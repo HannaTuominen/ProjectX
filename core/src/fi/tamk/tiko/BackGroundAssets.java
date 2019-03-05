@@ -21,6 +21,7 @@ public class BackGroundAssets extends Actor {
     private static Texture texture;
     MainClass mainClass;
     float whichOnePicked;
+    String jee;
 
 
     private String backgroundpicker = "";
