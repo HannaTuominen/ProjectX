@@ -21,16 +21,23 @@ public class BackGroundAssets extends Actor {
     private static Texture texture;
     MainClass mainClass;
     float whichOnePicked;
-    String jee;
+	static int id;
+	static boolean choice;
+	static int affect_id;
+	static int affect_steps;
+	static String story;
+	static int numberOfPages = 1;
+	static String choiceBox1;
+	static String choiceBox2;
+	static int stepCount;
 
-
-    private String backgroundpicker = "";
+    /*private String backgroundpicker = "";
     private String backgroundBase = "background_";
-    private String backgroundEnd = ".png";
+    private String backgroundEnd = ".png";*/
 
     public BackGroundAssets(MainClass MainClass2, String whichOne) {
         this.mainClass = MainClass2;
-        List<Character> backgrounds = new ArrayList<Character>();
+        /*List<Character> backgrounds = new ArrayList<Character>();
 
 
         for(int i = 0; i< backgroundBase.length(); i++) {
@@ -51,7 +58,7 @@ public class BackGroundAssets extends Actor {
             texture = new Texture(Gdx.files.internal(backgroundpicker));
             setWidth(mainClass.screenWidth);
             setHeight(mainClass.screenHeight);
-            setBounds(0,0,getWidth(),getHeight());
+            setBounds(0,0,getWidth(),getHeight());*/
 
 
         addListener(new PlayerListener());
