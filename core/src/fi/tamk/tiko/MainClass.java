@@ -16,26 +16,26 @@ import com.badlogic.gdx.utils.I18NBundle;
 import java.util.Locale;
 
 /*
-	Main class where the batch, fonts, camera, localisation texts, screen width and height and "MyPreferences.xml" where information is saved is created.
+	Main class where the batch, fonts, camera, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
 	These will be used in the different places of other codes.
  */
 
 public class MainClass extends Game {
-	SpriteBatch batch;
+	private SpriteBatch batch;
 
-	FreeTypeFontGenerator generator;
+	private FreeTypeFontGenerator generator;
 	private BitmapFont font12;
-	int fontSize = 20;
+	private int fontSize = 20;
 
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 	private float CurrentSteps;
 
 	String title;
-	String chapter1;
-	String chapter2;
-	String chapter3;
-	String chapter4;
-	String chapter5;
+	private String chapter1;
+	private String chapter2;
+	private String chapter3;
+	private String chapter4;
+	private String chapter5;
 
 	Preferences prefs;
 
