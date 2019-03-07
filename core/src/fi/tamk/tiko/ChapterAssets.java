@@ -44,10 +44,10 @@ public class ChapterAssets extends Actor {
     private String backgroundBase = "background_";
     private String backgroundEnd = ".png";*/
 
-    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choise, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
+    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
         this.mainClass = MainClass2;
         this.texture = texture;
-        this.choice = choise;
+        this.choice = choice;
         this.affect_id = affect_id;
         this.affect_steps = affect_steps;
         this.choiceBox1 = choiceBox1;
@@ -149,7 +149,6 @@ public class ChapterAssets extends Actor {
        batch.setProjectionMatrix(mainClass.camera.combined);
 //       System.out.println("GOT HERE");
 
-//        System.out.println("here");
         batch.draw(texture,
                 this.getX(), this.getY(),
                 this.getOriginX(),
