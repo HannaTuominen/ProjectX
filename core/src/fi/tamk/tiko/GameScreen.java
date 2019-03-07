@@ -87,11 +87,11 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        if(sceneNumber == 1 && !swapped) {
-            backGroundSwap("001");
-            swapped = true;
-            createButtons();
-        }
+//        if(sceneNumber == 1 && !swapped) {
+//            backGroundSwap("001");
+//            swapped = true;
+//            createButtons();
+//        }
         if(sceneNumber == 2 && !swapped) {
             backGroundSwap("002");
             swapped = true;
