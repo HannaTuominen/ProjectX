@@ -3,6 +3,7 @@ package fi.tamk.tiko;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -13,30 +14,53 @@ import com.badlogic.gdx.scenes.scene2d.actions.RotateToAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BackGroundAssets extends Actor {
-    private static Texture texture;
+public class ChapterAssets extends Actor {
+    private Texture texture;
     MainClass mainClass;
-    float whichOnePicked;
-	static int id;
-	static boolean choice;
-	static int affect_id;
-	static int affect_steps;
-	static String story;
-	static int numberOfPages = 1;
-	static String choiceBox1;
-	static String choiceBox2;
-	static int stepCount;
+//    float whichOnePicked;
+
+	static int id; //Ei tarvii?
+    String story;
+     int numberOfPages = 1;
+
+
+	boolean choice;
+	int affect_id;
+	int affect_steps;
+	String choiceBox1;
+    String choiceBox2;
+	int stepCount;
+
+    BitmapFont font12;
 
     /*private String backgroundpicker = "";
     private String backgroundBase = "background_";
     private String backgroundEnd = ".png";*/
 
-    public BackGroundAssets(MainClass MainClass2, String whichOne) {
+    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choise, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
         this.mainClass = MainClass2;
+        this.texture = texture;
+        this.choice = choise;
+        this.affect_id = affect_id;
+        this.affect_steps = affect_steps;
+        this.choiceBox1 = choiceBox1;
+        this.choiceBox2 = choiceBox2;
+        this.stepCount = stepCount;
+
+        this.mainClass = MainClass2;
+        this.story = story;
+        font12 = mainClass.getFont12();
+
+
+
+//        mainClass.setFontSize(15);
         /*List<Character> backgrounds = new ArrayList<Character>();
 
 
@@ -56,9 +80,11 @@ public class BackGroundAssets extends Actor {
 
 
             texture = new Texture(Gdx.files.internal(backgroundpicker));
+
+            */
             setWidth(mainClass.screenWidth);
             setHeight(mainClass.screenHeight);
-            setBounds(0,0,getWidth(),getHeight());*/
+            setBounds(0,0,getWidth(),getHeight());
 
 
         addListener(new PlayerListener());
@@ -101,10 +127,29 @@ public class BackGroundAssets extends Actor {
             return true;
         }
     }
-
+//    public void createButton1() {
+//
+//        final TextButton button = new TextButton("Play", mainClass.);
+//        button.setWidth(200f);
+//        button.setHeight(100f);
+//        button.setPosition(screenWidth/2 - 100f, screenHeight/2 - 100f);
+//        stage.addActor(button);
+//        Gdx.input.setInputProcessor(stage);
+//
+//        button.addListener(new ClickListener(){
+//            @Override
+//            public void clicked(InputEvent event, float x, float y){
+//                chapterNumber++;
+//                swapped = false;
+//            }
+//        });
+//    }
     @Override
     public void draw(Batch batch, float alpha) {
        batch.setProjectionMatrix(mainClass.camera.combined);
+//       System.out.println("GOT HERE");
+
+//        System.out.println("here");
         batch.draw(texture,
                 this.getX(), this.getY(),
                 this.getOriginX(),
@@ -115,6 +160,7 @@ public class BackGroundAssets extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
+        font12.draw(batch,story, 0, 100);
 
     }
     @Override

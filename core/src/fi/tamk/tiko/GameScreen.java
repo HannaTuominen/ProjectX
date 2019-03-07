@@ -23,40 +23,87 @@ public class GameScreen implements Screen {
 
     MainClass mainClass;
     SpriteBatch batch;
-    BitmapFont font12;
+//    BitmapFont font12;
 
-    Texture BackGroundImage;
+    Texture backGroundImage1;
+    Texture backGroundImage2;
+    Texture backGroundImage3;
+    Texture backGroundImage4;
+    Texture backGroundImage5;
+//    Texture BackGroundImage6;
+
     private Stage stage;
     Skin skin;
 
-    private float sceneNumber = 1;
+    private float chapterNumber;
 
-    private BackGroundAssets background;
-    private boolean swapped = false;
+    private ChapterAssets chapter1;
+    private ChapterAssets chapter2;
+    private ChapterAssets chapter3;
+    private ChapterAssets chapter4;
+    private ChapterAssets chapter5;
+    private boolean openedFirstTime = false;
+
+//    private ChapterAssets chapter6;
+
+//    private boolean swapped = false;
     private float screenWidth;
     private float screenHeight;
 
-    public void backGroundSwap(String backGroundNumber) {
-        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
-        background = new BackGroundAssets(mainClass, backGroundNumber);
-        stage.addActor(background);
-        Gdx.input.setInputProcessor(stage);
+    public void implementTextures() {
+        backGroundImage1 = new Texture(Gdx.files.internal("background_001.png"));
+        backGroundImage2 = new Texture(Gdx.files.internal("background_002.png"));
+        backGroundImage3 = new Texture(Gdx.files.internal("background_003.png"));
+        backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
+        backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
+
     }
+
+    public void createScenes() {
+        chapter1 = new ChapterAssets(mainClass, backGroundImage1, false, 0,0,"idk mita taha tulis", "Tyhja", 100,mainClass.getChapter1Text());
+//        stage.addActor(chapter1);
+
+        chapter2 = new ChapterAssets(mainClass, backGroundImage2, true, 3,300,"purje", "airot", 300, mainClass.getChapter2Text());
+//        stage.addActor(chapter2);
+
+        chapter3 = new ChapterAssets(mainClass, backGroundImage3, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter1Text());
+//        stage.addActor(chapter3);
+
+        chapter4 = new ChapterAssets(mainClass, backGroundImage4, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter2Text());
+//        stage.addActor(chapter4);
+
+        chapter5 = new ChapterAssets(mainClass, backGroundImage5, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter1Text());
+//        stage.addActor(chapter5);
+
+//        Gdx.input.setInputProcessor(stage);
+    }
+
 
     public GameScreen(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
+        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
 
-        backGroundSwap("001");
+        //Pitää tehdä vain kerran eli pitää kattoo onko jo tehty ekalla kerralla jne joskus sit :D
+        implementTextures();
+        createScenes();
+
 //        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
         skin = new Skin( Gdx.files.internal("uiskin.json"));
+        openedFirstTime = mainClass.prefs.getBoolean("openedFirstTime");
+        if (!openedFirstTime) {
+            System.out.println("GOT HERE");
+            mainClass.prefs.putInteger("ChapterNumber",1 );
+            openedFirstTime = true;
+            mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
+            mainClass.prefs.flush();
+        }
         createButtons();
 
-
+        chapterNumber = mainClass.prefs.getInteger("ChapterNumber");
     }
-
 
     public void createButtons() {
 
@@ -70,8 +117,8 @@ public class GameScreen implements Screen {
         button.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y){
-                sceneNumber++;
-                swapped = false;
+                chapterNumber++;
+//                swapped = false;
             }
         });
     }
@@ -87,34 +134,54 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
+        if(chapterNumber == 1) {
+            stage.addActor(chapter1);
+//            mainClass.prefs.putInteger("ChapterNumber",1 );
+//            mainClass.prefs.flush();
+            createButtons();
+        }
+        if(chapterNumber == 2) {
+            stage.clear();
+            stage.addActor(chapter2);
+            mainClass.prefs.putInteger("ChapterNumber",2 );
+            createButtons();
+           mainClass.prefs.flush();
+        }
+        if(chapterNumber == 3) {
+            stage.clear();
+            stage.addActor(chapter3);
+            mainClass.prefs.putInteger("ChapterNumber",3 );
+            createButtons();
+            mainClass.prefs.flush();
+        }
+
 //        if(sceneNumber == 1 && !swapped) {
 //            backGroundSwap("001");
 //            swapped = true;
 //            createButtons();
 //        }
-        if(sceneNumber == 2 && !swapped) {
-            backGroundSwap("002");
-            swapped = true;
-            createButtons();
-        }
-        if(sceneNumber == 3&& !swapped) {
-            backGroundSwap("003");
-            swapped = true;
-            createButtons();
-        }
-        if(sceneNumber == 4&& !swapped) {
-            backGroundSwap("004");
-            swapped = true;
-            createButtons();
-        }
-        if(sceneNumber == 5&& !swapped) {
-            backGroundSwap("005");
-            swapped = true;
-            createButtons();
-        }
+//        if(sceneNumber == 2 && !swapped) {
+//            backGroundSwap("002");
+//            swapped = true;
+//            createButtons();
+//        }
+//        if(sceneNumber == 3&& !swapped) {
+//            backGroundSwap("003");
+//            swapped = true;
+//            createButtons();
+//        }
+//        if(sceneNumber == 4&& !swapped) {
+//            backGroundSwap("004");
+//            swapped = true;
+//            createButtons();
+//        }
+//        if(sceneNumber == 5&& !swapped) {
+//            backGroundSwap("005");
+//            swapped = true;
+//            createButtons();
+//        }
 
         batch.end();
-
 
 //        stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
