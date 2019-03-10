@@ -32,24 +32,23 @@ public class MainClass extends Game {
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 	private float CurrentSteps;
 
-	String title;
+	private String title;
 	private String chapter1;
 	private String chapter2;
 	private String chapter3;
 	private String chapter4;
 	private String chapter5;
+	private String play;
+	private String chapterSelect;
+	private String credits;
+	private String exit;
+	private String back;
 
 	private boolean clearedChapter1;
 	private boolean clearedChapter2;
 	private boolean clearedChapter3;
 	private boolean clearedChapter4;
 	private boolean clearedChapter5;
-
-	private String play;
-	private String chapterSelect;
-	private String credits;
-	private String exit;
-	private String back;
 
 	Preferences prefs;
 	private Stage stage;
@@ -70,6 +69,8 @@ public class MainClass extends Game {
 
 	public static boolean playPressed = false;
 
+	public OrthographicCamera camera;
+
 	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
@@ -79,7 +80,6 @@ public class MainClass extends Game {
 		Gdx.input.setInputProcessor(stage);
 
 	}
-
 
 
 	public void setChapterNumber(int chapterNumber) {
@@ -95,8 +95,6 @@ public class MainClass extends Game {
 		return swapped;
 	}
 
-
-	public OrthographicCamera camera;
 
 	public SpriteBatch getBatch() {
 		return batch;
@@ -219,7 +217,7 @@ public class MainClass extends Game {
 		return buttonWidth;
 	}
 	public void setFontSize(int size) {
-		fontSize= size;
+		fontSize = size;
 	}
 
 

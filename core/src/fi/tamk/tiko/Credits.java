@@ -22,12 +22,15 @@ public class Credits implements Screen {
     MainClass mainClass;
     SpriteBatch batch;
     BitmapFont font12;
+    Texture texture;
 
     public Credits(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
+        font12 = mainClass.getFont12();
         mainClass.getStage().clear();
         mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+        texture = new Texture(Gdx.files.internal("background_001.png"));
     }
 
     @Override
@@ -41,6 +44,8 @@ public class Credits implements Screen {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
+        batch.draw(texture, 0f, 0f, mainClass.getScreenWidth(),mainClass.getScreenHeight());
+        font12.draw(batch,"Scrum master: Antti Peltola \n Graafikko: Tanja Varvio \n Graafikko: Aapo Rantanen \n Koodari: Juuso Toivanen \n Koodari: Hanna Tuominen", mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-100);
         batch.end();
         mainClass.getStage().draw();
     }

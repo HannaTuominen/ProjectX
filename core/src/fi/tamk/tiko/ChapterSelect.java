@@ -22,6 +22,7 @@ public class ChapterSelect implements Screen {
     MainClass mainClass;
     SpriteBatch batch;
     BitmapFont font12;
+    Texture texture;
 
 
     public ChapterSelect(MainClass MainClass2) {
@@ -35,6 +36,7 @@ public class ChapterSelect implements Screen {
         mainClass.createButtons("5",8,50,150,200,50);
         //BACK
         mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+        texture = new Texture(Gdx.files.internal("background_001.png"));
 
     }
 
@@ -49,6 +51,7 @@ public class ChapterSelect implements Screen {
         Gdx.gl.glClearColor(1, 0, 5, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
+        batch.draw(texture, 0f, 0f, mainClass.getScreenWidth(),mainClass.getScreenHeight());
         batch.end();
         mainClass.getStage().draw();
     }
