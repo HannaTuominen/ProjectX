@@ -47,10 +47,10 @@ public class MainMenu implements Screen {
         Skin skin = new Skin( Gdx.files.internal("uiskin.json"));
 
         mainClass.getStage().clear();
-        mainClass.createButtons(mainClass.getPlay(),1,screenWidth/2-50,screenHeight/2);
-        mainClass.createButtons(mainClass.getChapterSelect(),2,screenWidth/2-50,screenHeight/2-50);
-        mainClass.createButtons(mainClass.getCredits(),3,screenWidth/2-50,screenHeight/2-100);
-        mainClass.createButtons(mainClass.getExit(),4,screenWidth/2-50,screenHeight/2-150);
+        mainClass.createButtons(mainClass.getPlay(),1,screenWidth/2-50,screenHeight/2,200,50);
+        mainClass.createButtons(mainClass.getChapterSelect(),2,screenWidth/2-50,screenHeight/2-50,200,50);
+        mainClass.createButtons(mainClass.getCredits(),3,screenWidth/2-50,screenHeight/2-100,200,50);
+        mainClass.createButtons(mainClass.getExit(),4,screenWidth/2-50,screenHeight/2-150,200,50);
 
 
 //        final TextButton button = new TextButton("Play", skin);

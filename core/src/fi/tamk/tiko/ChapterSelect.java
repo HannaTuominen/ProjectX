@@ -27,7 +27,7 @@ public class ChapterSelect implements Screen {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
-        mainClass.createButtons(mainClass.getBack(),7,50,100);
+        mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
 
     }
 

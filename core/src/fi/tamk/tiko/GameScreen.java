@@ -133,14 +133,14 @@ public class GameScreen implements Screen {
 //            mainClass.prefs.putInteger("ChapterNumber",1 );
 //            mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
-            mainClass.createButtons(mainClass.getBack(),7,50,100);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
+            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
         }
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter2);
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
-            mainClass.createButtons(mainClass.getBack(),7,50,100);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
+            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
@@ -151,8 +151,8 @@ public class GameScreen implements Screen {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter3);
             mainClass.prefs.putInteger("ChapterNumber",3 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
-            mainClass.createButtons(mainClass.getBack(),7,50,100);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
+            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
@@ -160,8 +160,8 @@ public class GameScreen implements Screen {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter4);
             mainClass.prefs.putInteger("ChapterNumber",4 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
-            mainClass.createButtons(mainClass.getBack(),7,50,100);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
+            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
@@ -169,8 +169,8 @@ public class GameScreen implements Screen {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter5);
             mainClass.prefs.putInteger("ChapterNumber",5 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
-            mainClass.createButtons(mainClass.getBack(),7,50,100);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
+            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }

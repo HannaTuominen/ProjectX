@@ -23,10 +23,12 @@ public class Button extends Actor {
     int useForTheButton;
     float xPlace;
     float yPlace;
+    float buttonWidth;
+    float buttonHeight;
 
 
 
-   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace) {
+   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
 
         this.mainClass = mainclass;
         this.texture = texture;
@@ -34,12 +36,14 @@ public class Button extends Actor {
         this.useForTheButton = useForTheButton;
         this.xPlace = xPlace;
         this.yPlace = yPlace;
+        this.buttonHeight = buttonHeight;
+        this.buttonWidth = buttonWidth;
        chapterNumber = mainclass.getChapterNumber();
 //       System.out.println(chapterNumber+"H");
        font12 = mainClass.getFont12();
        addListener(new PlayerListener());
 //       System.out.println("BUTOTTOTTOTOTO");
-       setBounds(xPlace, yPlace, mainClass.getScreenWidth()/5, mainClass.getScreenHeight()/12);
+       setBounds(xPlace, yPlace, buttonWidth, buttonHeight);
 //       System.out.println(xPlace + "y: " + yPlace);
    }
 
@@ -129,8 +133,8 @@ public class Button extends Actor {
                 xPlace, yPlace,
                 this.getOriginX(),
                 this.getOriginY(),
-                mainClass.getScreenWidth()/5,
-                mainClass.getScreenHeight()/12,
+                buttonWidth,
+                buttonHeight,
                 this.getScaleX(),
                 this.getScaleY(),
                 this.getRotation(),0,0,

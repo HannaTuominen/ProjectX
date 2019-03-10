@@ -54,19 +54,24 @@ public class MainClass extends Game {
 	Texture buttonTexture1;
 
 	private float chapterNumber;
+	float buttonWidth;
+	float buttonHeight;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
 
-	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace) {
+	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
 //        final TextButton button = new TextButton("Play", skin);
 //        button.setWidth(200f);
 //        button.setHeight(100f);
 //        button.setPosition(screenWidth/2 - 100f, screenHeight/2 - 100f);
+		this.buttonHeight = buttonHeight;
+		this.buttonWidth = buttonWidth;
 		buttonTexture1 = new Texture(Gdx.files.internal("placeholderbutton.jpg"));
-		button = new Button(this, buttonTexture1, textForAButton, useForTheButton, xPlace, yPlace);
+		button = new Button(this, buttonTexture1, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight);
 		stage.addActor(button);
 		Gdx.input.setInputProcessor(stage);
+
 //		System.out.println("HI");
 //        button.addListener(new ClickListener(){
 //            @Override
@@ -136,6 +141,7 @@ public class MainClass extends Game {
 	public String getChapter5Text() {
 		return chapter5;
 	}
+
 	public String getPlay() {
 		return play;
 	}
@@ -153,6 +159,12 @@ public class MainClass extends Game {
 
 	public String getBack() {
 		return back;
+	}
+	public float getButtonWidth() {
+		return buttonWidth;
+	}
+	public float getButtonHeight() {
+		return buttonWidth;
 	}
 	public void setFontSize(int size) {
 		fontSize= size;
