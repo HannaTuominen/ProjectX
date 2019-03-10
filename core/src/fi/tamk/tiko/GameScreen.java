@@ -132,13 +132,8 @@ public class GameScreen implements Screen {
             mainClass.setChapterNumber(mainClass.prefs.getInteger("currentFurthestChapter"));
             mainClass.prefs.putInteger("ChapterNumber",mainClass.getChapterNumber());
             mainClass.setPlayPressed(false);
-
-
-        } else {
-            mainClass.setChapterNumber(mainClass.prefs.getInteger("ChapterNumber"));
+            System.out.println(mainClass.getChapterNumber() + "H");
         }
-
-
 
 
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
@@ -159,7 +154,7 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(mainClass.camera.combined);
         Gdx.gl.glClearColor(1, 2, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+//        System.out.println(mainClass.getChapterNumber());
 //        System.out.println(mainClass.getChapterNumber());
         batch.begin();
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {

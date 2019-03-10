@@ -59,10 +59,10 @@ public class MainClass extends Game {
 	Button button;
 	Texture buttonTexture1;
 
-	private int chapterNumber = 1;
+	private static int chapterNumber = 1;
 	float buttonWidth;
 	float buttonHeight;
-	int currentFurthestChapter = 1;
+	static int currentFurthestChapter = 1;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;

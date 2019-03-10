@@ -163,8 +163,10 @@ public class Button extends Actor {
                        mainClass.getCurrentFurthestChapter() == chapterSelect) {
 
                    mainClass.setChapterNumber(chapterSelect);
+//                   System.out.println(chapterSelect);
                    mainClass.prefs.putInteger("ChapterNumber",chapterSelect);
-
+                   mainClass.setPlayPressed(false);
+                   System.out.println(chapterSelect);
                    GameScreen gameScreen = new GameScreen(mainClass);
                    mainClass.setScreen(gameScreen);
                } else{
