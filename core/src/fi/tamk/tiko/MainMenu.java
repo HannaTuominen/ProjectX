@@ -40,7 +40,7 @@ public class MainMenu implements Screen {
         batch = mainClass.getBatch();
         font12 = mainClass.getFont12();
 
-        texture = new Texture(Gdx.files.internal("background_001.png"));
+        texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
         stage = mainClass.getStage();
 

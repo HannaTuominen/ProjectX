@@ -30,7 +30,7 @@ public class Credits implements Screen {
         font12 = mainClass.getFont12();
         mainClass.getStage().clear();
         mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
-        texture = new Texture(Gdx.files.internal("background_001.png"));
+        texture = new Texture(Gdx.files.internal("startBackground_1.png"));
     }
 
     @Override

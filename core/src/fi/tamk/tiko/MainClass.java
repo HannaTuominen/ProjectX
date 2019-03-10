@@ -17,14 +17,16 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import java.util.Locale;
 
-/*
+/**
 	Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
 	These will be used in the different places of other codes.
  */
 
 public class MainClass extends Game {
+	//Batch created here and used in every single java code of the game
 	private SpriteBatch batch;
 
+	//the font is created here and used everywhere else - size and bitmapFont also
 	private FreeTypeFontGenerator generator;
 	private BitmapFont font12;
 	private int fontSize = 20;
@@ -32,6 +34,7 @@ public class MainClass extends Game {
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 	private float CurrentSteps;
 
+	//All of the names of the MyBundle things used in the FIN/ENG distinction
 	private String title;
 	private String chapter1;
 	private String chapter2;
@@ -44,32 +47,45 @@ public class MainClass extends Game {
 	private String exit;
 	private String back;
 
+	//Used to check what chapters have been cleared
 	private boolean clearedChapter1;
 	private boolean clearedChapter2;
 	private boolean clearedChapter3;
 	private boolean clearedChapter4;
 	private boolean clearedChapter5;
 
+	//Created the prefs file here that is used everywhere in the code
 	Preferences prefs;
+
+	//Created the stage used everywhere in the code
 	private Stage stage;
 
+	//Screen width and height used everywhere in the code
 	float screenWidth;
 	float screenHeight;
 
+	//Implement the button used everywhere in the code
 	Button button;
 	Texture buttonTexture1;
 
+	//ChapterNumber is used everywhere in the code - it is the current chapter that is displayed
 	private static int chapterNumber = 1;
+	//Used to get and set the furthest the player has gotten in the story so evry time they press the play button in the main menu it redirects them correctly to the last chapter played
+	static int currentFurthestChapter = 1;
+
+	//Used when creating a new button to set its width and height
 	float buttonWidth;
 	float buttonHeight;
-	static int currentFurthestChapter = 1;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
 
+	//Needed to check if the PlayButton has been pressed (changed in the Button script) to set things correctly
 	public static boolean playPressed = false;
 
+	//Camera used everywhere
 	public OrthographicCamera camera;
+
 
 	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
 		this.buttonHeight = buttonHeight;
