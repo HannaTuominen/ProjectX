@@ -26,7 +26,8 @@ public class Credits implements Screen {
     public Credits(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
-
+        mainClass.getStage().clear();
+        mainClass.createButtons(mainClass.getBack(),7,50,100);
     }
 
     @Override
@@ -41,6 +42,7 @@ public class Credits implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.end();
+        mainClass.getStage().draw();
     }
 
     @Override

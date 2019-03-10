@@ -11,12 +11,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.I18NBundle;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import java.util.Locale;
 
 /*
-	Main class where the batch, fonts, camera, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
+	Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
 	These will be used in the different places of other codes.
  */
 
@@ -36,17 +38,46 @@ public class MainClass extends Game {
 	private String chapter3;
 	private String chapter4;
 	private String chapter5;
+	private String play;
+	private String chapterSelect;
+	private String credits;
+	private String exit;
+	private String back;
 
 	Preferences prefs;
+	private Stage stage;
 
 	float screenWidth;
 	float screenHeight;
 
+	Button button;
+	Texture buttonTexture1;
+
 	private float chapterNumber;
+
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
 
-
+	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace) {
+//        final TextButton button = new TextButton("Play", skin);
+//        button.setWidth(200f);
+//        button.setHeight(100f);
+//        button.setPosition(screenWidth/2 - 100f, screenHeight/2 - 100f);
+		buttonTexture1 = new Texture(Gdx.files.internal("placeholderbutton.jpg"));
+		button = new Button(this, buttonTexture1, textForAButton, useForTheButton, xPlace, yPlace);
+		stage.addActor(button);
+		Gdx.input.setInputProcessor(stage);
+//		System.out.println("HI");
+//        button.addListener(new ClickListener(){
+//            @Override
+//            public void clicked(InputEvent event, float x, float y){
+//                chapterNumber++;
+//                System.out.println("HERE");
+//                System.out.println(chapterNumber);
+//                swapped = false;
+//            }
+//        });
+	}
 
 
 
@@ -87,6 +118,9 @@ public class MainClass extends Game {
 		return CurrentSteps;
 	}
 
+	public Stage getStage() {
+		return stage;
+	}
 	public String getChapter1Text() {
 		return chapter1;
 	}
@@ -102,7 +136,24 @@ public class MainClass extends Game {
 	public String getChapter5Text() {
 		return chapter5;
 	}
+	public String getPlay() {
+		return play;
+	}
+	public String getChapterSelect() {
+		return chapterSelect;
+	}
 
+	public String getCredits() {
+		return credits;
+	}
+
+	public String getExit() {
+		return exit;
+	}
+
+	public String getBack() {
+		return back;
+	}
 	public void setFontSize(int size) {
 		fontSize= size;
 	}
@@ -139,7 +190,7 @@ public class MainClass extends Game {
 		//Create or open file MyPreferences.xml
 		prefs = Gdx.app.getPreferences("MyPreferences");
 
-
+		stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
 		//Save in this textfile name = Donald Duck
 //		prefs.putString("name", "Donald Duck");
 //		prefs.putInteger("ChapterNumber",1 );
@@ -169,6 +220,12 @@ public class MainClass extends Game {
 		I18NBundle myBundle =
 				I18NBundle.createBundle(Gdx.files.internal("MyBundle"), locale);
 		title = myBundle.get("title");
+		play = myBundle.get("play");
+		chapterSelect = myBundle.get("chapterSelect");
+		credits = myBundle.get("credits");
+		exit = myBundle.get("exit");
+		back = myBundle.get("back");
+
 		chapter1 = myBundle.get("chapter1");
 		chapter2 = myBundle.get("chapter2");
 		chapter3 = myBundle.get("chapter3");

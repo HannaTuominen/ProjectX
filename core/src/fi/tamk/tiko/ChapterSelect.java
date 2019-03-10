@@ -26,6 +26,8 @@ public class ChapterSelect implements Screen {
     public ChapterSelect(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
+        mainClass.getStage().clear();
+        mainClass.createButtons(mainClass.getBack(),7,50,100);
 
     }
 
@@ -41,6 +43,7 @@ public class ChapterSelect implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.end();
+        mainClass.getStage().draw();
     }
 
     @Override

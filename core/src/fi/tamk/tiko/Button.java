@@ -20,19 +20,27 @@ public class Button extends Actor {
     Texture texture;
     String textForAButton;
     float chapterNumber;
+    int useForTheButton;
+    float xPlace;
+    float yPlace;
 
 
 
-   public Button(MainClass mainclass, Texture texture, String textForAButton) {
+   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace) {
+
         this.mainClass = mainclass;
         this.texture = texture;
         this.textForAButton = textForAButton;
+        this.useForTheButton = useForTheButton;
+        this.xPlace = xPlace;
+        this.yPlace = yPlace;
        chapterNumber = mainclass.getChapterNumber();
-       System.out.println(chapterNumber+"H");
+//       System.out.println(chapterNumber+"H");
        font12 = mainClass.getFont12();
        addListener(new PlayerListener());
-       System.out.println("BUTOTTOTTOTOTO");
-       setBounds(65f, 185f, 200, 100);
+//       System.out.println("BUTOTTOTTOTOTO");
+       setBounds(xPlace, yPlace, mainClass.getScreenWidth()/5, mainClass.getScreenHeight()/12);
+//       System.out.println(xPlace + "y: " + yPlace);
    }
 
     class PlayerListener extends InputListener {
@@ -74,10 +82,41 @@ public class Button extends Actor {
 
         @Override
         public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-            System.out.println("HEREEEEEE");
-            mainClass.setChapterNumber(chapterNumber + 1);
-            mainClass.setSwapped(false);
-            System.out.println(mainClass.getChapterNumber());
+           /*
+            useForTheButton
+            1. Play the game / continue
+            2. Chapter Select
+            3. Credits
+            4. Exit
+            5. Choice 1
+            6. Choice 2
+            7. Back to main menu
+            */
+           if (useForTheButton == 5 || useForTheButton == 6) {
+//               System.out.println("HEREEEEEE");
+               mainClass.setChapterNumber(chapterNumber + 1);
+               mainClass.setSwapped(false);
+               System.out.println(mainClass.getChapterNumber());
+           } else if (useForTheButton == 7) {
+               mainClass.getStage().clear();
+               //START THE GAME FROM MAIN MENU
+               MainMenu mainMenu = new MainMenu(mainClass);
+               mainClass.setSwapped(false);
+               mainClass.setScreen(mainMenu);
+           } else if (useForTheButton == 1) {
+               GameScreen gameScreen = new GameScreen(mainClass);
+               mainClass.setScreen(gameScreen);
+           } else if (useForTheButton == 2) {
+               ChapterSelect chapterSelect = new ChapterSelect(mainClass);
+               mainClass.setScreen(chapterSelect);
+           } else if (useForTheButton == 3) {
+               Credits credits = new Credits(mainClass);
+               mainClass.setScreen(credits);
+           } else if (useForTheButton == 4) {
+               //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
+               Gdx.app.exit();
+           }
+
         }
     }
 
@@ -87,16 +126,16 @@ public class Button extends Actor {
 //       System.out.println("GOT HERE");
 
         batch.draw(texture,
-                65f, 185f,
+                xPlace, yPlace,
                 this.getOriginX(),
                 this.getOriginY(),
-                200,
-                100,
+                mainClass.getScreenWidth()/5,
+                mainClass.getScreenHeight()/12,
                 this.getScaleX(),
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        font12.draw(batch,textForAButton, 100, 250);
+        font12.draw(batch,textForAButton, xPlace+10, yPlace+35);
 
     }
     @Override

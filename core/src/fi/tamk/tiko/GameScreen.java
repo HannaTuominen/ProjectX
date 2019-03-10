@@ -31,13 +31,11 @@ public class GameScreen implements Screen {
     Texture backGroundImage4;
     Texture backGroundImage5;
 
-    Texture buttonTexture1;
+
 //    Texture BackGroundImage6;
 
-    private Stage stage;
+
     Skin skin;
-
-
 
     private ChapterAssets chapter1;
     private ChapterAssets chapter2;
@@ -66,25 +64,15 @@ public class GameScreen implements Screen {
         backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
         backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
 
-        buttonTexture1 = new Texture(Gdx.files.internal("placeholderbutton.jpg"));
 
     }
 
     public void createScenes() {
         chapter1 = new ChapterAssets(mainClass, backGroundImage1, false, 0,0,"idk mita taha tulis", "Tyhja", 100,mainClass.getChapter1Text());
-//        stage.addActor(chapter1); -- not needed here
-
         chapter2 = new ChapterAssets(mainClass, backGroundImage2, true, 3,300,"purje", "airot", 300, mainClass.getChapter2Text());
-//        stage.addActor(chapter2);
-
         chapter3 = new ChapterAssets(mainClass, backGroundImage3, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter3Text());
-//        stage.addActor(chapter3);
-
         chapter4 = new ChapterAssets(mainClass, backGroundImage4, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter4Text());
-//        stage.addActor(chapter4);
-
         chapter5 = new ChapterAssets(mainClass, backGroundImage5, false, 0,0,"idk mita taha tulis", "Tyhja", 300,mainClass.getChapter5Text());
-//        stage.addActor(chapter5);
 
 //        Gdx.input.setInputProcessor(stage);
     }
@@ -93,11 +81,9 @@ public class GameScreen implements Screen {
     public GameScreen(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
+        mainClass.getStage().clear();
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
-        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
-
-        //Pitää tehdä vain kerran eli pitää kattoo onko jo tehty ekalla kerralla jne joskus sit :D
 
 
 //        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
@@ -113,39 +99,21 @@ public class GameScreen implements Screen {
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
         if (!openedFirstTime) {
-            System.out.println("GOT HERE");
+//            System.out.println("GOT HERE");
             mainClass.prefs.putInteger("ChapterNumber",1 );
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
             //ON FIRST OPEN SET CURRENT STEPS TO 0
             mainClass.setCurrentSteps(0);
+
         }
 //        createButtons();
-
         mainClass.setChapterNumber(mainClass.prefs.getInteger("ChapterNumber"));
+//        System.out.println(mainClass.getChapterNumber());
     }
 
-    public void createButtons() {
-//        final TextButton button = new TextButton("Play", skin);
-//        button.setWidth(200f);
-//        button.setHeight(100f);
-//        button.setPosition(screenWidth/2 - 100f, screenHeight/2 - 100f);
 
-        button = new Button(mainClass, buttonTexture1, mainClass.title);
-        stage.addActor(button);
-        Gdx.input.setInputProcessor(stage);
-        System.out.println("HI");
-//        button.addListener(new ClickListener(){
-//            @Override
-//            public void clicked(InputEvent event, float x, float y){
-//                chapterNumber++;
-//                System.out.println("HERE");
-//                System.out.println(chapterNumber);
-//                swapped = false;
-//            }
-//        });
-    }
     @Override
     public void show() {
 
@@ -160,16 +128,19 @@ public class GameScreen implements Screen {
 //        System.out.println(mainClass.getChapterNumber());
         batch.begin();
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {
-            stage.addActor(chapter1);
+            mainClass.getStage().clear();
+            mainClass.getStage().addActor(chapter1);
 //            mainClass.prefs.putInteger("ChapterNumber",1 );
 //            mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            createButtons();
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
+            mainClass.createButtons(mainClass.getBack(),7,50,100);
         }
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()) {
-            stage.clear();
-            stage.addActor(chapter2);
-            createButtons();
+            mainClass.getStage().clear();
+            mainClass.getStage().addActor(chapter2);
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
+            mainClass.createButtons(mainClass.getBack(),7,50,100);
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
@@ -177,61 +148,35 @@ public class GameScreen implements Screen {
 //        System.out.println(chapterNumber);
         if(mainClass.getChapterNumber() == 3 && !mainClass.getSwapped()) {
             System.out.println("got here");
-            stage.clear();
-            stage.addActor(chapter3);
+            mainClass.getStage().clear();
+            mainClass.getStage().addActor(chapter3);
             mainClass.prefs.putInteger("ChapterNumber",3 );
-            createButtons();
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
+            mainClass.createButtons(mainClass.getBack(),7,50,100);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
         if(mainClass.getChapterNumber() == 4 && !mainClass.getSwapped()) {
-            stage.clear();
-            stage.addActor(chapter4);
+            mainClass.getStage().clear();
+            mainClass.getStage().addActor(chapter4);
             mainClass.prefs.putInteger("ChapterNumber",4 );
-            createButtons();
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
+            mainClass.createButtons(mainClass.getBack(),7,50,100);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
         if(mainClass.getChapterNumber() == 5 && !mainClass.getSwapped()) {
-            stage.clear();
-            stage.addActor(chapter5);
+            mainClass.getStage().clear();
+            mainClass.getStage().addActor(chapter5);
             mainClass.prefs.putInteger("ChapterNumber",5 );
-            createButtons();
+            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f);
+            mainClass.createButtons(mainClass.getBack(),7,50,100);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
 
-//        if(sceneNumber == 1 && !swapped) {
-//            backGroundSwap("001");
-//            swapped = true;
-//            createButtons();
-//        }
-//        if(sceneNumber == 2 && !swapped) {
-//            backGroundSwap("002");
-//            swapped = true;
-//            createButtons();
-//        }
-//        if(sceneNumber == 3&& !swapped) {
-//            backGroundSwap("003");
-//            swapped = true;
-//            createButtons();
-//        }
-//        if(sceneNumber == 4&& !swapped) {
-//            backGroundSwap("004");
-//            swapped = true;
-//            createButtons();
-//        }
-//        if(sceneNumber == 5&& !swapped) {
-//            backGroundSwap("005");
-//            swapped = true;
-//            createButtons();
-//        }
-
         batch.end();
-
-//        System.out.println( mainClass.getCurrentSteps());
-//        stage.act(Gdx.graphics.getDeltaTime());
-        stage.draw();
+        mainClass.getStage().draw();
     }
 
     @Override
