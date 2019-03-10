@@ -38,6 +38,13 @@ public class MainClass extends Game {
 	private String chapter3;
 	private String chapter4;
 	private String chapter5;
+
+	private boolean clearedChapter1;
+	private boolean clearedChapter2;
+	private boolean clearedChapter3;
+	private boolean clearedChapter4;
+	private boolean clearedChapter5;
+
 	private String play;
 	private String chapterSelect;
 	private String credits;
@@ -53,18 +60,17 @@ public class MainClass extends Game {
 	Button button;
 	Texture buttonTexture1;
 
-	private float chapterNumber;
+	private int chapterNumber = 1;
 	float buttonWidth;
 	float buttonHeight;
+	int currentFurthestChapter = 1;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
 
+	public static boolean playPressed = false;
+
 	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
-//        final TextButton button = new TextButton("Play", skin);
-//        button.setWidth(200f);
-//        button.setHeight(100f);
-//        button.setPosition(screenWidth/2 - 100f, screenHeight/2 - 100f);
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
 		buttonTexture1 = new Texture(Gdx.files.internal("placeholderbutton.jpg"));
@@ -72,24 +78,14 @@ public class MainClass extends Game {
 		stage.addActor(button);
 		Gdx.input.setInputProcessor(stage);
 
-//		System.out.println("HI");
-//        button.addListener(new ClickListener(){
-//            @Override
-//            public void clicked(InputEvent event, float x, float y){
-//                chapterNumber++;
-//                System.out.println("HERE");
-//                System.out.println(chapterNumber);
-//                swapped = false;
-//            }
-//        });
 	}
 
 
 
-	public void setChapterNumber(float chapterNumber) {
+	public void setChapterNumber(int chapterNumber) {
 		this.chapterNumber = chapterNumber;
 	}
-	public float getChapterNumber() {
+	public int getChapterNumber() {
 		return chapterNumber;
 	}
 	public void setSwapped(boolean swapped) {
@@ -98,7 +94,6 @@ public class MainClass extends Game {
 	public boolean getSwapped() {
 		return swapped;
 	}
-
 
 
 	public OrthographicCamera camera;
@@ -141,6 +136,63 @@ public class MainClass extends Game {
 	public String getChapter5Text() {
 		return chapter5;
 	}
+	public int getCurrentFurthestChapter() {
+		return currentFurthestChapter;
+	}
+
+	public void setCurrentFurthestChapter(int currentFurthestChapter) {
+		if(this.currentFurthestChapter <= currentFurthestChapter) {
+			this.currentFurthestChapter = currentFurthestChapter;
+			prefs.putInteger("currentFurthestChapter", currentFurthestChapter);
+		}
+	}
+
+
+	public boolean getPlayPressed() {
+		return playPressed;
+	}
+	public void setPlayPressed(boolean playPressed) {
+		this.playPressed = playPressed;
+	}
+
+
+
+
+	public boolean getClearedChapter1() {
+		return clearedChapter1;
+	}
+	public boolean getClearedChapter2() {
+		return clearedChapter2;
+	}
+	public boolean getClearedChapter3() {
+		return clearedChapter3;
+	}
+	public boolean getClearedChapter4() {
+		return clearedChapter4;
+	}
+	public boolean getClearedChapter5() {
+		return clearedChapter5;
+	}
+
+
+
+	public void setClearedChapter1(boolean clearedChapter1) {
+		this.clearedChapter1 = clearedChapter1;
+	}
+	public void setClearedChapter2(boolean clearedChapter2) {
+		this.clearedChapter2 = clearedChapter2;
+	}
+	public void setClearedChapter3(boolean clearedChapter3) {
+		this.clearedChapter3 = clearedChapter3;
+	}
+	public void setClearedChapter4(boolean clearedChapter4) {
+		this.clearedChapter4 = clearedChapter4;
+	}
+	public void setClearedChapter5(boolean clearedChapter5) {
+		this.clearedChapter5 = clearedChapter5;
+	}
+
+
 
 	public String getPlay() {
 		return play;
@@ -203,17 +255,6 @@ public class MainClass extends Game {
 		prefs = Gdx.app.getPreferences("MyPreferences");
 
 		stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
-		//Save in this textfile name = Donald Duck
-//		prefs.putString("name", "Donald Duck");
-//		prefs.putInteger("ChapterNumber",1 );
-		// Try to find things by the key "name"
-//		String name = prefs.getString("name", "No name Stored");
-
-//		prefs.putBoolean("soundOn", true);
-
-//		prefs.putInteger("highscore", 10);
-		//Save happens here
-
 
 		//CREATE THE GAMERA THAT IS USEED THROUGHOUT THE GAME
 		camera = new OrthographicCamera();
@@ -244,7 +285,9 @@ public class MainClass extends Game {
 		chapter4 = myBundle.get("chapter4");
 		chapter5 = myBundle.get("chapter5");
 		//String steps = myBundle.format("steps");
-
+		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
+		prefs.putInteger("ChapterNumber",1 );
+		prefs.putInteger("currentFurthestChapter",1);
 		//START THE GAME FROM MAIN MENU
 		MainMenu mainMenu = new MainMenu(this);
 		setScreen(mainMenu);

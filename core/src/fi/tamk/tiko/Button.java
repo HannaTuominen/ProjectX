@@ -19,12 +19,13 @@ public class Button extends Actor {
     BitmapFont font12;
     Texture texture;
     String textForAButton;
-    float chapterNumber;
+    int chapterNumber;
     int useForTheButton;
     float xPlace;
     float yPlace;
     float buttonWidth;
     float buttonHeight;
+    int chapterSelect;
 
 
 
@@ -44,6 +45,7 @@ public class Button extends Actor {
        addListener(new PlayerListener());
 //       System.out.println("BUTOTTOTTOTOTO");
        setBounds(xPlace, yPlace, buttonWidth, buttonHeight);
+
 //       System.out.println(xPlace + "y: " + yPlace);
    }
 
@@ -95,12 +97,40 @@ public class Button extends Actor {
             5. Choice 1
             6. Choice 2
             7. Back to main menu
+            8. ChapterSelect Buttons
             */
+
            if (useForTheButton == 5 || useForTheButton == 6) {
-//               System.out.println("HEREEEEEE");
+//               System.out.println("clearedChapter" + mainClass.getChapterNumber());
+               mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+               if(mainClass.getChapterNumber() == 1) {
+                   mainClass.setClearedChapter1(true);
+                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+               } else if (mainClass.getChapterNumber() == 2) {
+                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                   mainClass.setClearedChapter2(true);
+               } else if (mainClass.getChapterNumber() == 3) {
+                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                   mainClass.setClearedChapter3(true);
+               } else if (mainClass.getChapterNumber() == 4) {
+                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                   mainClass.setClearedChapter4(true);
+               } else if (mainClass.getChapterNumber() == 5) {
+                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                   mainClass.setClearedChapter5(true);
+               }
+
                mainClass.setChapterNumber(chapterNumber + 1);
+               mainClass.prefs.putInteger("ChapterNumber",chapterNumber+1);
+
                mainClass.setSwapped(false);
-               System.out.println(mainClass.getChapterNumber());
+//               System.out.println(mainClass.getChapterNumber());
+
            } else if (useForTheButton == 7) {
                mainClass.getStage().clear();
                //START THE GAME FROM MAIN MENU
@@ -108,6 +138,8 @@ public class Button extends Actor {
                mainClass.setSwapped(false);
                mainClass.setScreen(mainMenu);
            } else if (useForTheButton == 1) {
+               mainClass.setPlayPressed(true);
+               System.out.println(mainClass.getPlayPressed());
                GameScreen gameScreen = new GameScreen(mainClass);
                mainClass.setScreen(gameScreen);
            } else if (useForTheButton == 2) {
@@ -119,6 +151,25 @@ public class Button extends Actor {
            } else if (useForTheButton == 4) {
                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
                Gdx.app.exit();
+           } else if (useForTheButton == 8) {
+//               mainClass.setPlayPressed(false);
+               chapterSelect = Integer.parseInt(textForAButton);
+               System.out.println(chapterSelect + "c: " + mainClass.getClearedChapter1());
+               if(mainClass.getClearedChapter1() && chapterSelect == 1 ||
+                       mainClass.getClearedChapter2() && chapterSelect == 2 ||
+                       mainClass.getClearedChapter3() && chapterSelect == 3 ||
+                       mainClass.getClearedChapter4() && chapterSelect == 4 ||
+                       mainClass.getClearedChapter5() && chapterSelect == 5 ||
+                       mainClass.getCurrentFurthestChapter() == chapterSelect) {
+
+                   mainClass.setChapterNumber(chapterSelect);
+                   mainClass.prefs.putInteger("ChapterNumber",chapterSelect);
+
+                   GameScreen gameScreen = new GameScreen(mainClass);
+                   mainClass.setScreen(gameScreen);
+               } else{
+
+               }
            }
 
         }

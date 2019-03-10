@@ -43,6 +43,8 @@ public class GameScreen implements Screen {
     private ChapterAssets chapter4;
     private ChapterAssets chapter5;
 
+
+
     Button button;
 
     private boolean openedFirstTime = false;
@@ -63,7 +65,6 @@ public class GameScreen implements Screen {
         backGroundImage3 = new Texture(Gdx.files.internal("background_003.png"));
         backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
         backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
-
 
     }
 
@@ -99,18 +100,52 @@ public class GameScreen implements Screen {
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
         if (!openedFirstTime) {
-//            System.out.println("GOT HERE");
-            mainClass.prefs.putInteger("ChapterNumber",1 );
+            System.out.println("GOT HERE");
+
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
             //ON FIRST OPEN SET CURRENT STEPS TO 0
             mainClass.setCurrentSteps(0);
+            mainClass.prefs.putFloat("currentSteps", mainClass.getCurrentSteps());
+
+            mainClass.setChapterNumber(1);
+            mainClass.setCurrentFurthestChapter(1);
+            mainClass.prefs.putInteger("ChapterNumber",1 );
+            mainClass.prefs.putInteger("currentFurthestChapter",1);
+
+            mainClass.setClearedChapter1(false);
+            mainClass.prefs.putBoolean("clearedChapter1", false);
+            mainClass.setClearedChapter2(false);
+            mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter2());
+            mainClass.setClearedChapter3(false);
+            mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter3());
+            mainClass.setClearedChapter4(false);
+            mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
+            mainClass.setClearedChapter5(false);
+            mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
 
         }
-//        createButtons();
-        mainClass.setChapterNumber(mainClass.prefs.getInteger("ChapterNumber"));
-//        System.out.println(mainClass.getChapterNumber());
+        System.out.println(mainClass.getPlayPressed());
+        if (mainClass.getPlayPressed()) {
+            System.out.println("HEREEEEFDFSEF");
+            mainClass.setChapterNumber(mainClass.prefs.getInteger("currentFurthestChapter"));
+            mainClass.prefs.putInteger("ChapterNumber",mainClass.getChapterNumber());
+            mainClass.setPlayPressed(false);
+
+
+        } else {
+            mainClass.setChapterNumber(mainClass.prefs.getInteger("ChapterNumber"));
+        }
+
+
+
+
+        mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
+        mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
+        mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
+        mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
+        mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
     }
 
 
@@ -136,7 +171,7 @@ public class GameScreen implements Screen {
             mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
             mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
         }
-        if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()) {
+        if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()&& mainClass.getClearedChapter1()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter2);
             mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
@@ -146,28 +181,32 @@ public class GameScreen implements Screen {
             mainClass.setSwapped(true);
         }
 //        System.out.println(chapterNumber);
-        if(mainClass.getChapterNumber() == 3 && !mainClass.getSwapped()) {
+        if(mainClass.getChapterNumber() == 3 && !mainClass.getSwapped()&& mainClass.getClearedChapter2() ) {
             System.out.println("got here");
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter3);
+            mainClass.prefs.putBoolean("clearedChapter2", true);
+
             mainClass.prefs.putInteger("ChapterNumber",3 );
             mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
             mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
-        if(mainClass.getChapterNumber() == 4 && !mainClass.getSwapped()) {
+        if(mainClass.getChapterNumber() == 4 && !mainClass.getSwapped() && mainClass.getClearedChapter3()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter4);
+            mainClass.prefs.putBoolean("clearedChapter3", true);
             mainClass.prefs.putInteger("ChapterNumber",4 );
             mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
             mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
-        if(mainClass.getChapterNumber() == 5 && !mainClass.getSwapped()) {
+        if(mainClass.getChapterNumber() == 5 && !mainClass.getSwapped()&& mainClass.getClearedChapter4()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter5);
+            mainClass.prefs.putBoolean("clearedChapter4", true);
             mainClass.prefs.putInteger("ChapterNumber",5 );
             mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
             mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);

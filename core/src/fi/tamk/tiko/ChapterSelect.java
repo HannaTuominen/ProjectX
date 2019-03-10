@@ -23,10 +23,17 @@ public class ChapterSelect implements Screen {
     SpriteBatch batch;
     BitmapFont font12;
 
+
     public ChapterSelect(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
+        mainClass.createButtons("1",8,50,350,200,50);
+        mainClass.createButtons("2",8,300,350,200,50);
+        mainClass.createButtons("3",8,50,250,200,50);
+        mainClass.createButtons("4",8,300,250,200,50);
+        mainClass.createButtons("5",8,50,150,200,50);
+        //BACK
         mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
 
     }
