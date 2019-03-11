@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-/*
+/**
 
     This is the Credits screen in the main menu
 
@@ -24,13 +24,26 @@ public class Credits implements Screen {
     BitmapFont font12;
     Texture texture;
 
+    float buttonWidth;
+    float buttonHeight;
+
+
+    float screenWidth;
+    float screenHeight;
+
     public Credits(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         font12 = mainClass.getFont12();
+        screenHeight = mainClass.getScreenHeight();
+        screenWidth = mainClass.getScreenWidth();
         mainClass.getStage().clear();
-        mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+        buttonWidth = screenWidth/4;
+        buttonHeight = screenHeight/10;
+
+        mainClass.createButtons(mainClass.getBack(),7,screenWidth/2-buttonWidth/2,buttonHeight+15,buttonWidth,buttonHeight);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
+
     }
 
     @Override

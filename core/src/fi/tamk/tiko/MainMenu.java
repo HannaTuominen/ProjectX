@@ -15,7 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-/*
+/**
     Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
  */
 
@@ -26,6 +26,8 @@ public class MainMenu implements Screen {
 //    public OrthographicCamera camera;
     private float screenWidth;
     private float screenHeight;
+    private float buttonWidth;
+    private float buttonHeight;
 
     private Stage stage;
 
@@ -44,13 +46,17 @@ public class MainMenu implements Screen {
 
         stage = mainClass.getStage();
 
-        Skin skin = new Skin( Gdx.files.internal("uiskin.json"));
+//        Skin skin = new Skin( Gdx.files.internal("uiskin.json"));
+
+        buttonWidth = screenWidth/4;
+        buttonHeight = screenHeight/10;
 
         mainClass.getStage().clear();
-        mainClass.createButtons(mainClass.getPlay(),1,screenWidth/2-50,screenHeight/2,200,50);
-        mainClass.createButtons(mainClass.getChapterSelect(),2,screenWidth/2-50,screenHeight/2-50,200,50);
-        mainClass.createButtons(mainClass.getCredits(),3,screenWidth/2-50,screenHeight/2-100,200,50);
-        mainClass.createButtons(mainClass.getExit(),4,screenWidth/2-50,screenHeight/2-150,200,50);
+
+        mainClass.createButtons(mainClass.getPlay(),1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight);
+        mainClass.createButtons(mainClass.getChapterSelect(),2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight);
+        mainClass.createButtons(mainClass.getCredits(),3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight);
+        mainClass.createButtons(mainClass.getExit(),4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight);
 
     }
 

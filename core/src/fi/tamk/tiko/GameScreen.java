@@ -15,7 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-/*
+/**
     The actual game screen where the game is "played", gotten through main menu
  */
 
@@ -46,6 +46,9 @@ public class GameScreen implements Screen {
 
 
     Button button;
+
+    float buttonWidth;
+    float buttonHeight;
 
     private boolean openedFirstTime = false;
 
@@ -90,7 +93,8 @@ public class GameScreen implements Screen {
 //        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
         skin = new Skin( Gdx.files.internal("uiskin.json"));
         openedFirstTime = mainClass.prefs.getBoolean("openedFirstTime");
-
+        buttonWidth = screenWidth/4;
+        buttonHeight = screenHeight/10;
 
        //These need to be created again each time you open the project again, the textures and scenes so they cannot be moved to the openedFirstTime
         implementTextures();
@@ -163,14 +167,14 @@ public class GameScreen implements Screen {
 //            mainClass.prefs.putInteger("ChapterNumber",1 );
 //            mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
-            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+            mainClass.createButtons(mainClass.getPlay(),6, screenWidth-buttonWidth-50, 250f, buttonWidth ,buttonHeight);
+            mainClass.createButtons(mainClass.getBack(),7,50,250f, buttonWidth ,buttonHeight);
         }
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()&& mainClass.getClearedChapter1()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter2);
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
-            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+            mainClass.createButtons(mainClass.getPlay(),6, screenWidth-buttonWidth-50, 250f, buttonWidth ,buttonHeight);
+            mainClass.createButtons(mainClass.getBack(),7,50,250f, buttonWidth ,buttonHeight);
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
@@ -183,8 +187,8 @@ public class GameScreen implements Screen {
             mainClass.prefs.putBoolean("clearedChapter2", true);
 
             mainClass.prefs.putInteger("ChapterNumber",3 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
-            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+            mainClass.createButtons(mainClass.getPlay(),6, screenWidth-buttonWidth-50, 250f, buttonWidth ,buttonHeight);
+            mainClass.createButtons(mainClass.getBack(),7,50,250f, buttonWidth ,buttonHeight);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
@@ -193,8 +197,8 @@ public class GameScreen implements Screen {
             mainClass.getStage().addActor(chapter4);
             mainClass.prefs.putBoolean("clearedChapter3", true);
             mainClass.prefs.putInteger("ChapterNumber",4 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
-            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+            mainClass.createButtons(mainClass.getPlay(),6, screenWidth-buttonWidth-50, 250f, buttonWidth ,buttonHeight);
+            mainClass.createButtons(mainClass.getBack(),7,50,250f, buttonWidth ,buttonHeight);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
@@ -203,8 +207,8 @@ public class GameScreen implements Screen {
             mainClass.getStage().addActor(chapter5);
             mainClass.prefs.putBoolean("clearedChapter4", true);
             mainClass.prefs.putInteger("ChapterNumber",5 );
-            mainClass.createButtons(mainClass.getPlay(),6, 65f, 185f,200,50);
-            mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+            mainClass.createButtons(mainClass.getPlay(),6, screenWidth-buttonWidth-50, 250f, buttonWidth ,buttonHeight);
+            mainClass.createButtons(mainClass.getBack(),7,50,250f, buttonWidth ,buttonHeight);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }

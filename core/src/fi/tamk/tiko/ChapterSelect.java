@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-/*
+/**
 
     This is the Chapter select screen in the main menu
 
@@ -24,18 +24,30 @@ public class ChapterSelect implements Screen {
     BitmapFont font12;
     Texture texture;
 
+    private float screenWidth;
+    private float screenHeight;
+    private float buttonWidth;
+    private float buttonHeight;
+
 
     public ChapterSelect(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
-        mainClass.createButtons("1",8,50,350,200,50);
-        mainClass.createButtons("2",8,300,350,200,50);
-        mainClass.createButtons("3",8,50,250,200,50);
-        mainClass.createButtons("4",8,300,250,200,50);
-        mainClass.createButtons("5",8,50,150,200,50);
+
+        screenHeight = mainClass.getScreenHeight();
+        screenWidth = mainClass.getScreenWidth();
+        buttonWidth = screenWidth/4;
+        buttonHeight = screenHeight/10;
+
+
+        mainClass.createButtons("1",8,screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons("2",8,screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons("3",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons("4",8,screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons("5",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth,buttonHeight);
         //BACK
-        mainClass.createButtons(mainClass.getBack(),7,50,100,200,50);
+        mainClass.createButtons(mainClass.getBack(),7,screenWidth/2-buttonWidth/2,buttonHeight+15,buttonWidth,buttonHeight);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
     }

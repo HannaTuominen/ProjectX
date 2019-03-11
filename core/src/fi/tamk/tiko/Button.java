@@ -43,7 +43,6 @@ public class Button extends Actor {
 //       System.out.println(chapterNumber+"H");
        font12 = mainClass.getFont12();
        addListener(new PlayerListener());
-//       System.out.println("BUTOTTOTTOTOTO");
        setBounds(xPlace, yPlace, buttonWidth, buttonHeight);
 
 //       System.out.println(xPlace + "y: " + yPlace);
@@ -192,7 +191,7 @@ public class Button extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        font12.draw(batch,textForAButton, xPlace+10, yPlace+35);
+        font12.draw(batch,textForAButton, xPlace+buttonWidth/3, yPlace+buttonHeight/1.7f);
 
     }
     @Override

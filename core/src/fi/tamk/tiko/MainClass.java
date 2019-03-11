@@ -29,7 +29,7 @@ public class MainClass extends Game {
 	//the font is created here and used everywhere else - size and bitmapFont also
 	private FreeTypeFontGenerator generator;
 	private BitmapFont font12;
-	private int fontSize = 20;
+	private int fontSize = 40;
 
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 	private float CurrentSteps;
@@ -226,12 +226,16 @@ public class MainClass extends Game {
 	public String getBack() {
 		return back;
 	}
+
 	public float getButtonWidth() {
+		buttonWidth = screenWidth/2;
 		return buttonWidth;
 	}
-	public float getButtonHeight() {
+	public float getButtonHeight()
+	{	buttonHeight = screenHeight/2;
 		return buttonWidth;
 	}
+
 	public void setFontSize(int size) {
 		fontSize = size;
 	}
@@ -244,6 +248,7 @@ public class MainClass extends Game {
 	public float getScreenHeight() {
 		return screenHeight;
 	}
+
 	
 	@Override
 	public void create () {
@@ -253,6 +258,9 @@ public class MainClass extends Game {
 		System.out.println(screenWidth);
 		System.out.println(screenHeight);
 
+//		getButtonHeight();
+//		getButtonWidth();
+
 		//CREATE A NEW BATCH THAT IS USED EVERYWHERE
 		batch = new SpriteBatch();
 
@@ -260,9 +268,12 @@ public class MainClass extends Game {
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("helsinki.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		parameter.size = fontSize;
+
 		parameter.borderColor = Color.BLACK;
 		parameter.borderWidth = 3;
 		font12 = generator.generateFont(parameter);
+
+		font12.setColor(Color.WHITE);
 
 		//CREATE OR OPEN THE MyPreferences.xml FILE THAT STORES INFO ON SCENES AND SUCH
 		//Create or open file MyPreferences.xml
