@@ -87,11 +87,11 @@ public class MainClass extends Game {
 	public OrthographicCamera camera;
 
 
-	public void createButtons(String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
+	public void createButtons(Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
-		buttonTexture1 = new Texture(Gdx.files.internal("placeholderbutton.jpg"));
-		button = new Button(this, buttonTexture1, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight);
+//		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
+		button = new Button(this, texture, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight);
 		stage.addActor(button);
 		Gdx.input.setInputProcessor(stage);
 
@@ -265,15 +265,15 @@ public class MainClass extends Game {
 		batch = new SpriteBatch();
 
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
-		generator = new FreeTypeFontGenerator(Gdx.files.internal("helsinki.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal("sui-generis-rg.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		parameter.size = fontSize;
 
-		parameter.borderColor = Color.BLACK;
-		parameter.borderWidth = 3;
+//		parameter.borderColor = Color.BLACK;
+//		parameter.borderWidth = 3;
 		font12 = generator.generateFont(parameter);
 
-		font12.setColor(Color.WHITE);
+		font12.setColor(Color.BLACK);
 
 		//CREATE OR OPEN THE MyPreferences.xml FILE THAT STORES INFO ON SCENES AND SUCH
 		//Create or open file MyPreferences.xml

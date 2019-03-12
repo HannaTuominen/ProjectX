@@ -41,13 +41,13 @@ public class ChapterSelect implements Screen {
         buttonHeight = screenHeight/10;
 
 
-        mainClass.createButtons("1",8,screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
-        mainClass.createButtons("2",8,screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
-        mainClass.createButtons("3",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
-        mainClass.createButtons("4",8,screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
-        mainClass.createButtons("5",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("button_orange.png"),"1",8,screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("button_orange.png"),"2",8,screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("button_orange.png"),"3",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("button_orange.png"),"4",8,screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("button_orange.png"),"5",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth,buttonHeight);
         //BACK
-        mainClass.createButtons(mainClass.getBack(),7,screenWidth/2-buttonWidth/2,buttonHeight+15,buttonWidth,buttonHeight);
+        mainClass.createButtons(new Texture("back_X.png"),"",7,50f,screenHeight-130f,100f,100f);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
     }

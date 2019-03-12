@@ -39,6 +39,7 @@ public class Button extends Actor {
         this.yPlace = yPlace;
         this.buttonHeight = buttonHeight;
         this.buttonWidth = buttonWidth;
+
        chapterNumber = mainclass.getChapterNumber();
 //       System.out.println(chapterNumber+"H");
        font12 = mainClass.getFont12();
@@ -52,7 +53,12 @@ public class Button extends Actor {
 
        @Override
         public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-            texture = new Texture(Gdx.files.internal("placeholderbuttonpressed.jpg"));
+           if(useForTheButton != 7) {
+               texture = new Texture(Gdx.files.internal("button_orange_pressed.png"));
+           } else {
+               texture = new Texture(Gdx.files.internal("back_X_pressed.png"));
+           }
+
             // JOS TULLAAN TARVIIMAAN MYÖHEMMIN NIIN VALMIIKS
 
 //            ParallelAction parallel = new ParallelAction();

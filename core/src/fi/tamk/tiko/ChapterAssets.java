@@ -23,6 +23,7 @@ import java.util.List;
 
 public class ChapterAssets extends Actor {
     private Texture texture;
+    private Texture textbox;
     MainClass mainClass;
 //    float whichOnePicked;
 
@@ -38,6 +39,10 @@ public class ChapterAssets extends Actor {
 	int stepCount;
 
     BitmapFont font12;
+    float screenWidth;
+    float screenHeight;
+
+    float textboxHeight;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
         this.mainClass = MainClass2;
@@ -48,6 +53,9 @@ public class ChapterAssets extends Actor {
         this.choiceBox1 = choiceBox1;
         this.choiceBox2 = choiceBox2;
         this.stepCount = stepCount;
+        this.screenHeight = mainClass.getScreenHeight();
+        this.screenWidth = mainClass.getScreenWidth();
+
 
         this.mainClass = MainClass2;
         this.story = story;
@@ -56,6 +64,13 @@ public class ChapterAssets extends Actor {
         setWidth(mainClass.screenWidth);
         setHeight(mainClass.screenHeight);
         setBounds(0,0,getWidth(),getHeight());
+        textbox = new Texture("textbox_1.png");
+        if(screenHeight < 800) {
+            textboxHeight = screenHeight/3.3f;
+        } else if (screenHeight >= 1000) {
+            textboxHeight = screenHeight/5f;
+        }
+
 
     }
 
@@ -73,7 +88,9 @@ public class ChapterAssets extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        font12.draw(batch,story, 0, 200f);
+        batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
+
+        font12.draw(batch,story, 40f, 220f);
 
     }
     @Override
