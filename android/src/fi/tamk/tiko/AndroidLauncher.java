@@ -1,5 +1,6 @@
 package fi.tamk.tiko;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -12,5 +13,6 @@ public class AndroidLauncher extends AndroidApplication {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		initialize(new MainClass(), config);
+		startService(new Intent(getBaseContext(),MyServices.class));
 	}
 }

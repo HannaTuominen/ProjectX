@@ -46,6 +46,7 @@ public class MainClass extends Game {
 	private String credits;
 	private String exit;
 	private String back;
+	static int steps;
 
 	//Used to check what chapters have been cleared
 	private boolean clearedChapter1;
@@ -327,5 +328,8 @@ public class MainClass extends Game {
 	@Override
 	public void dispose () {
 
+	}
+	public static void setSteps(int numSteps) {
+		steps = numSteps;
 	}
 }
