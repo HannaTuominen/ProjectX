@@ -111,7 +111,9 @@ public class Button extends Actor {
                if(mainClass.getChapterNumber() == 1) {
                    mainClass.setClearedChapter1(true);
                    mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                   mainClass.removeSteps(100);
                    mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+
                } else if (mainClass.getChapterNumber() == 2) {
                    mainClass.setCurrentFurthestChapter(chapterNumber+1);
                    mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());

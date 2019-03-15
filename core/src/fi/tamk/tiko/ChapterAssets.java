@@ -44,6 +44,7 @@ public class ChapterAssets extends Actor {
 
     float textboxHeight;
     float steps;
+    String currentStepsText;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
         this.mainClass = MainClass2;
@@ -56,6 +57,7 @@ public class ChapterAssets extends Actor {
         this.stepCount = stepCount;
         this.screenHeight = mainClass.getScreenHeight();
         this.screenWidth = mainClass.getScreenWidth();
+        currentStepsText = mainClass.getStepsString();
 
 
 
@@ -92,7 +94,9 @@ public class ChapterAssets extends Actor {
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
         batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
-        font12.draw(batch,String.valueOf(steps), screenWidth/2,screenHeight-20f);
+
+        font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth/2-50f,screenHeight-20f);
+
         font12.draw(batch,story, 40f, 220f);
 
     }

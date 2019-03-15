@@ -46,8 +46,10 @@ public class MainClass extends Game {
 	private String credits;
 	private String exit;
 	private String back;
+	private String stepsString;
 	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
+
 
 	//Used to check what chapters have been cleared
 	private boolean clearedChapter1;
@@ -152,6 +154,9 @@ public class MainClass extends Game {
 	}
 	public int getCurrentFurthestChapter() {
 		return currentFurthestChapter;
+	}
+	public String getStepsString(){
+		return stepsString;
 	}
 
 	public void setCurrentFurthestChapter(int currentFurthestChapter) {
@@ -309,6 +314,7 @@ public class MainClass extends Game {
 		chapter3 = myBundle.get("chapter3");
 		chapter4 = myBundle.get("chapter4");
 		chapter5 = myBundle.get("chapter5");
+		stepsString = myBundle.get("stepString");
 		//String steps = myBundle.format("steps");
 		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
 		prefs.putInteger("ChapterNumber",1 );
@@ -339,7 +345,7 @@ public class MainClass extends Game {
 	}
 	public void removeSteps(int steps) {
 		if (steps < this.getCurrentSteps()) {
-			setSteps(steps);
+			setSteps(this.getCurrentSteps() - steps);
 		} else {
 			System.out.println("ERROR: Not enough steps");
 		}
