@@ -331,7 +331,17 @@ public class MainClass extends Game {
 	public static void setSteps(int numSteps) {
 		steps = numSteps;
 	}
-	public float getCurrentSteps() {
+	public static int getSteps() {
 		return steps;
+	}
+	public int getCurrentSteps() {
+		return steps;
+	}
+	public void removeSteps(int steps) {
+		if (steps < this.getCurrentSteps()) {
+			setSteps(steps);
+		} else {
+			System.out.println("ERROR: Not enough steps");
+		}
 	}
 }

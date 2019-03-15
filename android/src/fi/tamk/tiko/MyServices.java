@@ -32,7 +32,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		loadData();
-		MainClass.setSteps(numSteps);
+		setGameSteps();
 		return START_NOT_STICKY;
 	}
 	@Override
@@ -49,6 +49,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		numSteps++;
 		MainClass.setSteps(numSteps);
 		save();
+		setGameSteps();
 		System.out.println(numSteps);
 	}
 	public void save() {
@@ -66,11 +67,10 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		sensorManager.unregisterListener(MyServices.this);
 		stopService(new Intent(getBaseContext(), MyServices.class));
 	}
-	public static void removeSteps(int steps) {
-		if (steps < numSteps) {
-			numSteps = numSteps - steps;
-		} else {
-			System.out.println("Not enough steps");
+	public void setGameSteps() {
+		if (MainClass.getSteps() != 0) {
+			numSteps = MainClass.getSteps();
 		}
+		MainClass.setSteps(numSteps);
 	}
 }
