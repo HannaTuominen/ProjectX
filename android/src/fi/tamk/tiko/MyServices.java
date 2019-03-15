@@ -13,7 +13,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	private StepDetector simpleStepDetector;
 	private SensorManager sensorManager;
 	private Sensor accel;
-	int numSteps;
+	static int numSteps;
 	public static final String SHARED_PREFS = "Steps";
 
 
@@ -65,5 +65,12 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	public void onDestroy() {
 		sensorManager.unregisterListener(MyServices.this);
 		stopService(new Intent(getBaseContext(), MyServices.class));
+	}
+	public static void removeSteps(int steps) {
+		if (steps < numSteps) {
+			numSteps = numSteps - steps;
+		} else {
+			System.out.println("Not enough steps");
+		}
 	}
 }
