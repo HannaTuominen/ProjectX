@@ -46,6 +46,7 @@ public class MainClass extends Game {
 	private String credits;
 	private String exit;
 	private String back;
+	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
 
 	//Used to check what chapters have been cleared
