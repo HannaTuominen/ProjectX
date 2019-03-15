@@ -32,7 +32,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		loadData();
-		setGameSteps();
+		getGameSteps();
 		return START_NOT_STICKY;
 	}
 	@Override
@@ -46,10 +46,10 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	public void onAccuracyChanged(Sensor sensor, int accuracy) { }
 	@Override
 	public void step(long timeNs) {
+		getGameSteps();
 		numSteps++;
 		MainClass.setSteps(numSteps);
 		save();
-		setGameSteps();
 		System.out.println(numSteps);
 	}
 	public void save() {
@@ -67,10 +67,11 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		sensorManager.unregisterListener(MyServices.this);
 		stopService(new Intent(getBaseContext(), MyServices.class));
 	}
-	public void setGameSteps() {
+	public void getGameSteps() {
 		if (MainClass.getSteps() != 0) {
 			numSteps = MainClass.getSteps();
+			System.out.println("Ollaan iffissä");
 		}
-		MainClass.setSteps(numSteps);
+
 	}
 }
