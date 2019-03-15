@@ -32,7 +32,7 @@ public class MainClass extends Game {
 	private int fontSize = 40;
 
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
-	private float CurrentSteps;
+//	private float CurrentSteps;
 
 	//All of the names of the MyBundle things used in the FIN/ENG distinction
 	private String title;
@@ -126,12 +126,10 @@ public class MainClass extends Game {
 		return title;
 	}
 
-	public void setCurrentSteps(float CurrentSteps) {
-		this.CurrentSteps = CurrentSteps;
-	}
-	public float getCurrentSteps() {
-		return CurrentSteps;
-	}
+//	public void setCurrentSteps(float Steps) {
+//		this.CurrentSteps = CurrentSteps;
+//	}
+
 
 	public Stage getStage() {
 		return stage;
@@ -331,5 +329,8 @@ public class MainClass extends Game {
 	}
 	public static void setSteps(int numSteps) {
 		steps = numSteps;
+	}
+	public float getCurrentSteps() {
+		return steps;
 	}
 }

@@ -110,7 +110,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
             //ON FIRST OPEN SET CURRENT STEPS TO 0
-            mainClass.setCurrentSteps(0);
+//            mainClass.setCurrentSteps(0);
             mainClass.prefs.putFloat("currentSteps", mainClass.getCurrentSteps());
 
             mainClass.setChapterNumber(1);

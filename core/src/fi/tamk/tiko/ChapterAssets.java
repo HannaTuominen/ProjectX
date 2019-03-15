@@ -43,6 +43,7 @@ public class ChapterAssets extends Actor {
     float screenHeight;
 
     float textboxHeight;
+    float steps;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
         this.mainClass = MainClass2;
@@ -55,6 +56,7 @@ public class ChapterAssets extends Actor {
         this.stepCount = stepCount;
         this.screenHeight = mainClass.getScreenHeight();
         this.screenWidth = mainClass.getScreenWidth();
+
 
 
         this.mainClass = MainClass2;
@@ -76,6 +78,7 @@ public class ChapterAssets extends Actor {
 
     @Override
     public void draw(Batch batch, float alpha) {
+        steps = mainClass.getCurrentSteps();
        batch.setProjectionMatrix(mainClass.camera.combined);
 
         batch.draw(texture,
@@ -89,7 +92,7 @@ public class ChapterAssets extends Actor {
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
         batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
-
+        font12.draw(batch,String.valueOf(steps), screenWidth/2,screenHeight-20f);
         font12.draw(batch,story, 40f, 220f);
 
     }
