@@ -68,7 +68,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		stopService(new Intent(getBaseContext(), MyServices.class));
 	}
 	public void getGameSteps() {
-		if (MainClass.getSteps() != 0) {
+		if (MainClass.getSteps() != -1) {
 			numSteps = MainClass.getSteps();
 			System.out.println("Ollaan iffissä");
 		}

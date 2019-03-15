@@ -26,10 +26,14 @@ public class Button extends Actor {
     float buttonWidth;
     float buttonHeight;
     int chapterSelect;
+    int stepsToOpenNextChapter;
+    int steps;
+    boolean enoughSteps = false;
 
 
 
-   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
+
+   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
         this.mainClass = mainclass;
         this.texture = texture;
@@ -39,7 +43,10 @@ public class Button extends Actor {
         this.yPlace = yPlace;
         this.buttonHeight = buttonHeight;
         this.buttonWidth = buttonWidth;
-
+        if(stepsToOpenNextChapter > 0) {
+            this.stepsToOpenNextChapter = stepsToOpenNextChapter;
+        }
+        System.out.println("BUTTON HAS BEEN CREATED WITH " + this.stepsToOpenNextChapter + " STEPS TO OPEN THE NEXT CHAPTER");
        chapterNumber = mainclass.getChapterNumber();
 //       System.out.println(chapterNumber+"H");
        font12 = mainClass.getFont12();
@@ -53,11 +60,21 @@ public class Button extends Actor {
 
        @Override
         public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-           if(useForTheButton != 7) {
+           if(useForTheButton == 1 || useForTheButton == 2 || useForTheButton == 3 || useForTheButton == 4 || useForTheButton == 8 ) {
                texture = new Texture(Gdx.files.internal("button_orange_pressed.png"));
-           } else {
+           }
+           if (useForTheButton == 7) {
                texture = new Texture(Gdx.files.internal("back_X_pressed.png"));
            }
+
+           if(useForTheButton == 6 || useForTheButton == 5) {
+               if(stepsToOpenNextChapter > steps) {
+                System.out.println("NExt chapter button pressed but too little steps");
+               } else {
+                   texture = new Texture(Gdx.files.internal("button_orange_pressed.png"));
+               }
+           }
+
 
             // JOS TULLAAN TARVIIMAAN MYÖHEMMIN NIIN VALMIIKS
 
@@ -109,34 +126,82 @@ public class Button extends Actor {
 //               System.out.println("clearedChapter" + mainClass.getChapterNumber());
                mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                if(mainClass.getChapterNumber() == 1) {
-                   mainClass.setClearedChapter1(true);
-                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
-                   mainClass.removeSteps(100);
-                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
 
+                   if(stepsToOpenNextChapter > steps) {
+                       System.out.println("ERROR TOO FEW STEPS");
+                   } else {
+                       System.out.println("REMOVING STEPS");
+                       System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
+                       mainClass.removeSteps(stepsToOpenNextChapter);
+                       System.out.println(steps);
+                       mainClass.setClearedChapter1(true);
+                       mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                       mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                       enoughSteps = true;
+                   }
                } else if (mainClass.getChapterNumber() == 2) {
-                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
-                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
-                   mainClass.setClearedChapter2(true);
+
+                   if(stepsToOpenNextChapter > steps) {
+                       System.out.println("ERROR TOO FEW STEPS");
+                   } else {
+                       System.out.println("REMOVING STEPS");
+                       System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
+                       mainClass.removeSteps(stepsToOpenNextChapter);
+                       enoughSteps = true;
+                       mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                       mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                       mainClass.setClearedChapter2(true);
+                   }
+
                } else if (mainClass.getChapterNumber() == 3) {
-                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
-                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
-                   mainClass.setClearedChapter3(true);
+                   if(stepsToOpenNextChapter > steps) {
+                       System.out.println("ERROR TOO FEW STEPS");
+                   } else {
+                       System.out.println("REMOVING STEPS");
+                       System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
+                       mainClass.removeSteps(stepsToOpenNextChapter);
+                       enoughSteps = true;
+                       mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                       mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                       mainClass.setClearedChapter3(true);
+                   }
                } else if (mainClass.getChapterNumber() == 4) {
-                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
-                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
-                   mainClass.setClearedChapter4(true);
+                   if(stepsToOpenNextChapter > steps) {
+                       System.out.println("ERROR TOO FEW STEPS");
+                   } else {
+                       System.out.println("REMOVING STEPS");
+                       System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
+                       mainClass.removeSteps(stepsToOpenNextChapter);
+                       enoughSteps = true;
+                       mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                       mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                       mainClass.setClearedChapter4(true);
+                   }
+
                } else if (mainClass.getChapterNumber() == 5) {
-                   mainClass.setCurrentFurthestChapter(chapterNumber+1);
-                   mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
-                   mainClass.setClearedChapter5(true);
+                   if(stepsToOpenNextChapter > steps) {
+                       System.out.println("ERROR TOO FEW STEPS");
+                   } else {
+                       System.out.println("REMOVING STEPS");
+                       System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
+                       mainClass.removeSteps(stepsToOpenNextChapter);
+                       enoughSteps = true;
+                       mainClass.setCurrentFurthestChapter(chapterNumber+1);
+                       mainClass.prefs.putInteger("currentFurthestChapter", mainClass.getCurrentFurthestChapter());
+                       mainClass.setClearedChapter5(true);
+                   }
+
                }
 
-               mainClass.setChapterNumber(chapterNumber + 1);
-               mainClass.prefs.putInteger("ChapterNumber",chapterNumber+1);
+               if(enoughSteps) {
+                   mainClass.setChapterNumber(chapterNumber + 1);
+                   mainClass.prefs.putInteger("ChapterNumber",chapterNumber+1);
 
-               mainClass.setSwapped(false);
+                   mainClass.setSwapped(false);
 //               System.out.println(mainClass.getChapterNumber());
+                   enoughSteps = false;
+               }
+
 
            } else if (useForTheButton == 7) {
                mainClass.getStage().clear();
@@ -188,7 +253,7 @@ public class Button extends Actor {
     public void draw(Batch batch, float alpha) {
         batch.setProjectionMatrix(mainClass.camera.combined);
 //       System.out.println("GOT HERE");
-
+        steps = mainClass.getCurrentSteps();
         batch.draw(texture,
                 xPlace, yPlace,
                 this.getOriginX(),

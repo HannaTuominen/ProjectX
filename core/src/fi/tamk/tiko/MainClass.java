@@ -91,11 +91,11 @@ public class MainClass extends Game {
 	public OrthographicCamera camera;
 
 
-	public void createButtons(Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight) {
+	public void createButtons(Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
 //		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
-		button = new Button(this, texture, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight);
+		button = new Button(this, texture, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 		stage.addActor(button);
 		Gdx.input.setInputProcessor(stage);
 
@@ -334,6 +334,7 @@ public class MainClass extends Game {
 	public void dispose () {
 
 	}
+
 	public static void setSteps(int numSteps) {
 		steps = numSteps;
 	}
@@ -344,7 +345,7 @@ public class MainClass extends Game {
 		return steps;
 	}
 	public void removeSteps(int steps) {
-		if (steps < this.getCurrentSteps()) {
+		if (steps <= this.getCurrentSteps()) {
 			setSteps(this.getCurrentSteps() - steps);
 		} else {
 			System.out.println("ERROR: Not enough steps");

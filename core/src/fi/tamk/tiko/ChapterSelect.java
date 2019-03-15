@@ -41,13 +41,13 @@ public class ChapterSelect implements Screen {
         buttonHeight = screenHeight/10;
 
 
-        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"1",8,screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2);
-        mainClass.createButtons(new Texture("chapter_1_lock.png"),"2",8,screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2);
-        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"3",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2);
-        mainClass.createButtons(new Texture("chapter_1_lock.png"),"4",8,screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2);
-        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"5",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth/2,buttonHeight*2);
+        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"1",8,screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2,0);
+        mainClass.createButtons(new Texture("chapter_1_lock.png"),"2",8,screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2,0);
+        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"3",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
+        mainClass.createButtons(new Texture("chapter_1_lock.png"),"4",8,screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
+        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"5",8,screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth/2,buttonHeight*2,0);
         //BACK
-        mainClass.createButtons(new Texture("back_X.png"),"",7,50f,screenHeight-130f,100f,100f);
+        mainClass.createButtons(new Texture("back_X.png"),"",7,50f,screenHeight-130f,100f,100f,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
     }

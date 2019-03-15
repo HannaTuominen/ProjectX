@@ -43,7 +43,7 @@ public class ChapterAssets extends Actor {
     float screenHeight;
 
     float textboxHeight;
-    float steps;
+    int steps;
     String currentStepsText;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
