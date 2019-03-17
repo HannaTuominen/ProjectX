@@ -41,7 +41,7 @@ public class Credits implements Screen {
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
 
-        mainClass.createButtons(new Texture("back_X.png"),"",7,50f,screenHeight-130f,100f,100f,0);
+        mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20,screenWidth/20,screenHeight/10,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
     }

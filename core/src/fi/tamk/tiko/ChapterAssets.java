@@ -93,11 +93,11 @@ public class ChapterAssets extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
 
+        batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
         font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth/2-50f,screenHeight-20f);
 
-        font12.draw(batch,story, 40f, 220f);
+//        font12.draw(batch,story, 40f, 220f);
 
     }
     @Override

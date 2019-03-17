@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -29,11 +30,14 @@ public class Button extends Actor {
     int stepsToOpenNextChapter;
     int steps;
     boolean enoughSteps = false;
+    float storyID;
+    float buttonTextXPlace;
+    float buttonTextYPlace;
 
 
 
 
-   public Button(MainClass mainclass, Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
+   public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
         this.mainClass = mainclass;
         this.texture = texture;
@@ -43,6 +47,18 @@ public class Button extends Actor {
         this.yPlace = yPlace;
         this.buttonHeight = buttonHeight;
         this.buttonWidth = buttonWidth;
+        this.storyID = storyID;
+//        textXPlace = this.xPlace+buttonWidth/3 - textForAButton.length()/2;
+//       GlyphLayout layout = new GlyphLayout();
+//       layout.setText(font12,"Some Text");
+//       float width = layout.width;
+//       float height = layout.height;
+
+       //SETS THE X PLACE CORRECTLY TO CENTER DEPENDING ON THE TEXT SIZE FOR BUTTONS
+        buttonTextXPlace = this.xPlace + buttonWidth/2 - mainClass.getTextPlaceWIDTH(textForAButton)/2;
+        buttonTextYPlace = this.yPlace+buttonHeight/1.7f;
+
+
         if(stepsToOpenNextChapter > 0) {
             this.stepsToOpenNextChapter = stepsToOpenNextChapter;
         }
@@ -63,11 +79,11 @@ public class Button extends Actor {
            if(useForTheButton == 1 || useForTheButton == 2 || useForTheButton == 3 || useForTheButton == 4 || useForTheButton == 8 ) {
                texture = new Texture(Gdx.files.internal("button_orange_pressed.png"));
            }
-           if (useForTheButton == 7) {
+           if (useForTheButton == 8) {
                texture = new Texture(Gdx.files.internal("back_X_pressed.png"));
            }
 
-           if(useForTheButton == 6 || useForTheButton == 5) {
+           if(useForTheButton == 6 || useForTheButton == 5 || useForTheButton == 7) {
                if(stepsToOpenNextChapter > steps) {
                 System.out.println("NExt chapter button pressed but too little steps");
                } else {
@@ -118,8 +134,10 @@ public class Button extends Actor {
             4. Exit
             5. Choice 1
             6. Choice 2
-            7. Back to main menu
-            8. ChapterSelect Buttons
+            7. Previous chapter
+            8. Back to main menu
+            9. ChapterSelect Buttons
+            10. StoryBox button next slide
             */
 
            if (useForTheButton == 5 || useForTheButton == 6) {
@@ -195,21 +213,25 @@ public class Button extends Actor {
 
                if(enoughSteps) {
                    mainClass.setChapterNumber(chapterNumber + 1);
-                   mainClass.prefs.putInteger("ChapterNumber",chapterNumber+1);
-
+//                   mainClass.prefs.putInteger("ChapterNumber",chapterNumber+1);
                    mainClass.setSwapped(false);
-//               System.out.println(mainClass.getChapterNumber());
-                   enoughSteps = false;
                }
 
 
            } else if (useForTheButton == 7) {
+               mainClass.setChapterNumber(chapterNumber - 1);
+               mainClass.setSwapped(false);
+//               System.out.println(mainClass.getChapterNumber());
+               enoughSteps = false;
+           } else if (useForTheButton == 8) {
                mainClass.getStage().clear();
                //START THE GAME FROM MAIN MENU
                MainMenu mainMenu = new MainMenu(mainClass);
                mainClass.setSwapped(false);
                mainClass.setScreen(mainMenu);
            } else if (useForTheButton == 1) {
+               mainClass.prefs.putBoolean("openedFirstTime", true);
+               mainClass.prefs.flush();
                mainClass.setPlayPressed(true);
                System.out.println(mainClass.getPlayPressed());
                GameScreen gameScreen = new GameScreen(mainClass);
@@ -223,7 +245,7 @@ public class Button extends Actor {
            } else if (useForTheButton == 4) {
                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
                Gdx.app.exit();
-           } else if (useForTheButton == 8) {
+           } else if (useForTheButton == 9) {
 //               mainClass.setPlayPressed(false);
                chapterSelect = Integer.parseInt(textForAButton);
                System.out.println(chapterSelect + "c: " + mainClass.getClearedChapter1());
@@ -244,8 +266,40 @@ public class Button extends Actor {
                } else{
 
                }
-           }
 
+           } else if (useForTheButton == 10) {
+               if(storyID == 1.1f) {
+                   textForAButton = mainClass.getChapter1_2Text();
+                   storyID = 1.2f;
+               } else if(storyID == 1.2f) {
+                   textForAButton = mainClass.getChapter1_1Text();
+                   storyID = 1.1f;
+               } else if(storyID == 2.1f) {
+                   textForAButton = mainClass.getChapter2_2Text();
+                   storyID = 2.2f;
+               } else if(storyID == 2.2f) {
+                   textForAButton = mainClass.getChapter1_1Text();
+                   storyID = 2.1f;
+               } else if(storyID == 3.1f) {
+                   textForAButton = mainClass.getChapter3_2Text();
+                   storyID = 3.2f;
+               } else if(storyID == 3.2f) {
+                   textForAButton = mainClass.getChapter1_1Text();
+                   storyID = 3.1f;
+               }else if(storyID == 4.1f) {
+                   textForAButton = mainClass.getChapter4_2Text();
+                   storyID = 4.2f;
+               } else if(storyID == 4.2f) {
+                   textForAButton = mainClass.getChapter1_1Text();
+                   storyID = 4.1f;
+               }else if(storyID == 5.1f) {
+                   textForAButton = mainClass.getChapter5_2Text();
+                   storyID = 5.2f;
+               } else if(storyID == 5.2f) {
+                   textForAButton = mainClass.getChapter1_1Text();
+                   storyID = 5.1f;
+               }
+           }
         }
     }
 
@@ -264,7 +318,12 @@ public class Button extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        font12.draw(batch,textForAButton, xPlace+buttonWidth/3, yPlace+buttonHeight/1.7f);
+        if(useForTheButton != 10) {
+            font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
+
+        } else {
+            font12.draw(batch,textForAButton, 40f, yPlace+buttonHeight-20f);
+        }
 
     }
     @Override

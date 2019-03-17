@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -29,27 +30,47 @@ public class MainClass extends Game {
 	//the font is created here and used everywhere else - size and bitmapFont also
 	private FreeTypeFontGenerator generator;
 	private BitmapFont font12;
-	private int fontSize = 40;
+	private int fontSize;
 
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 //	private float CurrentSteps;
 
 	//All of the names of the MyBundle things used in the FIN/ENG distinction
+
+	private String chapter1_1;
+	private String chapter1_2;
+
+	private String chapter2_1;
+	private String chapter2_2;
+
+	private String chapter3_1;
+	private String chapter3_2;
+
+	private String chapter4_1;
+	private String chapter4_2;
+
+	private String chapter5_1;
+	private String chapter5_2;
+
+//	private String chapter2;
+//	private String chapter3;
+//	private String chapter4;
+//	private String chapter5;
+
 	private String title;
-	private String chapter1;
-	private String chapter2;
-	private String chapter3;
-	private String chapter4;
-	private String chapter5;
 	private String play;
 	private String chapterSelect;
 	private String credits;
 	private String exit;
 	private String back;
 	private String stepsString;
+	private String previous;
+	private String next;
+    private String continuee;
 	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
 
+	GlyphLayout layout;
 
 	//Used to check what chapters have been cleared
 	private boolean clearedChapter1;
@@ -91,11 +112,11 @@ public class MainClass extends Game {
 	public OrthographicCamera camera;
 
 
-	public void createButtons(Texture texture, String textForAButton, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
+	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
 //		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
-		button = new Button(this, texture, textForAButton, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+		button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 		stage.addActor(button);
 		Gdx.input.setInputProcessor(stage);
 
@@ -137,21 +158,63 @@ public class MainClass extends Game {
 	public Stage getStage() {
 		return stage;
 	}
-	public String getChapter1Text() {
-		return chapter1;
+
+	public String getChapter1_1Text() {
+		return chapter1_1;
 	}
-	public String getChapter2Text() {
-		return chapter2;
+	public String getChapter1_2Text() {
+		return chapter1_2;
 	}
-	public String getChapter3Text() {
-		return chapter3;
+
+	public String getChapter2_1Text() {
+		return chapter2_1;
 	}
-	public String getChapter4Text() {
-		return chapter4;
+	public String getChapter2_2Text() {
+		return chapter2_2;
 	}
-	public String getChapter5Text() {
-		return chapter5;
+
+	public String getChapter3_1Text() {
+		return chapter3_1;
 	}
+	public String getChapter3_2Text() {
+		return chapter3_2;
+	}
+
+	public String getChapter4_1Text() {
+		return chapter4_1;
+	}
+	public String getChapter4_2Text() {
+		return chapter4_2;
+	}
+
+	public String getChapter5_1Text() {
+		return chapter5_1;
+	}
+	public String getChapter5_2Text() {
+		return chapter5_2;
+	}
+
+//	public String getChapter2Text() {
+//		return chapter2;
+//	}
+//	public String getChapter3Text() {
+//		return chapter3;
+//	}
+//	public String getChapter4Text() {
+//		return chapter4;
+//	}
+//	public String getChapter5Text() {
+//		return chapter5;
+//	}
+	public String getNext() {
+		return next;
+	}
+	public String getPrevious() {
+		return previous;
+	}
+    public String getContinue() {
+        return continuee;
+    }
 	public int getCurrentFurthestChapter() {
 		return currentFurthestChapter;
 	}
@@ -241,10 +304,21 @@ public class MainClass extends Game {
 		return buttonWidth;
 	}
 
-	public void setFontSize(int size) {
-		fontSize = size;
+	public int getFontSize() {
+		return fontSize;
 	}
 
+	public float getTextPlaceWIDTH(String text) {
+		layout.setText(font12,text);
+		float width = layout.width;
+		return width;
+	}
+
+//	public float getTextPlaceHEIGHT(String text) {
+//		layout.setText(font12,text);
+//		float height = layout.height;
+//		return height;
+//	}
 
 	public float getScreenWidth() {
 		return screenWidth;
@@ -262,6 +336,7 @@ public class MainClass extends Game {
 		screenHeight = Gdx.graphics.getHeight();
 		System.out.println(screenWidth);
 		System.out.println(screenHeight);
+		layout = new GlyphLayout();
 
 //		getButtonHeight();
 //		getButtonWidth();
@@ -272,6 +347,11 @@ public class MainClass extends Game {
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("sui-generis-rg.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+		if(screenHeight < 800) {
+			fontSize = 20;
+		} else if (screenHeight >= 1000) {
+			fontSize = 40;
+		}
 		parameter.size = fontSize;
 
 //		parameter.borderColor = Color.BLACK;
@@ -309,12 +389,29 @@ public class MainClass extends Game {
 		exit = myBundle.get("exit");
 		back = myBundle.get("back");
 
-		chapter1 = myBundle.get("chapter1");
-		chapter2 = myBundle.get("chapter2");
-		chapter3 = myBundle.get("chapter3");
-		chapter4 = myBundle.get("chapter4");
-		chapter5 = myBundle.get("chapter5");
+		chapter1_1 = myBundle.get("chapter1_1");
+		chapter1_2 = myBundle.get("chapter1_2");
+
+		chapter2_1 = myBundle.get("chapter2_1");
+		chapter2_2 = myBundle.get("chapter2_2");
+
+		chapter3_1 = myBundle.get("chapter3_1");
+		chapter3_2 = myBundle.get("chapter3_2");
+
+		chapter4_1 = myBundle.get("chapter4_1");
+		chapter4_2 = myBundle.get("chapter4_2");
+
+		chapter5_1 = myBundle.get("chapter5_1");
+		chapter5_2 = myBundle.get("chapter5_2");
+
+//		chapter2 = myBundle.get("chapter2");
+//		chapter3 = myBundle.get("chapter3");
+//		chapter4 = myBundle.get("chapter4");
+//		chapter5 = myBundle.get("chapter5");
 		stepsString = myBundle.get("stepString");
+		previous = myBundle.get("previous");
+		next = myBundle.get("next");
+        continuee = myBundle.get("continuee");
 		//String steps = myBundle.format("steps");
 		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
 		prefs.putInteger("ChapterNumber",1 );

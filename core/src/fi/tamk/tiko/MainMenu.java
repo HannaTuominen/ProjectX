@@ -32,8 +32,10 @@ public class MainMenu implements Screen {
     private Stage stage;
 
     Texture texture;
+    boolean firstRound = false;
 
     public MainMenu(MainClass MainClass2) {
+        System.out.println(firstRound + " IS IT FIRST ROUND");
 
         this.mainClass = MainClass2;
         screenHeight = mainClass.getScreenHeight();
@@ -52,11 +54,22 @@ public class MainMenu implements Screen {
         buttonHeight = screenHeight/10;
 
         mainClass.getStage().clear();
+        firstRound = mainClass.prefs.getBoolean("openedFirstTime");
 
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight,0);
+        if(!firstRound) {
+
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
+
+
+            System.out.println(firstRound + " IS IT FIRST ROUND");
+        } else {
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
+
+        }
+
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight,0);
 
     }
 
