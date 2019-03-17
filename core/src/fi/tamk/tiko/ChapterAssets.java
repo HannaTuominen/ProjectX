@@ -46,7 +46,7 @@ public class ChapterAssets extends Actor {
     int steps;
     String currentStepsText;
 
-    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount, String story) {
+    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount) {
         this.mainClass = MainClass2;
         this.texture = texture;
         this.choice = choice;
