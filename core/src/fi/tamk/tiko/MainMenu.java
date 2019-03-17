@@ -57,10 +57,7 @@ public class MainMenu implements Screen {
         firstRound = mainClass.prefs.getBoolean("openedFirstTime");
 
         if(!firstRound) {
-
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
-
-
             System.out.println(firstRound + " IS IT FIRST ROUND");
         } else {
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
@@ -70,7 +67,9 @@ public class MainMenu implements Screen {
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight,0);
-
+        System.out.println("CHAPTER 1 IS CLEARED: " + mainClass.getClearedChapter1());
+        System.out.println("CHAPTER 2 IS CLEARED: " + mainClass.getClearedChapter2());
+        System.out.println("CHAPTER 3 IS CLEARED: " + mainClass.getClearedChapter3());
     }
 
     @Override

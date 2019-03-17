@@ -230,8 +230,10 @@ public class Button extends Actor {
                mainClass.setSwapped(false);
                mainClass.setScreen(mainMenu);
            } else if (useForTheButton == 1) {
-               mainClass.prefs.putBoolean("openedFirstTime", true);
-               mainClass.prefs.flush();
+               if(!mainClass.prefs.getBoolean("openedFirstTime")) {
+                   mainClass.prefs.putBoolean("openedFirstTime", true);
+                   mainClass.prefs.flush();
+               }
                mainClass.setPlayPressed(true);
                System.out.println(mainClass.getPlayPressed());
                GameScreen gameScreen = new GameScreen(mainClass);

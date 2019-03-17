@@ -140,7 +140,9 @@ public class GameScreen implements Screen {
             mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
 
         }
+
         System.out.println(mainClass.getPlayPressed());
+
         if (mainClass.getPlayPressed()) {
             System.out.println("HEREEEEFDFSEF");
             mainClass.setChapterNumber(mainClass.prefs.getInteger("currentFurthestChapter"));
@@ -149,12 +151,14 @@ public class GameScreen implements Screen {
             System.out.println(mainClass.getChapterNumber() + "H");
         }
 
-
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
         mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
         mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
         mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
         mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
+        System.out.println("CHAPTER 11 IS CLEARED: " + mainClass.getClearedChapter1());
+        System.out.println("CHAPTER 22 IS CLEARED: " + mainClass.getClearedChapter2());
+        System.out.println("CHAPTER 33 IS CLEARED: " + mainClass.getClearedChapter3());
     }
 
 
@@ -177,11 +181,14 @@ public class GameScreen implements Screen {
 //            mainClass.prefs.putInteger("ChapterNumber",1 );
 //            mainClass.prefs.flush();
             mainClass.setSwapped(true);
-
+            System.out.println("CHAPTER 111 IS CLEARED: " + mainClass.getClearedChapter1());
+//            System.out.println("CHAPTER 1 IS CLEARED: " + mainClass.getClearedChapter1());
             if(!mainClass.getClearedChapter1()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +20,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,20);
+                System.out.println("CHAPTER 1111 IS CLEARED: " + mainClass.getClearedChapter1());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                System.out.println("CHAPTER 11111 IS CLEARED: " + mainClass.getClearedChapter1());
             }
 //            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),7, 50, 250f, buttonWidth ,buttonHeight,0);
 //            batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
