@@ -322,10 +322,13 @@ public class Button extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-        if(useForTheButton != 10) {
+        if(useForTheButton == 9) {
+            font12.draw(batch,"", buttonTextXPlace, buttonTextYPlace);
+
+        }else if(useForTheButton != 10) {
             font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
 
-        } else {
+        }else {
             font12.draw(batch,textForAButton, 40f, yPlace+buttonHeight-20f);
         }
 
