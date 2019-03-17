@@ -23,19 +23,12 @@ public class GameScreen implements Screen {
 
     MainClass mainClass;
     SpriteBatch batch;
-//    BitmapFont font12;
 
     Texture backGroundImage1;
     Texture backGroundImage2;
     Texture backGroundImage3;
     Texture backGroundImage4;
     Texture backGroundImage5;
-//    private Texture textbox;
-
-
-
-
-//    Texture BackGroundImage6;
 
 
     Skin skin;
@@ -49,15 +42,11 @@ public class GameScreen implements Screen {
     float textboxHeight;
 
 
-
-    Button button;
-
     float buttonWidth;
     float buttonHeight;
 
     private boolean openedFirstTime = false;
 
-//    private ChapterAssets chapter6;
 
 
 
@@ -99,9 +88,11 @@ public class GameScreen implements Screen {
             textboxHeight = screenHeight/5f;
         }
 
-//        stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
         skin = new Skin( Gdx.files.internal("uiskin.json"));
+
+
         openedFirstTime = mainClass.prefs.getBoolean("openedFirstTime");
+
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
 
@@ -112,8 +103,12 @@ public class GameScreen implements Screen {
         //Check if the game is being opened for the very first time to save the chapter number to the initial 1
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
+
+//        System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
+
         if (!openedFirstTime) {
-            System.out.println("GOT HERE");
+
+            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
@@ -138,10 +133,11 @@ public class GameScreen implements Screen {
             mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
             mainClass.setClearedChapter5(false);
             mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
+            mainClass.prefs.flush();
 
         }
 
-        System.out.println(mainClass.getPlayPressed());
+//        System.out.println(mainClass.getPlayPressed());
 
         if (mainClass.getPlayPressed()) {
             System.out.println("HEREEEEFDFSEF");
@@ -149,6 +145,8 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",mainClass.getChapterNumber());
             mainClass.setPlayPressed(false);
             System.out.println(mainClass.getChapterNumber() + "H");
+            System.out.println(mainClass.getCurrentFurthestChapter() + " CUR H");
+            mainClass.prefs.flush();
         }
 
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
@@ -156,9 +154,6 @@ public class GameScreen implements Screen {
         mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
         mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
         mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
-        System.out.println("CHAPTER 11 IS CLEARED: " + mainClass.getClearedChapter1());
-        System.out.println("CHAPTER 22 IS CLEARED: " + mainClass.getClearedChapter2());
-        System.out.println("CHAPTER 33 IS CLEARED: " + mainClass.getClearedChapter3());
     }
 
 
@@ -172,67 +167,75 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(mainClass.camera.combined);
         Gdx.gl.glClearColor(1, 2, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//        System.out.println(mainClass.getChapterNumber());
-//        System.out.println(mainClass.getChapterNumber());
+
         batch.begin();
+
+
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter1);
-//            mainClass.prefs.putInteger("ChapterNumber",1 );
-//            mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            System.out.println("CHAPTER 111 IS CLEARED: " + mainClass.getClearedChapter1());
-//            System.out.println("CHAPTER 1 IS CLEARED: " + mainClass.getClearedChapter1());
             if(!mainClass.getClearedChapter1()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +20,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,20);
-                System.out.println("CHAPTER 1111 IS CLEARED: " + mainClass.getClearedChapter1());
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
-                System.out.println("CHAPTER 11111 IS CLEARED: " + mainClass.getClearedChapter1());
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
-//            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),7, 50, 250f, buttonWidth ,buttonHeight,0);
-//            batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
-//            mainClass.createButtons(new Texture("textbox_1.png"),"",10,20f,20f, screenWidth-40f,textboxHeight,0);
-
-            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter1_1Text(),1.1f,10,20f,20f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter1_1Text(),1.1f,10,
+                    20f,20f, screenWidth-40f,textboxHeight,0);
+            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
         }
-        if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped()&& mainClass.getClearedChapter1()) {
+
+        if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped() && mainClass.getClearedChapter1()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter2);
             if(!mainClass.getClearedChapter2()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +10,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,10);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +1,0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,1);
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
-            System.out.println("Created chapter 2 with 10 steps");
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),2.1f,7, 50, textboxHeight+30, buttonWidth ,buttonHeight,0);
-            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter2_1Text(),2.1f,10,20f,20f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),2.1f,7,
+                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter2_1Text(),2.1f,10,
+                    20f,20f, screenWidth-40f,textboxHeight,0);
+            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
-//        System.out.println(chapterNumber);
+
+
         if(mainClass.getChapterNumber() == 3 && !mainClass.getSwapped()&& mainClass.getClearedChapter2() ) {
-            System.out.println("got here");
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter3);
             mainClass.prefs.putBoolean("clearedChapter2", true);
-
             mainClass.prefs.putInteger("ChapterNumber",3 );
 
             if(!mainClass.getClearedChapter3()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +20,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,20);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),3.1f,7, 50, textboxHeight+30, buttonWidth ,buttonHeight,0);
-            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter3_1Text(),3.1f,10,20f,20f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),3.1f,7,
+                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter3_1Text(),3.1f,10,
+                    20f,20f, screenWidth-40f,textboxHeight,0);
+            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
+
+
         if(mainClass.getChapterNumber() == 4 && !mainClass.getSwapped() && mainClass.getClearedChapter3()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter4);
@@ -240,29 +243,43 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",4 );
 
             if(!mainClass.getClearedChapter4()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +20,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,20);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),4.1f,7, 50, textboxHeight+30, buttonWidth ,buttonHeight,0);
-            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter4_1Text(),4.1f,10,20f,20f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),4.1f,7,
+                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter4_1Text(),4.1f,10,
+                    20f,20f, screenWidth-40f,textboxHeight,0);
+            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }
+
+
         if(mainClass.getChapterNumber() == 5 && !mainClass.getSwapped()&& mainClass.getClearedChapter4()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter5);
             mainClass.prefs.putBoolean("clearedChapter4", true);
             mainClass.prefs.putInteger("ChapterNumber",5 );
             if(!mainClass.getClearedChapter5()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +20,0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,20);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6, screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),5.1f,7, 50, textboxHeight+30, buttonWidth ,buttonHeight,0);
-            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,20f,20f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",8,0,20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),5.1f,7,
+                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,
+                    20f,20f, screenWidth-40f,textboxHeight,0);
+            mainClass.createButtons(new Texture("back_X.png"),"",8,0,
+                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
         }

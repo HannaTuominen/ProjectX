@@ -52,11 +52,6 @@ public class MainClass extends Game {
 	private String chapter5_1;
 	private String chapter5_2;
 
-//	private String chapter2;
-//	private String chapter3;
-//	private String chapter4;
-//	private String chapter5;
-
 	private String title;
 	private String play;
 	private String chapterSelect;
@@ -150,11 +145,6 @@ public class MainClass extends Game {
 		return title;
 	}
 
-//	public void setCurrentSteps(float Steps) {
-//		this.CurrentSteps = CurrentSteps;
-//	}
-
-
 	public Stage getStage() {
 		return stage;
 	}
@@ -194,18 +184,6 @@ public class MainClass extends Game {
 		return chapter5_2;
 	}
 
-//	public String getChapter2Text() {
-//		return chapter2;
-//	}
-//	public String getChapter3Text() {
-//		return chapter3;
-//	}
-//	public String getChapter4Text() {
-//		return chapter4;
-//	}
-//	public String getChapter5Text() {
-//		return chapter5;
-//	}
 	public String getNext() {
 		return next;
 	}
@@ -314,12 +292,6 @@ public class MainClass extends Game {
 		return width;
 	}
 
-//	public float getTextPlaceHEIGHT(String text) {
-//		layout.setText(font12,text);
-//		float height = layout.height;
-//		return height;
-//	}
-
 	public float getScreenWidth() {
 		return screenWidth;
 	}
@@ -328,7 +300,7 @@ public class MainClass extends Game {
 		return screenHeight;
 	}
 
-	
+
 	@Override
 	public void create () {
 		//GET THE SCREEN WIDTH AND HEIGHT OF YOUR CURRENT DEVICE IN PIXELS
@@ -337,9 +309,6 @@ public class MainClass extends Game {
 		System.out.println(screenWidth);
 		System.out.println(screenHeight);
 		layout = new GlyphLayout();
-
-//		getButtonHeight();
-//		getButtonWidth();
 
 		//CREATE A NEW BATCH THAT IS USED EVERYWHERE
 		batch = new SpriteBatch();
@@ -404,18 +373,19 @@ public class MainClass extends Game {
 		chapter5_1 = myBundle.get("chapter5_1");
 		chapter5_2 = myBundle.get("chapter5_2");
 
-//		chapter2 = myBundle.get("chapter2");
-//		chapter3 = myBundle.get("chapter3");
-//		chapter4 = myBundle.get("chapter4");
-//		chapter5 = myBundle.get("chapter5");
 		stepsString = myBundle.get("stepString");
 		previous = myBundle.get("previous");
 		next = myBundle.get("next");
         continuee = myBundle.get("continuee");
 		//String steps = myBundle.format("steps");
-		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
-		prefs.putInteger("ChapterNumber",1 );
-		prefs.putInteger("currentFurthestChapter",1);
+
+
+//		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
+//		if()
+//		prefs.putInteger("ChapterNumber",1 );
+//		prefs.putInteger("currentFurthestChapter",1);
+		prefs.flush();
+
 		//START THE GAME FROM MAIN MENU
 		MainMenu mainMenu = new MainMenu(this);
 		setScreen(mainMenu);
