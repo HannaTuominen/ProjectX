@@ -32,6 +32,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		loadData();
+		MainClass.setSteps(numSteps);
 		getGameSteps();
 		return START_NOT_STICKY;
 	}
