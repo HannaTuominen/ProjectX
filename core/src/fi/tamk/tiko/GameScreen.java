@@ -25,7 +25,8 @@ public class GameScreen implements Screen {
     SpriteBatch batch;
 
     Texture backGroundImage1;
-    Texture backGroundImage2;
+    Texture backGroundImage2_1;
+    Texture backGroundImage2_2;
     Texture backGroundImage3;
     Texture backGroundImage4;
     Texture backGroundImage5;
@@ -34,7 +35,8 @@ public class GameScreen implements Screen {
     Skin skin;
 
     private ChapterAssets chapter1;
-    private ChapterAssets chapter2;
+    private ChapterAssets chapter2_1;
+    private ChapterAssets chapter2_2;
     private ChapterAssets chapter3;
     private ChapterAssets chapter4;
     private ChapterAssets chapter5;
@@ -58,7 +60,8 @@ public class GameScreen implements Screen {
 
     public void implementTextures() {
         backGroundImage1 = new Texture(Gdx.files.internal("background_001.png"));
-        backGroundImage2 = new Texture(Gdx.files.internal("background_002.png"));
+        backGroundImage2_1 = new Texture(Gdx.files.internal("background_002_purje.png"));
+        backGroundImage2_2 = new Texture(Gdx.files.internal("background_002_airo.png"));
         backGroundImage3 = new Texture(Gdx.files.internal("background_003.png"));
         backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
         backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
@@ -66,13 +69,31 @@ public class GameScreen implements Screen {
     }
 
     public void createScenes() {
-        chapter1 = new ChapterAssets(mainClass, backGroundImage1, false, 0,0,"idk mita taha tulis", "Tyhja", 100);
-        chapter2 = new ChapterAssets(mainClass, backGroundImage2, true, 3,300,"purje", "airot", 300);
-        chapter3 = new ChapterAssets(mainClass, backGroundImage3, false, 0,0,"idk mita taha tulis", "Tyhja", 300);
-        chapter4 = new ChapterAssets(mainClass, backGroundImage4, false, 0,0,"idk mita taha tulis", "Tyhja", 300);
-        chapter5 = new ChapterAssets(mainClass, backGroundImage5, false, 0,0,"idk mita taha tulis", "Tyhja", 300);
+        chapter1 = new ChapterAssets(mainClass, backGroundImage1, false, 0,0, 100);
+        chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, true, 3,300, 300);
+        chapter2_2 = new ChapterAssets(mainClass, backGroundImage2_2, true, 3,300, 300);
+        chapter3 = new ChapterAssets(mainClass, backGroundImage3, false, 0,0, 300);
+        chapter4 = new ChapterAssets(mainClass, backGroundImage4, false, 0,0, 300);
+        chapter5 = new ChapterAssets(mainClass, backGroundImage5, false, 0,0, 300);
 
-//        Gdx.input.setInputProcessor(stage);
+    }
+
+    public void requiredStepsFirstLoad() {
+        mainClass.setStepsToOpenChapter2_1(200);
+        mainClass.setStepsToOpenChapter2_2(250);
+        mainClass.setStepsToOpenChapter3_1(100);
+        mainClass.setStepsToOpenChapter4_1(50);
+        mainClass.setStepsToOpenChapter5_1(200);
+        mainClass.setStepsToOpenChapter6_1(200);
+    }
+
+    public void requiredStepsUpdater() {
+        mainClass.setStepsToOpenChapter2_1(mainClass.prefs.getInteger("setStepsToOpenChapter2_1"));
+        mainClass.setStepsToOpenChapter2_2(mainClass.prefs.getInteger("setStepsToOpenChapter2_2"));
+        mainClass.setStepsToOpenChapter3_1(mainClass.prefs.getInteger("setStepsToOpenChapter3_1"));
+        mainClass.setStepsToOpenChapter4_1(mainClass.prefs.getInteger("setStepsToOpenChapter4_1"));
+        mainClass.setStepsToOpenChapter5_1(mainClass.prefs.getInteger("setStepsToOpenChapter5_1"));
+        mainClass.setStepsToOpenChapter6_1(mainClass.prefs.getInteger("setStepsToOpenChapter6_1"));
     }
 
     public GameScreen(MainClass MainClass2) {
@@ -100,6 +121,7 @@ public class GameScreen implements Screen {
         implementTextures();
         createScenes();
 
+
         //Check if the game is being opened for the very first time to save the chapter number to the initial 1
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
@@ -113,6 +135,7 @@ public class GameScreen implements Screen {
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
+            requiredStepsFirstLoad();
             //ON FIRST OPEN SET CURRENT STEPS TO 0
 //            mainClass.setCurrentSteps(0);
 
@@ -149,6 +172,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.flush();
         }
 
+        requiredStepsUpdater();
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
         mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
         mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
@@ -176,12 +200,16 @@ public class GameScreen implements Screen {
             mainClass.getStage().addActor(chapter1);
             mainClass.setSwapped(true);
             if(!mainClass.getClearedChapter1()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_2() +mainClass.getStepsToOpenChapter2_2(),0,6,
+                        screenWidth-buttonWidth*2-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
             }
+
+
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter1_1Text(),1.1f,10,
                     20f,20f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
@@ -190,10 +218,14 @@ public class GameScreen implements Screen {
 
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped() && mainClass.getClearedChapter1()) {
             mainClass.getStage().clear();
-            mainClass.getStage().addActor(chapter2);
+            if(mainClass.getChoseWrong_1()) {
+                mainClass.getStage().addActor(chapter2_1);
+            } else {
+                mainClass.getStage().addActor(chapter2_2);
+            }
             if(!mainClass.getClearedChapter2()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +1,0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,1);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter3_1(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter3_1());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
@@ -218,8 +250,8 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",3 );
 
             if(!mainClass.getClearedChapter3()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter4_1(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter4_1());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
@@ -243,8 +275,8 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",4 );
 
             if(!mainClass.getClearedChapter4()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter5_1(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter5_1());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
@@ -267,8 +299,8 @@ public class GameScreen implements Screen {
             mainClass.prefs.putBoolean("clearedChapter4", true);
             mainClass.prefs.putInteger("ChapterNumber",5 );
             if(!mainClass.getClearedChapter5()) {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +2,0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,2);
+                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter6_1(),0,6,
+                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter6_1());
             } else {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);

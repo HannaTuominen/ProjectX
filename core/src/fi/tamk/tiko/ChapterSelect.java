@@ -46,6 +46,7 @@ public class ChapterSelect implements Screen {
         mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
         mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
         mainClass.setCurrentFurthestChapter(mainClass.prefs.getInteger("currentFurthestChapter"));
+        mainClass.prefs.flush();
 
 
         mainClass.createButtons(new Texture("chapter_1_unlock.png"),"1",0,9,

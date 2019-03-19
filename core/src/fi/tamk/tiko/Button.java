@@ -35,8 +35,6 @@ public class Button extends Actor {
     float buttonTextYPlace;
 
 
-
-
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
         this.mainClass = mainclass;
@@ -96,7 +94,7 @@ public class Button extends Actor {
             2. Chapter Select
             3. Credits
             4. Exit
-            5. Choice 1
+            5. Choice 1 (WRONG CHOICE)
             6. Choice 2
             7. Previous chapter
             8. Back to main menu
@@ -104,12 +102,17 @@ public class Button extends Actor {
             10. StoryBox button next slide
             */
 
-           if (useForTheButton == 5 || useForTheButton == 6) {
+           if (useForTheButton == 6 || useForTheButton == 5) {
 
                if(mainClass.getChapterNumber() == 1) {
                    if(stepsToOpenNextChapter > steps) {
                        System.out.println("ERROR TOO FEW STEPS");
                    } else {
+                       if (useForTheButton == 5) {
+                           mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1()+950);
+                           mainClass.setChoseWrong_1(true);
+                       }
+
                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                        System.out.println("REMOVING STEPS");
                        System.out.println("STEPS TO OPEN NEXT CHAPTER " +stepsToOpenNextChapter);
@@ -212,7 +215,7 @@ public class Button extends Actor {
 
                //COMPUTER TESTING ADD 250 STEPS
                if(!enoughSteps) {
-                   mainClass.setSteps(250);
+                   mainClass.setSteps(25000);
                }
 
 

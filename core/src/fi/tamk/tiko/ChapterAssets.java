@@ -25,17 +25,11 @@ public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
     MainClass mainClass;
-//    float whichOnePicked;
-
-	static int id; //Ei tarvii?
-    String story;
-    int numberOfPages = 1;
 
 	boolean choice;
 	int affect_id;
 	int affect_steps;
-	String choiceBox1;
-    String choiceBox2;
+
 	int stepCount;
 
     BitmapFont font12;
@@ -46,23 +40,22 @@ public class ChapterAssets extends Actor {
     int steps;
     String currentStepsText;
 
-    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, String choiceBox1, String choiceBox2, int stepCount) {
+    public void changeBackgroundImageDependingOnChoises(Texture texture) {
+        this.texture = texture;
+    }
+
+    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, int stepCount) {
         this.mainClass = MainClass2;
         this.texture = texture;
         this.choice = choice;
         this.affect_id = affect_id;
         this.affect_steps = affect_steps;
-        this.choiceBox1 = choiceBox1;
-        this.choiceBox2 = choiceBox2;
         this.stepCount = stepCount;
         this.screenHeight = mainClass.getScreenHeight();
         this.screenWidth = mainClass.getScreenWidth();
         currentStepsText = mainClass.getStepsString();
 
-
-
         this.mainClass = MainClass2;
-        this.story = story;
         font12 = mainClass.getFont12();
 
         setWidth(mainClass.screenWidth);
@@ -97,7 +90,6 @@ public class ChapterAssets extends Actor {
         batch.draw(textbox,20f,20f,screenWidth-40f, textboxHeight);
         font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth/2-50f,screenHeight-20f);
 
-//        font12.draw(batch,story, 40f, 220f);
 
     }
     @Override

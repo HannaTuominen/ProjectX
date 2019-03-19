@@ -62,6 +62,9 @@ public class MainClass extends Game {
 	private String previous;
 	private String next;
     private String continuee;
+    private String chapter1_choice_text_1;
+    private String chapter1_choice_text_2
+            ;
 	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
 
@@ -73,6 +76,23 @@ public class MainClass extends Game {
 	private boolean clearedChapter3;
 	private boolean clearedChapter4;
 	private boolean clearedChapter5;
+
+	private boolean choseWrong_1 = false;
+    private boolean choseWrong_2 = false;
+    private boolean choseWrong_3 = false;
+    private boolean choseWrong_4 = false;
+
+	private int stepsToOpenChapter2_1;
+	private int stepsToOpenChapter2_2;
+
+	private int stepsToOpenChapter3_1;
+//	private int stepsToOpenChapter3_2;
+
+	private int stepsToOpenChapter4_1;
+
+	private int stepsToOpenChapter5_1;
+
+	private int stepsToOpenChapter6_1;
 
 	//Created the prefs file here that is used everywhere in the code
 	Preferences prefs;
@@ -117,6 +137,74 @@ public class MainClass extends Game {
 
 	}
 
+    public void setChoseWrong_1(boolean choseWrong_1) {
+        this.choseWrong_1 = choseWrong_1;
+        prefs.putBoolean("choseWrong_1", this.choseWrong_1);
+        prefs.flush();
+    }
+    public boolean getChoseWrong_1() {
+	    choseWrong_1 = prefs.getBoolean("choseWrong_1");
+        return choseWrong_1;
+    }
+
+
+
+
+
+	public void setStepsToOpenChapter2_1(int steps) {
+		stepsToOpenChapter2_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter2_1", stepsToOpenChapter2_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter2_1() {
+		return stepsToOpenChapter2_1;
+	}
+	public void setStepsToOpenChapter2_2(int steps) {
+		stepsToOpenChapter2_2 = steps;
+		prefs.putInteger("setStepsToOpenChapter2_2", stepsToOpenChapter2_2);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter2_2() {
+		return stepsToOpenChapter2_2;
+	}
+
+
+	public void setStepsToOpenChapter3_1(int steps) {
+		stepsToOpenChapter3_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter3_1", stepsToOpenChapter3_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter3_1() {
+		return stepsToOpenChapter3_1;
+	}
+
+
+	public void setStepsToOpenChapter4_1(int steps) {
+		stepsToOpenChapter4_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter4_1", stepsToOpenChapter4_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter4_1() {
+		return stepsToOpenChapter4_1;
+	}
+
+	public void setStepsToOpenChapter5_1(int steps) {
+		stepsToOpenChapter5_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter5_1", stepsToOpenChapter5_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter6_1() {
+		return stepsToOpenChapter6_1;
+	}
+
+	public void setStepsToOpenChapter6_1(int steps) {
+		stepsToOpenChapter6_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter6_1", stepsToOpenChapter6_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter5_1() {
+		return stepsToOpenChapter5_1;
+	}
 
 	public void setChapterNumber(int chapterNumber) {
 		this.chapterNumber = chapterNumber;
@@ -187,6 +275,12 @@ public class MainClass extends Game {
 	public String getNext() {
 		return next;
 	}
+    public String getChapter1_choice_text_1() {
+        return chapter1_choice_text_1;
+    }
+    public String getChapter1_choice_text_2() {
+        return chapter1_choice_text_2;
+    }
 	public String getPrevious() {
 		return previous;
 	}
@@ -204,6 +298,7 @@ public class MainClass extends Game {
 		if(this.currentFurthestChapter <= currentFurthestChapter) {
 			this.currentFurthestChapter = currentFurthestChapter;
 			prefs.putInteger("currentFurthestChapter", currentFurthestChapter);
+			prefs.flush();
 		}
 	}
 
@@ -358,6 +453,8 @@ public class MainClass extends Game {
 		exit = myBundle.get("exit");
 		back = myBundle.get("back");
 
+        chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
+        chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
 		chapter1_1 = myBundle.get("chapter1_1");
 		chapter1_2 = myBundle.get("chapter1_2");
 
