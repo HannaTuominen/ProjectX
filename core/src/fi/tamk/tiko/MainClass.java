@@ -39,6 +39,7 @@ public class MainClass extends Game {
 
 	private String chapter1_1;
 	private String chapter1_2;
+	private String chapter1_3;
 
 	private String chapter2_1;
 	private String chapter2_2;
@@ -106,7 +107,13 @@ public class MainClass extends Game {
 
 	//Implement the button used everywhere in the code
 	Button button;
-	Texture buttonTexture1;
+	String localLanguageToString;
+	Locale locale;
+	I18NBundle myBundle;
+	private static boolean swappedLanguage = false;
+
+	private static boolean languageFinnish = false;
+	private static boolean languageFirstRound;
 
 	//ChapterNumber is used everywhere in the code - it is the current chapter that is displayed
 	private static int chapterNumber = 1;
@@ -243,6 +250,9 @@ public class MainClass extends Game {
 	public String getChapter1_2Text() {
 		return chapter1_2;
 	}
+	public String getChapter1_3Text() {
+		return chapter1_3;
+	}
 
 	public String getChapter2_1Text() {
 		return chapter2_1;
@@ -310,8 +320,92 @@ public class MainClass extends Game {
 		this.playPressed = playPressed;
 	}
 
+	public boolean getLanguageFinnish() {
+		languageFinnish =prefs.getBoolean("languageFinnish");
+		return languageFinnish;
+	}
+	public void setLanguageFinnish(boolean languageFinnish) {
+		this.languageFinnish = languageFinnish;
+		prefs.putBoolean("languageFinnish", languageFinnish);
+		prefs.flush();
+	}
 
+	public boolean getLanguageFirstRound() {
+		languageFirstRound =prefs.getBoolean("languageFirstRound");
+		return languageFirstRound;
+	}
+	public void setLanguageFirstRound(boolean languageFirstRound) {
+		this.languageFirstRound = languageFirstRound;
+		prefs.putBoolean("languageFirstRound", languageFirstRound);
+		prefs.flush();
+	}
+	public boolean getSwappedlanguage() {
+		return swappedLanguage;
+	}
 
+	public void setSwappedlanguage(boolean swappedLanguage) {
+		this.swappedLanguage = swappedLanguage;
+	}
+	public void setLocale(Locale locale) {
+		this.locale = locale;
+		swappedLanguage = true;
+		myBundle =
+				I18NBundle.createBundle(Gdx.files.internal("MyBundle"), locale);
+	}
+	public Locale getLocale() {
+		return locale;
+	}
+	public void setLocaleTexts() {
+
+		title = myBundle.get("title");
+		play = myBundle.get("play");
+		chapterSelect = myBundle.get("chapterSelect");
+		credits = myBundle.get("credits");
+		exit = myBundle.get("exit");
+		back = myBundle.get("back");
+
+		chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
+		chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
+		chapter1_1 = myBundle.get("chapter1_1");
+		chapter1_2 = myBundle.get("chapter1_2");
+        chapter1_3 = myBundle.get("chapter1_3");
+
+		chapter2_1 = myBundle.get("chapter2_1");
+		chapter2_2 = myBundle.get("chapter2_2");
+
+		chapter3_1 = myBundle.get("chapter3_1");
+		chapter3_2 = myBundle.get("chapter3_2");
+
+		chapter4_1 = myBundle.get("chapter4_1");
+		chapter4_2 = myBundle.get("chapter4_2");
+
+		chapter5_1 = myBundle.get("chapter5_1");
+		chapter5_2 = myBundle.get("chapter5_2");
+
+		stepsString = myBundle.get("stepString");
+		previous = myBundle.get("previous");
+		next = myBundle.get("next");
+		continuee = myBundle.get("continuee");
+	}
+	public void setDefaultLocale() {
+		locale = Locale.getDefault();
+		localLanguageToString = java.util.Locale.getDefault().toString();
+		setLocale(locale);
+		setLocalLanguageToString(localLanguageToString);
+		prefs.putString("localLanguageToString", localLanguageToString);
+		prefs.flush();
+	}
+
+	public void setLocalLanguageToString(String localLanguageToString) {
+		this.localLanguageToString = localLanguageToString;
+		prefs.putString("localLanguageToString", this.localLanguageToString);
+		prefs.flush();
+	}
+
+	public String getlocalLanguageToString() {
+		localLanguageToString = prefs.getString("localLanguageToString");
+		return localLanguageToString;
+	}
 
 	public boolean getClearedChapter1() {
 		return clearedChapter1;
@@ -435,52 +529,64 @@ public class MainClass extends Game {
 		camera.setToOrtho(false, screenWidth, screenHeight);
 
 
-		//CHOOSE FINNISH
-		//Locale locale = new Locale("fi", "FI");
-		//CHOOSE ENGLISH
+		if(languageFirstRound == false) {
+			languageFirstRound = prefs.getBoolean("languageFirstRound");
+			prefs.putBoolean("languageFirstRound", true);
+			prefs.flush();
+		}
+
+		if(languageFirstRound != prefs.getBoolean("languageFirstRound")) {
+			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + prefs.getBoolean("languageFirstRound"));
+			System.out.println("LANGUAGE FALSE");
+			setDefaultLocale();
+			languageFirstRound = prefs.getBoolean("languageFirstRound");
+			prefs.flush();
+
+			if(localLanguageToString.equals("fi_FI")) {
+				System.out.println("LOCAL LANGUAGE FINNISH");
+				languageFinnish = true;
+				prefs.putBoolean("languageFinnish", true);
+				setLocalLanguageToString("fi_FI");
+				setLocaleTexts();
+				prefs.flush();
+				System.out.println("local language: " + localLanguageToString);
+			} else {
+				languageFinnish = false;
+				prefs.putBoolean("languageFinnish", false);
+				setLocalLanguageToString("en_EN");
+				setLocaleTexts();
+				prefs.flush();
+				System.out.println("local language: " + localLanguageToString);
+			}
+		} else {
+			languageFirstRound = prefs.getBoolean("languageFirstRound");
+			getlocalLanguageToString();
+			System.out.println("local language: " + localLanguageToString);
+			prefs.flush();
+			if(localLanguageToString.equals("fi_FI")) {
+				System.out.println("LOCAL LANGUAGE FINNISH");
+				languageFinnish = true;
+				prefs.putBoolean("languageFinnish", true);
+				setLocale(new Locale("fi", "FI"));
+				setLocaleTexts();
+				prefs.flush();
+			} else {
+				languageFinnish = false;
+				prefs.putBoolean("languageFinnish", false);
+				setLocale(new Locale("en", "EN"));
+				setLocaleTexts();
+				prefs.flush();
+			}
+		}
 //		Locale locale = new Locale("en", "EN");
 
-		//DEPENDS ON YOUR PHONE
-		Locale locale = Locale.getDefault();
 
 		//FINNISH AND ENGLISH TEXTS ARE CREATED HERE TO BE USED EVERYWHERE
-		I18NBundle myBundle =
+		myBundle =
 				I18NBundle.createBundle(Gdx.files.internal("MyBundle"), locale);
-		title = myBundle.get("title");
-		play = myBundle.get("play");
-		chapterSelect = myBundle.get("chapterSelect");
-		credits = myBundle.get("credits");
-		exit = myBundle.get("exit");
-		back = myBundle.get("back");
 
-        chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
-        chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
-		chapter1_1 = myBundle.get("chapter1_1");
-		chapter1_2 = myBundle.get("chapter1_2");
-
-		chapter2_1 = myBundle.get("chapter2_1");
-		chapter2_2 = myBundle.get("chapter2_2");
-
-		chapter3_1 = myBundle.get("chapter3_1");
-		chapter3_2 = myBundle.get("chapter3_2");
-
-		chapter4_1 = myBundle.get("chapter4_1");
-		chapter4_2 = myBundle.get("chapter4_2");
-
-		chapter5_1 = myBundle.get("chapter5_1");
-		chapter5_2 = myBundle.get("chapter5_2");
-
-		stepsString = myBundle.get("stepString");
-		previous = myBundle.get("previous");
-		next = myBundle.get("next");
-        continuee = myBundle.get("continuee");
 		//String steps = myBundle.format("steps");
 
-
-//		//SO YOU CAN GET TO THE GAME THROUGH THE CHAPTERSELECT SCREEN TOO I THINK
-//		if()
-//		prefs.putInteger("ChapterNumber",1 );
-//		prefs.putInteger("currentFurthestChapter",1);
 		prefs.flush();
 
 		//START THE GAME FROM MAIN MENU

@@ -55,15 +55,28 @@ public class MainMenu implements Screen {
 
         mainClass.getStage().clear();
         firstRound = mainClass.prefs.getBoolean("openedFirstTime");
+        createNewButtons();
 
+    }
+
+    public void createNewButtons() {
         if(!firstRound) {
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
             System.out.println(firstRound + " IS IT FIRST ROUND");
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
+
         } else {
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
+
         }
+
+        if(mainClass.getLanguageFinnish()) {
+            mainClass.createButtons(new Texture("fin_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+        } else {
+            mainClass.createButtons(new Texture("eng_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+        }
+
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight,0);
@@ -84,9 +97,13 @@ public class MainMenu implements Screen {
         batch.draw(texture, 0f, 0f, screenWidth,screenHeight);
 
         font12.draw(batch,mainClass.getTitle(), 0, 100);
-
+        if(mainClass.getSwappedlanguage()) {
+            System.out.println("SWAPPED BUTTONS AND THEIR LANGUAGE");
+            stage.clear();
+            createNewButtons();
+            mainClass.setSwappedlanguage(false);
+        }
         batch.end();
-
 
         stage.draw();
 
