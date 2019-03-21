@@ -112,7 +112,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (useForTheButton == 5) {
-                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 950);
+                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 10);
                             mainClass.setChoseWrong_1(true);
                         }
 
@@ -217,9 +217,9 @@ public class Button extends Actor {
                 }
 
                 //COMPUTER TESTING ADD 250 STEPS
-                if (!enoughSteps) {
-                    mainClass.setSteps(25000);
-                }
+//                if (!enoughSteps) {
+//                    mainClass.setSteps(25000);
+//                }
 
 
             } else if (useForTheButton == 7) {
@@ -279,7 +279,7 @@ public class Button extends Actor {
 
             } else if (useForTheButton == 10) {
                 if (storyID == 1.1f) {
-                    textForAButton = mainClass.getChapter1_2Text();
+                    textForAButton = mainClass.getChapter1_1Text();
                     storyID = 1.2f;
                 } else if (storyID == 1.2f) {
                     textForAButton = mainClass.getChapter1_2Text();
@@ -291,25 +291,25 @@ public class Button extends Actor {
                     textForAButton = mainClass.getChapter2_2Text();
                     storyID = 2.2f;
                 } else if (storyID == 2.2f) {
-                    textForAButton = mainClass.getChapter1_1Text();
+                    textForAButton = mainClass.getChapter2_1Text();
                     storyID = 2.1f;
                 } else if (storyID == 3.1f) {
                     textForAButton = mainClass.getChapter3_2Text();
                     storyID = 3.2f;
                 } else if (storyID == 3.2f) {
-                    textForAButton = mainClass.getChapter1_1Text();
+                    textForAButton = mainClass.getChapter3_1Text();
                     storyID = 3.1f;
                 } else if (storyID == 4.1f) {
                     textForAButton = mainClass.getChapter4_2Text();
                     storyID = 4.2f;
                 } else if (storyID == 4.2f) {
-                    textForAButton = mainClass.getChapter1_1Text();
+                    textForAButton = mainClass.getChapter4_1Text();
                     storyID = 4.1f;
                 } else if (storyID == 5.1f) {
                     textForAButton = mainClass.getChapter5_2Text();
                     storyID = 5.2f;
                 } else if (storyID == 5.2f) {
-                    textForAButton = mainClass.getChapter1_1Text();
+                    textForAButton = mainClass.getChapter5_1Text();
                     storyID = 5.1f;
                 }
             } else if (useForTheButton == 11) {

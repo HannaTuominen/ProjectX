@@ -79,12 +79,12 @@ public class GameScreen implements Screen {
     }
 
     public void requiredStepsFirstLoad() {
-        mainClass.setStepsToOpenChapter2_1(200);
-        mainClass.setStepsToOpenChapter2_2(250);
-        mainClass.setStepsToOpenChapter3_1(100);
-        mainClass.setStepsToOpenChapter4_1(50);
-        mainClass.setStepsToOpenChapter5_1(200);
-        mainClass.setStepsToOpenChapter6_1(200);
+        mainClass.setStepsToOpenChapter2_1(10);
+        mainClass.setStepsToOpenChapter2_2(20);
+        mainClass.setStepsToOpenChapter3_1(40);
+        mainClass.setStepsToOpenChapter4_1(30);
+        mainClass.setStepsToOpenChapter5_1(20);
+        mainClass.setStepsToOpenChapter6_1(10);
     }
 
     public void requiredStepsUpdater() {
@@ -211,7 +211,7 @@ public class GameScreen implements Screen {
 
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter1_1Text(),1.1f,10,
-                    20f,20f, screenWidth-40f,textboxHeight,0);
+                    20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
         }
@@ -234,7 +234,7 @@ public class GameScreen implements Screen {
                     50, textboxHeight+30, buttonWidth ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter2_1Text(),2.1f,10,
-                    20f,20f, screenWidth-40f,textboxHeight,0);
+                    20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.putInteger("ChapterNumber",2 );
@@ -260,7 +260,7 @@ public class GameScreen implements Screen {
                     50, textboxHeight+30, buttonWidth ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter3_1Text(),3.1f,10,
-                    20f,20f, screenWidth-40f,textboxHeight,0);
+                    20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
@@ -285,7 +285,7 @@ public class GameScreen implements Screen {
                     50, textboxHeight+30, buttonWidth ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter4_1Text(),4.1f,10,
-                    20f,20f, screenWidth-40f,textboxHeight,0);
+                    20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
@@ -309,7 +309,7 @@ public class GameScreen implements Screen {
                     50, textboxHeight+30, buttonWidth ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,
-                    20f,20f, screenWidth-40f,textboxHeight,0);
+                    20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",8,0,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
