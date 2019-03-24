@@ -310,7 +310,7 @@ public class GameScreen implements Screen {
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",8,0,
+            mainClass.createButtons(new Texture("back_X.png"),"",8,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
