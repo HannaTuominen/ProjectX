@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
@@ -34,11 +35,14 @@ public class ChapterSelect implements Screen {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
-
+        mainClass.clearGroup();
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
+
+
+
 
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
         mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
@@ -48,46 +52,65 @@ public class ChapterSelect implements Screen {
         mainClass.setCurrentFurthestChapter(mainClass.prefs.getInteger("currentFurthestChapter"));
         mainClass.prefs.flush();
 
+        texture = new Texture("chapter_select_slidescroller.png");
 
+
+        mainClass.createButtons(new Texture("chapter_select_slidescroller.png"),"",0,12,
+                0,0,buttonWidth*22,buttonHeight *8.5f,0);
+
+        System.out.println("BTTONWIDTH*22: " + buttonWidth*22);
+
+        //UPROW
+        //1
         mainClass.createButtons(new Texture("chapter_1_unlock.png"),"1",0,9,
-                screenWidth/2-buttonWidth*2,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2,0);
-
-        if(!mainClass.getClearedChapter1()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"2",0,9,
-                    screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2,0);
-        } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"2",0,9,
-                    screenWidth/2+buttonWidth,screenHeight/2+buttonHeight,buttonWidth/2,buttonHeight*2,0);
-        }
-
+                20f,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
+        //3
         if(! mainClass.getClearedChapter2()) {
             mainClass.createButtons(new Texture("chapter_1_lock.png"),"3",0,9,
-                    screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
+                    (20f*2)+buttonWidth,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
             mainClass.createButtons(new Texture("chapter_1_unlock.png"),"3",0,9,
-                    screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
+                    (20f*2)+buttonWidth,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
-
-        if(! mainClass.getClearedChapter3()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"4",0,9,
-                    screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
-        } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"4",0,9,
-                    screenWidth/2+buttonWidth,screenHeight/2-buttonHeight,buttonWidth/2,buttonHeight*2,0);
-        }
-
+        //5
         if(!mainClass.getClearedChapter4()) {
             mainClass.createButtons(new Texture("chapter_1_lock.png"),"5",0,9,
-                    screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth/2,buttonHeight*2,0);
+                    (20f*3)+buttonWidth*2,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
             mainClass.createButtons(new Texture("chapter_1_unlock.png"),"5",0,9,
-                    screenWidth/2-buttonWidth*2,screenHeight/2-buttonHeight*3,buttonWidth/2,buttonHeight*2,0);
+                    (20f*3)+buttonWidth*2,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
 
+
+
+
+
+        //DOWNROW
+        //2
+        if(!mainClass.getClearedChapter1()) {
+            mainClass.createButtons(new Texture("chapter_1_lock.png"),"2",0,9,
+                    20f,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
+        } else {
+            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"2",0,9,
+                    20f,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
+        }
+        //4
+        if(! mainClass.getClearedChapter3()) {
+            mainClass.createButtons(new Texture("chapter_1_lock.png"),"4",0,9,
+                    (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
+        } else {
+            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"4",0,9,
+                    (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
+        }
+        mainClass.getGroup().setX(0);
+        mainClass.getGroup().setY(20);
+
+        mainClass.groupStageAdd();
         //BACK
         mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                 20,screenHeight-screenHeight/10-20,screenWidth/20,screenHeight/10,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
+
 
     }
 

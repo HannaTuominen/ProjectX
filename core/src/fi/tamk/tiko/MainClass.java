@@ -12,6 +12,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.I18NBundle;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -132,6 +134,7 @@ public class MainClass extends Game {
 
 	//Camera used everywhere
 	public OrthographicCamera camera;
+	Group group;
 
 
 	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
@@ -139,9 +142,26 @@ public class MainClass extends Game {
 		this.buttonWidth = buttonWidth;
 //		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
 		button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
-		stage.addActor(button);
+
+		if(useForTheButton == 9 || useForTheButton == 12) {
+			groupAcotrs(button);
+		} else {
+			stage.addActor(button);
+		}
 		Gdx.input.setInputProcessor(stage);
 
+	}
+	public void groupAcotrs(Actor actor) {
+		group.addActor(actor);
+	}
+	public void clearGroup() {
+	    group.clear();
+    }
+	public Group getGroup() {
+		return group;
+	}
+	public void groupStageAdd() {
+		stage.addActor(group);
 	}
 
     public void setChoseWrong_1(boolean choseWrong_1) {
@@ -528,6 +548,9 @@ public class MainClass extends Game {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, screenWidth, screenHeight);
 
+		group = new Group();
+
+
 
 		if(languageFirstRound == false) {
 			languageFirstRound = prefs.getBoolean("languageFirstRound");
@@ -588,6 +611,7 @@ public class MainClass extends Game {
 		//String steps = myBundle.format("steps");
 
 		prefs.flush();
+
 
 		//START THE GAME FROM MAIN MENU
 		MainMenu mainMenu = new MainMenu(this);
