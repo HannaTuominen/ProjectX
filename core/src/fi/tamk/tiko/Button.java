@@ -116,10 +116,11 @@ public class Button extends Actor {
         @Override
 
         public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
-            touchDownX = x;
-            touchDownY = y;
+            //touchDownX = x;
+            //touchDownY = y;
+            touchUpX =0;
 
-            System.out.println("TOUCHDOWNX: " + touchDownX + " TOUCHDOWNY: " + touchDownY);
+           // System.out.println("TOUCHDOWNX: " + touchDownX + " TOUCHDOWNY: " + touchDownY);
             if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 8 ) {
                 setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
             }
@@ -155,8 +156,8 @@ public class Button extends Actor {
             11. Fin/Eng switch
             12. Pan chapterScroller
             */
-            touchUpX = x;
-            touchUpY = y;
+            //touchUpX = x;
+            //touchUpY = y;
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
 
@@ -307,7 +308,7 @@ public class Button extends Actor {
                 //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
                 Gdx.app.exit();
             } else if (getUseForTheButton() == 9) {
-                if(touchDownX - touchUpX >= -10 && touchDownX - touchUpX <=10) {
+                if(touchUpX == 0) {
                 System.out.println("9 pressed");
 //               mainClass.setPlayPressed(false);
                     chapterSelect = Integer.parseInt(getTextForAButton());
@@ -398,7 +399,8 @@ public class Button extends Actor {
 
         public void pan(InputEvent event, float x, float y, float deltaX, float deltaY) {
 
-            System.out.println(touchDownX - touchUpX + " MIINUS<");
+            touchUpX = deltaX;
+            System.out.println(touchUpX + " TouchUPX   <");
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
                 if(getGroup().getX()<=0 && getGroup().getX()>= scrollerWidth) {
                     getGroup().setX(getGroup().getX()+deltaX);
