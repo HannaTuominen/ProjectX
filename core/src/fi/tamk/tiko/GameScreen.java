@@ -2,6 +2,7 @@ package fi.tamk.tiko;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -122,6 +123,12 @@ public class GameScreen implements Screen {
         createScenes();
 
 
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.playBackgroundMusic();
+        } else {
+            mainClass.stopBackGroundMusic();
+        }
+
         //Check if the game is being opened for the very first time to save the chapter number to the initial 1
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
@@ -214,6 +221,13 @@ public class GameScreen implements Screen {
                     20f,10f, screenWidth-40f,textboxHeight,0);
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
+            if(!mainClass.getbackGroundMusicOffOrOn()) {
+                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON ON");
+            } else {
+                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON OFF");
+            }
         }
 
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped() && mainClass.getClearedChapter1()) {
@@ -240,6 +254,13 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
+            if(!mainClass.getbackGroundMusicOffOrOn()) {
+                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON ON");
+            } else {
+                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON OFF");
+            }
         }
 
 
@@ -265,6 +286,13 @@ public class GameScreen implements Screen {
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
+            if(!mainClass.getbackGroundMusicOffOrOn()) {
+                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON ON");
+            } else {
+                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON OFF");
+            }
         }
 
 
@@ -290,6 +318,13 @@ public class GameScreen implements Screen {
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
+            if(!mainClass.getbackGroundMusicOffOrOn()) {
+                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON ON");
+            } else {
+                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON OFF");
+            }
         }
 
 
@@ -314,6 +349,13 @@ public class GameScreen implements Screen {
                     20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
+            if(!mainClass.getbackGroundMusicOffOrOn()) {
+                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON ON");
+            } else {
+                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+                System.out.println("CREATED SOUND BUTTON OFF");
+            }
         }
 
         batch.end();

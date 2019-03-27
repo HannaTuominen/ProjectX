@@ -41,8 +41,11 @@ public class ChapterSelect implements Screen {
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
 
-
-
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.playBackgroundMusic();
+        } else {
+            mainClass.stopBackGroundMusic();
+        }
 
         mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
         mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
@@ -52,10 +55,10 @@ public class ChapterSelect implements Screen {
         mainClass.setCurrentFurthestChapter(mainClass.prefs.getInteger("currentFurthestChapter"));
         mainClass.prefs.flush();
 
-        texture = new Texture("chapter_select_slidescroller.png");
+        texture = new Texture("inv_scroller.png");
 
 
-        mainClass.createButtons(new Texture("chapter_select_slidescroller.png"),"",0,12,
+        mainClass.createButtons(new Texture("inv_scroller.png"),"",0,12,
                 0,0,buttonWidth*22,buttonHeight *8.5f,0);
 
         System.out.println("BTTONWIDTH*22: " + buttonWidth*22);

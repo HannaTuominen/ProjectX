@@ -4,6 +4,8 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -135,6 +137,47 @@ public class MainClass extends Game {
 	//Camera used everywhere
 	public OrthographicCamera camera;
 	Group group;
+
+
+	//BACKGROUND MUSIC
+	Music music;
+	long id;
+	boolean backGroundMusicOff;
+
+
+
+	public void setbackGroundMusicOffOrOn(boolean backGroundMusicOff) {
+		prefs.putBoolean("backGroundMusicOff", backGroundMusicOff);
+		this.backGroundMusicOff = backGroundMusicOff;
+		prefs.flush();
+	}
+	public boolean getbackGroundMusicOffOrOn() {
+		backGroundMusicOff = prefs.getBoolean("backGroundMusicOff");
+		return backGroundMusicOff;
+	}
+	public void createBackGroundMusicAndLoopIt(boolean backGroundMusicOff) {
+		music = Gdx.audio.newMusic(Gdx.files.internal("game_music.mp3"));
+		music.setVolume(1.0f);                 // sets the volume to half the maximum volume
+		music.setLooping(true);                // will repeat playback until music.stop() is called
+//		music.stop();                          // stops the playback
+//		music.pause();                         // pauses the playback
+//		music.play();                          // resumes the playback
+//		boolean isPlaying = music.isPlaying(); // obvious :)
+//		boolean isLooping = music.isLooping(); // obvious as well :)
+//		float position = music.getPosition();  // returns the playback position in seconds
+
+		//first load set the backgroundmusic true
+		setbackGroundMusicOffOrOn(backGroundMusicOff);
+	}
+
+	public void playBackgroundMusic() {
+		music.play();                          // resumes the playback
+
+    }
+
+	public void stopBackGroundMusic() {
+		music.pause();                         // pauses the playback
+	}
 
 
 	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
@@ -549,21 +592,40 @@ public class MainClass extends Game {
 		camera.setToOrtho(false, screenWidth, screenHeight);
 
 		group = new Group();
-
-
-
 		if(languageFirstRound == false) {
 			languageFirstRound = prefs.getBoolean("languageFirstRound");
 			prefs.putBoolean("languageFirstRound", true);
 			prefs.flush();
+
+			backGroundMusicOff = prefs.getBoolean("backGroundMusicOff");
+			createBackGroundMusicAndLoopIt(backGroundMusicOff);
+			System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
+
 		}
+
+//		if(backGroundMusicOff != prefs.getBoolean("backGroundMusicOff")) {
+//			createBackGroundMusicAndLoopIt(true);
+//		}
+		System.out.println("IS SOUND OFF AT THE START: " + getbackGroundMusicOffOrOn());
+
+		if(!getbackGroundMusicOffOrOn()) {
+			playBackgroundMusic();
+			System.out.println("MAINCLASS PLAY MUSIC");
+		} else {
+			stopBackGroundMusic();
+			System.out.println("MAINCLASS DON'T PLAY MUSIC");
+		}
+
 
 		if(languageFirstRound != prefs.getBoolean("languageFirstRound")) {
 			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + prefs.getBoolean("languageFirstRound"));
 			System.out.println("LANGUAGE FALSE");
 			setDefaultLocale();
+//			getbackGroundMusicOffOrOff();
 			languageFirstRound = prefs.getBoolean("languageFirstRound");
 			prefs.flush();
+
+
 
 			if(localLanguageToString.equals("fi_FI")) {
 				System.out.println("LOCAL LANGUAGE FINNISH");

@@ -66,14 +66,15 @@ public class Button extends Actor {
         this.texture = texture;
     }
     public float getStoryID() {
-        return useForTheButton;
+        return storyID;
     }
+
     public void setStoryID(float storyID) {
         this.storyID = storyID;
     }
 
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace,
-                 float yPlace, float buttonWidth, float buttonHeight, final int stepsToOpenNextChapter) {
+                 float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
         this.mainClass = mainclass;
         //this.texture = texture;
@@ -155,9 +156,8 @@ public class Button extends Actor {
             10. StoryBox button next slide
             11. Fin/Eng switch
             12. Pan chapterScroller
+            13. Mute and unMute music
             */
-            //touchUpX = x;
-            //touchUpY = y;
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
 
@@ -271,20 +271,23 @@ public class Button extends Actor {
                 }
 
                 //COMPUTER TESTING ADD 250 STEPS
-//                if (!enoughSteps) {
-//                    mainClass.setSteps(25000);
-//                }
+                if (!enoughSteps) {
+                    mainClass.setSteps(25000);
+                }
 
 
             } else if (getUseForTheButton() == 7) {
+//                mainClass.stopBackGroundMusic();
                 mainClass.setChapterNumber(chapterNumber - 1);
                 mainClass.setSwapped(false);
             } else if (getUseForTheButton() == 8) {
+
                 mainClass.getStage().clear();
                 //START THE GAME FROM MAIN MENU
                 MainMenu mainMenu = new MainMenu(mainClass);
                 mainClass.setSwapped(false);
                 mainClass.setScreen(mainMenu);
+//                mainClass.stopBackGroundMusic();
             } else if (getUseForTheButton() == 1) {
                 if (mainClass.prefs.getBoolean("openedFirstTime")) {
                     mainClass.prefs.putBoolean("openedFirstTime", true);
@@ -295,16 +298,22 @@ public class Button extends Actor {
                 mainClass.setPlayPressed(true);
                 System.out.println(mainClass.getPlayPressed());
                 GameScreen gameScreen = new GameScreen(mainClass);
+//                mainClass.stopBackGroundMusic();
                 mainClass.setScreen(gameScreen);
                // System.out.println(mainClass.getCurrentFurthestChapter() + " CurFurth");
 
             } else if (getUseForTheButton() == 2) {
+//                mainClass.stopBackGroundMusic();
                 ChapterSelect chapterSelect = new ChapterSelect(mainClass);
                 mainClass.setScreen(chapterSelect);
+//                mainClass.stopBackGroundMusic();
             } else if (getUseForTheButton() == 3) {
+//                mainClass.stopBackGroundMusic();
                 Credits credits = new Credits(mainClass);
                 mainClass.setScreen(credits);
+//                mainClass.stopBackGroundMusic();
             } else if (getUseForTheButton() == 4) {
+//                mainClass.stopBackGroundMusic();
                 //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
                 Gdx.app.exit();
             } else if (getUseForTheButton() == 9) {
@@ -336,13 +345,14 @@ public class Button extends Actor {
 
             } else if (getUseForTheButton() == 10) {
                 if (getStoryID() == 1.1f) {
-                    setTextForAButton(mainClass.getChapter1_1Text());
-                    setStoryID(1.2f);
-                } else if (getStoryID() == 1.2f) {
                     setTextForAButton(mainClass.getChapter1_2Text());
+                    setStoryID(1.2f);
+                    System.out.println(getStoryID());
+                } else if (getStoryID() == 1.2f) {
+                    setTextForAButton(mainClass.getChapter1_3Text());
                     setStoryID(1.3f);
                 } else if (getStoryID() == 1.3f) {
-                    setTextForAButton(mainClass.getChapter1_3Text());
+                    setTextForAButton(mainClass.getChapter1_1Text());
                     setStoryID(1.1f);
                 }else if (getStoryID() == 2.1f) {
                     setTextForAButton(mainClass.getChapter2_2Text());
@@ -391,6 +401,24 @@ public class Button extends Actor {
                     mainClass.setLocalLanguageToString("fi_FI");
                     mainClass.setLocaleTexts();
                     System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                }
+            } else if (getUseForTheButton() == 13) {
+                if (mainClass.getbackGroundMusicOffOrOn()) {
+                    mainClass.setbackGroundMusicOffOrOn(false);
+                    mainClass.prefs.putBoolean("backGroundMusicOn", false);
+                    mainClass.prefs.flush();
+                    mainClass.playBackgroundMusic();
+                    setTexture(new Texture(Gdx.files.internal("sound_on_button.png")));
+                    System.out.println("I AM SWAPPING THE MUSIC OFF");
+                    System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                } else {
+                    mainClass.setbackGroundMusicOffOrOn(true);
+                    mainClass.prefs.putBoolean("backGroundMusicOn", true);
+                    mainClass.prefs.flush();
+                    mainClass.stopBackGroundMusic();
+                    setTexture(new Texture(Gdx.files.internal("sound_off_button.png")));
+                    System.out.println("I AM SWAPPING THE MUSIC ON");
+                    System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
                 }
             }
         }

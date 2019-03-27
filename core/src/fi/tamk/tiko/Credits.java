@@ -44,6 +44,11 @@ public class Credits implements Screen {
         mainClass.createButtons(new Texture("back_X.png"),"",0,8,20,screenHeight-screenHeight/10-20,screenWidth/20,screenHeight/10,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.playBackgroundMusic();
+        } else {
+            mainClass.stopBackGroundMusic();
+        }
     }
 
     @Override
