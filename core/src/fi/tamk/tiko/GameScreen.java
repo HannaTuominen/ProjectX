@@ -58,7 +58,6 @@ public class GameScreen implements Screen {
 
 
 
-
     public void implementTextures() {
         backGroundImage1 = new Texture(Gdx.files.internal("background_001.png"));
         backGroundImage2_1 = new Texture(Gdx.files.internal("background_002_purje.png"));
@@ -67,25 +66,32 @@ public class GameScreen implements Screen {
         backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
         backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
 
+
+    }
+    public void implementTexturesForTextIndicators() {
+        mainClass.setTextIndicator_3_1(new Texture("text_now_3.png"));
+        mainClass.setTextIndicator_3_2(new Texture("text_hidden_3.png"));
+        mainClass.setTextIndicator_3_3(new Texture("text_hidden_3.png"));
     }
 
     public void createScenes() {
-        chapter1 = new ChapterAssets(mainClass, backGroundImage1, false, 0,0, 100);
-        chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, true, 3,300, 300);
-        chapter2_2 = new ChapterAssets(mainClass, backGroundImage2_2, true, 3,300, 300);
-        chapter3 = new ChapterAssets(mainClass, backGroundImage3, false, 0,0, 300);
-        chapter4 = new ChapterAssets(mainClass, backGroundImage4, false, 0,0, 300);
-        chapter5 = new ChapterAssets(mainClass, backGroundImage5, false, 0,0, 300);
+        chapter1 = new ChapterAssets(mainClass, backGroundImage1, 3);
+        chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, 3);
+        chapter2_2 = new ChapterAssets(mainClass, backGroundImage2_2, 3);
+        chapter3 = new ChapterAssets(mainClass, backGroundImage3, 3);
+        chapter4 = new ChapterAssets(mainClass, backGroundImage4, 3);
+        chapter5 = new ChapterAssets(mainClass, backGroundImage5, 3);
 
     }
 
-    public void requiredStepsFirstLoad() {
-        mainClass.setStepsToOpenChapter2_1(10);
-        mainClass.setStepsToOpenChapter2_2(20);
-        mainClass.setStepsToOpenChapter3_1(40);
-        mainClass.setStepsToOpenChapter4_1(30);
-        mainClass.setStepsToOpenChapter5_1(20);
-        mainClass.setStepsToOpenChapter6_1(10);
+
+        public void requiredStepsFirstLoad() {
+        mainClass.setStepsToOpenChapter2_1(800);
+        mainClass.setStepsToOpenChapter2_2(800);
+        mainClass.setStepsToOpenChapter3_1(9000);
+        mainClass.setStepsToOpenChapter4_1(80000);
+        mainClass.setStepsToOpenChapter5_1(8000);
+        mainClass.setStepsToOpenChapter6_1(800);
     }
 
     public void requiredStepsUpdater() {
@@ -97,13 +103,35 @@ public class GameScreen implements Screen {
         mainClass.setStepsToOpenChapter6_1(mainClass.prefs.getInteger("setStepsToOpenChapter6_1"));
     }
 
+    public void addExitAndMusicButtons() {
+
+        mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
+
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
+                    screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            System.out.println("CREATED SOUND BUTTON ON");
+        } else {
+            mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
+                    screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            System.out.println("CREATED SOUND BUTTON OFF");
+        }
+
+        //CHAPTER TEXT IN THE BOTTOM LEFT CORNER OF THE TEXT BOX
+        mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter() + " " + mainClass.getChapterNumber(),0,14,
+                40, 50, 30 ,20,0);
+
+    }
+
+
     public GameScreen(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
-
+//        mainClass.clearGroup(15);
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.3f;
         } else if (screenHeight >= 1000) {
@@ -137,7 +165,7 @@ public class GameScreen implements Screen {
 
         if (!openedFirstTime) {
 
-            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
+//            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
@@ -170,12 +198,12 @@ public class GameScreen implements Screen {
 //        System.out.println(mainClass.getPlayPressed());
 
         if (mainClass.getPlayPressed()) {
-            System.out.println("HEREEEEFDFSEF");
+//            System.out.println("HEREEEEFDFSEF");
             mainClass.setChapterNumber(mainClass.prefs.getInteger("currentFurthestChapter"));
             mainClass.prefs.putInteger("ChapterNumber",mainClass.getChapterNumber());
             mainClass.setPlayPressed(false);
-            System.out.println(mainClass.getChapterNumber() + "H");
-            System.out.println(mainClass.getCurrentFurthestChapter() + " CUR H");
+//            System.out.println(mainClass.getChapterNumber() + "H");
+//            System.out.println(mainClass.getCurrentFurthestChapter() + " CUR H");
             mainClass.prefs.flush();
         }
 
@@ -202,6 +230,7 @@ public class GameScreen implements Screen {
         batch.begin();
 
 
+        int steps = mainClass.getCurrentSteps();
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter1);
@@ -211,23 +240,30 @@ public class GameScreen implements Screen {
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_2() +mainClass.getStepsToOpenChapter2_2(),0,6,
                         screenWidth-buttonWidth*2-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
+
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        screenWidth-buttonWidth*2-50, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter2_1());
+
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        screenWidth-buttonWidth*2-50, 50, screenWidth/4 ,20,0);
             }
 
+
+
+            implementTexturesForTextIndicators();
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter1_1Text(),1.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
-            if(!mainClass.getbackGroundMusicOffOrOn()) {
-                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON ON");
-            } else {
-                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON OFF");
-            }
+
+            addExitAndMusicButtons();
+
         }
 
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped() && mainClass.getClearedChapter1()) {
@@ -240,27 +276,31 @@ public class GameScreen implements Screen {
             if(!mainClass.getClearedChapter2()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter3_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter3_1());
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter3_1());
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),2.1f,7,
-                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
+                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
+
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter2_1Text(),2.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.putInteger("ChapterNumber",2 );
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            if(!mainClass.getbackGroundMusicOffOrOn()) {
-                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON ON");
-            } else {
-                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON OFF");
-            }
+            implementTexturesForTextIndicators();
+            addExitAndMusicButtons();
+
         }
 
 
@@ -273,26 +313,27 @@ public class GameScreen implements Screen {
             if(!mainClass.getClearedChapter3()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter4_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter4_1());
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter4_1());
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),3.1f,7,
-                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+            mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
+                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter3_1Text(),3.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            if(!mainClass.getbackGroundMusicOffOrOn()) {
-                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON ON");
-            } else {
-                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON OFF");
-            }
+            implementTexturesForTextIndicators();
+            addExitAndMusicButtons();
         }
 
 
@@ -305,26 +346,28 @@ public class GameScreen implements Screen {
             if(!mainClass.getClearedChapter4()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter5_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter5_1());
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter5_1());
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),4.1f,7,
-                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+
+            mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
+                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter4_1Text(),4.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            if(!mainClass.getbackGroundMusicOffOrOn()) {
-                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON ON");
-            } else {
-                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON OFF");
-            }
+            implementTexturesForTextIndicators();
+            addExitAndMusicButtons();
         }
 
 
@@ -336,26 +379,28 @@ public class GameScreen implements Screen {
             if(!mainClass.getClearedChapter5()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter6_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter6_1());
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter6_1());
             } else {
-                mainClass.createButtons(new Texture("button_orange.png"),mainClass.getNext(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+
+                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
+                mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
+                        20, 50, screenWidth/4 ,20,0);
             }
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPrevious(),5.1f,7,
-                    50, textboxHeight+30, buttonWidth ,buttonHeight,0);
+            mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
+                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
-            mainClass.createButtons(new Texture("back_X.png"),"",8,8,
-                    20,screenHeight-screenHeight/10-20, screenWidth/20,screenHeight/10,0);
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
-            if(!mainClass.getbackGroundMusicOffOrOn()) {
-                mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON ON");
-            } else {
-                mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-                System.out.println("CREATED SOUND BUTTON OFF");
-            }
+            implementTexturesForTextIndicators();
+            addExitAndMusicButtons();
+
         }
 
         batch.end();

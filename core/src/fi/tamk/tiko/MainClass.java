@@ -68,8 +68,8 @@ public class MainClass extends Game {
 	private String next;
     private String continuee;
     private String chapter1_choice_text_1;
-    private String chapter1_choice_text_2
-            ;
+    private String chapter1_choice_text_2;
+    private String chapter;
 	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
 
@@ -138,11 +138,39 @@ public class MainClass extends Game {
 	public OrthographicCamera camera;
 	Group group;
 
+	Group group2;
+
 
 	//BACKGROUND MUSIC
 	Music music;
 	long id;
 	boolean backGroundMusicOff;
+
+
+	Texture textIndicator_3_1;
+	Texture textIndicator_3_2;
+	Texture textIndicator_3_3;
+
+
+	public void setTextIndicator_3_1(Texture textIndicator_3_1) {
+		this.textIndicator_3_1 = textIndicator_3_1;
+	}
+	public Texture getTextIndicator_3_1() {
+		return textIndicator_3_1;
+	}
+	public void setTextIndicator_3_2(Texture textIndicator_3_2) {
+		this.textIndicator_3_2 = textIndicator_3_2;
+	}
+	public Texture getTextIndicator_3_2() {
+		return textIndicator_3_2;
+	}
+	public void setTextIndicator_3_3(Texture textIndicator_3_3) {
+		this.textIndicator_3_3 = textIndicator_3_3;
+	}
+	public Texture getTextIndicator_3_3() {
+		return textIndicator_3_3;
+	}
+
 
 
 
@@ -157,7 +185,7 @@ public class MainClass extends Game {
 	}
 	public void createBackGroundMusicAndLoopIt(boolean backGroundMusicOff) {
 		music = Gdx.audio.newMusic(Gdx.files.internal("game_music.mp3"));
-		music.setVolume(1.0f);                 // sets the volume to half the maximum volume
+//		music.setVolume(1.0f);                 // sets the volume to half the maximum volume
 		music.setLooping(true);                // will repeat playback until music.stop() is called
 //		music.stop();                          // stops the playback
 //		music.pause();                         // pauses the playback
@@ -171,7 +199,7 @@ public class MainClass extends Game {
 	}
 
 	public void playBackgroundMusic() {
-		music.play();                          // resumes the playback
+//		music.play();                          // resumes the playback
 
     }
 
@@ -180,32 +208,58 @@ public class MainClass extends Game {
 	}
 
 
-	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
+	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
+							  float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
+
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
 //		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
 		button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 
-		if(useForTheButton == 9 || useForTheButton == 12) {
-			groupAcotrs(button);
-		} else {
+		if(useForTheButton == 9 || useForTheButton == 12 ) {
+			groupActors(button);
+		}
+//		else if (useForTheButton == 14 || useForTheButton == 15 || useForTheButton == 16){
+//			groupActors2(button);
+//		}
+		else {
 			stage.addActor(button);
 		}
+
 		Gdx.input.setInputProcessor(stage);
 
 	}
-	public void groupAcotrs(Actor actor) {
+
+	public void groupActors(Actor actor) {
 		group.addActor(actor);
 	}
-	public void clearGroup() {
-	    group.clear();
+	public void groupActors2(Actor actor) {
+//		group2.addActor(actor);
+	}
+
+	public void clearGroup(int useForTheButton) {
+		if(useForTheButton == 9 || useForTheButton == 12) {
+			group.clear();
+		}else {
+			group2.clear();
+		}
     }
-	public Group getGroup() {
+	public Group getGroup1() {
 		return group;
 	}
-	public void groupStageAdd() {
+	public Group getGroup2() {
+		return group2;
+	}
+	public void groupStageAdd1() {
 		stage.addActor(group);
 	}
+	public void groupStageAdd2() {
+		stage.addActor(group2);
+	}
+
+
+
+
 
     public void setChoseWrong_1(boolean choseWrong_1) {
         this.choseWrong_1 = choseWrong_1;
@@ -307,6 +361,9 @@ public class MainClass extends Game {
 		return stage;
 	}
 
+	public String getChapter() {
+		return chapter;
+	}
 	public String getChapter1_1Text() {
 		return chapter1_1;
 	}
@@ -429,6 +486,7 @@ public class MainClass extends Game {
 
 		chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
 		chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
+		chapter= myBundle.get("chapter");
 		chapter1_1 = myBundle.get("chapter1_1");
 		chapter1_2 = myBundle.get("chapter1_2");
         chapter1_3 = myBundle.get("chapter1_3");

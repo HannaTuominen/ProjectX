@@ -24,6 +24,8 @@ import java.util.List;
 public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
+
+
     MainClass mainClass;
 
 	boolean choice;
@@ -38,22 +40,19 @@ public class ChapterAssets extends Actor {
 
     float textboxHeight;
     int steps;
-    String currentStepsText;
 
+    int howManyPageSwaps;
     public void changeBackgroundImageDependingOnChoises(Texture texture) {
         this.texture = texture;
     }
 
-    public ChapterAssets(MainClass MainClass2, Texture texture, boolean choice, int affect_id, int affect_steps, int stepCount) {
+    public ChapterAssets(MainClass MainClass2, Texture texture, int howManyPageSwaps) {
         this.mainClass = MainClass2;
         this.texture = texture;
-        this.choice = choice;
-        this.affect_id = affect_id;
-        this.affect_steps = affect_steps;
-        this.stepCount = stepCount;
+        this.howManyPageSwaps = howManyPageSwaps;
         this.screenHeight = mainClass.getScreenHeight();
         this.screenWidth = mainClass.getScreenWidth();
-        currentStepsText = mainClass.getStepsString();
+//        currentStepsText = mainClass.getStepsString();
 
         this.mainClass = MainClass2;
         font12 = mainClass.getFont12();
@@ -65,9 +64,8 @@ public class ChapterAssets extends Actor {
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.3f;
         } else if (screenHeight >= 1000) {
-            textboxHeight = screenHeight/5f;
+            textboxHeight = screenHeight/3.6f;
         }
-
 
     }
 
@@ -87,8 +85,16 @@ public class ChapterAssets extends Actor {
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
 
-        batch.draw(textbox,10f,10f,screenWidth-20f, textboxHeight);
-        font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth/2-50f,screenHeight-20f);
+        batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
+
+        if(howManyPageSwaps == 3) {
+            batch.draw(mainClass.getTextIndicator_3_1(),screenWidth/6,25,screenWidth/4/1.5f, 30);
+            batch.draw(mainClass.getTextIndicator_3_2(),screenWidth/6+screenWidth/4/1.5f+20,25,screenWidth/4/1.5f, 30);
+            batch.draw(mainClass.getTextIndicator_3_3(),screenWidth/6+screenWidth/4/1.5f*2+40,25,screenWidth/4/1.5f, 30);
+        }
+
+
+//        font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth-50f,screenHeight-20f);
 
 
     }

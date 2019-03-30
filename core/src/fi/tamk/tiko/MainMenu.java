@@ -80,15 +80,15 @@ public class MainMenu implements Screen {
         }
 
         if(mainClass.getLanguageFinnish()) {
-            mainClass.createButtons(new Texture("fin_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("fin_button.png"), "", 0, 11, screenWidth - buttonWidth/2, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
         } else {
-            mainClass.createButtons(new Texture("eng_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("eng_button.png"), "", 0, 11, screenWidth - buttonWidth/2, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
         }
         if(!mainClass.getbackGroundMusicOffOrOn()) {
-            mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
             System.out.println("CREATED SOUND BUTTON ON");
         } else {
-            mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -70, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
             System.out.println("CREATED SOUND BUTTON OFF");
         }
 //        mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -50, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);

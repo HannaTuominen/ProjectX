@@ -35,7 +35,7 @@ public class ChapterSelect implements Screen {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         mainClass.getStage().clear();
-        mainClass.clearGroup();
+        mainClass.clearGroup(9);
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
         buttonWidth = screenWidth/4;
@@ -105,13 +105,13 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("chapter_1_unlock.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         }
-        mainClass.getGroup().setX(0);
-        mainClass.getGroup().setY(20);
+        mainClass.getGroup1().setX(0);
+        mainClass.getGroup1().setY(20);
 
-        mainClass.groupStageAdd();
+        mainClass.groupStageAdd1();
         //BACK
         mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                20,screenHeight-screenHeight/10-20,screenWidth/20,screenHeight/10,0);
+                20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
 
