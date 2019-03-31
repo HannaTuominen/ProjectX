@@ -299,10 +299,62 @@ public class MainClass extends Game {
 	Music music;
 	boolean backGroundMusicOff;
 
+	Texture textIndicator_2_1;
+	Texture textIndicator_2_2;
 
 	Texture textIndicator_3_1;
 	Texture textIndicator_3_2;
 	Texture textIndicator_3_3;
+
+	Texture textIndicator_4_1;
+	Texture textIndicator_4_2;
+	Texture textIndicator_4_3;
+	Texture textIndicator_4_4;
+
+	Texture textIndicator_5_1;
+	Texture textIndicator_5_2;
+	Texture textIndicator_5_3;
+	Texture textIndicator_5_4;
+	Texture textIndicator_5_5;
+
+	Texture textIndicator_6_1;
+	Texture textIndicator_6_2;
+	Texture textIndicator_6_3;
+	Texture textIndicator_6_4;
+	Texture textIndicator_6_5;
+	Texture textIndicator_6_6;
+
+	Texture textIndicator_7_1;
+	Texture textIndicator_7_2;
+	Texture textIndicator_7_3;
+	Texture textIndicator_7_4;
+	Texture textIndicator_7_5;
+	Texture textIndicator_7_6;
+	Texture textIndicator_7_7;
+
+	Texture textIndicator_8_1;
+	Texture textIndicator_8_2;
+	Texture textIndicator_8_3;
+	Texture textIndicator_8_4;
+	Texture textIndicator_8_5;
+	Texture textIndicator_8_6;
+	Texture textIndicator_8_7;
+	Texture textIndicator_8_8;
+
+
+	public void setTextIndicator_2_1(Texture textIndicator_2_1) {
+		this.textIndicator_2_1 = textIndicator_2_1;
+	}
+	public Texture getTextIndicator_2_1() {
+		return textIndicator_2_1;
+	}
+	public void setTextIndicator_2_2(Texture textIndicator_2_2) {
+		this.textIndicator_2_2 = textIndicator_2_2;
+	}
+	public Texture getTextIndicator_2_2() {
+		return textIndicator_2_2;
+	}
+
 
 
 	public void setTextIndicator_3_1(Texture textIndicator_3_1) {
@@ -322,6 +374,197 @@ public class MainClass extends Game {
 	}
 	public Texture getTextIndicator_3_3() {
 		return textIndicator_3_3;
+	}
+
+
+	public void setTextIndicator_4_1(Texture textIndicator_4_1) {
+		this.textIndicator_4_1 = textIndicator_4_1;
+	}
+	public Texture getTextIndicator_4_1() {
+		return textIndicator_4_1;
+	}
+	public void setTextIndicator_4_2(Texture textIndicator_4_2) {
+		this.textIndicator_4_2 = textIndicator_4_2;
+	}
+	public Texture getTextIndicator_4_2() {
+		return textIndicator_4_2;
+	}
+	public void setTextIndicator_4_3(Texture textIndicator_4_3) {
+		this.textIndicator_4_3 = textIndicator_4_3;
+	}
+	public Texture getTextIndicator_4_3() {
+		return textIndicator_4_3;
+	}
+	public void setTextIndicator_4_4(Texture textIndicator_4_4) {
+		this.textIndicator_4_4 = textIndicator_4_4;
+	}
+	public Texture getTextIndicator_4_4() {
+		return textIndicator_4_4;
+	}
+
+
+	public void setTextIndicator_5_1(Texture textIndicator_5_1) {
+		this.textIndicator_5_1 = textIndicator_5_1;
+	}
+	public Texture getTextIndicator_5_1() {
+		return textIndicator_5_1;
+	}
+	public void setTextIndicator_5_2(Texture textIndicator_5_2) {
+		this.textIndicator_5_2 = textIndicator_5_2;
+	}
+	public Texture getTextIndicator_5_2() {
+		return textIndicator_5_2;
+	}
+	public void setTextIndicator_5_3(Texture textIndicator_5_3) {
+		this.textIndicator_5_3 = textIndicator_5_3;
+	}
+	public Texture getTextIndicator_5_3() {
+		return textIndicator_5_3;
+	}
+	public void setTextIndicator_5_4(Texture textIndicator_5_4) {
+		this.textIndicator_5_4 = textIndicator_5_4;
+	}
+	public Texture getTextIndicator_5_4() {
+		return textIndicator_5_4;
+	}
+	public void setTextIndicator_5_5(Texture textIndicator_5_5) {
+		this.textIndicator_5_5 = textIndicator_5_5;
+	}
+	public Texture getTextIndicator_5_5() {
+		return textIndicator_5_5;
+	}
+
+
+	public void setTextIndicator_6_1(Texture textIndicator_6_1) {
+		this.textIndicator_6_1 = textIndicator_6_1;
+	}
+	public Texture getTextIndicator_6_1() {
+		return textIndicator_6_1;
+	}
+	public void setTextIndicator_6_2(Texture textIndicator_6_2) {
+		this.textIndicator_6_2 = textIndicator_6_2;
+	}
+	public Texture getTextIndicator_6_2() {
+		return textIndicator_6_2;
+	}
+	public void setTextIndicator_6_3(Texture textIndicator_6_3) {
+		this.textIndicator_6_3 = textIndicator_6_3;
+	}
+	public Texture getTextIndicator_6_3() {
+		return textIndicator_6_3;
+	}
+	public void setTextIndicator_6_4(Texture textIndicator_6_4) {
+		this.textIndicator_6_4 = textIndicator_6_4;
+	}
+	public Texture getTextIndicator_6_4() {
+		return textIndicator_6_4;
+	}
+	public void setTextIndicator_6_5(Texture textIndicator_6_5) {
+		this.textIndicator_6_5 = textIndicator_6_5;
+	}
+	public Texture getTextIndicator_6_5() {
+		return textIndicator_6_5;
+	}
+	public void setTextIndicator_6_6(Texture textIndicator_6_6) {
+		this.textIndicator_6_6 = textIndicator_6_6;
+	}
+	public Texture getTextIndicator_6_6() {
+		return textIndicator_6_6;
+	}
+
+
+
+	public void setTextIndicator_7_1(Texture textIndicator_7_1) {
+		this.textIndicator_7_1 = textIndicator_7_1;
+	}
+	public Texture getTextIndicator_7_1() {
+		return textIndicator_7_1;
+	}
+	public void setTextIndicator_7_2(Texture textIndicator_7_2) {
+		this.textIndicator_7_2 = textIndicator_7_2;
+	}
+	public Texture getTextIndicator_7_2() {
+		return textIndicator_7_2;
+	}
+	public void setTextIndicator_7_3(Texture textIndicator_7_3) {
+		this.textIndicator_7_3 = textIndicator_7_3;
+	}
+	public Texture getTextIndicator_7_3() {
+		return textIndicator_7_3;
+	}
+	public void setTextIndicator_7_4(Texture textIndicator_7_4) {
+		this.textIndicator_7_4 = textIndicator_7_4;
+	}
+	public Texture getTextIndicator_7_4() {
+		return textIndicator_7_4;
+	}
+	public void setTextIndicator_7_5(Texture textIndicator_7_5) {
+		this.textIndicator_7_5 = textIndicator_7_5;
+	}
+	public Texture getTextIndicator_7_5() {
+		return textIndicator_7_5;
+	}
+	public void setTextIndicator_7_6(Texture textIndicator_7_6) {
+		this.textIndicator_7_6 = textIndicator_7_6;
+	}
+	public Texture getTextIndicator_7_6() {
+		return textIndicator_7_6;
+	}
+	public void setTextIndicator_7_7(Texture textIndicator_7_7) {
+		this.textIndicator_7_7 = textIndicator_7_7;
+	}
+	public Texture getTextIndicator_7_7() {
+		return textIndicator_7_7;
+	}
+
+
+	public void setTextIndicator_8_1(Texture textIndicator_8_1) {
+		this.textIndicator_8_1 = textIndicator_8_1;
+	}
+	public Texture getTextIndicator_8_1() {
+		return textIndicator_8_1;
+	}
+	public void setTextIndicator_8_2(Texture textIndicator_8_2) {
+		this.textIndicator_8_2 = textIndicator_8_2;
+	}
+	public Texture getTextIndicator_8_2() {
+		return textIndicator_8_2;
+	}
+	public void setTextIndicator_8_3(Texture textIndicator_8_3) {
+		this.textIndicator_8_3 = textIndicator_8_3;
+	}
+	public Texture getTextIndicator_8_3() {
+		return textIndicator_8_3;
+	}
+	public void setTextIndicator_8_4(Texture textIndicator_8_4) {
+		this.textIndicator_8_4 = textIndicator_8_4;
+	}
+	public Texture getTextIndicator_8_4() {
+		return textIndicator_8_4;
+	}
+	public void setTextIndicator_8_5(Texture textIndicator_8_5) {
+		this.textIndicator_8_5 = textIndicator_8_5;
+	}
+	public Texture getTextIndicator_8_5() {
+		return textIndicator_8_5;
+	}
+	public void setTextIndicator_8_6(Texture textIndicator_8_6) {
+		this.textIndicator_8_6 = textIndicator_8_6;
+	}
+	public Texture getTextIndicator_8_6() {
+		return textIndicator_8_6;
+	}
+	public void setTextIndicator_8_7(Texture textIndicator_8_7) {
+		this.textIndicator_8_7 = textIndicator_8_7;
+	}
+	public Texture getTextIndicator_8_7() {
+		return textIndicator_8_7;
+	}
+	public void setTextIndicator_8_8(Texture textIndicator_8_8) {
+		this.textIndicator_8_8 = textIndicator_8_8;
+	}
+	public Texture getTextIndicator_8_8() {
+		return textIndicator_8_8;
 	}
 
 
