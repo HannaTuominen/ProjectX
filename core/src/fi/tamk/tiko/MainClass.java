@@ -56,6 +56,105 @@ public class MainClass extends Game {
 
 	private String chapter5_1;
 	private String chapter5_2;
+	private String chapter5_3;
+
+	private String chapter6_1;
+	private String chapter6_2;
+	private String chapter6_3;
+
+	private String chapter7_1;
+	private String chapter7_2;
+	private String chapter7_3;
+
+	private String chapter8_1;
+	private String chapter8_2;
+	private String chapter8_3;
+
+	private String chapter9_1;
+	private String chapter9_2;
+	private String chapter9_3;
+	private String chapter9_4;
+
+	private String chapter10_1;
+	private String chapter10_2;
+	private String chapter10_3;
+
+	private String chapter11_1;
+	private String chapter11_2;
+	private String chapter11_3;
+	private String chapter11_4;
+
+	private String chapter12_1;
+	private String chapter12_2;
+	private String chapter12_3;
+	private String chapter12_4;
+
+	private String chapter13_1;
+	private String chapter13_2;
+	private String chapter13_3;
+	private String chapter13_4;
+
+	private String chapter14_1;
+	private String chapter14_2;
+	private String chapter14_3;
+	private String chapter14_4;
+
+	private String chapter15_1;
+	private String chapter15_2;
+	private String chapter15_3;
+	private String chapter15_4;
+	private String chapter15_5;
+
+	private String chapter16_1;
+	private String chapter16_2;
+	private String chapter16_3;
+	private String chapter16_4;
+	private String chapter16_5;
+
+	private String chapter17_1;
+	private String chapter17_2;
+	private String chapter17_3;
+	private String chapter17_4;
+	private String chapter17_5;
+	private String chapter17_6;
+	private String chapter17_7;
+	private String chapter17_8;
+
+	private String chapter18_1;
+	private String chapter18_2;
+	private String chapter18_3;
+	private String chapter18_4;
+	private String chapter18_5;
+
+	private String chapter19_1;
+	private String chapter19_2;
+	private String chapter19_3;
+	private String chapter19_4;
+
+	private String chapter20_1;
+	private String chapter20_2;
+	private String chapter20_3;
+	private String chapter20_4;
+
+	private String chapter21_1;
+	private String chapter21_2;
+	private String chapter21_3;
+	private String chapter21_4;
+	private String chapter21_5;
+
+	private String chapter22_1;
+	private String chapter22_2;
+	private String chapter22_3;
+	private String chapter22_4;
+	private String chapter22_5;
+	private String chapter22_6;
+	private String chapter22_7;
+
+	private String chapter23_1;
+	private String chapter23_2;
+	private String chapter23_3;
+	private String chapter23_4;
+
 
 	private String title;
 	private String play;
@@ -81,6 +180,25 @@ public class MainClass extends Game {
 	private boolean clearedChapter3;
 	private boolean clearedChapter4;
 	private boolean clearedChapter5;
+	private boolean clearedChapter6;
+	private boolean clearedChapter7;
+	private boolean clearedChapter8;
+	private boolean clearedChapter9;
+	private boolean clearedChapter10;
+	private boolean clearedChapter11;
+	private boolean clearedChapter12;
+	private boolean clearedChapter13;
+	private boolean clearedChapter14;
+	private boolean clearedChapter15;
+	private boolean clearedChapter16;
+	private boolean clearedChapter17;
+	private boolean clearedChapter18;
+	private boolean clearedChapter19;
+	private boolean clearedChapter20;
+	private boolean clearedChapter21;
+	private boolean clearedChapter22;
+	private boolean clearedChapter23;
+
 
 	private boolean choseWrong_1 = false;
     private boolean choseWrong_2 = false;
@@ -91,13 +209,49 @@ public class MainClass extends Game {
 	private int stepsToOpenChapter2_2;
 
 	private int stepsToOpenChapter3_1;
-//	private int stepsToOpenChapter3_2;
 
 	private int stepsToOpenChapter4_1;
 
 	private int stepsToOpenChapter5_1;
+	private int stepsToOpenChapter5_2;
 
 	private int stepsToOpenChapter6_1;
+
+	private int stepsToOpenChapter7_1;
+
+	private int stepsToOpenChapter8_1;
+
+	private int stepsToOpenChapter9_1;
+
+	private int stepsToOpenChapter10_1;
+
+	private int stepsToOpenChapter11_1;
+
+	private int stepsToOpenChapter12_1;
+	private int stepsToOpenChapter12_2;
+
+	private int stepsToOpenChapter13_1;
+
+	private int stepsToOpenChapter14_1;
+
+	private int stepsToOpenChapter15_1;
+
+	private int stepsToOpenChapter16_1;
+
+	private int stepsToOpenChapter17_1;
+
+	private int stepsToOpenChapter18_1;
+	private int stepsToOpenChapter18_2;
+
+	private int stepsToOpenChapter19_1;
+
+	private int stepsToOpenChapter20_1;
+
+	private int stepsToOpenChapter21_1;
+
+	private int stepsToOpenChapter22_1;
+
+	private int stepsToOpenChapter23_1;
 
 	//Created the prefs file here that is used everywhere in the code
 	Preferences prefs;
@@ -143,7 +297,6 @@ public class MainClass extends Game {
 
 	//BACKGROUND MUSIC
 	Music music;
-	long id;
 	boolean backGroundMusicOff;
 
 
@@ -271,9 +424,35 @@ public class MainClass extends Game {
         return choseWrong_1;
     }
 
+	public void setChoseWrong_2(boolean choseWrong_2) {
+		this.choseWrong_2 = choseWrong_2;
+		prefs.putBoolean("choseWrong_2", this.choseWrong_2);
+		prefs.flush();
+	}
+	public boolean getChoseWrong_2() {
+		choseWrong_2 = prefs.getBoolean("choseWrong_2");
+		return choseWrong_2;
+	}
 
+	public void setChoseWrong_3(boolean choseWrong_3) {
+		this.choseWrong_3 = choseWrong_3;
+		prefs.putBoolean("choseWrong_3", this.choseWrong_3);
+		prefs.flush();
+	}
+	public boolean getChoseWrong_3() {
+		choseWrong_3 = prefs.getBoolean("choseWrong_3");
+		return choseWrong_3;
+	}
 
-
+	public void setChoseWrong_4(boolean choseWrong_4) {
+		this.choseWrong_4 = choseWrong_4;
+		prefs.putBoolean("choseWrong_4", this.choseWrong_4);
+		prefs.flush();
+	}
+	public boolean getChoseWrong_4() {
+		choseWrong_4 = prefs.getBoolean("choseWrong_4");
+		return choseWrong_4;
+	}
 
 	public void setStepsToOpenChapter2_1(int steps) {
 		stepsToOpenChapter2_1 = steps;
@@ -283,6 +462,8 @@ public class MainClass extends Game {
 	public int getStepsToOpenChapter2_1() {
 		return stepsToOpenChapter2_1;
 	}
+
+
 	public void setStepsToOpenChapter2_2(int steps) {
 		stepsToOpenChapter2_2 = steps;
 		prefs.putInteger("setStepsToOpenChapter2_2", stepsToOpenChapter2_2);
@@ -312,23 +493,229 @@ public class MainClass extends Game {
 		return stepsToOpenChapter4_1;
 	}
 
+
 	public void setStepsToOpenChapter5_1(int steps) {
 		stepsToOpenChapter5_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter5_1", stepsToOpenChapter5_1);
 		prefs.flush();
 	}
-	public int getStepsToOpenChapter6_1() {
-		return stepsToOpenChapter6_1;
+	public int getStepsToOpenChapter5_1() {
+		return stepsToOpenChapter5_1;
 	}
+
+
+	public void setStepsToOpenChapter5_2(int steps) {
+		stepsToOpenChapter5_2 = steps;
+		prefs.putInteger("setStepsToOpenChapter5_2", stepsToOpenChapter5_2);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter5_2() {
+		return stepsToOpenChapter5_2;
+	}
+
 
 	public void setStepsToOpenChapter6_1(int steps) {
 		stepsToOpenChapter6_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter6_1", stepsToOpenChapter6_1);
 		prefs.flush();
 	}
-	public int getStepsToOpenChapter5_1() {
-		return stepsToOpenChapter5_1;
+	public int getStepsToOpenChapter6_1() {
+		return stepsToOpenChapter6_1;
 	}
+
+
+	public void setStepsToOpenChapter7_1(int steps) {
+		stepsToOpenChapter7_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter7_1", stepsToOpenChapter7_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter7_1() {
+		return stepsToOpenChapter7_1;
+	}
+
+
+	public void setStepsToOpenChapter8_1(int steps) {
+		stepsToOpenChapter8_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter8_1", stepsToOpenChapter8_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter8_1() {
+		return stepsToOpenChapter8_1;
+	}
+
+
+	public void setStepsToOpenChapter9_1(int steps) {
+		stepsToOpenChapter9_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter9_1", stepsToOpenChapter9_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter9_1() {
+		return stepsToOpenChapter9_1;
+	}
+
+
+	public void setStepsToOpenChapter10_1(int steps) {
+		stepsToOpenChapter10_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter10_1", stepsToOpenChapter10_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter10_1() {
+		return stepsToOpenChapter10_1;
+	}
+
+
+	public void setStepsToOpenChapter11_1(int steps) {
+		stepsToOpenChapter11_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter11_1", stepsToOpenChapter11_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter11_1() {
+		return stepsToOpenChapter11_1;
+	}
+
+
+	public void setStepsToOpenChapter12_1(int steps) {
+		stepsToOpenChapter12_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter12_1", stepsToOpenChapter12_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter12_1() {
+		return stepsToOpenChapter12_1;
+	}
+
+
+	public void setStepsToOpenChapter12_2(int steps) {
+		stepsToOpenChapter12_2 = steps;
+		prefs.putInteger("setStepsToOpenChapter12_2", stepsToOpenChapter12_2);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter12_2() {
+		return stepsToOpenChapter12_2;
+	}
+
+
+	public void setStepsToOpenChapter13_1(int steps) {
+		stepsToOpenChapter13_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter13_1", stepsToOpenChapter13_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter13_1() {
+		return stepsToOpenChapter13_1;
+	}
+
+
+	public void setStepsToOpenChapter14_1(int steps) {
+		stepsToOpenChapter14_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter14_1", stepsToOpenChapter14_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter14_1() {
+		return stepsToOpenChapter14_1;
+	}
+
+
+	public void setStepsToOpenChapter15_1(int steps) {
+		stepsToOpenChapter15_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter15_1", stepsToOpenChapter15_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter15_1() {
+		return stepsToOpenChapter15_1;
+	}
+
+
+	public void setStepsToOpenChapter16_1(int steps) {
+		stepsToOpenChapter16_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter16_1", stepsToOpenChapter16_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter16_1() {
+		return stepsToOpenChapter16_1;
+	}
+
+
+	public void setStepsToOpenChapter17_1(int steps) {
+		stepsToOpenChapter17_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter17_1", stepsToOpenChapter17_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter17_1() {
+		return stepsToOpenChapter17_1;
+	}
+
+
+	public void setStepsToOpenChapter18_1(int steps) {
+		stepsToOpenChapter18_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter18_1", stepsToOpenChapter18_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter18_1() {
+		return stepsToOpenChapter18_1;
+	}
+
+
+	public void setStepsToOpenChapter18_2(int steps) {
+		stepsToOpenChapter18_2 = steps;
+		prefs.putInteger("setStepsToOpenChapter18_2", stepsToOpenChapter18_2);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter18_2() {
+		return stepsToOpenChapter18_2;
+	}
+
+
+	public void setStepsToOpenChapter19_1(int steps) {
+		stepsToOpenChapter19_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter19_1", stepsToOpenChapter19_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter19_1() {
+		return stepsToOpenChapter19_1;
+	}
+
+
+	public void setStepsToOpenChapter20_1(int steps) {
+		stepsToOpenChapter20_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter20_1", stepsToOpenChapter20_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter20_1() {
+		return stepsToOpenChapter20_1;
+	}
+
+
+	public void setStepsToOpenChapter21_1(int steps) {
+		stepsToOpenChapter21_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter21_1", stepsToOpenChapter21_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter21_1() {
+		return stepsToOpenChapter21_1;
+	}
+
+
+	public void setStepsToOpenChapter22_1(int steps) {
+		stepsToOpenChapter22_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter22_1", stepsToOpenChapter22_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter22_1() {
+		return stepsToOpenChapter22_1;
+	}
+
+
+	public void setStepsToOpenChapter23_1(int steps) {
+		stepsToOpenChapter23_1 = steps;
+		prefs.putInteger("setStepsToOpenChapter23_1", stepsToOpenChapter23_1);
+		prefs.flush();
+	}
+	public int getStepsToOpenChapter23_1() {
+		return stepsToOpenChapter23_1;
+	}
+
+
+
+
 
 	public void setChapterNumber(int chapterNumber) {
 		this.chapterNumber = chapterNumber;
@@ -384,9 +771,7 @@ public class MainClass extends Game {
 	public String getChapter3_1Text() {
 		return chapter3_1;
 	}
-	public String getChapter3_2Text() {
-		return chapter3_2;
-	}
+	public String getChapter3_2Text() { return chapter3_2; }
 
 	public String getChapter4_1Text() {
 		return chapter4_1;
@@ -502,6 +887,104 @@ public class MainClass extends Game {
 
 		chapter5_1 = myBundle.get("chapter5_1");
 		chapter5_2 = myBundle.get("chapter5_2");
+		chapter5_3 = myBundle.get("chapter5_3");
+
+		chapter6_1 = myBundle.get("chapter6_1");
+		chapter6_2 = myBundle.get("chapter6_2");
+		chapter6_3 = myBundle.get("chapter6_3");
+
+		chapter7_1 = myBundle.get("chapter7_1");
+		chapter7_2 = myBundle.get("chapter7_2");
+		chapter7_3 = myBundle.get("chapter7_3");
+
+		chapter8_1 = myBundle.get("chapter8_1");
+		chapter8_2 = myBundle.get("chapter8_2");
+		chapter8_3 = myBundle.get("chapter8_3");
+
+		chapter9_1 = myBundle.get("chapter9_1");
+		chapter9_2 = myBundle.get("chapter9_2");
+		chapter9_3 = myBundle.get("chapter9_3");
+		chapter9_4 = myBundle.get("chapter9_4");
+
+		chapter10_1 = myBundle.get("chapter10_1");
+		chapter10_2 = myBundle.get("chapter10_2");
+		chapter10_3 = myBundle.get("chapter10_3");
+
+		chapter11_1 = myBundle.get("chapter11_1");
+		chapter11_2 = myBundle.get("chapter11_2");
+		chapter11_3 = myBundle.get("chapter11_3");
+		chapter11_4 = myBundle.get("chapter11_4");
+
+		chapter12_1 = myBundle.get("chapter12_1");
+		chapter12_2 = myBundle.get("chapter12_2");
+		chapter12_3 = myBundle.get("chapter12_3");
+		chapter12_4 = myBundle.get("chapter12_4");
+
+		chapter13_1 = myBundle.get("chapter13_1");
+		chapter13_2 = myBundle.get("chapter13_2");
+		chapter13_3 = myBundle.get("chapter13_3");
+		chapter13_4 = myBundle.get("chapter13_4");
+
+		chapter14_1 = myBundle.get("chapter14_1");
+		chapter14_2 = myBundle.get("chapter14_2");
+		chapter14_3 = myBundle.get("chapter14_3");
+		chapter14_4 = myBundle.get("chapter14_3");
+
+		chapter15_1 = myBundle.get("chapter15_1");
+		chapter15_2 = myBundle.get("chapter15_2");
+		chapter15_3 = myBundle.get("chapter15_3");
+		chapter15_4 = myBundle.get("chapter15_4");
+		chapter15_5 = myBundle.get("chapter15_5");
+
+		chapter16_1 = myBundle.get("chapter16_1");
+		chapter16_2 = myBundle.get("chapter16_2");
+		chapter16_3 = myBundle.get("chapter16_3");
+		chapter16_4 = myBundle.get("chapter16_4");
+		chapter16_5 = myBundle.get("chapter16_5");
+
+		chapter17_1 = myBundle.get("chapter17_1");
+		chapter17_2 = myBundle.get("chapter17_2");
+		chapter17_3 = myBundle.get("chapter17_3");
+		chapter17_4 = myBundle.get("chapter17_4");
+		chapter17_5 = myBundle.get("chapter17_5");
+		chapter17_6 = myBundle.get("chapter17_6");
+		chapter17_7 = myBundle.get("chapter17_7");
+		chapter17_8 = myBundle.get("chapter17_8");
+
+		chapter18_1 = myBundle.get("chapter18_1");
+		chapter18_2 = myBundle.get("chapter18_2");
+		chapter18_3 = myBundle.get("chapter18_3");
+		chapter18_4 = myBundle.get("chapter18_4");
+		chapter18_5 = myBundle.get("chapter18_5");
+
+		chapter19_1 = myBundle.get("chapter19_1");
+		chapter19_2 = myBundle.get("chapter19_2");
+		chapter19_3 = myBundle.get("chapter19_3");
+		chapter19_4 = myBundle.get("chapter19_4");
+
+		chapter20_1 = myBundle.get("chapter20_1");
+		chapter20_2 = myBundle.get("chapter20_2");
+		chapter20_3 = myBundle.get("chapter20_3");
+		chapter20_4 = myBundle.get("chapter20_4");
+
+		chapter21_1 = myBundle.get("chapter21_1");
+		chapter21_2 = myBundle.get("chapter21_2");
+		chapter21_3 = myBundle.get("chapter21_3");
+		chapter21_4 = myBundle.get("chapter21_4");
+		chapter21_5 = myBundle.get("chapter21_5");
+
+		chapter22_1 = myBundle.get("chapter22_1");
+		chapter22_2 = myBundle.get("chapter22_2");
+		chapter22_3 = myBundle.get("chapter22_3");
+		chapter22_4 = myBundle.get("chapter22_4");
+		chapter22_5 = myBundle.get("chapter22_5");
+		chapter22_6 = myBundle.get("chapter22_6");
+		chapter22_7 = myBundle.get("chapter22_7");
+
+		chapter23_1 = myBundle.get("chapter23_1");
+		chapter23_2 = myBundle.get("chapter23_2");
+		chapter23_3 = myBundle.get("chapter23_3");
+		chapter23_4 = myBundle.get("chapter23_4");
 
 		stepsString = myBundle.get("stepString");
 		previous = myBundle.get("previous");
@@ -534,15 +1017,64 @@ public class MainClass extends Game {
 	public boolean getClearedChapter2() {
 		return clearedChapter2;
 	}
-	public boolean getClearedChapter3() {
-		return clearedChapter3;
-	}
+	public boolean getClearedChapter3() { return clearedChapter3; }
 	public boolean getClearedChapter4() {
 		return clearedChapter4;
 	}
 	public boolean getClearedChapter5() {
 		return clearedChapter5;
 	}
+	public boolean getClearedChapter6() {
+		return clearedChapter6;
+	}
+	public boolean getClearedChapter7() {
+		return clearedChapter7;
+	}
+	public boolean getClearedChapter8() {
+		return clearedChapter8;
+	}
+	public boolean getClearedChapter9() {
+		return clearedChapter9;
+	}
+	public boolean getClearedChapter10() {
+		return clearedChapter10;
+	}
+	public boolean getClearedChapter11() {
+		return clearedChapter11;
+	}
+	public boolean getClearedChapter12() {
+		return clearedChapter12;
+	}
+	public boolean getClearedChapter13() {
+		return clearedChapter13;
+	}
+	public boolean getClearedChapter14() { return clearedChapter14; }
+	public boolean getClearedChapter15() {
+		return clearedChapter15;
+	}
+	public boolean getClearedChapter16() {
+		return clearedChapter16;
+	}
+	public boolean getClearedChapter17() {
+		return clearedChapter17;
+	}
+	public boolean getClearedChapter18() {
+		return clearedChapter18;
+	}
+	public boolean getClearedChapter19() {
+		return clearedChapter19;
+	}
+	public boolean getClearedChapter20() { return clearedChapter20; }
+	public boolean getClearedChapter21() {
+		return clearedChapter21;
+	}
+	public boolean getClearedChapter22() {
+		return clearedChapter22;
+	}
+	public boolean getClearedChapter23() {
+		return clearedChapter23;
+	}
+
 
 
 
@@ -558,10 +1090,25 @@ public class MainClass extends Game {
 	public void setClearedChapter4(boolean clearedChapter4) {
 		this.clearedChapter4 = clearedChapter4;
 	}
-	public void setClearedChapter5(boolean clearedChapter5) {
-		this.clearedChapter5 = clearedChapter5;
-	}
-
+	public void setClearedChapter5(boolean clearedChapter5) { this.clearedChapter5 = clearedChapter5; }
+	public void setClearedChapter6(boolean clearedChapter6) { this.clearedChapter5 = clearedChapter6; }
+	public void setClearedChapter7(boolean clearedChapter7) { this.clearedChapter5 = clearedChapter7; }
+	public void setClearedChapter8(boolean clearedChapter8) { this.clearedChapter5 = clearedChapter8; }
+	public void setClearedChapter9(boolean clearedChapter9) { this.clearedChapter5 = clearedChapter9; }
+	public void setClearedChapter10(boolean clearedChapter10) { this.clearedChapter5 = clearedChapter10; }
+	public void setClearedChapter11(boolean clearedChapter11) { this.clearedChapter5 = clearedChapter11; }
+	public void setClearedChapter12(boolean clearedChapter12) { this.clearedChapter5 = clearedChapter12; }
+	public void setClearedChapter13(boolean clearedChapter13) { this.clearedChapter5 = clearedChapter13; }
+	public void setClearedChapter14(boolean clearedChapter14) { this.clearedChapter5 = clearedChapter14; }
+	public void setClearedChapter15(boolean clearedChapter15) { this.clearedChapter5 = clearedChapter15; }
+	public void setClearedChapter16(boolean clearedChapter16) { this.clearedChapter5 = clearedChapter16; }
+	public void setClearedChapter17(boolean clearedChapter17) { this.clearedChapter5 = clearedChapter17; }
+	public void setClearedChapter18(boolean clearedChapter18) { this.clearedChapter5 = clearedChapter18; }
+	public void setClearedChapter19(boolean clearedChapter19) { this.clearedChapter5 = clearedChapter19; }
+	public void setClearedChapter20(boolean clearedChapter20) { this.clearedChapter5 = clearedChapter20; }
+	public void setClearedChapter21(boolean clearedChapter21) { this.clearedChapter5 = clearedChapter21; }
+	public void setClearedChapter22(boolean clearedChapter22) { this.clearedChapter5 = clearedChapter22; }
+	public void setClearedChapter23(boolean clearedChapter23) { this.clearedChapter5 = clearedChapter23; }
 
 
 	public String getPlay() {

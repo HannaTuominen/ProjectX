@@ -31,6 +31,28 @@ public class GameScreen implements Screen {
     Texture backGroundImage3;
     Texture backGroundImage4;
     Texture backGroundImage5;
+    Texture backGroundImage6_1;
+    Texture backGroundImage6_2;
+    Texture backGroundImage7;
+    Texture backGroundImage8;
+    Texture backGroundImage9;
+    Texture backGroundImage10;
+    Texture backGroundImage11;
+    Texture backGroundImage12;
+    Texture backGroundImage13_1;
+    Texture backGroundImage13_2;
+    Texture backGroundImage14;
+    Texture backGroundImage15;
+    Texture backGroundImage16;
+    Texture backGroundImage17;
+    Texture backGroundImage18;
+    Texture backGroundImage19_1;
+    Texture backGroundImage19_2;
+    Texture backGroundImage20;
+    Texture backGroundImage21;
+    Texture backGroundImage22;
+    Texture backGroundImage23;
+
 
 
     Skin skin;
@@ -41,6 +63,30 @@ public class GameScreen implements Screen {
     private ChapterAssets chapter3;
     private ChapterAssets chapter4;
     private ChapterAssets chapter5;
+    private ChapterAssets chapter6_1;
+    private ChapterAssets chapter6_2;
+    private ChapterAssets chapter7;
+    private ChapterAssets chapter8;
+    private ChapterAssets chapter9;
+    private ChapterAssets chapter10;
+    private ChapterAssets chapter11;
+    private ChapterAssets chapter12;
+    private ChapterAssets chapter13_1;
+    private ChapterAssets chapter13_2;
+    private ChapterAssets chapter14;
+    private ChapterAssets chapter15;
+    private ChapterAssets chapter16;
+    private ChapterAssets chapter17;
+    private ChapterAssets chapter18;
+    private ChapterAssets chapter19_1;
+    private ChapterAssets chapter19_2;
+    private ChapterAssets chapter20;
+    private ChapterAssets chapter21;
+    private ChapterAssets chapter22;
+    private ChapterAssets chapter23;
+
+
+
 
     float textboxHeight;
 
@@ -65,6 +111,28 @@ public class GameScreen implements Screen {
         backGroundImage3 = new Texture(Gdx.files.internal("background_003.png"));
         backGroundImage4 = new Texture(Gdx.files.internal("background_004.png"));
         backGroundImage5 = new Texture(Gdx.files.internal("background_005.png"));
+        backGroundImage6_1 = new Texture(Gdx.files.internal("background_006_1.png"));
+        backGroundImage6_2 = new Texture(Gdx.files.internal("background_006_2.png"));
+        backGroundImage7 = new Texture(Gdx.files.internal("background_007.png"));
+        backGroundImage8 = new Texture(Gdx.files.internal("background_008.png"));
+        backGroundImage9 = new Texture(Gdx.files.internal("background_009.png"));
+        backGroundImage10 = new Texture(Gdx.files.internal("background_010.png"));
+        backGroundImage11 = new Texture(Gdx.files.internal("background_011.png"));
+        backGroundImage12 = new Texture(Gdx.files.internal("background_012.png"));
+        backGroundImage13_1 = new Texture(Gdx.files.internal("background_013_1.png"));
+        backGroundImage13_2 = new Texture(Gdx.files.internal("background_013_2.png"));
+        backGroundImage14 = new Texture(Gdx.files.internal("background_014.png"));
+        backGroundImage15 = new Texture(Gdx.files.internal("background_015.png"));
+        backGroundImage16 = new Texture(Gdx.files.internal("background_016.png"));
+        backGroundImage17 = new Texture(Gdx.files.internal("background_017.png"));
+        backGroundImage18 = new Texture(Gdx.files.internal("background_018.png"));
+        backGroundImage19_1 = new Texture(Gdx.files.internal("background_019_1.png"));
+        backGroundImage19_2 = new Texture(Gdx.files.internal("background_019_2.png"));
+        backGroundImage20 = new Texture(Gdx.files.internal("background_020.png"));
+        backGroundImage21 = new Texture(Gdx.files.internal("background_021.png"));
+        backGroundImage22 = new Texture(Gdx.files.internal("background_022.png"));
+        backGroundImage23 = new Texture(Gdx.files.internal("background_023.png"));
+
 
 
     }
@@ -76,31 +144,102 @@ public class GameScreen implements Screen {
 
     public void createScenes() {
         chapter1 = new ChapterAssets(mainClass, backGroundImage1, 3);
-        chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, 3);
-        chapter2_2 = new ChapterAssets(mainClass, backGroundImage2_2, 3);
-        chapter3 = new ChapterAssets(mainClass, backGroundImage3, 3);
-        chapter4 = new ChapterAssets(mainClass, backGroundImage4, 3);
+        chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, 2);
+        chapter2_2 = new ChapterAssets(mainClass, backGroundImage2_2, 2);
+        chapter3 = new ChapterAssets(mainClass, backGroundImage3, 2);
+        chapter4 = new ChapterAssets(mainClass, backGroundImage4, 2);
         chapter5 = new ChapterAssets(mainClass, backGroundImage5, 3);
+        chapter6_1 = new ChapterAssets(mainClass, backGroundImage6_1, 3);
+        chapter6_2 = new ChapterAssets(mainClass, backGroundImage6_2, 3);
+        chapter7 = new ChapterAssets(mainClass, backGroundImage7, 3);
+        chapter8 = new ChapterAssets(mainClass, backGroundImage8, 3);
+        chapter9 = new ChapterAssets(mainClass, backGroundImage9, 4);
+        chapter10 = new ChapterAssets(mainClass, backGroundImage10, 3);
+        chapter11 = new ChapterAssets(mainClass, backGroundImage11, 4);
+        chapter12 = new ChapterAssets(mainClass, backGroundImage12, 4);
+
+        chapter13_1 = new ChapterAssets(mainClass, backGroundImage13_1, 4);
+        chapter13_2 = new ChapterAssets(mainClass, backGroundImage13_2, 4);
+        chapter14 = new ChapterAssets(mainClass, backGroundImage14, 4);
+        chapter15 = new ChapterAssets(mainClass, backGroundImage15, 5);
+        chapter16 = new ChapterAssets(mainClass, backGroundImage16, 5);
+        chapter17 = new ChapterAssets(mainClass, backGroundImage17, 8);
+        chapter18 = new ChapterAssets(mainClass, backGroundImage18, 5);
+
+        chapter19_1 = new ChapterAssets(mainClass, backGroundImage19_1, 4);
+        chapter19_2 = new ChapterAssets(mainClass, backGroundImage19_2, 4);
+        chapter20 = new ChapterAssets(mainClass, backGroundImage20, 4);
+        chapter21 = new ChapterAssets(mainClass, backGroundImage21, 5);
+        chapter22 = new ChapterAssets(mainClass, backGroundImage22, 7);
+        chapter23 = new ChapterAssets(mainClass, backGroundImage23, 4);
 
     }
 
 
         public void requiredStepsFirstLoad() {
-        mainClass.setStepsToOpenChapter2_1(800);
-        mainClass.setStepsToOpenChapter2_2(800);
-        mainClass.setStepsToOpenChapter3_1(9000);
-        mainClass.setStepsToOpenChapter4_1(80000);
-        mainClass.setStepsToOpenChapter5_1(8000);
-        mainClass.setStepsToOpenChapter6_1(800);
+        mainClass.setStepsToOpenChapter2_1(500); //WRONG + 300
+        mainClass.setStepsToOpenChapter2_2(500);
+        mainClass.setStepsToOpenChapter3_1(700);
+        mainClass.setStepsToOpenChapter4_1(4000);
+        mainClass.setStepsToOpenChapter5_1(2000); //WRONG + 1000
+        mainClass.setStepsToOpenChapter5_2(2000);
+        mainClass.setStepsToOpenChapter6_1(2000);
+        mainClass.setStepsToOpenChapter7_1(6500);
+        mainClass.setStepsToOpenChapter8_1(2000);
+        mainClass.setStepsToOpenChapter9_1(4000);
+        mainClass.setStepsToOpenChapter10_1(3000);
+        mainClass.setStepsToOpenChapter11_1(3600);
+        mainClass.setStepsToOpenChapter12_1(4000); //WRONG + 200
+        mainClass.setStepsToOpenChapter12_2(4000);
+        mainClass.setStepsToOpenChapter13_1(4500);
+        mainClass.setStepsToOpenChapter14_1(4000);
+        mainClass.setStepsToOpenChapter15_1(3000);
+        mainClass.setStepsToOpenChapter16_1(6000);
+        mainClass.setStepsToOpenChapter17_1(4500);
+        mainClass.setStepsToOpenChapter18_1(5000); //WRONG + 800
+        mainClass.setStepsToOpenChapter18_2(5000);
+        mainClass.setStepsToOpenChapter19_1(2000);
+        mainClass.setStepsToOpenChapter20_1(2000);
+        mainClass.setStepsToOpenChapter21_1(3000);
+        mainClass.setStepsToOpenChapter22_1(2200);
+        mainClass.setStepsToOpenChapter23_1(3500); //Vaihtoehtoja (jos alex valtisee mennä juhliin, alkaa peli alusta)
     }
 
     public void requiredStepsUpdater() {
         mainClass.setStepsToOpenChapter2_1(mainClass.prefs.getInteger("setStepsToOpenChapter2_1"));
         mainClass.setStepsToOpenChapter2_2(mainClass.prefs.getInteger("setStepsToOpenChapter2_2"));
+
         mainClass.setStepsToOpenChapter3_1(mainClass.prefs.getInteger("setStepsToOpenChapter3_1"));
         mainClass.setStepsToOpenChapter4_1(mainClass.prefs.getInteger("setStepsToOpenChapter4_1"));
+
         mainClass.setStepsToOpenChapter5_1(mainClass.prefs.getInteger("setStepsToOpenChapter5_1"));
+        mainClass.setStepsToOpenChapter5_2(mainClass.prefs.getInteger("setStepsToOpenChapter5_1"));
+
         mainClass.setStepsToOpenChapter6_1(mainClass.prefs.getInteger("setStepsToOpenChapter6_1"));
+        mainClass.setStepsToOpenChapter7_1(mainClass.prefs.getInteger("setStepsToOpenChapter7_1"));
+        mainClass.setStepsToOpenChapter8_1(mainClass.prefs.getInteger("setStepsToOpenChapter8_1"));
+        mainClass.setStepsToOpenChapter9_1(mainClass.prefs.getInteger("setStepsToOpenChapter9_1"));
+        mainClass.setStepsToOpenChapter10_1(mainClass.prefs.getInteger("setStepsToOpenChapter10_1"));
+        mainClass.setStepsToOpenChapter11_1(mainClass.prefs.getInteger("setStepsToOpenChapter11_1"));
+
+        mainClass.setStepsToOpenChapter12_1(mainClass.prefs.getInteger("setStepsToOpenChapter12_1"));
+        mainClass.setStepsToOpenChapter12_2(mainClass.prefs.getInteger("setStepsToOpenChapter12_1"));
+
+        mainClass.setStepsToOpenChapter13_1(mainClass.prefs.getInteger("setStepsToOpenChapter13_1"));
+        mainClass.setStepsToOpenChapter14_1(mainClass.prefs.getInteger("setStepsToOpenChapter14_1"));
+        mainClass.setStepsToOpenChapter15_1(mainClass.prefs.getInteger("setStepsToOpenChapter15_1"));
+        mainClass.setStepsToOpenChapter16_1(mainClass.prefs.getInteger("setStepsToOpenChapter16_1"));
+        mainClass.setStepsToOpenChapter17_1(mainClass.prefs.getInteger("setStepsToOpenChapter17_1"));
+
+        mainClass.setStepsToOpenChapter18_1(mainClass.prefs.getInteger("setStepsToOpenChapter18_1"));
+        mainClass.setStepsToOpenChapter18_2(mainClass.prefs.getInteger("setStepsToOpenChapter18_1"));
+
+        mainClass.setStepsToOpenChapter19_1(mainClass.prefs.getInteger("setStepsToOpenChapter19_1"));
+        mainClass.setStepsToOpenChapter20_1(mainClass.prefs.getInteger("setStepsToOpenChapter20_1"));
+        mainClass.setStepsToOpenChapter21_1(mainClass.prefs.getInteger("setStepsToOpenChapter21_1"));
+        mainClass.setStepsToOpenChapter22_1(mainClass.prefs.getInteger("setStepsToOpenChapter22_1"));
+        mainClass.setStepsToOpenChapter23_1(mainClass.prefs.getInteger("setStepsToOpenChapter23_1"));
+
     }
 
     public void addExitAndMusicButtons() {
@@ -400,7 +539,6 @@ public class GameScreen implements Screen {
             mainClass.setSwapped(true);
             implementTexturesForTextIndicators();
             addExitAndMusicButtons();
-
         }
 
         batch.end();

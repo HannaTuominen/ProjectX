@@ -28,12 +28,6 @@ public class ChapterAssets extends Actor {
 
     MainClass mainClass;
 
-	boolean choice;
-	int affect_id;
-	int affect_steps;
-
-	int stepCount;
-
     BitmapFont font12;
     float screenWidth;
     float screenHeight;
@@ -42,9 +36,6 @@ public class ChapterAssets extends Actor {
     int steps;
 
     int howManyPageSwaps;
-    public void changeBackgroundImageDependingOnChoises(Texture texture) {
-        this.texture = texture;
-    }
 
     public ChapterAssets(MainClass MainClass2, Texture texture, int howManyPageSwaps) {
         this.mainClass = MainClass2;
@@ -52,7 +43,6 @@ public class ChapterAssets extends Actor {
         this.howManyPageSwaps = howManyPageSwaps;
         this.screenHeight = mainClass.getScreenHeight();
         this.screenWidth = mainClass.getScreenWidth();
-//        currentStepsText = mainClass.getStepsString();
 
         this.mainClass = MainClass2;
         font12 = mainClass.getFont12();
@@ -93,8 +83,6 @@ public class ChapterAssets extends Actor {
             batch.draw(mainClass.getTextIndicator_3_3(),screenWidth/6+screenWidth/4/1.5f*2+40,25,screenWidth/4/1.5f, 30);
         }
 
-
-//        font12.draw(batch,currentStepsText +" " +String.valueOf(steps), screenWidth-50f,screenHeight-20f);
 
 
     }

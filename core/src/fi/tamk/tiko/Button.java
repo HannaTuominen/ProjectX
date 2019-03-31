@@ -34,12 +34,8 @@ public class Button extends Actor {
     Group group;
     Group group2;
     static float scrollerWidth;
-    boolean pan = false;
 
-    float touchDownX;
-    float touchDownY;
     float touchUpX;
-    float touchUpY;
 
     String currentStepsText;
 
@@ -260,7 +256,6 @@ public class Button extends Actor {
             13. Mute and unMute music
             14. Chapter number text in the game left corner
             15. Current and needed steps for at the current time
-            16,17,18. text_now and text_hidden for the 3x textbox indicators
             */
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
@@ -270,7 +265,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 10);
+                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
                             mainClass.setChoseWrong_1(true);
                         }
 
@@ -349,6 +344,11 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter5_1(mainClass.getStepsToOpenChapter5_1() + 1000);
+                            mainClass.setChoseWrong_2(true);
+                        }
+
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -362,6 +362,290 @@ public class Button extends Actor {
                         mainClass.prefs.flush();
                     }
 
+                } else if (mainClass.getChapterNumber() == 6) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter6(true);
+                        mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 7) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter7(true);
+                        mainClass.prefs.putBoolean("clearedChapter7", mainClass.getClearedChapter7());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 8) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter8(true);
+                        mainClass.prefs.putBoolean("clearedChapter8", mainClass.getClearedChapter8());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 9) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter9(true);
+                        mainClass.prefs.putBoolean("clearedChapter9", mainClass.getClearedChapter9());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 10) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter10(true);
+                        mainClass.prefs.putBoolean("clearedChapter10", mainClass.getClearedChapter10());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 11) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter11(true);
+                        mainClass.prefs.putBoolean("clearedChapter11", mainClass.getClearedChapter11());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 12) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter12_1(mainClass.getStepsToOpenChapter12_1() + 200);
+                            mainClass.setChoseWrong_3(true);
+                        }
+
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter12(true);
+                        mainClass.prefs.putBoolean("clearedChapter12", mainClass.getClearedChapter12());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 13) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter13(true);
+                        mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 15) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter15(true);
+                        mainClass.prefs.putBoolean("clearedChapter15", mainClass.getClearedChapter15());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 16) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter16(true);
+                        mainClass.prefs.putBoolean("clearedChapter16", mainClass.getClearedChapter16());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 17) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter17(true);
+                        mainClass.prefs.putBoolean("clearedChapter17", mainClass.getClearedChapter17());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 18) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter18_1(mainClass.getStepsToOpenChapter18_1() + 800);
+                            mainClass.setChoseWrong_4(true);
+                        }
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter18(true);
+                        mainClass.prefs.putBoolean("clearedChapter18", mainClass.getClearedChapter18());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 19) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter19(true);
+                        mainClass.prefs.putBoolean("clearedChapter19", mainClass.getClearedChapter19());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 20) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter20(true);
+                        mainClass.prefs.putBoolean("clearedChapter20", mainClass.getClearedChapter20());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 21) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter21(true);
+                        mainClass.prefs.putBoolean("clearedChapte21", mainClass.getClearedChapter21());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 22) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter22(true);
+                        mainClass.prefs.putBoolean("clearedChapter22", mainClass.getClearedChapter22());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 23) {
+
+                    System.out.println("LAST CHAPTER");
                 }
 
                 //COMPUTER TESTING ADD 250 STEPS
@@ -571,11 +855,9 @@ public class Button extends Actor {
             font12.draw(batch,textForAButton, getStepsNeededAndCurrentlyHavePlace(), buttonTextYPlace);
         } else if(useForTheButton != 10) {
             font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
-
         }
         //STORY BOX TEXT
         else {
-
             font12.draw(batch,textForAButton, 40f, yPlace+buttonHeight+50);
         }
 
