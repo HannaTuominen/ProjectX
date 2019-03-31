@@ -277,8 +277,6 @@ public class GameScreen implements Screen {
             textboxHeight = screenHeight/5f;
         }
 
-        skin = new Skin( Gdx.files.internal("uiskin.json"));
-
 
         openedFirstTime = mainClass.prefs.getBoolean("openedFirstTime");
 
