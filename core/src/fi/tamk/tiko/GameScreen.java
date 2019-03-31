@@ -259,7 +259,7 @@ public class GameScreen implements Screen {
 
         //CHAPTER TEXT IN THE BOTTOM LEFT CORNER OF THE TEXT BOX
         mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter() + " " + mainClass.getChapterNumber(),0,14,
-                40, 50, 30 ,20,0);
+                40, screenHeight/18, 30 ,20,0);
 
     }
 
@@ -272,9 +272,9 @@ public class GameScreen implements Screen {
         screenWidth = mainClass.getScreenWidth();
 //        mainClass.clearGroup(15);
         if(screenHeight < 800) {
-            textboxHeight = screenHeight/3.3f;
+            textboxHeight = screenHeight/3.7f;
         } else if (screenHeight >= 1000) {
-            textboxHeight = screenHeight/5f;
+            textboxHeight = screenHeight/4f;
         }
 
 
@@ -374,22 +374,22 @@ public class GameScreen implements Screen {
             mainClass.setSwapped(true);
             if(!mainClass.getClearedChapter1()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
+                        screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_2() +mainClass.getStepsToOpenChapter2_2(),0,6,
-                        screenWidth-buttonWidth*2-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
+                        screenWidth-buttonWidth*2-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
 
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        screenWidth-buttonWidth*2-50, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter2_1());
+                        screenWidth-buttonWidth*2-50, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter2_1());
 
             } else {
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        screenWidth-buttonWidth*2-50, 50, screenWidth/4 ,20,0);
+                        screenWidth-buttonWidth*2-50, screenHeight/18, screenWidth/4 ,20,0);
             }
 
 
@@ -412,22 +412,22 @@ public class GameScreen implements Screen {
             }
             if(!mainClass.getClearedChapter2()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter3_1(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter3_1());
+                        screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter3_1());
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter3_1());
+                        20, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter3_1());
             } else {
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,0);
+                        20, screenHeight/18, screenWidth/4 ,20,0);
             }
 
             mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
-                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
+                    50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
 
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter2_1Text(),2.1f,10,
@@ -449,21 +449,21 @@ public class GameScreen implements Screen {
 
             if(!mainClass.getClearedChapter3()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter4_1(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter4_1());
+                        screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter4_1());
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter4_1());
+                        20, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter4_1());
             } else {
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,0);
+                        20, screenHeight/18, screenWidth/4 ,20,0);
             }
             mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
-                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
+                    50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter3_1Text(),3.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
@@ -482,22 +482,22 @@ public class GameScreen implements Screen {
 
             if(!mainClass.getClearedChapter4()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter5_1(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter5_1());
+                        screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter5_1());
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter5_1());
+                        20, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter5_1());
             } else {
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,0);
+                        20, screenHeight/18, screenWidth/4 ,20,0);
             }
 
             mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
-                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
+                    50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter4_1Text(),4.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);
@@ -515,21 +515,21 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",5 );
             if(!mainClass.getClearedChapter5()) {
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getStepsString() +mainClass.getStepsToOpenChapter6_1(),0,6,
-                        screenWidth-buttonWidth-50, textboxHeight+30, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter6_1());
+                        screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter6_1());
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,mainClass.getStepsToOpenChapter6_1());
+                        20, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter6_1());
             } else {
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+30, buttonWidth /5 ,buttonHeight,0);
+                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
-                        20, 50, screenWidth/4 ,20,0);
+                        20, screenHeight/18, screenWidth/4 ,20,0);
             }
             mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
-                    50, textboxHeight+30, buttonWidth/5 ,buttonHeight,0);
+                    50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
 
             mainClass.createButtons(new Texture("textboxEMPTY.png"),mainClass.getChapter5_1Text(),5.1f,10,
                     20f,10f, screenWidth-40f,textboxHeight,0);

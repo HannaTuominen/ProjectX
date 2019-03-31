@@ -37,6 +37,8 @@ public class Button extends Actor {
 
     float touchUpX;
 
+    float textboxHeight;
+
     String currentStepsText;
 
 
@@ -1125,7 +1127,12 @@ public class Button extends Actor {
         }
         //STORY BOX TEXT
         else {
-            font12.draw(batch,textForAButton, 40f, yPlace+buttonHeight+50);
+            if(mainClass.getScreenHeight() < 800) {
+                textboxHeight = mainClass.getScreenHeight()/3.7f;
+            } else if (mainClass.getScreenHeight() >= 1000) {
+                textboxHeight = mainClass.getScreenHeight()/4f;
+            }
+            font12.draw(batch,textForAButton, 40f, textboxHeight);
         }
 
 

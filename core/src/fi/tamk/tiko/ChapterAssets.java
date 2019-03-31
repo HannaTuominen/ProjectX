@@ -62,7 +62,7 @@ public class ChapterAssets extends Actor {
     @Override
     public void draw(Batch batch, float alpha) {
         steps = mainClass.getCurrentSteps();
-       batch.setProjectionMatrix(mainClass.camera.combined);
+        batch.setProjectionMatrix(mainClass.camera.combined);
 
         batch.draw(texture,
                 this.getX(), this.getY(),
@@ -78,9 +78,9 @@ public class ChapterAssets extends Actor {
         batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
 
         if(howManyPageSwaps == 3) {
-            batch.draw(mainClass.getTextIndicator_3_1(),screenWidth/6,25,screenWidth/4/1.5f, 30);
-            batch.draw(mainClass.getTextIndicator_3_2(),screenWidth/6+screenWidth/4/1.5f+20,25,screenWidth/4/1.5f, 30);
-            batch.draw(mainClass.getTextIndicator_3_3(),screenWidth/6+screenWidth/4/1.5f*2+40,25,screenWidth/4/1.5f, 30);
+            batch.draw(mainClass.getTextIndicator_3_1(),screenWidth/6,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_3_2(),screenWidth/6+screenWidth/4/1.5f+20,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_3_3(),screenWidth/6+screenWidth/4/1.5f*2+40,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
         }
 
 
