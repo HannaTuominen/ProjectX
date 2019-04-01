@@ -216,7 +216,7 @@ public class GameScreen implements Screen {
 
 
         public void requiredStepsFirstLoad() {
-        mainClass.setStepsToOpenChapter2_1(5);//(500); //WRONG + 300 (5);//
+        mainClass.setStepsToOpenChapter2_1(10);//(500); //WRONG + 300 (5);//
         mainClass.setStepsToOpenChapter2_2(10);//(500);
         mainClass.setStepsToOpenChapter3_1(5);//(700);
         mainClass.setStepsToOpenChapter4_1(10);//(4000);
