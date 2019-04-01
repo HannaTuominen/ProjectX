@@ -595,7 +595,7 @@ public class MainClass extends Game {
 	}
 
 	public void playBackgroundMusic() {
-//		music.play();                          // resumes the playback
+		music.play();                          // resumes the playback
 
     }
 
