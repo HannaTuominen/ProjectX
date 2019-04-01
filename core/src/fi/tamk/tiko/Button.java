@@ -537,7 +537,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
+                            mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 5);//300);
                             mainClass.setChoseWrong_1(true);
                         }
 
@@ -599,7 +599,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 1000);
+                            mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 5);// 1000);
                             mainClass.setChoseWrong_2(true);
                         }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
@@ -726,7 +726,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 200);
+                            mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 5);//+ 200);
                             mainClass.setChoseWrong_3(true);
                         }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
@@ -955,9 +955,9 @@ public class Button extends Actor {
                 }
 
                 //COMPUTER TESTING ADD 250 STEPS
-                if (!enoughSteps) {
-                    mainClass.setSteps(880000);
-                }
+//                if (!enoughSteps) {
+//                    mainClass.setSteps(880000);
+//                }
 
 
             } else if (getUseForTheButton() == 7) {
