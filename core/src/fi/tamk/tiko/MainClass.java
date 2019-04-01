@@ -1029,6 +1029,261 @@ public class MainClass extends Game {
 	public String getChapter5_2Text() {
 		return chapter5_2;
 	}
+	public String getChapter5_3Text() {
+		return chapter5_3;
+	}
+
+	public String getChapter6_1Text() {
+		return chapter6_1;
+	}
+	public String getChapter6_2Text() {
+		return chapter6_2;
+	}
+	public String getChapter6_3Text() {
+		return chapter6_3;
+	}
+
+	public String getChapter7_1Text() {
+		return chapter7_1;
+	}
+	public String getChapter7_2Text() {
+		return chapter7_2;
+	}
+	public String getChapter7_3Text() {
+		return chapter7_3;
+	}
+
+	public String getChapter8_1Text() {
+		return chapter8_1;
+	}
+	public String getChapter8_2Text() {
+		return chapter8_2;
+	}
+	public String getChapter8_3Text() {
+		return chapter8_3;
+	}
+
+	public String getChapter9_1Text() {
+		return chapter9_1;
+	}
+	public String getChapter9_2Text() {
+		return chapter9_2;
+	}
+	public String getChapter9_3Text() { return chapter9_3; }
+	public String getChapter9_4Text() { return chapter9_4; }
+
+	public String getChapter10_1Text() {
+		return chapter10_1;
+	}
+	public String getChapter10_2Text() {
+		return chapter10_2;
+	}
+	public String getChapter10_3Text() {
+		return chapter10_3;
+	}
+
+	public String getChapter11_1Text() {
+		return chapter11_1;
+	}
+	public String getChapter11_2Text() {
+		return chapter11_2;
+	}
+	public String getChapter11_3Text() {
+		return chapter11_3;
+	}
+	public String getChapter11_4Text() {
+		return chapter11_4;
+	}
+
+	public String getChapter12_1Text() {
+		return chapter12_1;
+	}
+	public String getChapter12_2Text() {
+		return chapter12_2;
+	}
+	public String getChapter12_3Text() {
+		return chapter12_3;
+	}
+	public String getChapter12_4Text() {
+		return chapter12_4;
+	}
+
+	public String getChapter13_1Text() {
+		return chapter13_1;
+	}
+	public String getChapter13_2Text() {
+		return chapter13_2;
+	}
+	public String getChapter13_3Text() {
+		return chapter13_3;
+	}
+	public String getChapter13_4Text() {
+		return chapter13_4;
+	}
+
+	public String getChapter14_1Text() {
+		return chapter14_1;
+	}
+	public String getChapter14_2Text() {
+		return chapter14_2;
+	}
+	public String getChapter14_3Text() {
+		return chapter14_3;
+	}
+	public String getChapter14_4Text() {
+		return chapter14_4;
+	}
+
+	public String getChapter15_1Text() {
+		return chapter15_1;
+	}
+	public String getChapter15_2Text() {
+		return chapter15_2;
+	}
+	public String getChapter15_3Text() {
+		return chapter15_3;
+	}
+	public String getChapter15_4Text() {
+		return chapter15_4;
+	}
+	public String getChapter15_5Text() {
+		return chapter15_5;
+	}
+
+	public String getChapter16_1Text() {
+		return chapter16_1;
+	}
+	public String getChapter16_2Text() {
+		return chapter16_2;
+	}
+	public String getChapter16_3Text() {
+		return chapter16_3;
+	}
+	public String getChapter16_4Text() {
+		return chapter16_4;
+	}
+	public String getChapter16_5Text() {
+		return chapter16_5;
+	}
+
+	public String getChapter17_1Text() {
+		return chapter17_1;
+	}
+	public String getChapter17_2Text() {
+		return chapter17_2;
+	}
+	public String getChapter17_3Text() {
+		return chapter17_3;
+	}
+	public String getChapter17_4Text() {
+		return chapter17_4;
+	}
+	public String getChapter17_5Text() {
+		return chapter17_5;
+	}
+	public String getChapter17_6Text() {
+		return chapter17_6;
+	}
+	public String getChapter17_7Text() {
+		return chapter17_7;
+	}
+	public String getChapter17_8Text() {
+		return chapter17_8;
+	}
+
+	public String getChapter18_1Text() {
+		return chapter18_1;
+	}
+	public String getChapter18_2Text() {
+		return chapter18_2;
+	}
+	public String getChapter18_3Text() {
+		return chapter18_3;
+	}
+	public String getChapter18_4Text() {
+		return chapter18_4;
+	}
+	public String getChapter18_5Text() {
+		return chapter18_5;
+	}
+
+	public String getChapter19_1Text() {
+		return chapter19_1;
+	}
+	public String getChapter19_2Text() {
+		return chapter19_2;
+	}
+	public String getChapter19_3Text() {
+		return chapter19_3;
+	}
+	public String getChapter19_4Text() {
+		return chapter19_4;
+	}
+
+	public String getChapter20_1Text() {
+		return chapter20_1;
+	}
+	public String getChapter20_2Text() {
+		return chapter20_2;
+	}
+	public String getChapter20_3Text() {
+		return chapter20_3;
+	}
+	public String getChapter20_4Text() {
+		return chapter20_4;
+	}
+
+	public String getChapter21_1Text() {
+		return chapter21_1;
+	}
+	public String getChapter21_2Text() {
+		return chapter21_2;
+	}
+	public String getChapter21_3Text() {
+		return chapter21_3;
+	}
+	public String getChapter21_4Text() {
+		return chapter21_4;
+	}
+	public String getChapter21_5Text() {
+		return chapter21_5;
+	}
+
+	public String getChapter22_1Text() {
+		return chapter22_1;
+	}
+	public String getChapter22_2Text() {
+		return chapter22_2;
+	}
+	public String getChapter22_3Text() {
+		return chapter22_3;
+	}
+	public String getChapter22_4Text() {
+		return chapter22_4;
+	}
+	public String getChapter22_5Text() {
+		return chapter22_5;
+	}
+	public String getChapter22_6Text() {
+		return chapter22_6;
+	}
+	public String getChapter22_7Text() {
+		return chapter22_7;
+	}
+
+	public String getChapter23_1Text() {
+		return chapter23_1;
+	}
+	public String getChapter23_2Text() {
+		return chapter23_2;
+	}
+	public String getChapter23_3Text() {
+		return chapter23_3;
+	}
+	public String getChapter23_4Text() {
+		return chapter23_4;
+	}
+
 
 	public String getNext() {
 		return next;
@@ -1334,24 +1589,24 @@ public class MainClass extends Game {
 		this.clearedChapter4 = clearedChapter4;
 	}
 	public void setClearedChapter5(boolean clearedChapter5) { this.clearedChapter5 = clearedChapter5; }
-	public void setClearedChapter6(boolean clearedChapter6) { this.clearedChapter5 = clearedChapter6; }
-	public void setClearedChapter7(boolean clearedChapter7) { this.clearedChapter5 = clearedChapter7; }
-	public void setClearedChapter8(boolean clearedChapter8) { this.clearedChapter5 = clearedChapter8; }
-	public void setClearedChapter9(boolean clearedChapter9) { this.clearedChapter5 = clearedChapter9; }
-	public void setClearedChapter10(boolean clearedChapter10) { this.clearedChapter5 = clearedChapter10; }
-	public void setClearedChapter11(boolean clearedChapter11) { this.clearedChapter5 = clearedChapter11; }
-	public void setClearedChapter12(boolean clearedChapter12) { this.clearedChapter5 = clearedChapter12; }
-	public void setClearedChapter13(boolean clearedChapter13) { this.clearedChapter5 = clearedChapter13; }
-	public void setClearedChapter14(boolean clearedChapter14) { this.clearedChapter5 = clearedChapter14; }
-	public void setClearedChapter15(boolean clearedChapter15) { this.clearedChapter5 = clearedChapter15; }
-	public void setClearedChapter16(boolean clearedChapter16) { this.clearedChapter5 = clearedChapter16; }
-	public void setClearedChapter17(boolean clearedChapter17) { this.clearedChapter5 = clearedChapter17; }
-	public void setClearedChapter18(boolean clearedChapter18) { this.clearedChapter5 = clearedChapter18; }
-	public void setClearedChapter19(boolean clearedChapter19) { this.clearedChapter5 = clearedChapter19; }
-	public void setClearedChapter20(boolean clearedChapter20) { this.clearedChapter5 = clearedChapter20; }
-	public void setClearedChapter21(boolean clearedChapter21) { this.clearedChapter5 = clearedChapter21; }
-	public void setClearedChapter22(boolean clearedChapter22) { this.clearedChapter5 = clearedChapter22; }
-	public void setClearedChapter23(boolean clearedChapter23) { this.clearedChapter5 = clearedChapter23; }
+	public void setClearedChapter6(boolean clearedChapter6) { this.clearedChapter6 = clearedChapter6; }
+	public void setClearedChapter7(boolean clearedChapter7) { this.clearedChapter7 = clearedChapter7; }
+	public void setClearedChapter8(boolean clearedChapter8) { this.clearedChapter8 = clearedChapter8; }
+	public void setClearedChapter9(boolean clearedChapter9) { this.clearedChapter9 = clearedChapter9; }
+	public void setClearedChapter10(boolean clearedChapter10) { this.clearedChapter10 = clearedChapter10; }
+	public void setClearedChapter11(boolean clearedChapter11) { this.clearedChapter11 = clearedChapter11; }
+	public void setClearedChapter12(boolean clearedChapter12) { this.clearedChapter12 = clearedChapter12; }
+	public void setClearedChapter13(boolean clearedChapter13) { this.clearedChapter13 = clearedChapter13; }
+	public void setClearedChapter14(boolean clearedChapter14) { this.clearedChapter14 = clearedChapter14; }
+	public void setClearedChapter15(boolean clearedChapter15) { this.clearedChapter15 = clearedChapter15; }
+	public void setClearedChapter16(boolean clearedChapter16) { this.clearedChapter16 = clearedChapter16; }
+	public void setClearedChapter17(boolean clearedChapter17) { this.clearedChapter17 = clearedChapter17; }
+	public void setClearedChapter18(boolean clearedChapter18) { this.clearedChapter18 = clearedChapter18; }
+	public void setClearedChapter19(boolean clearedChapter19) { this.clearedChapter19 = clearedChapter19; }
+	public void setClearedChapter20(boolean clearedChapter20) { this.clearedChapter20 = clearedChapter20; }
+	public void setClearedChapter21(boolean clearedChapter21) { this.clearedChapter21 = clearedChapter21; }
+	public void setClearedChapter22(boolean clearedChapter22) { this.clearedChapter22 = clearedChapter22; }
+	public void setClearedChapter23(boolean clearedChapter23) { this.clearedChapter23 = clearedChapter23; }
 
 
 	public String getPlay() {

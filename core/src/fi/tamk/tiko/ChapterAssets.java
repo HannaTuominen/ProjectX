@@ -77,10 +77,48 @@ public class ChapterAssets extends Actor {
 
         batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
 
-        if(howManyPageSwaps == 3) {
+        if(howManyPageSwaps == 2) {
+            batch.draw(mainClass.getTextIndicator_2_1(),screenWidth/6,screenHeight/40,screenWidth/4/1, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_2_2(),screenWidth/6+screenWidth/4f+20,screenHeight/40,screenWidth/4/1, screenHeight/40);
+        } else if(howManyPageSwaps == 3) {
             batch.draw(mainClass.getTextIndicator_3_1(),screenWidth/6,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
             batch.draw(mainClass.getTextIndicator_3_2(),screenWidth/6+screenWidth/4/1.5f+20,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
             batch.draw(mainClass.getTextIndicator_3_3(),screenWidth/6+screenWidth/4/1.5f*2+40,screenHeight/40,screenWidth/4/1.5f, screenHeight/40);
+        } else if(howManyPageSwaps == 4) {
+            batch.draw(mainClass.getTextIndicator_4_1(),screenWidth/6,screenHeight/40,screenWidth/4/2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_4_2(),screenWidth/6+screenWidth/4/2f+20,screenHeight/40,screenWidth/4/2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_4_3(),screenWidth/6+screenWidth/4/2f*2+40,screenHeight/40,screenWidth/4/2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_4_4(),screenWidth/6+screenWidth/4/2f*3+60,screenHeight/40,screenWidth/4/2f, screenHeight/40);
+        } else if(howManyPageSwaps == 5) {
+            batch.draw(mainClass.getTextIndicator_5_1(),screenWidth/6,screenHeight/40,screenWidth/4/2.7f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_5_2(),screenWidth/6+screenWidth/4/2.7f+20,screenHeight/40,screenWidth/4/2.7f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_5_3(),screenWidth/6+screenWidth/4/2.7f*2+40,screenHeight/40,screenWidth/4/2.7f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_5_4(),screenWidth/6+screenWidth/4/2.7f*3+60,screenHeight/40,screenWidth/4/2.7f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_5_5(),screenWidth/6+screenWidth/4/2.7f*4+80,screenHeight/40,screenWidth/4/2.7f, screenHeight/40);
+        } else if(howManyPageSwaps == 6) {
+            batch.draw(mainClass.getTextIndicator_6_1(),screenWidth/6,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_6_2(),screenWidth/6+screenWidth/4/3f+20,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_6_3(),screenWidth/6+screenWidth/4/3f*2+40,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_6_4(),screenWidth/6+screenWidth/4/3f*3+60,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_6_5(),screenWidth/6+screenWidth/4/3f*4+80,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_6_6(),screenWidth/6+screenWidth/4/3f*5+100,screenHeight/40,screenWidth/4/3.5f, screenHeight/40);
+        } else if(howManyPageSwaps == 7) {
+            batch.draw(mainClass.getTextIndicator_7_1(),screenWidth/6,screenHeight/40,screenWidth/4/4f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_2(),screenWidth/6+screenWidth/4/4f+20,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_3(),screenWidth/6+screenWidth/4/4f*2+40,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_4(),screenWidth/6+screenWidth/4/4f*3+60,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_5(),screenWidth/6+screenWidth/4/4f*4+80,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_6(),screenWidth/6+screenWidth/4/4f*5+100,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_7_7(),screenWidth/6+screenWidth/4/4f*6+120,screenHeight/40,screenWidth/4/4.2f, screenHeight/40);
+        } else if(howManyPageSwaps == 8) {
+            batch.draw(mainClass.getTextIndicator_8_1(),screenWidth/6,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_2(),screenWidth/6+screenWidth/4/5f+20,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_3(),screenWidth/6+screenWidth/4/5f*2+40,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_4(),screenWidth/6+screenWidth/4/5f*3+60,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_5(),screenWidth/6+screenWidth/4/5f*4+80,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_6(),screenWidth/6+screenWidth/4/5f*5+100,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_7(),screenWidth/6+screenWidth/4/5f*6+120,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
+            batch.draw(mainClass.getTextIndicator_8_8(),screenWidth/6+screenWidth/4/5f*7+140,screenHeight/40,screenWidth/4/4.5f, screenHeight/40);
         }
 
 

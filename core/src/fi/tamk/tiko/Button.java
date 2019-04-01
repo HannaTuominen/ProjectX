@@ -42,9 +42,11 @@ public class Button extends Actor {
     String currentStepsText;
 
 
+
     float stepsNeededAndCurrentlyHavePlace;
     int stepsLength;
     int howManyNumbersInStepsToOpenNextChapter;
+    float stepsXPlace;
     boolean swappedIndicator = true;
 
     public void indicatorsX2_stage_1() {
@@ -127,7 +129,7 @@ public class Button extends Actor {
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_now_3.png")));
     }
-    public void indicatorsX4_stage_5() {
+    public void indicatorsX5_stage_5() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
@@ -368,7 +370,7 @@ public class Button extends Actor {
         }else if(stepsLength ==4) {
             setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.5f);
         } else if(stepsLength ==5) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.2f);
+            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.1f);
         } else if(stepsLength ==6) {
             setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.9f);
         } else if(stepsLength ==7) {
@@ -376,9 +378,9 @@ public class Button extends Actor {
         } else if(stepsLength ==8) {
             setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.5f);
         } else if(stepsLength ==9) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.4f);
+            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.25f);
         } else if(stepsLength ==10) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.23f);
+            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.15f);
         } else if(stepsLength ==11) {
             setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.05f);
         } else if(stepsLength ==12) {
@@ -596,6 +598,10 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 1000);
+                            mainClass.setChoseWrong_2(true);
+                        }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -614,11 +620,6 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
-                        if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter5_1(mainClass.getStepsToOpenChapter5_1() + 1000);
-                            mainClass.setChoseWrong_2(true);
-                        }
-
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -637,6 +638,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+//                        System.out.println(mainClass.getChapterNumber());
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
                         mainClass.removeSteps(stepsToOpenNextChapter);
@@ -644,9 +646,11 @@ public class Button extends Actor {
                         mainClass.setCurrentFurthestChapter(chapterNumber + 1);
                         mainClass.setClearedChapter6(true);
                         mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
+                        System.out.println(mainClass.getClearedChapter6());
                         mainClass.setChapterNumber(chapterNumber + 1);
                         mainClass.setSwapped(false);
                         mainClass.prefs.flush();
+                        System.out.println("GOT TO CHAPTER 6 END BUTTON");
                     }
 
                 } else if (mainClass.getChapterNumber() == 7) {
@@ -721,6 +725,10 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 200);
+                            mainClass.setChoseWrong_3(true);
+                        }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -738,11 +746,6 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
-                        if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter12_1(mainClass.getStepsToOpenChapter12_1() + 200);
-                            mainClass.setChoseWrong_3(true);
-                        }
-
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -767,6 +770,23 @@ public class Button extends Actor {
                         enoughSteps = true;
                         mainClass.setCurrentFurthestChapter(chapterNumber + 1);
                         mainClass.setClearedChapter13(true);
+                        mainClass.prefs.putBoolean("clearedChapter13", mainClass.getClearedChapter13());
+                        mainClass.setChapterNumber(chapterNumber + 1);
+                        mainClass.setSwapped(false);
+                        mainClass.prefs.flush();
+                    }
+
+                } else if (mainClass.getChapterNumber() == 14) {
+                    if (stepsToOpenNextChapter > steps) {
+                        System.out.println("ERROR TOO FEW STEPS");
+                    } else {
+                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                        System.out.println("REMOVING STEPS");
+                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                        mainClass.removeSteps(stepsToOpenNextChapter);
+                        enoughSteps = true;
+                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                        mainClass.setClearedChapter14(true);
                         mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
                         mainClass.setChapterNumber(chapterNumber + 1);
                         mainClass.setSwapped(false);
@@ -811,6 +831,10 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
+                        if (getUseForTheButton() == 5) {
+                            mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 800);
+                            mainClass.setChoseWrong_4(true);
+                        }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -828,10 +852,6 @@ public class Button extends Actor {
                     if (stepsToOpenNextChapter > steps) {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
-                        if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter18_1(mainClass.getStepsToOpenChapter18_1() + 800);
-                            mainClass.setChoseWrong_4(true);
-                        }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                         System.out.println("REMOVING STEPS");
                         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -914,8 +934,24 @@ public class Button extends Actor {
                     }
 
                 } else if (mainClass.getChapterNumber() == 23) {
-
+                    if (getUseForTheButton() == 5) {
+                        System.out.println("MENIS TAKAS ALKUUN MUTTA EI JAKSANU KKOODATA VIEL AFDSFD");
+                    }
+                    if (getUseForTheButton() == 6) {
+                        System.out.println("En tiiä mitä täst pitäs tapahtuu sdfsdf");
+                    }
                     System.out.println("LAST CHAPTER");
+                    mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                    System.out.println("REMOVING STEPS");
+                    System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                    mainClass.removeSteps(stepsToOpenNextChapter);
+                    enoughSteps = true;
+                    mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                    mainClass.setClearedChapter22(true);
+                    mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
+                    mainClass.setChapterNumber(chapterNumber + 1);
+                    mainClass.setSwapped(false);
+                    mainClass.prefs.flush();
                 }
 
                 //COMPUTER TESTING ADD 250 STEPS
@@ -999,36 +1035,360 @@ public class Button extends Actor {
                 }else if (getStoryID() == 2.1f) {
                     setTextForAButton(mainClass.getChapter2_2Text());
                     setStoryID(2.2f);
-                    indicatorsX3_stage_1();
+                    indicatorsX2_stage_1();
                 } else if (getStoryID() == 2.2f) {
                     setTextForAButton(mainClass.getChapter2_1Text());
                     setStoryID(2.1f);
-                    indicatorsX3_stage_2();
+                    indicatorsX2_stage_2();
                 } else if (getStoryID() == 3.1f) {
                     setTextForAButton(mainClass.getChapter3_2Text());
                     setStoryID(3.2f);
-                    indicatorsX3_stage_1();
+                    indicatorsX2_stage_1();
                 } else if (getStoryID() == 3.2f) {
                     setTextForAButton(mainClass.getChapter3_1Text());
                     setStoryID(3.1f);
-                    indicatorsX3_stage_2();
+                    indicatorsX2_stage_2();
                 } else if (getStoryID() == 4.1f) {
                     setTextForAButton(mainClass.getChapter4_2Text());
                     setStoryID(4.2f);
-                    indicatorsX3_stage_1();
+                    indicatorsX2_stage_1();
                 } else if (getStoryID() == 4.2f) {
                     setTextForAButton(mainClass.getChapter4_1Text());
                     setStoryID(4.1f);
-                    indicatorsX3_stage_2();
+                    indicatorsX2_stage_2();
                 } else if (getStoryID() == 5.1f) {
                     setTextForAButton(mainClass.getChapter5_2Text());
                     setStoryID(5.2f);
                     indicatorsX3_stage_1();
                 } else if (getStoryID() == 5.2f) {
+                    setTextForAButton(mainClass.getChapter5_3Text());
+                    setStoryID(5.3f);
+                    indicatorsX3_stage_2();
+                }  else if (getStoryID() == 5.3f) {
                     setTextForAButton(mainClass.getChapter5_1Text());
                     setStoryID(5.1f);
+                    indicatorsX3_stage_3();
+                } else if (getStoryID() == 6.1f) {
+                    setTextForAButton(mainClass.getChapter6_2Text());
+                    setStoryID(6.2f);
+                    indicatorsX3_stage_1();
+                } else if (getStoryID() == 6.2f) {
+                    setTextForAButton(mainClass.getChapter6_3Text());
+                    setStoryID(6.3f);
                     indicatorsX3_stage_2();
+                }  else if (getStoryID() == 6.3f) {
+                    setTextForAButton(mainClass.getChapter6_1Text());
+                    setStoryID(6.1f);
+                    indicatorsX3_stage_3();
+                } else if (getStoryID() == 7.1f) {
+                    setTextForAButton(mainClass.getChapter7_2Text());
+                    setStoryID(7.2f);
+                    indicatorsX3_stage_1();
+                } else if (getStoryID() == 7.2f) {
+                    setTextForAButton(mainClass.getChapter7_3Text());
+                    setStoryID(7.3f);
+                    indicatorsX3_stage_2();
+                }  else if (getStoryID() == 7.3f) {
+                    setTextForAButton(mainClass.getChapter7_1Text());
+                    setStoryID(7.1f);
+                    indicatorsX3_stage_3();
+                } else if (getStoryID() == 8.1f) {
+                    setTextForAButton(mainClass.getChapter8_2Text());
+                    setStoryID(8.2f);
+                    indicatorsX3_stage_1();
+                } else if (getStoryID() == 8.2f) {
+                    setTextForAButton(mainClass.getChapter8_3Text());
+                    setStoryID(8.3f);
+                    indicatorsX3_stage_2();
+                }  else if (getStoryID() == 8.3f) {
+                    setTextForAButton(mainClass.getChapter8_1Text());
+                    setStoryID(8.1f);
+                    indicatorsX3_stage_3();
+                } else if (getStoryID() == 9.1f) {
+                    setTextForAButton(mainClass.getChapter9_2Text());
+                    setStoryID(9.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 9.2f) {
+                    setTextForAButton(mainClass.getChapter9_3Text());
+                    setStoryID(9.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 9.3f) {
+                    setTextForAButton(mainClass.getChapter9_4Text());
+                    setStoryID(9.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 9.4f) {
+                    setTextForAButton(mainClass.getChapter9_1Text());
+                    setStoryID(9.1f);
+                    indicatorsX4_stage_4();
+                }  else if (getStoryID() == 10.1f) {
+                    setTextForAButton(mainClass.getChapter10_2Text());
+                    setStoryID(10.2f);
+                    indicatorsX3_stage_1();
+                } else if (getStoryID() == 10.2f) {
+                    setTextForAButton(mainClass.getChapter10_3Text());
+                    setStoryID(10.3f);
+                    indicatorsX3_stage_2();
+                }  else if (getStoryID() == 10.3f) {
+                    setTextForAButton(mainClass.getChapter10_1Text());
+                    setStoryID(10.1f);
+                    indicatorsX3_stage_3();
+                } else if (getStoryID() == 11.1f) {
+                    setTextForAButton(mainClass.getChapter11_2Text());
+                    setStoryID(11.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 11.2f) {
+                    setTextForAButton(mainClass.getChapter11_3Text());
+                    setStoryID(11.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 11.3f) {
+                    setTextForAButton(mainClass.getChapter11_4Text());
+                    setStoryID(11.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 11.4f) {
+                    setTextForAButton(mainClass.getChapter11_1Text());
+                    setStoryID(11.1f);
+                    indicatorsX4_stage_4();
+                } else if (getStoryID() == 12.1f) {
+                    setTextForAButton(mainClass.getChapter12_2Text());
+                    setStoryID(12.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 12.2f) {
+                    setTextForAButton(mainClass.getChapter12_3Text());
+                    setStoryID(12.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 12.3f) {
+                    setTextForAButton(mainClass.getChapter12_4Text());
+                    setStoryID(12.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 12.4f) {
+                    setTextForAButton(mainClass.getChapter12_1Text());
+                    setStoryID(12.1f);
+                    indicatorsX4_stage_4();
+                } else if (getStoryID() == 13.1f) {
+                    setTextForAButton(mainClass.getChapter13_2Text());
+                    setStoryID(13.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 13.2f) {
+                    setTextForAButton(mainClass.getChapter13_3Text());
+                    setStoryID(13.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 13.3f) {
+                    setTextForAButton(mainClass.getChapter13_4Text());
+                    setStoryID(13.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 13.4f) {
+                    setTextForAButton(mainClass.getChapter13_1Text());
+                    setStoryID(13.1f);
+                    indicatorsX4_stage_4();
+                } else if (getStoryID() == 14.1f) {
+                    setTextForAButton(mainClass.getChapter14_2Text());
+                    setStoryID(14.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 14.2f) {
+                    setTextForAButton(mainClass.getChapter14_3Text());
+                    setStoryID(14.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 14.3f) {
+                    setTextForAButton(mainClass.getChapter14_4Text());
+                    setStoryID(14.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 14.4f) {
+                    setTextForAButton(mainClass.getChapter14_1Text());
+                    setStoryID(14.1f);
+                    indicatorsX4_stage_4();
+                } else if (getStoryID() == 15.1f) {
+                    setTextForAButton(mainClass.getChapter15_2Text());
+                    setStoryID(15.2f);
+                    indicatorsX5_stage_1();
+                } else if (getStoryID() == 15.2f) {
+                    setTextForAButton(mainClass.getChapter15_3Text());
+                    setStoryID(15.3f);
+                    indicatorsX5_stage_2();
+                }  else if (getStoryID() == 15.3f) {
+                    setTextForAButton(mainClass.getChapter15_4Text());
+                    setStoryID(15.4f);
+                    indicatorsX5_stage_3();
+                } else if (getStoryID() == 15.4f) {
+                    setTextForAButton(mainClass.getChapter15_5Text());
+                    setStoryID(15.5f);
+                    indicatorsX5_stage_4();
+                } else if (getStoryID() == 15.5f) {
+                    setTextForAButton(mainClass.getChapter15_1Text());
+                    setStoryID(15.1f);
+                    indicatorsX5_stage_5();
+                } else if (getStoryID() == 16.1f) {
+                    setTextForAButton(mainClass.getChapter16_2Text());
+                    setStoryID(16.2f);
+                    indicatorsX5_stage_1();
+                } else if (getStoryID() == 16.2f) {
+                    setTextForAButton(mainClass.getChapter16_3Text());
+                    setStoryID(16.3f);
+                    indicatorsX5_stage_2();
+                }  else if (getStoryID() == 16.3f) {
+                    setTextForAButton(mainClass.getChapter16_4Text());
+                    setStoryID(16.4f);
+                    indicatorsX5_stage_3();
+                } else if (getStoryID() == 16.4f) {
+                    setTextForAButton(mainClass.getChapter16_5Text());
+                    setStoryID(16.5f);
+                    indicatorsX5_stage_4();
+                } else if (getStoryID() == 16.5f) {
+                    setTextForAButton(mainClass.getChapter16_1Text());
+                    setStoryID(16.1f);
+                    indicatorsX5_stage_5();
+                } else if (getStoryID() == 17.1f) {
+                    setTextForAButton(mainClass.getChapter17_2Text());
+                    setStoryID(17.2f);
+                    indicatorsX8_stage_1();
+                } else if (getStoryID() == 17.2f) {
+                    setTextForAButton(mainClass.getChapter17_3Text());
+                    setStoryID(17.3f);
+                    indicatorsX8_stage_2();
+                }  else if (getStoryID() == 17.3f) {
+                    setTextForAButton(mainClass.getChapter17_4Text());
+                    setStoryID(17.4f);
+                    indicatorsX8_stage_3();
+                } else if (getStoryID() == 17.4f) {
+                    setTextForAButton(mainClass.getChapter17_5Text());
+                    setStoryID(17.5f);
+                    indicatorsX8_stage_4();
+                } else if (getStoryID() == 17.5f) {
+                    setTextForAButton(mainClass.getChapter17_6Text());
+                    setStoryID(17.6f);
+                    indicatorsX8_stage_5();
+                } else if (getStoryID() == 17.6f) {
+                    setTextForAButton(mainClass.getChapter17_7Text());
+                    setStoryID(17.7f);
+                    indicatorsX8_stage_6();
+                } else if (getStoryID() == 17.7f) {
+                    setTextForAButton(mainClass.getChapter17_8Text());
+                    setStoryID(17.8f);
+                    indicatorsX8_stage_7();
+                } else if (getStoryID() == 17.8f) {
+                    setTextForAButton(mainClass.getChapter17_1Text());
+                    setStoryID(17.1f);
+                    indicatorsX8_stage_8();
+                } else if (getStoryID() == 18.1f) {
+                    setTextForAButton(mainClass.getChapter18_2Text());
+                    setStoryID(18.2f);
+                    indicatorsX5_stage_1();
+                } else if (getStoryID() == 18.2f) {
+                    setTextForAButton(mainClass.getChapter18_3Text());
+                    setStoryID(18.3f);
+                    indicatorsX5_stage_2();
+                }  else if (getStoryID() == 18.3f) {
+                    setTextForAButton(mainClass.getChapter18_4Text());
+                    setStoryID(18.4f);
+                    indicatorsX5_stage_3();
+                } else if (getStoryID() == 18.4f) {
+                    setTextForAButton(mainClass.getChapter18_5Text());
+                    setStoryID(18.5f);
+                    indicatorsX5_stage_4();
+                } else if (getStoryID() == 18.5f) {
+                    setTextForAButton(mainClass.getChapter18_1Text());
+                    setStoryID(18.1f);
+                    indicatorsX5_stage_5();
+                } else if (getStoryID() == 19.1f) {
+                    setTextForAButton(mainClass.getChapter19_2Text());
+                    setStoryID(19.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 19.2f) {
+                    setTextForAButton(mainClass.getChapter19_3Text());
+                    setStoryID(19.3f);
+                    indicatorsX4_stage_2();
+                } else if (getStoryID() == 19.3f) {
+                    setTextForAButton(mainClass.getChapter19_4Text());
+                    setStoryID(19.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 19.4f) {
+                    setTextForAButton(mainClass.getChapter19_1Text());
+                    setStoryID(19.1f);
+                    indicatorsX4_stage_4();
+                }  else if (getStoryID() == 20.1f) {
+                    setTextForAButton(mainClass.getChapter20_2Text());
+                    setStoryID(20.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 20.2f) {
+                    setTextForAButton(mainClass.getChapter20_3Text());
+                    setStoryID(20.3f);
+                    indicatorsX4_stage_2();
+                }  else if (getStoryID() == 20.3f) {
+                    setTextForAButton(mainClass.getChapter20_4Text());
+                    setStoryID(20.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 20.4f) {
+                    setTextForAButton(mainClass.getChapter20_1Text());
+                    setStoryID(20.1f);
+                    indicatorsX4_stage_4();
+                } else if (getStoryID() == 21.1f) {
+                    setTextForAButton(mainClass.getChapter21_2Text());
+                    setStoryID(21.2f);
+                    indicatorsX5_stage_1();
+                } else if (getStoryID() == 21.2f) {
+                    setTextForAButton(mainClass.getChapter21_3Text());
+                    setStoryID(21.3f);
+                    indicatorsX5_stage_2();
+                }  else if (getStoryID() == 21.3f) {
+                    setTextForAButton(mainClass.getChapter21_4Text());
+                    setStoryID(21.4f);
+                    indicatorsX5_stage_3();
+                } else if (getStoryID() == 21.4f) {
+                    setTextForAButton(mainClass.getChapter21_5Text());
+                    setStoryID(21.5f);
+                    indicatorsX5_stage_4();
+                } else if (getStoryID() == 21.5f) {
+                    setTextForAButton(mainClass.getChapter21_1Text());
+                    setStoryID(21.1f);
+                    indicatorsX5_stage_5();
+                } else if (getStoryID() == 22.1f) {
+                    setTextForAButton(mainClass.getChapter22_2Text());
+                    setStoryID(22.2f);
+                    indicatorsX7_stage_1();
+                } else if (getStoryID() == 22.2f) {
+                    setTextForAButton(mainClass.getChapter22_3Text());
+                    setStoryID(22.3f);
+                    indicatorsX7_stage_2();
+                }  else if (getStoryID() == 22.3f) {
+                    setTextForAButton(mainClass.getChapter22_4Text());
+                    setStoryID(22.4f);
+                    indicatorsX7_stage_3();
+                } else if (getStoryID() == 22.4f) {
+                    setTextForAButton(mainClass.getChapter22_5Text());
+                    setStoryID(22.5f);
+                    indicatorsX7_stage_4();
+                } else if (getStoryID() == 22.5f) {
+                    setTextForAButton(mainClass.getChapter22_6Text());
+                    setStoryID(22.6f);
+                    indicatorsX7_stage_5();
+                } else if (getStoryID() == 22.6f) {
+                    setTextForAButton(mainClass.getChapter22_7Text());
+                    setStoryID(22.7f);
+                    indicatorsX7_stage_6();
+                } else if (getStoryID() == 22.7f) {
+                    setTextForAButton(mainClass.getChapter22_1Text());
+                    setStoryID(22.1f);
+                    indicatorsX7_stage_7();
+                } else if (getStoryID() == 23.1f) {
+                    setTextForAButton(mainClass.getChapter23_2Text());
+                    setStoryID(23.2f);
+                    indicatorsX4_stage_1();
+                } else if (getStoryID() == 23.2f) {
+                    setTextForAButton(mainClass.getChapter23_3Text());
+                    setStoryID(23.3f);
+                    indicatorsX4_stage_2();
+                } else if (getStoryID() == 23.3f) {
+                    setTextForAButton(mainClass.getChapter23_4Text());
+                    setStoryID(23.4f);
+                    indicatorsX4_stage_3();
+                } else if (getStoryID() == 23.4f) {
+                    setTextForAButton(mainClass.getChapter23_1Text());
+                    setStoryID(23.1f);
+                    indicatorsX4_stage_4();
                 }
+
+
+
+
 
 
             } else if (getUseForTheButton() == 11) {
@@ -1120,8 +1480,13 @@ public class Button extends Actor {
         } else if (useForTheButton == 15) {
 //            System.out.println(stepsToOpenNextChapter);
             setUpChapterTextBottomScreen(stepsToOpenNextChapter);
+            if(mainClass.getScreenHeight() < 800) {
+                stepsXPlace = getStepsNeededAndCurrentlyHavePlace()- 20f;
+            } else if (mainClass.getScreenHeight() >= 1000) {
+                stepsXPlace = getStepsNeededAndCurrentlyHavePlace();
+            }
             textForAButton = String.valueOf(steps) + "/" + stepsToOpenNextChapter;
-            font12.draw(batch,textForAButton, getStepsNeededAndCurrentlyHavePlace(), buttonTextYPlace);
+            font12.draw(batch,textForAButton, stepsXPlace, buttonTextYPlace);
         } else if(useForTheButton != 10) {
             font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
         }
@@ -1132,7 +1497,7 @@ public class Button extends Actor {
             } else if (mainClass.getScreenHeight() >= 1000) {
                 textboxHeight = mainClass.getScreenHeight()/4f;
             }
-            font12.draw(batch,textForAButton, 40f, textboxHeight);
+            font12.draw(batch,textForAButton, textboxHeight/8, textboxHeight);
         }
 
 
