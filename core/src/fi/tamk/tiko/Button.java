@@ -1001,6 +1001,24 @@ public class Button extends Actor {
                             mainClass.getClearedChapter3() && chapterSelect == 3 ||
                             mainClass.getClearedChapter4() && chapterSelect == 4 ||
                             mainClass.getClearedChapter5() && chapterSelect == 5 ||
+                            mainClass.getClearedChapter6() && chapterSelect == 6 ||
+                            mainClass.getClearedChapter7() && chapterSelect == 7 ||
+                            mainClass.getClearedChapter8() && chapterSelect == 8 ||
+                            mainClass.getClearedChapter9() && chapterSelect == 9 ||
+                            mainClass.getClearedChapter10() && chapterSelect == 10 ||
+                            mainClass.getClearedChapter11() && chapterSelect == 11 ||
+                            mainClass.getClearedChapter12() && chapterSelect == 12 ||
+                            mainClass.getClearedChapter13() && chapterSelect == 13 ||
+                            mainClass.getClearedChapter14() && chapterSelect == 14 ||
+                            mainClass.getClearedChapter15() && chapterSelect == 15 ||
+                            mainClass.getClearedChapter16() && chapterSelect == 16 ||
+                            mainClass.getClearedChapter17() && chapterSelect == 17 ||
+                            mainClass.getClearedChapter18() && chapterSelect == 18 ||
+                            mainClass.getClearedChapter19() && chapterSelect == 19 ||
+                            mainClass.getClearedChapter20() && chapterSelect == 20 ||
+                            mainClass.getClearedChapter21() && chapterSelect == 21 ||
+                            mainClass.getClearedChapter22() && chapterSelect == 22 ||
+                            mainClass.getClearedChapter23() && chapterSelect == 23 ||
                             mainClass.getCurrentFurthestChapter() == chapterSelect) {
 
                         mainClass.setChapterNumber(chapterSelect);
