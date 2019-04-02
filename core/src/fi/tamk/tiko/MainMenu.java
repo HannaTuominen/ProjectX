@@ -1,6 +1,7 @@
 package fi.tamk.tiko;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -57,6 +58,12 @@ public class MainMenu implements Screen {
         firstRound = mainClass.prefs.getBoolean("openedFirstTime");
         createNewButtons();
 
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.playBackgroundMusic();
+        } else {
+            mainClass.stopBackGroundMusic();
+        }
+
     }
 
     public void createNewButtons() {
@@ -65,6 +72,7 @@ public class MainMenu implements Screen {
             System.out.println(firstRound + " IS IT FIRST ROUND");
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
 
+
         } else {
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
@@ -72,10 +80,18 @@ public class MainMenu implements Screen {
         }
 
         if(mainClass.getLanguageFinnish()) {
-            mainClass.createButtons(new Texture("fin_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("fin_button.png"), "", 0, 11, screenWidth - buttonWidth/2, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
         } else {
-            mainClass.createButtons(new Texture("eng_button.png"), "", 0, 11, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            mainClass.createButtons(new Texture("eng_button.png"), "", 0, 11, screenWidth - buttonWidth/2, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
         }
+        if(!mainClass.getbackGroundMusicOffOrOn()) {
+            mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            System.out.println("CREATED SOUND BUTTON ON");
+        } else {
+            mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
+            System.out.println("CREATED SOUND BUTTON OFF");
+        }
+//        mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -50, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
 
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
@@ -134,5 +150,6 @@ public class MainMenu implements Screen {
     public void dispose() {
         stage.dispose();
         batch.dispose();
+
     }
 }
