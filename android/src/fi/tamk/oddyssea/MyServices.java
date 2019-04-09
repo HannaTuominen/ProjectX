@@ -1,4 +1,4 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
 import android.app.Service;
 import android.content.Intent;

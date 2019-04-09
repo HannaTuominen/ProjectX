@@ -1,13 +1,10 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -169,6 +166,7 @@ public class MainClass extends Game {
     private String chapter1_choice_text_1;
     private String chapter1_choice_text_2;
     private String chapter;
+    private String sponsors;
 	// remove steps by: MyServices.removeSteps(int);
 	static int steps;
 
@@ -265,6 +263,8 @@ public class MainClass extends Game {
 
 	//Implement the button used everywhere in the code
 	Button button;
+	Button button5;
+	Button button6;
 	String localLanguageToString;
 	Locale locale;
 	I18NBundle myBundle;
@@ -293,6 +293,9 @@ public class MainClass extends Game {
 	Group group;
 
 	Group group2;
+
+	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
+	private boolean gotToTheLastTextOnceAlready = false;
 
 
 	//BACKGROUND MUSIC
@@ -595,7 +598,7 @@ public class MainClass extends Game {
 	}
 
 	public void playBackgroundMusic() {
-		music.play();                          // resumes the playback
+//		music.play();                          // resumes the playback
 
     }
 
@@ -603,24 +606,100 @@ public class MainClass extends Game {
 		music.pause();                         // pauses the playback
 	}
 
+	public void setButton5Visible(boolean visible) {
+	    System.out.println(visible + "Button 5 on tällä hetkellä");
+		button5.setVisible(visible);
+	}
+	public void setButton6Visible(boolean visible){
+        button6.setVisible(visible);
+
+        System.out.println(visible + "Button 6 on tällä hetkellä");
+    }
+
+    public void setGotToLastTextPartOkayToShowNeededButtons(boolean gotToLastTextPartOkayToShowNeededButtons) {
+        this.gotToLastTextPartOkayToShowNeededButtons = gotToLastTextPartOkayToShowNeededButtons;
+        prefs.putBoolean("gotToLastTextPartOkayToShowNeededButtons", this.gotToLastTextPartOkayToShowNeededButtons);
+        prefs.flush();
+    }
+    public boolean getGotToLastTextPartOkayToShowNeededButtons() {
+        gotToLastTextPartOkayToShowNeededButtons = prefs.getBoolean("gotToLastTextPartOkayToShowNeededButtons");
+        return gotToLastTextPartOkayToShowNeededButtons;
+    }
+    public void setGotToTheLastTextOnceAlready(boolean gotToTheLastTextOnceAlready) {
+        this.gotToTheLastTextOnceAlready = gotToTheLastTextOnceAlready;
+        prefs.putBoolean("gotToTheLastTextOnceAlready", this.gotToTheLastTextOnceAlready);
+        prefs.flush();
+    }
+    public boolean getGotToTheLastTextOnceAlready() {
+        gotToTheLastTextOnceAlready = prefs.getBoolean("gotToTheLastTextOnceAlready");
+        return gotToTheLastTextOnceAlready;
+    }
 
 	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
 							  float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
-//		buttonTexture1 = new Texture(Gdx.files.internal("button_orange.png"));
-		button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+
+		if(useForTheButton == 1 || useForTheButton == 2
+                || useForTheButton == 3 || useForTheButton == 4
+                || useForTheButton == 7 || useForTheButton == 8
+                || useForTheButton == 9 || useForTheButton == 10
+                || useForTheButton == 11 || useForTheButton == 12
+                || useForTheButton == 13 || useForTheButton == 14
+                || useForTheButton == 15
+                ) {
+            button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+            stage.addActor(button);
+            System.out.println(useForTheButton);
+        }
 
 		if(useForTheButton == 9 || useForTheButton == 12 ) {
+//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 			groupActors(button);
+			groupStageAdd1();
+//			stage.addActor(button);
 		}
-//		else if (useForTheButton == 14 || useForTheButton == 15 || useForTheButton == 16){
-//			groupActors2(button);
+
+		if(useForTheButton == 5 || useForTheButton == 6) {
+		    System.out.println("useforthebutton is " + useForTheButton);
+			if(useForTheButton == 5) {
+				button5 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+                stage.addActor(button5);
+                System.out.println("created button5" + getGotToLastTextPartOkayToShowNeededButtons());
+//                setButton5Visible(false);
+			}
+			else if (useForTheButton == 6) {
+			    System.out.println("GOT HERE TO CREATING BUTTON 6");
+				button6 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+                stage.addActor(button6);
+//                setButton6Visible(false);
+                System.out.println("created button6" + getGotToLastTextPartOkayToShowNeededButtons());
+			}
+
+			if(!getGotToLastTextPartOkayToShowNeededButtons()) {
+			    if(useForTheButton == 5) {
+                   button5.setVisible(false);
+                    System.out.println("set nonvisible button5");
+                }else if (useForTheButton == 6) {
+                    button6.setVisible(false);
+                    System.out.println("set nonvisible button6");
+                }
+			} else {
+                if(useForTheButton == 5) {
+                    setButton5Visible(true);
+                    System.out.println("set visible button5");
+                }else if (useForTheButton == 6) {
+                    setButton6Visible(true);
+                    System.out.println("set visible button6");
+                }
+			}
+		}
+
+
+//		else {
+//			stage.addActor(button);
 //		}
-		else {
-			stage.addActor(button);
-		}
 
 		Gdx.input.setInputProcessor(stage);
 
@@ -986,6 +1065,9 @@ public class MainClass extends Game {
 	public String getTitle() {
 		return title;
 	}
+	public String getSponsors() {
+		return sponsors;
+	}
 
 	public Stage getStage() {
 		return stage;
@@ -1308,11 +1390,16 @@ public class MainClass extends Game {
 	}
 
 	public void setCurrentFurthestChapter(int currentFurthestChapter) {
+        if(currentFurthestChapter > this.currentFurthestChapter) {
+            setGotToTheLastTextOnceAlready(false);
+        }
 		if(this.currentFurthestChapter <= currentFurthestChapter) {
 			this.currentFurthestChapter = currentFurthestChapter;
+
 			prefs.putInteger("currentFurthestChapter", currentFurthestChapter);
 			prefs.flush();
 		}
+
 	}
 
 
@@ -1370,6 +1457,7 @@ public class MainClass extends Game {
 		chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
 		chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
 		chapter= myBundle.get("chapter");
+		sponsors= myBundle.get("sponsors");
 		chapter1_1 = myBundle.get("chapter1_1");
 		chapter1_2 = myBundle.get("chapter1_2");
         chapter1_3 = myBundle.get("chapter1_3");
@@ -1426,7 +1514,7 @@ public class MainClass extends Game {
 		chapter14_1 = myBundle.get("chapter14_1");
 		chapter14_2 = myBundle.get("chapter14_2");
 		chapter14_3 = myBundle.get("chapter14_3");
-		chapter14_4 = myBundle.get("chapter14_3");
+		chapter14_4 = myBundle.get("chapter14_4");
 
 		chapter15_1 = myBundle.get("chapter15_1");
 		chapter15_2 = myBundle.get("chapter15_2");
@@ -1703,6 +1791,8 @@ public class MainClass extends Game {
 			backGroundMusicOff = prefs.getBoolean("backGroundMusicOff");
 			createBackGroundMusicAndLoopIt(backGroundMusicOff);
 			System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
+//			setGotToTheLastTextOnceAlready(false);
+//			setGotToLastTextPartOkayToShowNeededButtons(false);
 
 		}
 

@@ -1,20 +1,12 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 
 /**
     Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
@@ -33,6 +25,7 @@ public class MainMenu implements Screen {
     private Stage stage;
 
     Texture texture;
+    Texture texture2;
     boolean firstRound = false;
 
     public MainMenu(MainClass MainClass2) {
@@ -46,6 +39,7 @@ public class MainMenu implements Screen {
         font12 = mainClass.getFont12();
 
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
+        texture2 = new Texture(Gdx.files.internal("18tiko3D-Oddyssea.png"));
 
         stage = mainClass.getStage();
 
@@ -68,13 +62,13 @@ public class MainMenu implements Screen {
 
     public void createNewButtons() {
         if(!firstRound) {
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f ,buttonHeight*1.3f,0);
             System.out.println(firstRound + " IS IT FIRST ROUND");
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
 
 
         } else {
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/2-buttonWidth/2,screenHeight/2+buttonHeight+10, buttonWidth ,buttonHeight,0);
+            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f, buttonHeight*1.3f,0);
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
 
         }
@@ -93,9 +87,9 @@ public class MainMenu implements Screen {
         }
 //        mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -50, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
 
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/2-buttonWidth/2,screenHeight/2, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight-10, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/2-buttonWidth/2,screenHeight/2-buttonHeight*2-20, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/10*1.35f,screenHeight/2f, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/10*1.35f,screenHeight/2.2f-buttonHeight, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*2, buttonWidth ,buttonHeight,0);
     }
 
     @Override
@@ -108,11 +102,11 @@ public class MainMenu implements Screen {
         batch.setProjectionMatrix(mainClass.camera.combined);
         Gdx.gl.glClearColor(0, 1, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         batch.begin();
         batch.draw(texture, 0f, 0f, screenWidth,screenHeight);
+        batch.draw(texture2, screenWidth/2, screenWidth/20, screenWidth/2.2f,screenHeight/1.2f);
 
-        font12.draw(batch,mainClass.getTitle(), 0, 100);
+//        font12.draw(batch,mainClass.getTitle(), 0, 100);
         if(mainClass.getSwappedlanguage()) {
             System.out.println("SWAPPED BUTTONS AND THEIR LANGUAGE");
             stage.clear();

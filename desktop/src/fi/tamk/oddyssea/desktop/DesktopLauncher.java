@@ -1,8 +1,8 @@
-package fi.tamk.tiko.desktop;
+package fi.tamk.oddyssea.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import fi.tamk.tiko.MainClass;
+import fi.tamk.oddyssea.MainClass;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {

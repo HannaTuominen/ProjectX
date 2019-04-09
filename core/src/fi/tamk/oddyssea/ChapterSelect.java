@@ -1,16 +1,11 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 
 /**
 
@@ -83,39 +78,39 @@ public class ChapterSelect implements Screen {
 
         //UPROW
         //1
-        mainClass.createButtons(new Texture("chapter_1_unlock.png"),"1",0,9,
+        mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"1",0,9,
                 20f,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         //3
         if(! mainClass.getClearedChapter2()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"3",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_x.png"),"3",0,9,
                     (20f*2)+buttonWidth,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"3",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"3",0,9,
                     (20f*2)+buttonWidth,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
         //5
         if(!mainClass.getClearedChapter4()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"5",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_x_ilman.png"),"5",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"5",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"5",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
         //7
         if(!mainClass.getClearedChapter6()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"7",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_3.png"),"7",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"7",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"7",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
 
         //9
         if(!mainClass.getClearedChapter8()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"9",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_v101.png"),"9",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"9",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"9",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2.2f,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -190,36 +185,36 @@ public class ChapterSelect implements Screen {
         //DOWNROW
         //2
         if(!mainClass.getClearedChapter1()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"2",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked.png"),"2",0,9,
                     20f,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"2",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"2",0,9,
                     20f,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         }
         //4
         if(! mainClass.getClearedChapter3()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"4",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_ilman.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"4",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         }
 
         //6
         if(! mainClass.getClearedChapter5()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"6",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_darker.png"),"6",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"6",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"6",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         }
 
         //8
         if(! mainClass.getClearedChapter7()) {
-            mainClass.createButtons(new Texture("chapter_1_lock.png"),"8",0,9,
+            mainClass.createButtons(new Texture("chapter_2_locked_v100.png"),"8",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_1_unlock.png"),"8",0,9,
+            mainClass.createButtons(new Texture("chapter_2_unlocked.png"),"8",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2f - buttonHeight*4.5f,buttonWidth,buttonHeight*3.5f,0);
         }
 

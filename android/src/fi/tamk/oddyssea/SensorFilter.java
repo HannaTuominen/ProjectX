@@ -1,4 +1,4 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
 public class SensorFilter {
 	private SensorFilter() {

@@ -1,20 +1,11 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.viewport.FitViewport;
 
 /**
     The actual game screen where the game is "played", gotten through main menu
@@ -341,6 +332,8 @@ public class GameScreen implements Screen {
 
         if (!openedFirstTime) {
 
+//            mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
+//            mainClass.setGotToTheLastTextOnceAlready(false);
 //            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
             openedFirstTime = true;
@@ -465,18 +458,34 @@ public class GameScreen implements Screen {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter1);
             mainClass.setSwapped(true);
+
+//            if(!mainClass.getGotToTheLastTextOnceAlready()) {
+//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
+//                System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons() + "G");
+//            } else {
+//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
+//                System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons() + "GG");
+//            }
+
             if(!mainClass.getClearedChapter1()) {
+//                if(mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
+//                    System.out.println("GOT TO THE LAST PART OF THE TEXT, HERE THE BUTTONS WOULD COME VISIBLE");
+//                }
+//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
+
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
+//                mainClass.setButton5Visible(false);
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_2() +mainClass.getStepsToOpenChapter2_2(),0,6,
                         screenWidth-buttonWidth*2-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
-
-
-                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+//                mainClass.setButton6Visible(false);
+//
+//                //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("textboxEMPTY.png"),"",0,15,
                         screenWidth-buttonWidth*2-50, screenHeight/18, screenWidth/4 ,20,mainClass.getStepsToOpenChapter2_1());
 
             } else {
+                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.createButtons(new Texture("next_page.png"),"",0,6,
                         screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
@@ -498,6 +507,13 @@ public class GameScreen implements Screen {
 
         if(mainClass.getChapterNumber() == 2 && !mainClass.getSwapped() && mainClass.getClearedChapter1()) {
             mainClass.getStage().clear();
+
+            if(!mainClass.getGotToTheLastTextOnceAlready()) {
+                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
+            } else {
+                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
+            }
+
             if(mainClass.getChoseWrong_1()) {
                 mainClass.getStage().addActor(chapter2_1);
             } else {

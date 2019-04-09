@@ -1,4 +1,4 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 
@@ -832,7 +831,7 @@ public class Button extends Actor {
                         System.out.println("ERROR TOO FEW STEPS");
                     } else {
                         if (getUseForTheButton() == 5) {
-                            mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 800);
+                            mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 5 );// 800);
                             mainClass.setChoseWrong_4(true);
                         }
                         mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
@@ -954,10 +953,10 @@ public class Button extends Actor {
                     mainClass.prefs.flush();
                 }
 
-                //COMPUTER TESTING ADD 250 STEPS
-//                if (!enoughSteps) {
-//                    mainClass.setSteps(880000);
-//                }
+//                COMPUTER TESTING ADD 250 STEPS
+                if (!enoughSteps) {
+                    mainClass.setSteps(880000);
+                }
 
 
             } else if (getUseForTheButton() == 7) {
@@ -1046,6 +1045,16 @@ public class Button extends Actor {
                     setTextForAButton(mainClass.getChapter1_3Text());
                     setStoryID(1.3f);
                    indicatorsX3_stage_2();
+                   if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
+                       System.out.println("SET LASTTEXTOKAY TO TRUE");
+                       mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
+                       if(!mainClass.getClearedChapter1()) {
+                           mainClass.setButton5Visible(true);
+                           mainClass.setButton6Visible(true);
+                       } else {
+                           mainClass.setButton6Visible(true);
+                       }
+                   }
                 } else if (getStoryID() == 1.3f) {
                     setTextForAButton(mainClass.getChapter1_1Text());
                     setStoryID(1.1f);
@@ -1054,6 +1063,17 @@ public class Button extends Actor {
                     setTextForAButton(mainClass.getChapter2_2Text());
                     setStoryID(2.2f);
                     indicatorsX2_stage_1();
+                    if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
+                        System.out.println("SET LASTTEXTOKAY TO TRUE");
+//                        mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
+//                        mainClass.setGotToTheLastTextOnceAlready(true);
+                        if(!mainClass.getClearedChapter1()) {
+//                            mainClass.setButton5Visible();
+                            mainClass.setButton6Visible(true);
+                        } else {
+                            mainClass.setButton6Visible(true);
+                        }
+                    }
                 } else if (getStoryID() == 2.2f) {
                     setTextForAButton(mainClass.getChapter2_1Text());
                     setStoryID(2.1f);
@@ -1460,8 +1480,12 @@ public class Button extends Actor {
         public void pan(InputEvent event, float x, float y, float deltaX, float deltaY) {
 
             touchUpX = deltaX;
+            System.out.println("PAN PAN PAN");
 //            System.out.println(touchUpX + " TouchUPX   <");
+            System.out.println(useForTheButton + " ads " + getGroup1().getX());
+
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
+                System.out.println(useForTheButton);
                 if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
                 }else if (getGroup1().getX() > 0){
@@ -1482,6 +1506,21 @@ public class Button extends Actor {
 //       System.out.println("GOT HERE");
         steps = mainClass.getCurrentSteps();
 
+        if(useForTheButton == 5 || useForTheButton == 6) {
+            if(mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
+                System.out.println("GOT HERE AT THE START OF 5 AND 6");
+//            System.out.println(useForTheButton);
+                if(useForTheButton == 5) {
+                    mainClass.setButton5Visible(true);
+                    System.out.println("GOT HERE 5");
+                }
+                if(useForTheButton == 6) {
+                    mainClass.setButton6Visible(true);
+                    System.out.println("GOT HERE 6");
+                }
+            }
+        }
+
         batch.draw(texture,
                 xPlace, yPlace,
                 this.getOriginX(),
@@ -1492,6 +1531,17 @@ public class Button extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
+//
+//        if(useForTheButton == 5) {
+//            System.out.println("BUTTON 5");
+//        }
+//        if(useForTheButton == 6) {
+//            System.out.println("BUTTON 6");
+//        }
+
+//        System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons());
+
+
         if(useForTheButton == 9) {
             font12.draw(batch,"", buttonTextXPlace, buttonTextYPlace);
 

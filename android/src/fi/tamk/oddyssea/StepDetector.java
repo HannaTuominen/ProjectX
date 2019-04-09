@@ -1,4 +1,4 @@
-package fi.tamk.tiko;
+package fi.tamk.oddyssea;
 
 public class StepDetector {
 	private static final int ACCEL_RING_SIZE = 10;
