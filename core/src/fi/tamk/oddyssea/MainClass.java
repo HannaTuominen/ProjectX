@@ -607,13 +607,13 @@ public class MainClass extends Game {
 	}
 
 	public void setButton5Visible(boolean visible) {
-	    System.out.println(visible + "Button 5 on tällä hetkellä");
+//	    System.out.println(visible + "Button 5 on tällä hetkellä");
 		button5.setVisible(visible);
 	}
 	public void setButton6Visible(boolean visible){
         button6.setVisible(visible);
 
-        System.out.println(visible + "Button 6 on tällä hetkellä");
+//        System.out.println(visible + "Button 6 on tällä hetkellä");
     }
 
     public void setGotToLastTextPartOkayToShowNeededButtons(boolean gotToLastTextPartOkayToShowNeededButtons) {
@@ -651,7 +651,7 @@ public class MainClass extends Game {
                 ) {
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             stage.addActor(button);
-            System.out.println(useForTheButton);
+//            System.out.println(useForTheButton);
         }
 
 		if(useForTheButton == 9 || useForTheButton == 12 ) {
@@ -1383,6 +1383,7 @@ public class MainClass extends Game {
         return continuee;
     }
 	public int getCurrentFurthestChapter() {
+		currentFurthestChapter = prefs.getInteger("currentFurthestChapter");
 		return currentFurthestChapter;
 	}
 	public String getStepsString(){
@@ -1392,6 +1393,7 @@ public class MainClass extends Game {
 	public void setCurrentFurthestChapter(int currentFurthestChapter) {
         if(currentFurthestChapter > this.currentFurthestChapter) {
             setGotToTheLastTextOnceAlready(false);
+            System.out.println("setting the last text once to false in the currentfurthest" + "this.curr " + this.currentFurthestChapter + " current " + currentFurthestChapter);
         }
 		if(this.currentFurthestChapter <= currentFurthestChapter) {
 			this.currentFurthestChapter = currentFurthestChapter;
