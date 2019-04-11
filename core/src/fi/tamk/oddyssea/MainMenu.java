@@ -90,6 +90,8 @@ public class MainMenu implements Screen {
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/10*1.35f,screenHeight/2f, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/10*1.35f,screenHeight/2.2f-buttonHeight, buttonWidth ,buttonHeight,0);
         mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*2, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_orange.png"),"clear prefs",0,16,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*3.3f, buttonWidth ,buttonHeight,0);
+
     }
 
     @Override

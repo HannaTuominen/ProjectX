@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
+    private Texture stepbox;
 
 
     MainClass mainClass;
@@ -17,6 +18,7 @@ public class ChapterAssets extends Actor {
     float screenHeight;
 
     float textboxHeight;
+    float stepboxHeight;
     int steps;
 
     int howManyPageSwaps;
@@ -35,10 +37,14 @@ public class ChapterAssets extends Actor {
         setHeight(mainClass.screenHeight);
         setBounds(0,0,getWidth(),getHeight());
         textbox = new Texture("textbox_2.png");
+        stepbox = new Texture ("askelbox.png");
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.3f;
+            stepboxHeight = screenHeight/7.3f;
+
         } else if (screenHeight >= 1000) {
             textboxHeight = screenHeight/3.6f;
+            stepboxHeight = screenHeight/7.6f;
         }
 
     }
@@ -60,6 +66,7 @@ public class ChapterAssets extends Actor {
                 texture.getWidth(), texture.getHeight(), false, false);
 
         batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
+        batch.draw(stepbox,screenWidth/3.2f,screenHeight-stepboxHeight,screenWidth/4, stepboxHeight);
 
         if(howManyPageSwaps == 2) {
             batch.draw(mainClass.getTextIndicator_2_1(),screenWidth/6,screenHeight/40,screenWidth/4/1, screenHeight/40);

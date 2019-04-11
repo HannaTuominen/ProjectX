@@ -588,7 +588,7 @@ public class MainClass extends Game {
 		music.setLooping(true);                // will repeat playback until music.stop() is called
 //		music.stop();                          // stops the playback
 //		music.pause();                         // pauses the playback
-//		music.play();                          // resumes the playback
+		music.play();                          // resumes the playback
 //		boolean isPlaying = music.isPlaying(); // obvious :)
 //		boolean isLooping = music.isLooping(); // obvious as well :)
 //		float position = music.getPosition();  // returns the playback position in seconds
@@ -598,7 +598,7 @@ public class MainClass extends Game {
 	}
 
 	public void playBackgroundMusic() {
-//		music.play();                          // resumes the playback
+		music.play();                          // resumes the playback
 
     }
 
@@ -647,7 +647,7 @@ public class MainClass extends Game {
                 || useForTheButton == 9 || useForTheButton == 10
                 || useForTheButton == 11 || useForTheButton == 12
                 || useForTheButton == 13 || useForTheButton == 14
-                || useForTheButton == 15
+                || useForTheButton == 15 || useForTheButton == 16
                 ) {
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             stage.addActor(button);
