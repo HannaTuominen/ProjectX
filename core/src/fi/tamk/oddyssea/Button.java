@@ -2390,11 +2390,12 @@ public class Button extends Actor {
             if (useForTheButton == 10) {
                 if(velocityX > 0) {
                     flingX = velocityX;
-                    useForTheButtonis10();
+                    useForTheButtonIs10Reverse();
                 } else if (velocityX < 0) {
                     System.out.println("SMALLER");
                    flingX = velocityX;
-                   useForTheButtonIs10Reverse();
+
+                    useForTheButtonis10();
                 }
                 System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
 
