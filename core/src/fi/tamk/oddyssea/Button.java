@@ -1713,7 +1713,7 @@ public class Button extends Actor {
        currentStepsText = mainClass.getStepsString();
 
         if(useForTheButton == 12) {
-            scrollerWidth = -mainclass.getScreenWidth()/4*22+(mainclass.getScreenWidth()/0.99f);
+            scrollerWidth = -mainclass.getScreenWidth()/4*13.5f+(mainclass.getScreenWidth()/0.99f);
         }
 
         //this.storyID = storyID;
@@ -2366,12 +2366,15 @@ public class Button extends Actor {
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
 //                System.out.println(useForTheButton);
 
-                if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
+                if(getGroup1().getX()<=20 && getGroup1().getX()>= scrollerWidth-20) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
+                    System.out.println("FIRST OPTION GOING ON");
                 }else if (getGroup1().getX() > 0){
                     getGroup1().setX(-getGroup1().getX());
+                    System.out.println("SECOND OPTION GOING ON");
                 } else if(getGroup1().getX()<scrollerWidth){
                     getGroup1().setX(scrollerWidth);
+                    System.out.println("THIRD OPTION GOING ON");
                 }
 
                 setGroup1(mainClass.getGroup1());

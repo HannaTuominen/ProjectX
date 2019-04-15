@@ -1759,12 +1759,12 @@ public class MainClass extends Game {
 		batch = new SpriteBatch();
 
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
-		generator = new FreeTypeFontGenerator(Gdx.files.internal("sui-generis-rg.ttf"));
+		generator = new FreeTypeFontGenerator(Gdx.files.internal("Aero Matics Regular.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		if(screenHeight < 800) {
-			fontSize = 20;
+			fontSize = 23;
 		} else if (screenHeight >= 1000) {
-			fontSize = 40;
+			fontSize = 50;
 		}
 		parameter.size = fontSize;
 
