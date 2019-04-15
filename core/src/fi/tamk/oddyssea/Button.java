@@ -2430,15 +2430,6 @@ public class Button extends Actor {
                 this.getScaleY(),
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
-//
-//        if(useForTheButton == 5) {
-//            System.out.println("BUTTON 5");
-//        }
-//        if(useForTheButton == 6) {
-//            System.out.println("BUTTON 6");
-//        }
-
-//        System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons());
 
 
         if(useForTheButton == 9) {
