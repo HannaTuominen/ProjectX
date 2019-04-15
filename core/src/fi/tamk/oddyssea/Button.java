@@ -1719,12 +1719,12 @@ public class Button extends Actor {
         //this.storyID = storyID;
 
        if(useForTheButton == 14 || useForTheButton == 15) {
-           buttonTextXPlace = this.xPlace;
+           buttonTextXPlace = this.xPlace+4;
            buttonTextYPlace = this.yPlace;
        } else {
            //SETS THE X PLACE CORRECTLY TO CENTER DEPENDING ON THE TEXT SIZE FOR BUTTONS
            buttonTextXPlace = this.xPlace + buttonWidth/2 - mainClass.getTextPlaceWIDTH(textForAButton)/2;
-           buttonTextYPlace = this.yPlace+buttonHeight/1.7f;
+           buttonTextYPlace = this.yPlace+buttonHeight/1.55f;
        }
 
 
@@ -2455,11 +2455,11 @@ public class Button extends Actor {
         //STORY BOX TEXT
         else {
             if(mainClass.getScreenHeight() < 800) {
-                textboxHeight = mainClass.getScreenHeight()/3.7f;
+                textboxHeight = mainClass.getScreenHeight()/3.9f;
             } else if (mainClass.getScreenHeight() >= 1000) {
-                textboxHeight = mainClass.getScreenHeight()/4f;
+                textboxHeight = mainClass.getScreenHeight()/4.1f;
             }
-            font12.draw(batch,textForAButton, textboxHeight/8, textboxHeight);
+            font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+12);
         }
 
 

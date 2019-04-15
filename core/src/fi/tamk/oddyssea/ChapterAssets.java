@@ -36,7 +36,7 @@ public class ChapterAssets extends Actor {
         setWidth(mainClass.screenWidth);
         setHeight(mainClass.screenHeight);
         setBounds(0,0,getWidth(),getHeight());
-        textbox = new Texture("textbox_2.png");
+        textbox = new Texture("textbox_90.png");
         stepbox = new Texture ("askelbox.png");
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.3f;
