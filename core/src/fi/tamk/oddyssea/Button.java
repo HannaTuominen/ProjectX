@@ -1791,8 +1791,9 @@ public class Button extends Actor {
 
            if (useForTheButton == 16) {
                mainClass.prefs.clear();
+               mainClass.setResetEverything(true);
                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
-               Gdx.app.exit();
+//               Gdx.app.exit();
            }
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
                 if(touchUpX == 0) {
@@ -2366,14 +2367,16 @@ public class Button extends Actor {
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
 //                System.out.println(useForTheButton);
 
-                if(getGroup1().getX()<=20 && getGroup1().getX()>= scrollerWidth-20) {
+                if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
-                    System.out.println("FIRST OPTION GOING ON");
-                }else if (getGroup1().getX() > 0){
+                    System.out.println("FIRST OPTION GOING ON " + getGroup1().getX());
+                } else if (getGroup1().getX() > 20){
                     getGroup1().setX(-getGroup1().getX());
                     System.out.println("SECOND OPTION GOING ON");
+                } else if (getGroup1().getX() < 20) {
+                    getGroup1().setX(getGroup1().getX()+20);
                 } else if(getGroup1().getX()<scrollerWidth){
-                    getGroup1().setX(scrollerWidth);
+                    getGroup1().setX(scrollerWidth-30);
                     System.out.println("THIRD OPTION GOING ON");
                 }
 

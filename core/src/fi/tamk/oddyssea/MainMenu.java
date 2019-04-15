@@ -114,6 +114,9 @@ public class MainMenu implements Screen {
             stage.clear();
             createNewButtons();
             mainClass.setSwappedlanguage(false);
+        } if(mainClass.getResetEverything()) {
+            createNewButtons();
+            mainClass.setResetEverything(false);
         }
         batch.end();
 

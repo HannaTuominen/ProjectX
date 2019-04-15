@@ -19,7 +19,8 @@ public class Credits implements Screen {
     SpriteBatch batch;
     BitmapFont font12;
     Texture texture;
-    Texture logo1;
+    Texture credits;
+//    Texture logo1;
 
     float buttonWidth;
     float buttonHeight;
@@ -44,7 +45,13 @@ public class Credits implements Screen {
 
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
-        logo1 = new Texture(Gdx.files.internal("asemakylan_verstas_logo.jpg"));
+        if(mainClass.getLanguageFinnish()) {
+            credits = new Texture(Gdx.files.internal("CREDITS_textbox_FINNISH.png"));
+            System.out.println("FINNISH");
+        }else {
+            credits = new Texture(Gdx.files.internal("CREDITS_textbox.png"));
+
+        }
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.playBackgroundMusic();
@@ -65,11 +72,11 @@ public class Credits implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(texture, 0f, 0f, mainClass.getScreenWidth(),mainClass.getScreenHeight());
-        font12.draw(batch,"Scrum master: Antti Peltola \n Graafikko: Tanja Varvio \n Graafikko: Aapo Rantanen \n Koodari: Juuso Toivanen \n Koodari: Hanna Tuominen", mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-100);
+//        font12.draw(batch,"Scrum master: Antti Peltola \n Graafikko: Tanja Varvio \n Graafikko: Aapo Rantanen \n Koodari: Juuso Toivanen \n Koodari: Hanna Tuominen", mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-100);
 
 
-        batch.draw(logo1, 20, 20, mainClass.getScreenWidth()/3,mainClass.getScreenHeight()/3);
-        font12.draw(batch,mainClass.getSponsors(), mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-250);
+        batch.draw(credits, 15, 15, mainClass.getScreenWidth()-30,mainClass.getScreenHeight()-30);
+//        font12.draw(batch,mainClass.getSponsors(), mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-250);
 
         batch.end();
         mainClass.getStage().draw();

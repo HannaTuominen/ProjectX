@@ -33,6 +33,7 @@ public class MainClass extends Game {
 	private BitmapFont font12;
 	private int fontSize;
 
+	private boolean resetEverything = false;
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 //	private float CurrentSteps;
 
@@ -254,6 +255,8 @@ public class MainClass extends Game {
 	//Created the prefs file here that is used everywhere in the code
 	Preferences prefs;
 
+	Preferences soundAndLanguage;
+
 	//Created the stage used everywhere in the code
 	private Stage stage;
 
@@ -343,6 +346,17 @@ public class MainClass extends Game {
 	Texture textIndicator_8_6;
 	Texture textIndicator_8_7;
 	Texture textIndicator_8_8;
+
+
+	public void setResetEverything(boolean resetEverything) {
+        soundAndLanguage.putBoolean("resetEverything", resetEverything);
+        this.resetEverything = resetEverything;
+        soundAndLanguage.flush();
+    }
+    public boolean getResetEverything() {
+	    resetEverything = soundAndLanguage.getBoolean("resetEverything");
+	    return resetEverything;
+    }
 
 
 	public void setTextIndicator_2_1(Texture textIndicator_2_1) {
@@ -574,12 +588,12 @@ public class MainClass extends Game {
 
 
 	public void setbackGroundMusicOffOrOn(boolean backGroundMusicOff) {
-		prefs.putBoolean("backGroundMusicOff", backGroundMusicOff);
+        soundAndLanguage.putBoolean("backGroundMusicOff", backGroundMusicOff);
 		this.backGroundMusicOff = backGroundMusicOff;
-		prefs.flush();
+        soundAndLanguage.flush();
 	}
 	public boolean getbackGroundMusicOffOrOn() {
-		backGroundMusicOff = prefs.getBoolean("backGroundMusicOff");
+		backGroundMusicOff = soundAndLanguage.getBoolean("backGroundMusicOff");
 		return backGroundMusicOff;
 	}
 	public void createBackGroundMusicAndLoopIt(boolean backGroundMusicOff) {
@@ -1413,23 +1427,23 @@ public class MainClass extends Game {
 	}
 
 	public boolean getLanguageFinnish() {
-		languageFinnish =prefs.getBoolean("languageFinnish");
+		languageFinnish =soundAndLanguage.getBoolean("languageFinnish");
 		return languageFinnish;
 	}
 	public void setLanguageFinnish(boolean languageFinnish) {
 		this.languageFinnish = languageFinnish;
-		prefs.putBoolean("languageFinnish", languageFinnish);
-		prefs.flush();
+        soundAndLanguage.putBoolean("languageFinnish", languageFinnish);
+        soundAndLanguage.flush();
 	}
 
 	public boolean getLanguageFirstRound() {
-		languageFirstRound =prefs.getBoolean("languageFirstRound");
+		languageFirstRound =soundAndLanguage.getBoolean("languageFirstRound");
 		return languageFirstRound;
 	}
 	public void setLanguageFirstRound(boolean languageFirstRound) {
 		this.languageFirstRound = languageFirstRound;
-		prefs.putBoolean("languageFirstRound", languageFirstRound);
-		prefs.flush();
+        soundAndLanguage.putBoolean("languageFirstRound", languageFirstRound);
+        soundAndLanguage.flush();
 	}
 	public boolean getSwappedlanguage() {
 		return swappedLanguage;
@@ -1584,18 +1598,18 @@ public class MainClass extends Game {
 		localLanguageToString = java.util.Locale.getDefault().toString();
 		setLocale(locale);
 		setLocalLanguageToString(localLanguageToString);
-		prefs.putString("localLanguageToString", localLanguageToString);
-		prefs.flush();
+        soundAndLanguage.putString("localLanguageToString", localLanguageToString);
+        soundAndLanguage.flush();
 	}
 
 	public void setLocalLanguageToString(String localLanguageToString) {
 		this.localLanguageToString = localLanguageToString;
-		prefs.putString("localLanguageToString", this.localLanguageToString);
-		prefs.flush();
+        soundAndLanguage.putString("localLanguageToString", this.localLanguageToString);
+        soundAndLanguage.flush();
 	}
 
 	public String getlocalLanguageToString() {
-		localLanguageToString = prefs.getString("localLanguageToString");
+		localLanguageToString = soundAndLanguage.getString("localLanguageToString");
 		return localLanguageToString;
 	}
 
@@ -1777,7 +1791,7 @@ public class MainClass extends Game {
 		//CREATE OR OPEN THE MyPreferences.xml FILE THAT STORES INFO ON SCENES AND SUCH
 		//Create or open file MyPreferences.xml
 		prefs = Gdx.app.getPreferences("MyPreferences");
-
+        soundAndLanguage = Gdx.app.getPreferences("MyPreferences2");
 		stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
 
 		//CREATE THE GAMERA THAT IS USEED THROUGHOUT THE GAME
@@ -1786,13 +1800,13 @@ public class MainClass extends Game {
 
 		group = new Group();
 		if(languageFirstRound == false) {
-			languageFirstRound = prefs.getBoolean("languageFirstRound");
-			prefs.putBoolean("languageFirstRound", true);
-			prefs.flush();
+			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
+            soundAndLanguage.putBoolean("languageFirstRound", true);
 
-			backGroundMusicOff = prefs.getBoolean("backGroundMusicOff");
+			backGroundMusicOff = soundAndLanguage.getBoolean("backGroundMusicOff");
 			createBackGroundMusicAndLoopIt(backGroundMusicOff);
 			System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
+            soundAndLanguage.flush();
 //			setGotToTheLastTextOnceAlready(false);
 //			setGotToLastTextPartOkayToShowNeededButtons(false);
 
@@ -1812,50 +1826,51 @@ public class MainClass extends Game {
 		}
 
 
-		if(languageFirstRound != prefs.getBoolean("languageFirstRound")) {
-			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + prefs.getBoolean("languageFirstRound"));
+		if(languageFirstRound != soundAndLanguage.getBoolean("languageFirstRound")) {
+			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + soundAndLanguage.getBoolean("languageFirstRound"));
 			System.out.println("LANGUAGE FALSE");
 			setDefaultLocale();
 //			getbackGroundMusicOffOrOff();
-			languageFirstRound = prefs.getBoolean("languageFirstRound");
-			prefs.flush();
+			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
+            soundAndLanguage.flush();
 
-
+            setResetEverything(false);
+            getResetEverything();
 
 			if(localLanguageToString.equals("fi_FI")) {
 				System.out.println("LOCAL LANGUAGE FINNISH");
 				languageFinnish = true;
-				prefs.putBoolean("languageFinnish", true);
+                soundAndLanguage.putBoolean("languageFinnish", true);
 				setLocalLanguageToString("fi_FI");
 				setLocaleTexts();
-				prefs.flush();
+                soundAndLanguage.flush();
 				System.out.println("local language: " + localLanguageToString);
 			} else {
 				languageFinnish = false;
-				prefs.putBoolean("languageFinnish", false);
+                soundAndLanguage.putBoolean("languageFinnish", false);
 				setLocalLanguageToString("en_EN");
 				setLocaleTexts();
-				prefs.flush();
+                soundAndLanguage.flush();
 				System.out.println("local language: " + localLanguageToString);
 			}
 		} else {
-			languageFirstRound = prefs.getBoolean("languageFirstRound");
+			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
 			getlocalLanguageToString();
 			System.out.println("local language: " + localLanguageToString);
-			prefs.flush();
+            soundAndLanguage.flush();
 			if(localLanguageToString.equals("fi_FI")) {
 				System.out.println("LOCAL LANGUAGE FINNISH");
 				languageFinnish = true;
-				prefs.putBoolean("languageFinnish", true);
+                soundAndLanguage.putBoolean("languageFinnish", true);
 				setLocale(new Locale("fi", "FI"));
 				setLocaleTexts();
-				prefs.flush();
+                soundAndLanguage.flush();
 			} else {
 				languageFinnish = false;
-				prefs.putBoolean("languageFinnish", false);
+                soundAndLanguage.putBoolean("languageFinnish", false);
 				setLocale(new Locale("en", "EN"));
 				setLocaleTexts();
-				prefs.flush();
+                soundAndLanguage.flush();
 			}
 		}
 //		Locale locale = new Locale("en", "EN");
@@ -1867,6 +1882,7 @@ public class MainClass extends Game {
 
 		//String steps = myBundle.format("steps");
 
+        soundAndLanguage.flush();
 		prefs.flush();
 
 
