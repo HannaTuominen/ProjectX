@@ -2456,10 +2456,12 @@ public class Button extends Actor {
         else {
             if(mainClass.getScreenHeight() < 800) {
                 textboxHeight = mainClass.getScreenHeight()/3.9f;
+                font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+12);
             } else if (mainClass.getScreenHeight() >= 1000) {
-                textboxHeight = mainClass.getScreenHeight()/4.1f;
+                textboxHeight = mainClass.getScreenHeight()/4.2f;
+                font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+25);
             }
-            font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+12);
+//            font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+15);
         }
 
 
