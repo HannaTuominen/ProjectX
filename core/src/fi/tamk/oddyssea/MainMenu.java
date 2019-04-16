@@ -120,8 +120,9 @@ public class MainMenu implements Screen {
 
         if(mainClass.getResetEverything()) {
             System.out.println("RESETTING MAIN MENU");
-            createNewButtons();
             mainClass.setResetEverything(false);
+            firstRound = mainClass.prefs.getBoolean("openedFirstTime");
+            createNewButtons();
         }
         batch.end();
 
