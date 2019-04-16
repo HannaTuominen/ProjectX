@@ -663,6 +663,7 @@ public class MainClass extends Game {
                 || useForTheButton == 13 || useForTheButton == 14
                 || useForTheButton == 15 || useForTheButton == 16
                 ) {
+
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             stage.addActor(button);
 //            System.out.println(useForTheButton);
@@ -672,6 +673,7 @@ public class MainClass extends Game {
 //			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 			groupActors(button);
 			groupStageAdd1();
+
 //			stage.addActor(button);
 		}
 
@@ -1830,12 +1832,13 @@ public class MainClass extends Game {
 			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + soundAndLanguage.getBoolean("languageFirstRound"));
 			System.out.println("LANGUAGE FALSE");
 			setDefaultLocale();
+			setCurrentFurthestChapter(1);
 //			getbackGroundMusicOffOrOff();
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
             soundAndLanguage.flush();
 
             setResetEverything(false);
-            getResetEverything();
+//            getResetEverything();
 
 			if(localLanguageToString.equals("fi_FI")) {
 				System.out.println("LOCAL LANGUAGE FINNISH");

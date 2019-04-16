@@ -44,7 +44,7 @@ public class GameScreen implements Screen {
     Texture backGroundImage22;
     Texture backGroundImage23;
 
-
+    Texture backGroundImage24;
 
     Skin skin;
 
@@ -76,7 +76,7 @@ public class GameScreen implements Screen {
     private ChapterAssets chapter22;
     private ChapterAssets chapter23;
 
-
+    private ChapterAssets chapter24;
 
 
     float textboxHeight;
@@ -123,6 +123,8 @@ public class GameScreen implements Screen {
         backGroundImage21 = new Texture(Gdx.files.internal("background_021.png"));
         backGroundImage22 = new Texture(Gdx.files.internal("background_022.png"));
         backGroundImage23 = new Texture(Gdx.files.internal("background_023.png"));
+
+//        backGroundImage24 = new Texture(Gdx.files.internal("background_024.png"));
 
 
 
@@ -202,6 +204,8 @@ public class GameScreen implements Screen {
         chapter21 = new ChapterAssets(mainClass, backGroundImage21, 5);
         chapter22 = new ChapterAssets(mainClass, backGroundImage22, 7);
         chapter23 = new ChapterAssets(mainClass, backGroundImage23, 4);
+
+        chapter24 = new ChapterAssets(mainClass, backGroundImage24, 4);
 
     }
 

@@ -54,6 +54,7 @@ public class MainMenu implements Screen {
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.playBackgroundMusic();
+
         } else {
             mainClass.stopBackGroundMusic();
         }
@@ -70,7 +71,6 @@ public class MainMenu implements Screen {
         } else {
             mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f, buttonHeight*1.3f,0);
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
-
         }
 
         if(mainClass.getLanguageFinnish()) {
@@ -114,7 +114,9 @@ public class MainMenu implements Screen {
             stage.clear();
             createNewButtons();
             mainClass.setSwappedlanguage(false);
-        } if(mainClass.getResetEverything()) {
+        }
+
+        if(mainClass.getResetEverything()) {
             createNewButtons();
             mainClass.setResetEverything(false);
         }
