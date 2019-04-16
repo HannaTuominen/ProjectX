@@ -1692,6 +1692,11 @@ public class Button extends Actor {
         this.storyID = storyID;
     }
 
+    public void calculateButtonXAndYPlace() {
+        //SETS THE X PLACE CORRECTLY TO CENTER DEPENDING ON THE TEXT SIZE FOR BUTTONS
+        buttonTextXPlace = this.xPlace + buttonWidth/2 - mainClass.getTextPlaceWIDTH(textForAButton)/2;
+        buttonTextYPlace = this.yPlace+buttonHeight/1.55f;
+    }
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace,
                  float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
@@ -1718,13 +1723,11 @@ public class Button extends Actor {
 
         //this.storyID = storyID;
 
-       if(useForTheButton == 14 || useForTheButton == 15) {
+       if(useForTheButton == 14) {
            buttonTextXPlace = this.xPlace+4;
            buttonTextYPlace = this.yPlace;
        } else {
-           //SETS THE X PLACE CORRECTLY TO CENTER DEPENDING ON THE TEXT SIZE FOR BUTTONS
-           buttonTextXPlace = this.xPlace + buttonWidth/2 - mainClass.getTextPlaceWIDTH(textForAButton)/2;
-           buttonTextYPlace = this.yPlace+buttonHeight/1.55f;
+          calculateButtonXAndYPlace();
        }
 
 
@@ -2311,24 +2314,35 @@ public class Button extends Actor {
                         }
 
                     } else if (mainClass.getChapterNumber() == 23) {
+                        System.out.println("GOT HERE at 23");
                         if (getUseForTheButton() == 5) {
-                            System.out.println("MENIS TAKAS ALKUUN MUTTA EI JAKSANU KKOODATA VIEL AFDSFD");
+                            mainClass.setResetEverything(true);
+                            enoughSteps = true;
+                            mainClass.setCurrentFurthestChapter(1);
+                            mainClass.setChapterNumber(1);
+                            mainClass.prefs.flush();
                         }
                         if (getUseForTheButton() == 6) {
-                            System.out.println("En tiiä mitä täst pitäs tapahtuu sdfsdf");
+                            System.out.println("LAST CHAPTER");
+                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                            System.out.println("REMOVING STEPS");
+                            System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                            mainClass.removeSteps(stepsToOpenNextChapter);
+                            enoughSteps = true;
+                            mainClass.setCurrentFurthestChapter(chapterNumber + 1);
+                            mainClass.setClearedChapter23(true);
+                            mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
+                            mainClass.setChapterNumber(chapterNumber + 1);
+                            mainClass.setSwapped(false);
+                            mainClass.prefs.flush();
                         }
-                        System.out.println("LAST CHAPTER");
-                        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
-                        System.out.println("REMOVING STEPS");
-                        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
-                        mainClass.removeSteps(stepsToOpenNextChapter);
-                        enoughSteps = true;
-                        mainClass.setCurrentFurthestChapter(chapterNumber + 1);
-                        mainClass.setClearedChapter22(true);
-                        mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
-                        mainClass.setChapterNumber(chapterNumber + 1);
+
+                    } else if (mainClass.getChapterNumber() == 24) {
+                        mainClass.getStage().clear();
+                        //START THE GAME FROM MAIN MENU
+                        MainMenu mainMenu = new MainMenu(mainClass);
                         mainClass.setSwapped(false);
-                        mainClass.prefs.flush();
+                        mainClass.setScreen(mainMenu);
                     }
                 }
 //                COMPUTER TESTING ADD 250 STEPS
@@ -2556,17 +2570,28 @@ public class Button extends Actor {
             font12.draw(batch,"", buttonTextXPlace, buttonTextYPlace);
 
         } else if (useForTheButton == 15) {
-//            System.out.println(stepsToOpenNextChapter);
-            setUpChapterTextBottomScreen(stepsToOpenNextChapter);
-            if(mainClass.getScreenHeight() < 800) {
-                stepsXPlace = getStepsNeededAndCurrentlyHavePlace()- 20f;
-            } else if (mainClass.getScreenHeight() >= 1000) {
-                stepsXPlace = getStepsNeededAndCurrentlyHavePlace();
-            }
+////            System.out.println(stepsToOpenNextChapter);
+//            setUpChapterTextBottomScreen(stepsToOpenNextChapter);
+//            if(mainClass.getScreenHeight() < 800) {
+//                stepsXPlace = getStepsNeededAndCurrentlyHavePlace()- 20f;
+//            } else if (mainClass.getScreenHeight() >= 1000) {
+//                stepsXPlace = getStepsNeededAndCurrentlyHavePlace();
+//            }
             textForAButton = String.valueOf(steps) + "/" + stepsToOpenNextChapter;
-            font12.draw(batch,textForAButton, stepsXPlace, buttonTextYPlace);
+            calculateButtonXAndYPlace();
+            font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
         } else if(useForTheButton != 10) {
-            font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
+           if (mainClass.getChapterNumber() == 24 && getUseForTheButton() == 6) {
+                font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
+            } else {
+               if(mainClass.getChapterNumber() == 24 && useForTheButton == 14) {
+
+               } else {
+                   font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
+               }
+
+           }
+
         }
         //STORY BOX TEXT
         else {

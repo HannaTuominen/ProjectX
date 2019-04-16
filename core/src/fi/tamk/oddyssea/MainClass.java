@@ -154,6 +154,7 @@ public class MainClass extends Game {
 	private String chapter23_4;
 
 
+    private String backToMainMenu;
 	private String title;
 	private String play;
 	private String chapterSelect;
@@ -1077,6 +1078,9 @@ public class MainClass extends Game {
 		return font12;
 	}
 
+    public String getBackToMainMenu() {
+        return backToMainMenu;
+    }
 
 	public String getTitle() {
 		return title;
@@ -1464,6 +1468,8 @@ public class MainClass extends Game {
 		return locale;
 	}
 	public void setLocaleTexts() {
+
+        backToMainMenu = myBundle.get("backToMainMenu");
 
 		title = myBundle.get("title");
 		play = myBundle.get("play");
