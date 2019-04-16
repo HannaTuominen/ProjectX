@@ -2320,10 +2320,19 @@ public class Button extends Actor {
                     } else if (mainClass.getChapterNumber() == 23) {
                         System.out.println("GOT HERE at 23");
                         if (getUseForTheButton() == 5) {
-                            mainClass.setResetEverything(true);
+//                            mainClass.setResetEverything(true);
+                            mainClass.prefs.clear();
+                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                            System.out.println("REMOVING STEPS");
+                            System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                            mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setCurrentFurthestChapter(1);
+                            mainClass.setClearedChapter1(false);
+                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                             mainClass.setChapterNumber(1);
+                            mainClass.setSwapped(false);
+                            mainClass.setSteps(0);
                             mainClass.prefs.flush();
                         }
                         if (getUseForTheButton() == 6) {
