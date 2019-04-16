@@ -53,9 +53,11 @@ public class MainMenu implements Screen {
         createNewButtons();
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
+            System.out.println("PLAYING BACKGROUN MUSIC IN MAIN MENU");
             mainClass.playBackgroundMusic();
 
         } else {
+            System.out.println("NOT PLAYING BACKGROUN MUSIC IN MAIN MENU");
             mainClass.stopBackGroundMusic();
         }
 
@@ -117,6 +119,7 @@ public class MainMenu implements Screen {
         }
 
         if(mainClass.getResetEverything()) {
+            System.out.println("RESETTING MAIN MENU");
             createNewButtons();
             mainClass.setResetEverything(false);
         }

@@ -1906,6 +1906,7 @@ public class Button extends Actor {
            if (useForTheButton == 16) {
                mainClass.prefs.clear();
                mainClass.setResetEverything(true);
+               mainClass.setSteps(0);
                System.out.println("PREFS CLEARED PRESSED");
                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
 //               Gdx.app.exit();

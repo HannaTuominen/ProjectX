@@ -603,7 +603,7 @@ public class MainClass extends Game {
 		music.setLooping(true);                // will repeat playback until music.stop() is called
 //		music.stop();                          // stops the playback
 //		music.pause();                         // pauses the playback
-		music.play();                          // resumes the playback
+//		music.play();                          // resumes the playback
 //		boolean isPlaying = music.isPlaying(); // obvious :)
 //		boolean isLooping = music.isLooping(); // obvious as well :)
 //		float position = music.getPosition();  // returns the playback position in seconds
@@ -1798,8 +1798,10 @@ public class MainClass extends Game {
 
 		//CREATE OR OPEN THE MyPreferences.xml FILE THAT STORES INFO ON SCENES AND SUCH
 		//Create or open file MyPreferences.xml
-		prefs = Gdx.app.getPreferences("MyPreferences");
         soundAndLanguage = Gdx.app.getPreferences("MyPreferences2");
+		prefs = Gdx.app.getPreferences("MyPreferences");
+
+
 		stage = new Stage(new FitViewport(screenWidth, screenHeight), batch);
 
 		//CREATE THE GAMERA THAT IS USEED THROUGHOUT THE GAME
@@ -1807,6 +1809,7 @@ public class MainClass extends Game {
 		camera.setToOrtho(false, screenWidth, screenHeight);
 
 		group = new Group();
+
 		if(languageFirstRound == false) {
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
             soundAndLanguage.putBoolean("languageFirstRound", true);
@@ -1819,19 +1822,20 @@ public class MainClass extends Game {
 //			setGotToLastTextPartOkayToShowNeededButtons(false);
 
 		}
+        if(!getbackGroundMusicOffOrOn()) {
+            playBackgroundMusic();
+            System.out.println("MAINCLASS PLAY MUSIC");
+        } else {
+            stopBackGroundMusic();
+            System.out.println("MAINCLASS DON'T PLAY MUSIC");
+        }
+
 
 //		if(backGroundMusicOff != prefs.getBoolean("backGroundMusicOff")) {
 //			createBackGroundMusicAndLoopIt(true);
 //		}
 		System.out.println("IS SOUND OFF AT THE START: " + getbackGroundMusicOffOrOn());
 
-		if(!getbackGroundMusicOffOrOn()) {
-			playBackgroundMusic();
-			System.out.println("MAINCLASS PLAY MUSIC");
-		} else {
-			stopBackGroundMusic();
-			System.out.println("MAINCLASS DON'T PLAY MUSIC");
-		}
 
 
 		if(languageFirstRound != soundAndLanguage.getBoolean("languageFirstRound")) {
