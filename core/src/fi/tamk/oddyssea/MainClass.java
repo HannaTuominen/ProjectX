@@ -1822,10 +1822,13 @@ public class MainClass extends Game {
 //			setGotToLastTextPartOkayToShowNeededButtons(false);
 
 		}
-        if(!getbackGroundMusicOffOrOn()) {
+
+		if(!getbackGroundMusicOffOrOn()) {
+            createBackGroundMusicAndLoopIt(backGroundMusicOff);
             playBackgroundMusic();
             System.out.println("MAINCLASS PLAY MUSIC");
         } else {
+            createBackGroundMusicAndLoopIt(backGroundMusicOff);
             stopBackGroundMusic();
             System.out.println("MAINCLASS DON'T PLAY MUSIC");
         }
