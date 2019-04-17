@@ -85,7 +85,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_3_locked_unpressed.png"),"3",0,9,
                     (20f*2)+buttonWidth,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_3_unlocked_unpressed.png"),"3",0,9,
+            mainClass.createButtons(new Texture("Chapter_3_unlocked_unpressed.png"),"3",0,9,
                     (20f*2)+buttonWidth,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //5
@@ -93,7 +93,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_5_locked_unpressed.png"),"5",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_5_unlocked_unpressed.png"),"5",0,9,
+            mainClass.createButtons(new Texture("Chapter_5_unlocked_unpressed.png"),"5",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //7
@@ -101,7 +101,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_7_locked_unpressed.png"),"7",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_7_unlocked_unpressed.png"),"7",0,9,
+            mainClass.createButtons(new Texture("Chapter_7_unlocked_unpressed.png"),"7",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -110,7 +110,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_9_locked_unpressed.png"),"9",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_9_unlocked_unpressed.png"),"9",0,9,
+            mainClass.createButtons(new Texture("Chapter_9_unlocked_unpressed.png"),"9",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -119,7 +119,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_11_locked_unpressed.png"),"11",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_11_unlocked_unpressed.png"),"11",0,9,
+            mainClass.createButtons(new Texture("Chapter_11_unlocked_unpressed.png"),"11",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -128,7 +128,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_13_locked_unpressed.png"),"13",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_13_unlocked_unpressed.png"),"13",0,9,
+            mainClass.createButtons(new Texture("Chapter_13_unlocked_unpressed.png"),"13",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -137,7 +137,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_15_locked_unpressed.png"),"15",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_15_unlocked_unpressed.png"),"15",0,9,
+            mainClass.createButtons(new Texture("Chapter_15_unlocked_unpressed.png"),"15",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -146,7 +146,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_17_locked_unpressed.png"),"17",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_17_unlocked_unpressed.png"),"17",0,9,
+            mainClass.createButtons(new Texture("Chapter_17_unlocked_unpressed.png"),"17",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -155,7 +155,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_19_locked_unpressed.png"),"19",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_19_unlocked_unpressed.png"),"19",0,9,
+            mainClass.createButtons(new Texture("Chapter_19_unlocked_unpressed.png"),"19",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -164,7 +164,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_21_locked_unpressed.png"),"21",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_21_unlocked_unpressed.png"),"21",0,9,
+            mainClass.createButtons(new Texture("Chapter_21_unlocked_unpressed.png"),"21",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -173,7 +173,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_23_locked_unpressed.png"),"23",0,9,
                     (20f*12)+buttonWidth*11,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_23_unlocked_unpressed.png"),"23",0,9,
+            mainClass.createButtons(new Texture("Chapter_23_unlocked_unpressed.png"),"23",0,9,
                     (20f*12)+buttonWidth*11,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -188,7 +188,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_2_locked_unpressed.png"),"2",0,9,
                     20f,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_2_unlocked_unpressed.png"),"2",0,9,
+            mainClass.createButtons(new Texture("Chapter_2_unlocked_unpressed.png"),"2",0,9,
                     20f,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //4
@@ -196,7 +196,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_4_locked_unpressed.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_4_unlocked_unpressed.png"),"4",0,9,
+            mainClass.createButtons(new Texture("Chapter_4_unlocked_unpressed.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -205,7 +205,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_6_locked_unpressed.png"),"6",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_6_unlocked_unpressed.png"),"6",0,9,
+            mainClass.createButtons(new Texture("Chapter_6_unlocked_unpressed.png"),"6",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -214,7 +214,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_8_locked_unpressed.png"),"8",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_8_unlocked_unpressed.png"),"8",0,9,
+            mainClass.createButtons(new Texture("Chapter_8_unlocked_unpressed.png"),"8",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -223,7 +223,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_10_locked_unpressed.png"),"10",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_10_unlocked_unpressed.png"),"10",0,9,
+            mainClass.createButtons(new Texture("Chapter_10_unlocked_unpressed.png"),"10",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -232,7 +232,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_12_locked_unpressed.png"),"12",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_12_unlocked_unpressed.png"),"12",0,9,
+            mainClass.createButtons(new Texture("Chapter_12_unlocked_unpressed.png"),"12",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -241,7 +241,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_14_locked_unpressed.png"),"14",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_14_unlocked_unpressed.png"),"14",0,9,
+            mainClass.createButtons(new Texture("Chapter_14_unlocked_unpressed.png"),"14",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -250,7 +250,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_16_locked_unpressed.png"),"16",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_16_unlocked_unpressed.png"),"16",0,9,
+            mainClass.createButtons(new Texture("Chapter_16_unlocked_unpressed.png"),"16",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -259,7 +259,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_18_locked_unpressed.png"),"18",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_18_unlocked_unpressed.png"),"18",0,9,
+            mainClass.createButtons(new Texture("Chapter_18_unlocked_unpressed.png"),"18",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -268,7 +268,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_20_locked_unpressed.png"),"20",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_20_unlocked_unpressed.png"),"20",0,9,
+            mainClass.createButtons(new Texture("Chapter_20_unlocked_unpressed.png"),"20",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
@@ -277,7 +277,7 @@ public class ChapterSelect implements Screen {
             mainClass.createButtons(new Texture("Chapter_22_locked_unpressed.png"),"22",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
-            mainClass.createButtons(new Texture("chapter_22_unlocked_unpressed.png"),"22",0,9,
+            mainClass.createButtons(new Texture("Chapter_22_unlocked_unpressed.png"),"22",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
 
