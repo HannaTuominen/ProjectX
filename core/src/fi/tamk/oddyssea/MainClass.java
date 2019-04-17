@@ -35,6 +35,7 @@ public class MainClass extends Game {
 
 	private boolean resetEverything = false;
 	private boolean prefsPopUpActivate;
+	private boolean tutorialShow;
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 //	private float CurrentSteps;
 
@@ -160,6 +161,7 @@ public class MainClass extends Game {
     private String yes;
     private String no;
     private String ok;
+    private String tutorialText;
 
     private String backToMainMenu;
 	private String title;
@@ -312,6 +314,8 @@ public class MainClass extends Game {
 	Group group;
 
 	Group group2;
+
+    Group group3;
 
 	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
 	private boolean gotToTheLastTextOnceAlready = false;
@@ -676,6 +680,17 @@ public class MainClass extends Game {
         return prefsPopUpActivate;
     }
 
+    public void setTutorialShow(boolean tutorialShow) {
+        this.tutorialShow = tutorialShow;
+        prefs.putBoolean("tutorialShow", this.tutorialShow);
+        prefs.flush();
+    }
+
+    public boolean gettutorialShow() {
+        tutorialShow = prefs.getBoolean("tutorialShow");
+        return tutorialShow;
+    }
+
 
     public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
 							  float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
@@ -691,7 +706,8 @@ public class MainClass extends Game {
                 || useForTheButton == 13 || useForTheButton == 14
                 || useForTheButton == 15 || useForTheButton == 16
                 || useForTheButton == 17 || useForTheButton == 18
-                || useForTheButton == 19
+                || useForTheButton == 19 || useForTheButton == 20
+                || useForTheButton == 21
                 ) {
 
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
@@ -711,6 +727,14 @@ public class MainClass extends Game {
 //			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             groupActors2(button);
             groupStageAdd2();
+
+//			stage.addActor(button);
+        }
+
+        if(useForTheButton == 20 || useForTheButton == 21 ) {
+//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+            groupActors3(button);
+            groupStageAdd3();
 
 //			stage.addActor(button);
         }
@@ -765,13 +789,18 @@ public class MainClass extends Game {
 	public void groupActors2(Actor actor) {
 		group2.addActor(actor);
 	}
+    public void groupActors3(Actor actor) {
+        group3.addActor(actor);
+    }
 
 	public void clearGroup(int useForTheButton) {
 		if(useForTheButton == 9 || useForTheButton == 12) {
 			group.clear();
-		}else {
+		}else if (useForTheButton == 17 || useForTheButton == 18 || useForTheButton == 19) {
 			group2.clear();
-		}
+		}else {
+		    group3.clear();
+        }
     }
 	public Group getGroup1() {
 		return group;
@@ -779,6 +808,9 @@ public class MainClass extends Game {
 	public Group getGroup2() {
 		return group2;
 	}
+    public Group getGroup3() {
+        return group3;
+    }
 	public void groupStageAdd1() {
 		stage.addActor(group);
 	}
@@ -786,6 +818,9 @@ public class MainClass extends Game {
 		stage.addActor(group2);
 	}
 
+    public void groupStageAdd3() {
+        stage.addActor(group3);
+    }
 
 
 
@@ -1134,7 +1169,9 @@ public class MainClass extends Game {
     public String getOk() {
         return ok;
     }
-
+    public String getTutorialText() {
+        return tutorialText;
+    }
 	public String getTitle() {
 		return title;
 	}
@@ -1582,6 +1619,7 @@ public class MainClass extends Game {
         yes= myBundle.get("yes");
         no= myBundle.get("no");
         ok= myBundle.get("ok");
+        tutorialText = myBundle.get("tutorialText");
 
 
 		chapter= myBundle.get("chapter");
@@ -1914,7 +1952,7 @@ public class MainClass extends Game {
 
 		group = new Group();
         group2 = new Group();
-
+        group3 = new Group();
 		if(languageFirstRound == false) {
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
             soundAndLanguage.putBoolean("languageFirstRound", true);

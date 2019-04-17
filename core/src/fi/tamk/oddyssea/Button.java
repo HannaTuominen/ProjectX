@@ -1909,15 +1909,17 @@ public class Button extends Actor {
             17. Empty prefs place
             18. Yes
             19. No
+            20. Tutorial background place
+            21. Ok
             */
 
            if (useForTheButton == 16) {
                if(!mainClass.getPrefsPopUpActivate()) {
                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                    mainClass.setPrefsPopUpActivate(true);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 20, mainClass.getScreenHeight() / 20, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 20, mainClass.getScreenHeight() / 5, buttonWidth, buttonHeight, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 20 + mainClass.getScreenWidth() / 1.5f - buttonWidth, mainClass.getScreenHeight() / 5, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("textbox_90.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
                }
            }
             if (useForTheButton == 18) {
@@ -1938,6 +1940,11 @@ public class Button extends Actor {
             if (useForTheButton == 19) {
                 mainClass.clearGroup(17);
                 mainClass.setPrefsPopUpActivate(false);
+            }
+
+            if (useForTheButton == 21) {
+                mainClass.clearGroup(20);
+                mainClass.setTutorialShow(false);
             }
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
                 if(touchUpX == 0) {
@@ -2582,11 +2589,14 @@ public class Button extends Actor {
 
             } else if (getUseForTheButton() == 10) {
 //                swapTextIndicators();
-                swappedIndicator = false;
-                System.out.println("HERE " + getStoryID());
-                if(flingX == 0) {
-                    useForTheButtonis10();
+                if(!mainClass.gettutorialShow()) {
+                    swappedIndicator = false;
+                    System.out.println("HERE " + getStoryID());
+                    if(flingX == 0) {
+                        useForTheButtonis10();
+                    }
                 }
+
 
             } else if (getUseForTheButton() == 11) {
                 if(!mainClass.getPrefsPopUpActivate()) {
@@ -2742,6 +2752,8 @@ public class Button extends Actor {
             textForAButton = String.valueOf(steps) + "/" + stepsToOpenNextChapter;
             calculateButtonXAndYPlace();
             font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
+        } else if (useForTheButton == 17 || useForTheButton == 20) {
+            font12.draw(batch,textForAButton, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2+mainClass.getScreenHeight() / 1.6f/2-20);
         } else if(useForTheButton != 10) {
            if (mainClass.getChapterNumber() == 24 && getUseForTheButton() == 6) {
                 font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);

@@ -352,6 +352,7 @@ public class GameScreen implements Screen {
 //            mainClass.setGotToTheLastTextOnceAlready(false);
 //            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
+            mainClass.setTutorialShow(true);
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
@@ -482,7 +483,6 @@ public class GameScreen implements Screen {
 //                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
 //                System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons() + "GG");
 //            }
-
             if(!mainClass.getClearedChapter1()) {
                 if(mainClass.getResetEverything()) {
                     mainClass.setResetEverything(false);
@@ -516,6 +516,13 @@ public class GameScreen implements Screen {
                     20f,10f, screenWidth-40f,textboxHeight,0);
 
             addExitAndMusicButtons();
+
+            if(mainClass.gettutorialShow()) {
+                mainClass.createButtons(new Texture("textbox_90.png"), mainClass.getTutorialText(), 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                mainClass.createButtons(new Texture("button_orange.png"), mainClass.getOk(), 0, 21, screenWidth/2f-screenWidth/8, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
+
+            }
+
 
         }
 
