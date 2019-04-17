@@ -34,7 +34,7 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		loadData();
 		MainClass.setSteps(numSteps);
 		getGameSteps();
-		return START_NOT_STICKY;
+		return START_STICKY;
 	}
 	@Override
 	public void onSensorChanged(SensorEvent event) {
