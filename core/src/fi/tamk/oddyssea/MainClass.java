@@ -707,7 +707,7 @@ public class MainClass extends Game {
                 || useForTheButton == 15 || useForTheButton == 16
                 || useForTheButton == 17 || useForTheButton == 18
                 || useForTheButton == 19 || useForTheButton == 20
-                || useForTheButton == 21
+                || useForTheButton == 21 || useForTheButton == 22
                 ) {
 
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
@@ -1922,6 +1922,7 @@ public class MainClass extends Game {
 		//CREATE A NEW BATCH THAT IS USED EVERYWHERE
 		batch = new SpriteBatch();
 
+
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("Aero Matics Regular.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
@@ -2068,6 +2069,7 @@ public class MainClass extends Game {
 		return steps;
 	}
 	public int getCurrentSteps() {
+	    System.out.println(steps);
 		return steps;
 	}
 	public void removeSteps(int steps) {

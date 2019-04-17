@@ -287,6 +287,10 @@ public class GameScreen implements Screen {
                     20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
         }
 
+        //EXTRA STEPS FOR GAME FARE COMMENT OUT WHEN NOT NEEDED
+            mainClass.createButtons(new Texture("button_orange.png"),"+1000",0,22,
+                    stepboxHeight/8, textboxHeight+buttonHeight/2.5f, buttonWidth/1.5f ,buttonHeight,0);
+
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
                     screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
@@ -470,7 +474,7 @@ public class GameScreen implements Screen {
         batch.begin();
 
 
-        int steps = mainClass.getCurrentSteps();
+//        int steps = mainClass.getCurrentSteps();
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter1);
@@ -519,7 +523,7 @@ public class GameScreen implements Screen {
 
             if(mainClass.gettutorialShow()) {
                 mainClass.createButtons(new Texture("textbox_90.png"), mainClass.getTutorialText(), 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                mainClass.createButtons(new Texture("button_orange.png"), mainClass.getOk(), 0, 21, screenWidth/2f-screenWidth/8, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
+                mainClass.createButtons(new Texture("button_orange.png"), mainClass.getOk(), 0, 21, screenWidth/2f-screenWidth/8, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
 
             }
 

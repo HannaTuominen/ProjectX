@@ -1911,6 +1911,7 @@ public class Button extends Actor {
             19. No
             20. Tutorial background place
             21. Ok
+            22. Add extra steps for the Game fare
             */
 
            if (useForTheButton == 16) {
@@ -1918,8 +1919,8 @@ public class Button extends Actor {
                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                    mainClass.setPrefsPopUpActivate(true);
                    mainClass.createButtons(new Texture("textbox_90.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
                }
            }
             if (useForTheButton == 18) {
@@ -1946,6 +1947,11 @@ public class Button extends Actor {
                 mainClass.clearGroup(20);
                 mainClass.setTutorialShow(false);
             }
+            if (useForTheButton == 22) {
+                //Doesn't save on computer as you need at least 1 legit step for the save
+                mainClass.setSteps(mainClass.getCurrentSteps()+1000);
+            }
+
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
                 if(touchUpX == 0) {
                     if (mainClass.getChapterNumber() == 1) {
@@ -2390,10 +2396,10 @@ public class Button extends Actor {
                         mainClass.setScreen(mainMenu);
                     }
                 }
-//                COMPUTER TESTING ADD 250 STEPS
-                if (!enoughSteps) {
-                    mainClass.setSteps(880000);
-                }
+                //                COMPUTER TESTING ADD 250 STEPS
+//                if (!enoughSteps) {
+//                    mainClass.setSteps(880000);
+//                }
 
 
             } else if (getUseForTheButton() == 7) {
@@ -2753,7 +2759,7 @@ public class Button extends Actor {
             calculateButtonXAndYPlace();
             font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
         } else if (useForTheButton == 17 || useForTheButton == 20) {
-            font12.draw(batch,textForAButton, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2+mainClass.getScreenHeight() / 1.6f/2-20);
+            font12.draw(batch,textForAButton, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2+mainClass.getScreenHeight() / 1.6f/2-mainClass.getScreenHeight()/20);
         } else if(useForTheButton != 10) {
            if (mainClass.getChapterNumber() == 24 && getUseForTheButton() == 6) {
                 font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);

@@ -131,6 +131,7 @@ public class MainMenu implements Screen {
         stage.draw();
 
 
+//        System.out.println("CURRENT STEPS MAIN MENU: " + mainClass.getCurrentSteps());
     }
 
     @Override
