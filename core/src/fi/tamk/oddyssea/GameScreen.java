@@ -210,7 +210,7 @@ public class GameScreen implements Screen {
         chapter23 = new ChapterAssets(mainClass, backGroundImage23, 4);
 
         chapter24_1 = new ChapterAssets(mainClass, backGroundImage24_1, 0);
-        chapter24_2 = new ChapterAssets(mainClass, backGroundImage24_1, 0);
+        chapter24_2 = new ChapterAssets(mainClass, backGroundImage24_2, 0);
     }
 
 

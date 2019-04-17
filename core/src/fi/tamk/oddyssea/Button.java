@@ -1907,6 +1907,9 @@ public class Button extends Actor {
                mainClass.prefs.clear();
                mainClass.setSteps(0);
                mainClass.setCurrentFurthestChapter(1);
+//               mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+               mainClass.setClearedChapter1(false);
+               mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                mainClass.setChapterNumber(1);
                mainClass.setResetEverything(true);
                mainClass.prefs.flush();

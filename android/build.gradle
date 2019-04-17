@@ -17,7 +17,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "fi.tamk.tiko"
+        applicationId "fi.tamk.oddyssea"
         minSdkVersion 9
         targetSdkVersion 27
         versionCode 1
