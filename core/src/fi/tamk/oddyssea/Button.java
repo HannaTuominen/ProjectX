@@ -2399,6 +2399,7 @@ public class Button extends Actor {
             } else if (getUseForTheButton() == 4) {
                 //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
                 Gdx.app.exit();
+                System.exit(0);
             } else if (getUseForTheButton() == 9) {
                 if(touchUpX == 0) {
                 System.out.println("9 pressed");
