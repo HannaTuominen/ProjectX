@@ -282,8 +282,10 @@ public class GameScreen implements Screen {
 
     public void addExitAndMusicButtons() {
 
-        mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
+        if(mainClass.getChapterNumber() != 24) {
+            mainClass.createButtons(new Texture("back_X.png"),"",0,8,
+                    20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
+        }
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
@@ -319,6 +321,9 @@ public class GameScreen implements Screen {
             stepboxHeight = screenHeight/7.6f;
         }
 
+        if(mainClass.getCurrentFurthestChapter() == 0) {
+            mainClass.setCurrentFurthestChapter(1);
+        }
         openedFirstTime = mainClass.prefs.getBoolean("openedFirstTime");
 
         buttonWidth = screenWidth/4;
@@ -479,11 +484,10 @@ public class GameScreen implements Screen {
 //            }
 
             if(!mainClass.getClearedChapter1()) {
-//                if(mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
-//                    System.out.println("GOT TO THE LAST PART OF THE TEXT, HERE THE BUTTONS WOULD COME VISIBLE");
-//                }
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-
+                if(mainClass.getResetEverything()) {
+                    mainClass.setResetEverything(false);
+                    System.out.println("PUTTING RESET EVERYTHING BACK TO FALSE");
+                }
                 mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
 //                mainClass.setButton5Visible(false);

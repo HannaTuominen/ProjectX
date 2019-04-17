@@ -44,10 +44,10 @@ public class Button extends Actor {
 
 
 
-    float stepsNeededAndCurrentlyHavePlace;
-    int stepsLength;
-    int howManyNumbersInStepsToOpenNextChapter;
-    float stepsXPlace;
+//    float stepsNeededAndCurrentlyHavePlace;
+//    int stepsLength;
+//    int howManyNumbersInStepsToOpenNextChapter;
+//    float stepsXPlace;
     boolean swappedIndicator = true;
 
     public void useForTheButtonIs10Reverse() {
@@ -1590,66 +1590,66 @@ public class Button extends Actor {
 
 
 
-    public void setHowManyNumbersInStepsToOpenNextChapters(int steps) {
-        if(steps == 0) {
-            howManyNumbersInStepsToOpenNextChapter = 1;
-        } else if(steps>= 10 && steps <100) {
-            howManyNumbersInStepsToOpenNextChapter = 2;
-        } else if (steps >=100 && steps <1000) {
-            howManyNumbersInStepsToOpenNextChapter = 3;
-        } else if (steps >=1000 && steps <10000) {
-            howManyNumbersInStepsToOpenNextChapter = 4;
-        } else if (steps >=10000 && steps <100000) {
-            howManyNumbersInStepsToOpenNextChapter = 5;
-        }
-    }
-    public int getHowManyNumbersInStepsToOpenChapters() {
-        return howManyNumbersInStepsToOpenNextChapter;
-    }
+//    public void setHowManyNumbersInStepsToOpenNextChapters(int steps) {
+//        if(steps == 0) {
+//            howManyNumbersInStepsToOpenNextChapter = 1;
+//        } else if(steps>= 10 && steps <100) {
+//            howManyNumbersInStepsToOpenNextChapter = 2;
+//        } else if (steps >=100 && steps <1000) {
+//            howManyNumbersInStepsToOpenNextChapter = 3;
+//        } else if (steps >=1000 && steps <10000) {
+//            howManyNumbersInStepsToOpenNextChapter = 4;
+//        } else if (steps >=10000 && steps <100000) {
+//            howManyNumbersInStepsToOpenNextChapter = 5;
+//        }
+//    }
+//    public int getHowManyNumbersInStepsToOpenChapters() {
+//        return howManyNumbersInStepsToOpenNextChapter;
+//    }
+//
+//    public void setUpChapterTextBottomScreen(int steps) {
+//        setHowManyNumbersInStepsToOpenNextChapters(steps);
+//        gameScreenTextStuff();
+//    }
+//
+//    public void gameScreenTextStuff() {
+//        int steps = mainClass.getCurrentSteps();
+//
+//        stepsLength = String.valueOf(steps).length()+getHowManyNumbersInStepsToOpenChapters();
+////            System.out.println(stepsLength);
+//
+//        if(stepsLength <= 2) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/4f);
+////            System.out.println(stepsNeededAndCurrentlyHavePlace);
+//        } else if(stepsLength ==3) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/3.5f);
+////            System.out.println(stepsNeededAndCurrentlyHavePlace);
+//        }else if(stepsLength ==4) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.5f);
+//        } else if(stepsLength ==5) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.1f);
+//        } else if(stepsLength ==6) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.9f);
+//        } else if(stepsLength ==7) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.6f);
+//        } else if(stepsLength ==8) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.5f);
+//        } else if(stepsLength ==9) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.25f);
+//        } else if(stepsLength ==10) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.15f);
+//        } else if(stepsLength ==11) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.05f);
+//        } else if(stepsLength ==12) {
+//            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/0.9f);
+//        }
+//    }
 
-    public void setUpChapterTextBottomScreen(int steps) {
-        setHowManyNumbersInStepsToOpenNextChapters(steps);
-        gameScreenTextStuff();
-    }
-
-    public void gameScreenTextStuff() {
-        int steps = mainClass.getCurrentSteps();
-
-        stepsLength = String.valueOf(steps).length()+getHowManyNumbersInStepsToOpenChapters();
-//            System.out.println(stepsLength);
-
-        if(stepsLength <= 2) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/4f);
-//            System.out.println(stepsNeededAndCurrentlyHavePlace);
-        } else if(stepsLength ==3) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/3.5f);
-//            System.out.println(stepsNeededAndCurrentlyHavePlace);
-        }else if(stepsLength ==4) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.5f);
-        } else if(stepsLength ==5) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/2.1f);
-        } else if(stepsLength ==6) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.9f);
-        } else if(stepsLength ==7) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.6f);
-        } else if(stepsLength ==8) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.5f);
-        } else if(stepsLength ==9) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.25f);
-        } else if(stepsLength ==10) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.15f);
-        } else if(stepsLength ==11) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/1.05f);
-        } else if(stepsLength ==12) {
-            setStepsNeededAndCurrentlyHavePlace(mainClass.getScreenWidth()-buttonWidth/0.9f);
-        }
-    }
-
-    public void setStepsNeededAndCurrentlyHavePlace(float stepsNeededAndCurrentlyHavePlace) {
-        this.stepsNeededAndCurrentlyHavePlace = stepsNeededAndCurrentlyHavePlace;
-
-    }
-    public float getStepsNeededAndCurrentlyHavePlace() {return stepsNeededAndCurrentlyHavePlace;}
+//    public void setStepsNeededAndCurrentlyHavePlace(float stepsNeededAndCurrentlyHavePlace) {
+//        this.stepsNeededAndCurrentlyHavePlace = stepsNeededAndCurrentlyHavePlace;
+//
+//    }
+//    public float getStepsNeededAndCurrentlyHavePlace() {return stepsNeededAndCurrentlyHavePlace;}
 
 
     public void setGroup1(Group group) {
@@ -2298,7 +2298,7 @@ public class Button extends Actor {
                             enoughSteps = true;
                             mainClass.setCurrentFurthestChapter(chapterNumber + 1);
                             mainClass.setClearedChapter21(true);
-                            mainClass.prefs.putBoolean("clearedChapte21", mainClass.getClearedChapter21());
+                            mainClass.prefs.putBoolean("clearedChapter21", mainClass.getClearedChapter21());
                             mainClass.setChapterNumber(chapterNumber + 1);
                             mainClass.setSwapped(false);
                             mainClass.prefs.flush();
@@ -2326,15 +2326,15 @@ public class Button extends Actor {
                         if (getUseForTheButton() == 5) {
 //                            mainClass.setResetEverything(true);
                             mainClass.prefs.clear();
+                            mainClass.setResetEverything(true);
+                            mainClass.prefs.putBoolean("openedFirstTime", true);
                             mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
-                            System.out.println("REMOVING STEPS");
-                            System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
+                            mainClass.setChapterNumber(1);
                             mainClass.setCurrentFurthestChapter(1);
                             mainClass.setClearedChapter1(false);
                             mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
-                            mainClass.setChapterNumber(1);
                             mainClass.setSwapped(false);
                             mainClass.setSteps(0);
                             mainClass.prefs.flush();
@@ -2441,6 +2441,104 @@ public class Button extends Actor {
                     } else {
 
                     }
+                } else {
+                    chapterSelect = Integer.parseInt(getTextForAButton());
+                    System.out.println("RELEASED SCROLL SHOULD CHANGE BUTTON TO NORMAL");
+                    if (chapterSelect == 1) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter2() && chapterSelect == 2) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter3() && chapterSelect == 3) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter4() && chapterSelect == 4) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter5() && chapterSelect == 5) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter6() && chapterSelect == 6) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter7() && chapterSelect == 7) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter8() && chapterSelect == 8) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter9() && chapterSelect == 9) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter10() && chapterSelect == 10) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter11() && chapterSelect == 11) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter12() && chapterSelect == 12) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter13() && chapterSelect == 13) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter14() && chapterSelect == 14) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter15() && chapterSelect == 15) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter16() && chapterSelect == 16) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter17() && chapterSelect == 17) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter18() && chapterSelect == 18) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter19() && chapterSelect == 19) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter20() && chapterSelect == 20) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter21() && chapterSelect == 21) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter22() && chapterSelect == 22) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
+                    } else if (mainClass.getClearedChapter23() && chapterSelect == 23) {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
+                    } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
+                        if (chapterSelect == 1) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 2) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 3) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 4) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 5) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 6) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 7) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 8) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 9) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 10) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 11) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 12) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 13) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 14) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 15) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 16) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 17) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 18) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 19) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 20) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 21) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 22) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
+                        } else if (chapterSelect == 23) {
+                            setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
+                        }
+                    }
                 }
 
             } else if (getUseForTheButton() == 10) {
@@ -2450,9 +2548,6 @@ public class Button extends Actor {
                 if(flingX == 0) {
                     useForTheButtonis10();
                 }
-
-
-
 
             } else if (getUseForTheButton() == 11) {
 

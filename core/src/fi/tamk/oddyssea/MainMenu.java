@@ -108,7 +108,7 @@ public class MainMenu implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(texture, 0f, 0f, screenWidth,screenHeight);
-        batch.draw(texture2, screenWidth/2, screenWidth/20, screenWidth/2.2f,screenHeight/1.2f);
+        batch.draw(texture2, screenWidth/2.1f, screenWidth/23.5f, screenWidth/2.2f,screenHeight/1.2f);
 
 //        font12.draw(batch,mainClass.getTitle(), 0, 100);
         if(mainClass.getSwappedlanguage()) {
