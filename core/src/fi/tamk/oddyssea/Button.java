@@ -1755,7 +1755,9 @@ public class Button extends Actor {
             touchUpX = 0;
             flingX = 0;
             if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 || getUseForTheButton() == 18 || getUseForTheButton() == 19  ) {
-                setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                }
             }
 
 
