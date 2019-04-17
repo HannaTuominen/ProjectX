@@ -1781,6 +1781,7 @@ public class Button extends Actor {
 
             if (getUseForTheButton() == 9) {
                 chapterSelect = Integer.parseInt(getTextForAButton());
+
                 if(chapterSelect == 1) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
                 } else if(mainClass.getClearedChapter2() && chapterSelect == 2) {
@@ -2514,13 +2515,15 @@ public class Button extends Actor {
                 if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
                     System.out.println("FIRST OPTION GOING ON " + getGroup1().getX());
-                } else if (getGroup1().getX() > 20){
-                    getGroup1().setX(-getGroup1().getX());
+                }
+
+                if (getGroup1().getX() > 0){
+                    getGroup1().setX(-1);
                     System.out.println("SECOND OPTION GOING ON");
-                } else if (getGroup1().getX() < 20) {
-                    getGroup1().setX(getGroup1().getX()+20);
-                } else if(getGroup1().getX()<scrollerWidth){
-                    getGroup1().setX(scrollerWidth-30);
+                }
+
+                if (getGroup1().getX() < scrollerWidth){
+                    getGroup1().setX(scrollerWidth+1);
                     System.out.println("THIRD OPTION GOING ON");
                 }
 
