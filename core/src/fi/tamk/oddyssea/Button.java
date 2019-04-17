@@ -1950,6 +1950,7 @@ public class Button extends Actor {
             if (useForTheButton == 22) {
                 //Doesn't save on computer as you need at least 1 legit step for the save
                 mainClass.setSteps(mainClass.getCurrentSteps()+1000);
+
             }
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
