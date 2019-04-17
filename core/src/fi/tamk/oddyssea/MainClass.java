@@ -2069,7 +2069,7 @@ public class MainClass extends Game {
 		return steps;
 	}
 	public int getCurrentSteps() {
-	    System.out.println(steps);
+//	    System.out.println(steps);
 		return steps;
 	}
 	public void removeSteps(int steps) {

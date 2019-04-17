@@ -1960,7 +1960,7 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             if (getUseForTheButton() == 5) {
-                                mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 5);//300);
+                                mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
                                 mainClass.setChoseWrong_1(true);
                             }
 
@@ -2022,7 +2022,7 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             if (getUseForTheButton() == 5) {
-                                mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 5);// 1000);
+                                mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 1000);
                                 mainClass.setChoseWrong_2(true);
                             }
                             mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
@@ -2149,7 +2149,7 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             if (getUseForTheButton() == 5) {
-                                mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 5);//+ 200);
+                                mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 200);
                                 mainClass.setChoseWrong_3(true);
                             }
                             mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
@@ -2255,7 +2255,7 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             if (getUseForTheButton() == 5) {
-                                mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 5);// 800);
+                                mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 800);
                                 mainClass.setChoseWrong_4(true);
                             }
                             mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);

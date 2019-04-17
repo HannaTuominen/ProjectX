@@ -215,32 +215,32 @@ public class GameScreen implements Screen {
 
 
         public void requiredStepsFirstLoad() {
-        mainClass.setStepsToOpenChapter2_1(10000);//(500); //WRONG + 300 (5);//
-        mainClass.setStepsToOpenChapter2_2(10000);//(500);
-        mainClass.setStepsToOpenChapter3_1(5);//(700);
-        mainClass.setStepsToOpenChapter4_1(10);//(4000);
-        mainClass.setStepsToOpenChapter5_1(5);//(2000); //WRONG + 1000
-        mainClass.setStepsToOpenChapter5_2(5);//(2000);
-        mainClass.setStepsToOpenChapter6_1(10);//(2000);
-        mainClass.setStepsToOpenChapter7_1(5);//(6500);
-        mainClass.setStepsToOpenChapter8_1(10);//(2000);
-        mainClass.setStepsToOpenChapter9_1(5);//(4000);
-        mainClass.setStepsToOpenChapter10_1(10);//(3000);
-        mainClass.setStepsToOpenChapter11_1(5);//(3600);
-        mainClass.setStepsToOpenChapter12_1(10);//(4000); //WRONG + 200
-        mainClass.setStepsToOpenChapter12_2(10);//(4000);
-        mainClass.setStepsToOpenChapter13_1(5);//(4500);
-        mainClass.setStepsToOpenChapter14_1(10);//(4000);
-        mainClass.setStepsToOpenChapter15_1(5);//(3000);
-        mainClass.setStepsToOpenChapter16_1(10);//(6000);
-        mainClass.setStepsToOpenChapter17_1(5);//(4500);
-        mainClass.setStepsToOpenChapter18_1(10);//(5000); //WRONG + 800
-        mainClass.setStepsToOpenChapter18_2(10);//(5000);
-        mainClass.setStepsToOpenChapter19_1(5);//(2000);
-        mainClass.setStepsToOpenChapter20_1(10);//(2000);
-        mainClass.setStepsToOpenChapter21_1(5);//(3000);
-        mainClass.setStepsToOpenChapter22_1(10);//(2200);
-        mainClass.setStepsToOpenChapter23_1(5);//(3500); //Vaihtoehtoja (jos alex valtisee mennä juhliin, alkaa peli alusta)
+        mainClass.setStepsToOpenChapter2_1(500); //WRONG + 300 (5);//
+        mainClass.setStepsToOpenChapter2_2(500);
+        mainClass.setStepsToOpenChapter3_1(700);
+        mainClass.setStepsToOpenChapter4_1(4000);
+        mainClass.setStepsToOpenChapter5_1(2000); //WRONG + 1000
+        mainClass.setStepsToOpenChapter5_2(2000);
+        mainClass.setStepsToOpenChapter6_1(2000);
+        mainClass.setStepsToOpenChapter7_1(6500);
+        mainClass.setStepsToOpenChapter8_1(2000);
+        mainClass.setStepsToOpenChapter9_1(4000);
+        mainClass.setStepsToOpenChapter10_1(3000);
+        mainClass.setStepsToOpenChapter11_1(3600);
+        mainClass.setStepsToOpenChapter12_1(4000); //WRONG + 200
+        mainClass.setStepsToOpenChapter12_2(4000);
+        mainClass.setStepsToOpenChapter13_1(4500);
+        mainClass.setStepsToOpenChapter14_1(4000);
+        mainClass.setStepsToOpenChapter15_1(3000);
+        mainClass.setStepsToOpenChapter16_1(6000);
+        mainClass.setStepsToOpenChapter17_1(4500);
+        mainClass.setStepsToOpenChapter18_1(5000); //WRONG + 800
+        mainClass.setStepsToOpenChapter18_2(5000);
+        mainClass.setStepsToOpenChapter19_1(2000);
+        mainClass.setStepsToOpenChapter20_1(2000);
+        mainClass.setStepsToOpenChapter21_1(3000);
+        mainClass.setStepsToOpenChapter22_1(2200);
+        mainClass.setStepsToOpenChapter23_1(3500); //Vaihtoehtoja (jos alex valtisee mennä juhliin, alkaa peli alusta)
     }
 
     public void requiredStepsUpdater() {
