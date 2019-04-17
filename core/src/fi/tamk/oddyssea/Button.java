@@ -42,6 +42,8 @@ public class Button extends Actor {
 
     String currentStepsText;
 
+    boolean prefsPopUpActivate;
+
 
 
 //    float stepsNeededAndCurrentlyHavePlace;
@@ -1752,7 +1754,7 @@ public class Button extends Actor {
         public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
             touchUpX = 0;
             flingX = 0;
-            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 ) {
+            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 || getUseForTheButton() == 18 || getUseForTheButton() == 19  ) {
                 setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
             }
 
@@ -1902,22 +1904,39 @@ public class Button extends Actor {
             14. Chapter number text in the game left corner
             15. Current and needed steps for at the current time
             16. Clear prefs
+            17. Empty prefs place
+            18. Yes
+            19. No
             */
 
            if (useForTheButton == 16) {
-               mainClass.prefs.clear();
-               mainClass.setSteps(0);
-               mainClass.setCurrentFurthestChapter(1);
-//               mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
-               mainClass.setClearedChapter1(false);
-               mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
-               mainClass.setChapterNumber(1);
-               mainClass.setResetEverything(true);
-               mainClass.prefs.flush();
-               System.out.println("PREFS CLEARED PRESSED");
-               //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
-//               Gdx.app.exit();
+               if(!mainClass.getPrefsPopUpActivate()) {
+                   setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                   mainClass.setPrefsPopUpActivate(true);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 20, mainClass.getScreenHeight() / 20, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 20, mainClass.getScreenHeight() / 5, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 20 + mainClass.getScreenWidth() / 1.5f - buttonWidth, mainClass.getScreenHeight() / 5, buttonWidth, buttonHeight, 0);
+               }
            }
+            if (useForTheButton == 18) {
+                mainClass.prefs.clear();
+                mainClass.setSteps(0);
+                mainClass.setCurrentFurthestChapter(1);
+//               mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                mainClass.setClearedChapter1(false);
+                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
+                mainClass.setChapterNumber(1);
+                mainClass.setResetEverything(true);
+                mainClass.prefs.flush();
+                System.out.println("PREFS CLEARED PRESSED");
+                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
+//               Gdx.app.exit();
+                mainClass.setPrefsPopUpActivate(false);
+            }
+            if (useForTheButton == 19) {
+                mainClass.clearGroup(17);
+                mainClass.setPrefsPopUpActivate(false);
+            }
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
                 if(touchUpX == 0) {
                     if (mainClass.getChapterNumber() == 1) {
@@ -2379,28 +2398,46 @@ public class Button extends Actor {
                 mainClass.setSwapped(false);
                 mainClass.setScreen(mainMenu);
             } else if (getUseForTheButton() == 1) {
-                if (mainClass.prefs.getBoolean("openedFirstTime")) {
-                    mainClass.prefs.putBoolean("openedFirstTime", true);
-                    mainClass.prefs.flush();
-                    System.out.println("OPENEEDFIRSTTIME");
-                    mainClass.prefs.flush();
+                System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    if (mainClass.prefs.getBoolean("openedFirstTime")) {
+                        mainClass.prefs.putBoolean("openedFirstTime", true);
+                        mainClass.prefs.flush();
+                        System.out.println("OPENEEDFIRSTTIME");
+                        mainClass.prefs.flush();
+                    }
+                    mainClass.setPlayPressed(true);
+                    System.out.println(mainClass.getPlayPressed());
+                    GameScreen gameScreen = new GameScreen(mainClass);
+                    mainClass.setScreen(gameScreen);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                 }
-                mainClass.setPlayPressed(true);
-                System.out.println(mainClass.getPlayPressed());
-                GameScreen gameScreen = new GameScreen(mainClass);
-                mainClass.setScreen(gameScreen);
+
 
             } else if (getUseForTheButton() == 2) {
-                ChapterSelect chapterSelect = new ChapterSelect(mainClass);
-                mainClass.setScreen(chapterSelect);
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    ChapterSelect chapterSelect = new ChapterSelect(mainClass);
+                    mainClass.setScreen(chapterSelect);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                }
             } else if (getUseForTheButton() == 3) {
+                if(!mainClass.getPrefsPopUpActivate()) {
 //                mainClass.stopBackGroundMusic();
-                Credits credits = new Credits(mainClass);
-                mainClass.setScreen(credits);
+                    Credits credits = new Credits(mainClass);
+                    mainClass.setScreen(credits);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                }
             } else if (getUseForTheButton() == 4) {
-                //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
-                Gdx.app.exit();
-                System.exit(0);
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
+                    Gdx.app.exit();
+                    System.exit(0);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                }
             } else if (getUseForTheButton() == 9) {
                 if(touchUpX == 0) {
                 System.out.println("9 pressed");
@@ -2550,49 +2587,57 @@ public class Button extends Actor {
                 }
 
             } else if (getUseForTheButton() == 11) {
-
-                if (mainClass.getLanguageFinnish()) {
-                    mainClass.setLanguageFinnish(false);
-                    mainClass.prefs.putBoolean("languageFinnish", false);
-                    mainClass.prefs.flush();
-                    System.out.println("I AM SWAPPING THE LANGUAGE TO ENGLISH");
-                    setTexture(new Texture(Gdx.files.internal("eng_button.png")));
-                    mainClass.setLocale(new Locale("en", "EN"));
-                    mainClass.setLocalLanguageToString("en_EN");
-                    mainClass.setLocaleTexts();
-                    System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    if (mainClass.getLanguageFinnish()) {
+                        mainClass.setLanguageFinnish(false);
+                        mainClass.prefs.putBoolean("languageFinnish", false);
+                        mainClass.prefs.flush();
+                        System.out.println("I AM SWAPPING THE LANGUAGE TO ENGLISH");
+                        setTexture(new Texture(Gdx.files.internal("eng_button.png")));
+                        mainClass.setLocale(new Locale("en", "EN"));
+                        mainClass.setLocalLanguageToString("en_EN");
+                        mainClass.setLocaleTexts();
+                        System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                    } else {
+                        mainClass.setLanguageFinnish(true);
+                        mainClass.prefs.putBoolean("languageFinnish", true);
+                        mainClass.prefs.flush();
+                        System.out.println("I AM SWAPPING THE LANGUAGE TO FINNISH");
+                        setTexture(new Texture(Gdx.files.internal("fin_button.png")));
+                        mainClass.setLocale(new Locale("fi", "Fi"));
+                        mainClass.setLocalLanguageToString("fi_FI");
+                        mainClass.setLocaleTexts();
+                        System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                    }
                 } else {
-                    mainClass.setLanguageFinnish(true);
-                    mainClass.prefs.putBoolean("languageFinnish", true);
-                    mainClass.prefs.flush();
-                    System.out.println("I AM SWAPPING THE LANGUAGE TO FINNISH");
-                    setTexture(new Texture(Gdx.files.internal("fin_button.png")));
-                    mainClass.setLocale(new Locale("fi", "Fi"));
-                    mainClass.setLocalLanguageToString("fi_FI");
-                    mainClass.setLocaleTexts();
-                    System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                 }
             } else if (getUseForTheButton() == 13) {
-                if (mainClass.getbackGroundMusicOffOrOn()) {
-                    mainClass.setbackGroundMusicOffOrOn(false);
-                    mainClass.soundAndLanguage.putBoolean("backGroundMusicOff", false);
-                    mainClass.soundAndLanguage.flush();
-                    mainClass.playBackgroundMusic();
-                    setTexture(new Texture(Gdx.files.internal("sound_on_button.png")));
-                    System.out.println("I AM SWAPPING THE MUSIC OFF");
-                    System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    if (mainClass.getbackGroundMusicOffOrOn()) {
+                        mainClass.setbackGroundMusicOffOrOn(false);
+                        mainClass.soundAndLanguage.putBoolean("backGroundMusicOff", false);
+                        mainClass.soundAndLanguage.flush();
+                        mainClass.playBackgroundMusic();
+                        setTexture(new Texture(Gdx.files.internal("sound_on_button.png")));
+                        System.out.println("I AM SWAPPING THE MUSIC OFF");
+                        System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                    } else {
+                        mainClass.setbackGroundMusicOffOrOn(true);
+                        mainClass.soundAndLanguage.putBoolean("backGroundMusicOff", true);
+                        mainClass.soundAndLanguage.flush();
+                        mainClass.stopBackGroundMusic();
+                        setTexture(new Texture(Gdx.files.internal("sound_off_button.png")));
+                        System.out.println("I AM SWAPPING THE MUSIC ON");
+                        System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                    }
                 } else {
-                    mainClass.setbackGroundMusicOffOrOn(true);
-                    mainClass.soundAndLanguage.putBoolean("backGroundMusicOff", true);
-                    mainClass.soundAndLanguage.flush();
-                    mainClass.stopBackGroundMusic();
-                    setTexture(new Texture(Gdx.files.internal("sound_off_button.png")));
-                    System.out.println("I AM SWAPPING THE MUSIC ON");
-                    System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                 }
-            } else if (getUseForTheButton() == 16 || getUseForTheButton() == 17 || getUseForTheButton() == 18) {
-                setTexture(new Texture(Gdx.files.internal("text_hidden_3.png")));
             }
+//            else if (getUseForTheButton() == 16 || getUseForTheButton() == 17 || getUseForTheButton() == 18) {
+//                setTexture(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//            }
         }
 
         @Override

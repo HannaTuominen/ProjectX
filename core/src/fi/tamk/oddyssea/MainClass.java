@@ -34,6 +34,7 @@ public class MainClass extends Game {
 	private int fontSize;
 
 	private boolean resetEverything = false;
+	private boolean prefsPopUpActivate;
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 //	private float CurrentSteps;
 
@@ -154,6 +155,12 @@ public class MainClass extends Game {
 	private String chapter23_4;
 
 
+    private String resetGame;
+    private String resetGameQuestion;
+    private String yes;
+    private String no;
+    private String ok;
+
     private String backToMainMenu;
 	private String title;
 	private String play;
@@ -167,6 +174,14 @@ public class MainClass extends Game {
     private String continuee;
     private String chapter1_choice_text_1;
     private String chapter1_choice_text_2;
+	private String chapter4_choice_text_1;
+	private String chapter4_choice_text_2;
+	private String chapter11_choice_text_1;
+	private String chapter11_choice_text_2;
+	private String chapter17_choice_text_1;
+	private String chapter17_choice_text_2;
+	private String chapter23_choice_text_1;
+	private String chapter23_choice_text_2;
     private String chapter;
     private String sponsors;
 	// remove steps by: MyServices.removeSteps(int);
@@ -650,7 +665,19 @@ public class MainClass extends Game {
         return gotToTheLastTextOnceAlready;
     }
 
-	public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
+    public void setPrefsPopUpActivate(boolean prefsPopUpActivate) {
+        this.prefsPopUpActivate = prefsPopUpActivate;
+        prefs.putBoolean("prefsPopUpActivate", this.prefsPopUpActivate);
+        prefs.flush();
+    }
+
+    public boolean getPrefsPopUpActivate() {
+        prefsPopUpActivate = prefs.getBoolean("prefsPopUpActivate");
+        return prefsPopUpActivate;
+    }
+
+
+    public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
 							  float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
 		this.buttonHeight = buttonHeight;
@@ -663,6 +690,8 @@ public class MainClass extends Game {
                 || useForTheButton == 11 || useForTheButton == 12
                 || useForTheButton == 13 || useForTheButton == 14
                 || useForTheButton == 15 || useForTheButton == 16
+                || useForTheButton == 17 || useForTheButton == 18
+                || useForTheButton == 19
                 ) {
 
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
@@ -677,6 +706,14 @@ public class MainClass extends Game {
 
 //			stage.addActor(button);
 		}
+
+        if(useForTheButton == 17 || useForTheButton == 18 || useForTheButton == 19 ) {
+//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+            groupActors2(button);
+            groupStageAdd2();
+
+//			stage.addActor(button);
+        }
 
 		if(useForTheButton == 5 || useForTheButton == 6) {
 		    System.out.println("useforthebutton is " + useForTheButton);
@@ -726,7 +763,7 @@ public class MainClass extends Game {
 		group.addActor(actor);
 	}
 	public void groupActors2(Actor actor) {
-//		group2.addActor(actor);
+		group2.addActor(actor);
 	}
 
 	public void clearGroup(int useForTheButton) {
@@ -1082,6 +1119,22 @@ public class MainClass extends Game {
         return backToMainMenu;
     }
 
+    public String getResetGame() {
+        return resetGame;
+    }
+    public String getResetGameQuestion() {
+        return resetGameQuestion;
+    }
+    public String getYes() {
+        return yes;
+    }
+    public String getNo() {
+        return no;
+    }
+    public String getOk() {
+        return ok;
+    }
+
 	public String getTitle() {
 		return title;
 	}
@@ -1396,6 +1449,37 @@ public class MainClass extends Game {
     public String getChapter1_choice_text_2() {
         return chapter1_choice_text_2;
     }
+
+	public String getChapter4_choice_text_1() {
+		return chapter4_choice_text_1;
+	}
+	public String getChapter4_choice_text_2() {
+		return chapter4_choice_text_2;
+	}
+
+	public String getChapter11_choice_text_1() {
+		return chapter11_choice_text_1;
+	}
+	public String getChapter11_choice_text_2() {
+		return chapter11_choice_text_2;
+	}
+
+	public String getChapter17_choice_text_1() {
+		return chapter17_choice_text_1;
+	}
+	public String getChapter17_choice_text_2() {
+		return chapter17_choice_text_2;
+	}
+
+	public String getChapter23_choice_text_1() {
+		return chapter23_choice_text_1;
+	}
+	public String getChapter23_choice_text_2() {
+		return chapter23_choice_text_2;
+	}
+
+
+
 	public String getPrevious() {
 		return previous;
 	}
@@ -1480,6 +1564,26 @@ public class MainClass extends Game {
 
 		chapter1_choice_text_1 = myBundle.get("chapter1_choice_text_1");
 		chapter1_choice_text_2 = myBundle.get("chapter1_choice_text_2");
+
+		chapter4_choice_text_1 = myBundle.get("chapter4_choice_text_1");
+		chapter4_choice_text_2 = myBundle.get("chapter4_choice_text_2");
+
+		chapter11_choice_text_1 = myBundle.get("chapter11_choice_text_1");
+		chapter11_choice_text_2 = myBundle.get("chapter11_choice_text_2");
+
+		chapter17_choice_text_1 = myBundle.get("chapter17_choice_text_1");
+		chapter17_choice_text_2 = myBundle.get("chapter17_choice_text_2");
+
+		chapter23_choice_text_1 = myBundle.get("chapter23_choice_text_1");
+		chapter23_choice_text_2 = myBundle.get("chapter23_choice_text_2");
+
+        resetGame= myBundle.get("resetGame");
+        resetGameQuestion= myBundle.get("resetGameQuestion");
+        yes= myBundle.get("yes");
+        no= myBundle.get("no");
+        ok= myBundle.get("ok");
+
+
 		chapter= myBundle.get("chapter");
 		sponsors= myBundle.get("sponsors");
 		chapter1_1 = myBundle.get("chapter1_1");
@@ -1809,6 +1913,7 @@ public class MainClass extends Game {
 		camera.setToOrtho(false, screenWidth, screenHeight);
 
 		group = new Group();
+        group2 = new Group();
 
 		if(languageFirstRound == false) {
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
