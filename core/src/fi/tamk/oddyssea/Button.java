@@ -1951,8 +1951,6 @@ public class Button extends Actor {
                 //Doesn't save on computer as you need at least 1 legit step for the save
                 mainClass.setSteps(mainClass.getCurrentSteps()+1000);
                 setTexture(new Texture(Gdx.files.internal("button_orange.png")));
-
-
             }
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
