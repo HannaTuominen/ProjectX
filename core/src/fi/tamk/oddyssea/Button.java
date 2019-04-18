@@ -1759,9 +1759,15 @@ public class Button extends Actor {
         public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
             touchUpX = 0;
             flingX = 0;
-            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 || getUseForTheButton() == 18 || getUseForTheButton() == 19 || getUseForTheButton() == 22  ) {
+            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16
+                    || getUseForTheButton() == 18 || getUseForTheButton() == 19 || getUseForTheButton() == 21 || getUseForTheButton() == 22
+                    || getUseForTheButton() == 24) {
                 if(!mainClass.getPrefsPopUpActivate()) {
                     setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                }else {
+                    if(useForTheButton == 18 || useForTheButton == 19) {
+                        setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                    }
                 }
             }
 
