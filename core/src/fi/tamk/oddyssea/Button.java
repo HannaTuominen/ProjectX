@@ -1754,7 +1754,7 @@ public class Button extends Actor {
         public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
             touchUpX = 0;
             flingX = 0;
-            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 || getUseForTheButton() == 18 || getUseForTheButton() == 19  ) {
+            if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16 || getUseForTheButton() == 18 || getUseForTheButton() == 19 || getUseForTheButton() == 22  ) {
                 if(!mainClass.getPrefsPopUpActivate()) {
                     setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
                 }
@@ -1950,6 +1950,8 @@ public class Button extends Actor {
             if (useForTheButton == 22) {
                 //Doesn't save on computer as you need at least 1 legit step for the save
                 mainClass.setSteps(mainClass.getCurrentSteps()+1000);
+                setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+
 
             }
 
