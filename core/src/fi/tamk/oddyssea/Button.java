@@ -1720,7 +1720,12 @@ public class Button extends Actor {
        currentStepsText = mainClass.getStepsString();
 
         if(useForTheButton == 12) {
-            scrollerWidth = -mainclass.getScreenWidth()/4*13.5f+(mainclass.getScreenWidth()/0.99f);
+            if(mainClass.getScreenHeight() < 800) {
+                scrollerWidth = -mainclass.getScreenWidth()*2.35f;
+            } else if (mainClass.getScreenHeight() >= 1000) {
+                scrollerWidth = -mainclass.getScreenWidth()*2.15f;
+            }
+
         }
 
         //this.storyID = storyID;
@@ -2381,7 +2386,7 @@ public class Button extends Actor {
                             mainClass.prefs.clear();
                             mainClass.setResetEverything(true);
                             mainClass.prefs.putBoolean("openedFirstTime", true);
-                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), false);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setChapterNumber(1);
