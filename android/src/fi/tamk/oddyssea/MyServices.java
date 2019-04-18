@@ -1,5 +1,6 @@
 package fi.tamk.oddyssea;
 
+import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,7 +49,9 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 	@Override
 	public void step(long timeNs) {
 		getGameSteps();
-		numSteps++;
+		if (numSteps < 1000000) {
+			numSteps++;
+		}
 		MainClass.setSteps(numSteps);
 		save();
 		System.out.println(numSteps);
