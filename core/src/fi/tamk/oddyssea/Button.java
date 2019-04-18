@@ -1921,6 +1921,14 @@ public class Button extends Actor {
             24. Too few steps ok
             */
 
+           if((useForTheButton == 5 || useForTheButton == 6) && !getTexture().toString().equals("next_page.png") && !getTexture().toString().equals("next_page_pressed.png")) {
+               System.out.println("Setting texture back to orange");
+               setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+           }
+           if(getTexture().toString().equals("next_page_pressed.png")) {
+               setTexture(new Texture(Gdx.files.internal("next_page.png")));
+           }
+
            if (useForTheButton == 16) {
                if(!mainClass.getPrefsPopUpActivate()) {
                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
