@@ -285,11 +285,12 @@ public class GameScreen implements Screen {
         if(mainClass.getChapterNumber() != 24) {
             mainClass.createButtons(new Texture("back_X.png"),"",0,8,
                     20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/7.5f,0);
-        }
-
-        //EXTRA STEPS FOR GAME FARE COMMENT OUT WHEN NOT NEEDED
+            //EXTRA STEPS FOR GAME FARE COMMENT OUT WHEN NOT NEEDED
             mainClass.createButtons(new Texture("button_orange.png"),"+1000",0,22,
                     stepboxHeight/8+buttonWidth/1.5f, textboxHeight+buttonHeight/2.5f, buttonWidth/1.5f ,buttonHeight,0);
+
+
+        }
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
