@@ -1912,13 +1912,15 @@ public class Button extends Actor {
             20. Tutorial background place
             21. Ok
             22. Add extra steps for the Game fare
+            23. Too few steps steps background
+            24. Too few steps ok
             */
 
            if (useForTheButton == 16) {
                if(!mainClass.getPrefsPopUpActivate()) {
                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
                    mainClass.setPrefsPopUpActivate(true);
-                   mainClass.createButtons(new Texture("textbox_90.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                   mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
                    mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
                    mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
                }
@@ -1943,6 +1945,11 @@ public class Button extends Actor {
                 mainClass.setPrefsPopUpActivate(false);
             }
 
+            if (useForTheButton == 20) {
+                mainClass.clearGroup(20);
+                mainClass.setTutorialShow(false);
+            }
+
             if (useForTheButton == 21) {
                 mainClass.clearGroup(20);
                 mainClass.setTutorialShow(false);
@@ -1952,8 +1959,19 @@ public class Button extends Actor {
                 mainClass.setSteps(mainClass.getCurrentSteps()+1000);
                 setTexture(new Texture(Gdx.files.internal("button_orange.png")));
             }
+            if (useForTheButton == 23 || useForTheButton == 24) {
+                mainClass.clearGroup(24);
+                mainClass.setTooFewStepsPopUpActivate(false);
+            }
 
             if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
+                if (stepsToOpenNextChapter > steps) {
+                    if (!mainClass.getTooFewStepsPopUpActivate()) {
+                        mainClass.createButtons(new Texture("box.png"), mainClass.getTooFewStepsMessage(), 0, 23, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f / 2, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                        mainClass.createButtons(new Texture("button_orange.png"), mainClass.getOk(), 0, 24, mainClass.getScreenWidth()/2f-mainClass.getScreenWidth()/8, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2 + mainClass.getScreenHeight() / 20, buttonWidth, buttonHeight, 0);
+                        mainClass.setTooFewStepsPopUpActivate(true);
+                    }
+                }
                 if(touchUpX == 0) {
                     if (mainClass.getChapterNumber() == 1) {
                         if (stepsToOpenNextChapter > steps) {
@@ -2409,6 +2427,13 @@ public class Button extends Actor {
             } else if (getUseForTheButton() == 8) {
 
                 mainClass.getStage().clear();
+                if(mainClass.gettutorialShow()) {
+                    mainClass.clearGroup(20);
+                }
+                if(mainClass.getTooFewStepsPopUpActivate()) {
+                    mainClass.clearGroup(24);
+                }
+                mainClass.setTooFewStepsPopUpActivate(false);
                 //START THE GAME FROM MAIN MENU
                 MainMenu mainMenu = new MainMenu(mainClass);
                 mainClass.setSwapped(false);
@@ -2596,7 +2621,7 @@ public class Button extends Actor {
 
             } else if (getUseForTheButton() == 10) {
 //                swapTextIndicators();
-                if(!mainClass.gettutorialShow()) {
+                if(!mainClass.gettutorialShow() && !mainClass.getTooFewStepsPopUpActivate()) {
                     swappedIndicator = false;
                     System.out.println("HERE " + getStoryID());
                     if(flingX == 0) {
@@ -2695,19 +2720,20 @@ public class Button extends Actor {
         @Override
         public void fling(InputEvent event, float velocityX, float velocityY, int button) {
 //            flingX = velocityX;
+            if(!mainClass.gettutorialShow() && !mainClass.getTooFewStepsPopUpActivate()) {
+                if (useForTheButton == 10) {
+                    if (velocityX > 0) {
+                        flingX = velocityX;
+                        useForTheButtonIs10Reverse();
+                    } else if (velocityX < 0) {
+                        System.out.println("SMALLER");
+                        flingX = velocityX;
 
-            if (useForTheButton == 10) {
-                if(velocityX > 0) {
-                    flingX = velocityX;
-                    useForTheButtonIs10Reverse();
-                } else if (velocityX < 0) {
-                    System.out.println("SMALLER");
-                   flingX = velocityX;
+                        useForTheButtonis10();
+                    }
+                    System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
 
-                    useForTheButtonis10();
                 }
-                System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
-
             }
         }
     }
@@ -2759,9 +2785,11 @@ public class Button extends Actor {
             textForAButton = String.valueOf(steps) + "/" + stepsToOpenNextChapter;
             calculateButtonXAndYPlace();
             font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
-        } else if (useForTheButton == 17 || useForTheButton == 20) {
-            font12.draw(batch,textForAButton, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2+mainClass.getScreenHeight() / 1.6f/2-mainClass.getScreenHeight()/20);
-        } else if(useForTheButton != 10) {
+        }
+//        else if (useForTheButton == 17 || useForTheButton == 20 || useForTheButton == 23) {
+//            font12.draw(batch,textForAButton, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2+mainClass.getScreenHeight() / 1.6f/2-mainClass.getScreenHeight()/20);
+//        }
+        else if(useForTheButton != 10) {
            if (mainClass.getChapterNumber() == 24 && getUseForTheButton() == 6) {
                 font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
             } else {

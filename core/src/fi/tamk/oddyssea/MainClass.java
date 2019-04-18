@@ -36,6 +36,7 @@ public class MainClass extends Game {
 	private boolean resetEverything = false;
 	private boolean prefsPopUpActivate;
 	private boolean tutorialShow;
+	private boolean tooFewStepsPopUpActivate;
 	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
 //	private float CurrentSteps;
 
@@ -162,6 +163,7 @@ public class MainClass extends Game {
     private String no;
     private String ok;
     private String tutorialText;
+    private String tooFewStepsMessage;
 
     private String backToMainMenu;
 	private String title;
@@ -316,6 +318,8 @@ public class MainClass extends Game {
 	Group group2;
 
     Group group3;
+
+	Group group4;
 
 	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
 	private boolean gotToTheLastTextOnceAlready = false;
@@ -680,6 +684,17 @@ public class MainClass extends Game {
         return prefsPopUpActivate;
     }
 
+    public void setTooFewStepsPopUpActivate(boolean tooFewStepsPopUpActivate) {
+        this.tooFewStepsPopUpActivate = tooFewStepsPopUpActivate;
+        prefs.putBoolean("tooFewStepsPopUpActivate", this.tooFewStepsPopUpActivate);
+        prefs.flush();
+    }
+
+    public boolean getTooFewStepsPopUpActivate() {
+        tooFewStepsPopUpActivate = prefs.getBoolean("tooFewStepsPopUpActivate");
+        return tooFewStepsPopUpActivate;
+    }
+
     public void setTutorialShow(boolean tutorialShow) {
         this.tutorialShow = tutorialShow;
         prefs.putBoolean("tutorialShow", this.tutorialShow);
@@ -708,6 +723,7 @@ public class MainClass extends Game {
                 || useForTheButton == 17 || useForTheButton == 18
                 || useForTheButton == 19 || useForTheButton == 20
                 || useForTheButton == 21 || useForTheButton == 22
+                || useForTheButton == 23 || useForTheButton == 24
                 ) {
 
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
@@ -735,6 +751,14 @@ public class MainClass extends Game {
 //			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             groupActors3(button);
             groupStageAdd3();
+
+//			stage.addActor(button);
+        }
+
+        if(useForTheButton == 23 || useForTheButton == 24 ) {
+//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
+            groupActors4(button);
+            groupStageAdd4();
 
 //			stage.addActor(button);
         }
@@ -792,15 +816,21 @@ public class MainClass extends Game {
     public void groupActors3(Actor actor) {
         group3.addActor(actor);
     }
+	public void groupActors4(Actor actor) {
+		group4.addActor(actor);
+	}
 
 	public void clearGroup(int useForTheButton) {
 		if(useForTheButton == 9 || useForTheButton == 12) {
 			group.clear();
 		}else if (useForTheButton == 17 || useForTheButton == 18 || useForTheButton == 19) {
 			group2.clear();
-		}else {
+		}else if (useForTheButton == 20 || useForTheButton == 21) {
 		    group3.clear();
-        }
+		    System.out.println("clearing group 3");
+        } else {
+			group4.clear();
+		}
     }
 	public Group getGroup1() {
 		return group;
@@ -811,6 +841,9 @@ public class MainClass extends Game {
     public Group getGroup3() {
         return group3;
     }
+	public Group getGroup4() {
+		return group4;
+	}
 	public void groupStageAdd1() {
 		stage.addActor(group);
 	}
@@ -821,7 +854,9 @@ public class MainClass extends Game {
     public void groupStageAdd3() {
         stage.addActor(group3);
     }
-
+	public void groupStageAdd4() {
+		stage.addActor(group4);
+	}
 
 
 
@@ -1168,6 +1203,9 @@ public class MainClass extends Game {
     }
     public String getOk() {
         return ok;
+    }
+    public String getTooFewStepsMessage() {
+	    return  tooFewStepsMessage;
     }
     public String getTutorialText() {
         return tutorialText;
@@ -1620,7 +1658,7 @@ public class MainClass extends Game {
         no= myBundle.get("no");
         ok= myBundle.get("ok");
         tutorialText = myBundle.get("tutorialText");
-
+        tooFewStepsMessage = myBundle.get("tooFewStepsMessage");
 
 		chapter= myBundle.get("chapter");
 		sponsors= myBundle.get("sponsors");
@@ -1954,6 +1992,7 @@ public class MainClass extends Game {
 		group = new Group();
         group2 = new Group();
         group3 = new Group();
+		group4 = new Group();
 		if(languageFirstRound == false) {
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
             soundAndLanguage.putBoolean("languageFirstRound", true);
