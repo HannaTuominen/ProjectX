@@ -1542,52 +1542,46 @@ public class Button extends Actor {
                setTexture(new Texture(Gdx.files.internal("next_page.png")));
            }
 
-           if (useForTheButton == 16) {
-               if(!mainClass.getPrefsPopUpActivate()) {
-                   setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-                   mainClass.setPrefsPopUpActivate(true);
-                   mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
-                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
-               }
-           }
-            if (useForTheButton == 18) {
-                mainClass.prefs.clear();
-                mainClass.setSteps(0);
-                mainClass.setCurrentFurthestChapter(1);
-                mainClass.setClearedChapter1(false);
-                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
-                mainClass.setChapterNumber(1);
-                mainClass.setResetEverything(true);
-                mainClass.prefs.flush();
-                System.out.println("PREFS CLEARED PRESSED");
-                mainClass.setPrefsPopUpActivate(false);
-            }
-            if (useForTheButton == 19) {
-                mainClass.clearGroup(17);
-                mainClass.setPrefsPopUpActivate(false);
-            }
 
-            if (useForTheButton == 20) {
-                mainClass.clearGroup(20);
-                mainClass.setTutorialShow(false);
-            }
-
-            if (useForTheButton == 21) {
-                mainClass.clearGroup(20);
-                mainClass.setTutorialShow(false);
-            }
-            if (useForTheButton == 22) {
-                //Doesn't save on computer as you need at least 1 legit step for the save
-                mainClass.setSteps(mainClass.getCurrentSteps()+1000);
-                setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-            }
-            if (useForTheButton == 23 || useForTheButton == 24) {
-                mainClass.clearGroup(24);
-                mainClass.setTooFewStepsPopUpActivate(false);
-            }
-
-            if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
+            if (getUseForTheButton() == 1) {
+                System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    if (mainClass.prefs.getBoolean("openedFirstTime")) {
+                        mainClass.prefs.putBoolean("openedFirstTime", true);
+                        mainClass.prefs.flush();
+                        System.out.println("OPENEEDFIRSTTIME");
+                        mainClass.prefs.flush();
+                    }
+                    mainClass.setPlayPressed(true);
+                    System.out.println(mainClass.getPlayPressed());
+                    GameScreen gameScreen = new GameScreen(mainClass);
+                    mainClass.setScreen(gameScreen);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                }
+            }else if (getUseForTheButton() == 2) {
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    ChapterSelect chapterSelect = new ChapterSelect(mainClass);
+                    mainClass.setScreen(chapterSelect);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                }
+            } else if (getUseForTheButton() == 3) {
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    Credits credits = new Credits(mainClass);
+                    mainClass.setScreen(credits);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                }
+            } else if (getUseForTheButton() == 4) {
+                if(!mainClass.getPrefsPopUpActivate()) {
+                    //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
+                    Gdx.app.exit();
+                    System.exit(0);
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                }
+            } if (getUseForTheButton() == 6 || getUseForTheButton() == 5) {
                 if (stepsToOpenNextChapter > steps) {
                     if (!mainClass.getTooFewStepsPopUpActivate()) {
                         mainClass.createButtons(new Texture("box.png"), mainClass.getTooFewStepsMessage(), 0, 23, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f / 2, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
@@ -1884,7 +1878,6 @@ public class Button extends Actor {
                 mainClass.setChapterNumber(chapterNumber - 1);
                 mainClass.setSwapped(false);
             } else if (getUseForTheButton() == 8) {
-
                 mainClass.getStage().clear();
                 if(mainClass.gettutorialShow()) {
                     mainClass.clearGroup(20);
@@ -1897,50 +1890,10 @@ public class Button extends Actor {
                 MainMenu mainMenu = new MainMenu(mainClass);
                 mainClass.setSwapped(false);
                 mainClass.setScreen(mainMenu);
-            } else if (getUseForTheButton() == 1) {
-                System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    if (mainClass.prefs.getBoolean("openedFirstTime")) {
-                        mainClass.prefs.putBoolean("openedFirstTime", true);
-                        mainClass.prefs.flush();
-                        System.out.println("OPENEEDFIRSTTIME");
-                        mainClass.prefs.flush();
-                    }
-                    mainClass.setPlayPressed(true);
-                    System.out.println(mainClass.getPlayPressed());
-                    GameScreen gameScreen = new GameScreen(mainClass);
-                    mainClass.setScreen(gameScreen);
-                } else {
-                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-                }
-
-
-            } else if (getUseForTheButton() == 2) {
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    ChapterSelect chapterSelect = new ChapterSelect(mainClass);
-                    mainClass.setScreen(chapterSelect);
-                } else {
-                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-                }
-            } else if (getUseForTheButton() == 3) {
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    Credits credits = new Credits(mainClass);
-                    mainClass.setScreen(credits);
-                } else {
-                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-                }
-            } else if (getUseForTheButton() == 4) {
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    //EI SULJE TAUSTAPROSESSISTA VISSIIN --- SELVITÄ
-                    Gdx.app.exit();
-                    System.exit(0);
-                } else {
-                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
-                }
             } else if (getUseForTheButton() == 9) {
                 if(touchUpX == 0) {
-                System.out.println("9 pressed");
-                System.out.println(mainClass.getCurrentFurthestChapter());
+                    System.out.println("9 pressed");
+                    System.out.println(mainClass.getCurrentFurthestChapter());
                     chapterSelect = Integer.parseInt(getTextForAButton());
                     if (mainClass.getClearedChapter1() && chapterSelect == 1 ||
                             mainClass.getClearedChapter2() && chapterSelect == 2 ||
@@ -2085,8 +2038,6 @@ public class Button extends Actor {
                         useForTheButtonis10();
                     }
                 }
-
-
             } else if (getUseForTheButton() == 11) {
                 if(!mainClass.getPrefsPopUpActivate()) {
                     if (mainClass.getLanguageFinnish()) {
@@ -2136,6 +2087,53 @@ public class Button extends Actor {
                     setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             }
+
+            if (getUseForTheButton() == 16) {
+               if(!mainClass.getPrefsPopUpActivate()) {
+                   setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                   mainClass.setPrefsPopUpActivate(true);
+                   mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+               }
+           }
+            if (getUseForTheButton() == 18) {
+                mainClass.prefs.clear();
+                mainClass.setSteps(0);
+                mainClass.setCurrentFurthestChapter(1);
+                mainClass.setClearedChapter1(false);
+                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
+                mainClass.setChapterNumber(1);
+                mainClass.setResetEverything(true);
+                mainClass.prefs.flush();
+                System.out.println("PREFS CLEARED PRESSED");
+                mainClass.setPrefsPopUpActivate(false);
+            }
+            if (getUseForTheButton() == 19) {
+                mainClass.clearGroup(17);
+                mainClass.setPrefsPopUpActivate(false);
+            }
+
+            if (getUseForTheButton() == 20) {
+                mainClass.clearGroup(20);
+                mainClass.setTutorialShow(false);
+            }
+
+            if (getUseForTheButton() == 21) {
+                mainClass.clearGroup(20);
+                mainClass.setTutorialShow(false);
+            }
+            if (getUseForTheButton() == 22) {
+                //Doesn't save on computer as you need at least 1 legit step for the save
+                mainClass.setSteps(mainClass.getCurrentSteps()+1000);
+                setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+            }
+            if (getUseForTheButton() == 23 || getUseForTheButton() == 24) {
+                mainClass.clearGroup(24);
+                mainClass.setTooFewStepsPopUpActivate(false);
+            }
+
+
         }
 
         @Override
