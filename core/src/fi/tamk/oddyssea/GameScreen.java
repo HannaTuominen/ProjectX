@@ -390,7 +390,6 @@ public class GameScreen implements Screen {
         mainClass.getStage().clear();
         screenHeight = mainClass.getScreenHeight();
         screenWidth = mainClass.getScreenWidth();
-//        mainClass.clearGroup(15);
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.7f;
             textboxHeight = screenHeight/3.3f;
@@ -465,6 +464,16 @@ public class GameScreen implements Screen {
 
     }
 
+    public void alreadyReadAlwaysSameButtons() {
+        mainClass.createButtons(new Texture("next_page.png"),"",0,6,
+                screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
+
+//              CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
+        mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
+                screenWidth/2f-screenWidth/8, screenHeight-(stepboxHeight/1.5f), screenWidth/4 ,stepboxHeight/1.5f,0);
+
+    }
+
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(mainClass.camera.combined);
@@ -516,12 +525,8 @@ public class GameScreen implements Screen {
 
             } else {
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
+                alreadyReadAlwaysSameButtons();
 
-//              CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
-               mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
-               screenWidth/2f-screenWidth/8, screenHeight-(stepboxHeight/1.5f), screenWidth/4 ,stepboxHeight/1.5f,0);
             }
 
 
@@ -572,12 +577,8 @@ public class GameScreen implements Screen {
                 mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
                         screenWidth/2f-screenWidth/8, screenHeight-(stepboxHeight/1.5f), screenWidth/4 ,stepboxHeight/1.5f,mainClass.getStepsToOpenChapter3_1());
             } else {
-                mainClass.createButtons(new Texture("next_page.png"),"",0,6,
-                        screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
-                //CURRENT STEPS AND NEEDED STEPS WHEN CLEARED
-                mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
-                        screenWidth/2f-screenWidth/8, screenHeight-(stepboxHeight/1.5f), screenWidth/4 ,stepboxHeight/1.5f,0);
+                alreadyReadAlwaysSameButtons();
             }
 
             mainClass.createButtons(new Texture("prev_page.png"),"",0,7,

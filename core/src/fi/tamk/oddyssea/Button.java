@@ -1316,7 +1316,7 @@ public class Button extends Actor {
         this.mainClass = mainclass;
         setTextForAButton(textForAButton);
 
-//       setStoryID(storyID);
+        setStoryID(storyID);
         setTexture(texture);
         setUseForTheButton(useForTheButton);
         setGroup1(mainclass.getGroup1());
@@ -1336,7 +1336,6 @@ public class Button extends Actor {
 
         }
 
-
        if(useForTheButton == 14) {
            buttonTextXPlace = this.xPlace+4;
            buttonTextYPlace = this.yPlace;
@@ -1352,6 +1351,7 @@ public class Button extends Actor {
        font12 = mainClass.getFont12();
 
        setBounds(xPlace, yPlace, buttonWidth, buttonHeight);
+
        addListener(new Gesture());
 
 
@@ -1551,7 +1551,6 @@ public class Button extends Actor {
                 mainClass.prefs.clear();
                 mainClass.setSteps(0);
                 mainClass.setCurrentFurthestChapter(1);
-//               mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                 mainClass.setClearedChapter1(false);
                 mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                 mainClass.setChapterNumber(1);
@@ -2036,6 +2035,7 @@ public class Button extends Actor {
                     }
                 }
 
+
             } else if (getUseForTheButton() == 7) {
                 mainClass.setChapterNumber(chapterNumber - 1);
                 mainClass.setSwapped(false);
@@ -2292,7 +2292,6 @@ public class Button extends Actor {
                     setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             }
-
         }
 
         @Override
@@ -2302,7 +2301,6 @@ public class Button extends Actor {
             touchUpX = deltaX;
 
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
-
                 if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
                     System.out.println("FIRST OPTION GOING ON " + getGroup1().getX());
@@ -2326,7 +2324,6 @@ public class Button extends Actor {
         }
         @Override
         public void fling(InputEvent event, float velocityX, float velocityY, int button) {
-//            flingX = velocityX;
             if(!mainClass.gettutorialShow() && !mainClass.getTooFewStepsPopUpActivate()) {
                 if (useForTheButton == 10) {
                     if (velocityX > 0) {
@@ -2352,6 +2349,7 @@ public class Button extends Actor {
 
         if(useForTheButton == 5 || useForTheButton == 6) {
             if(mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
+
                 if(useForTheButton == 5) {
                     mainClass.setButton5Visible(true);
                 }
@@ -2382,7 +2380,6 @@ public class Button extends Actor {
             calculateButtonXAndYPlace();
             font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
         }
-
         else if(useForTheButton != 10) {
            if (mainClass.getChapterNumber() == 24 && getUseForTheButton() == 6) {
                 font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
