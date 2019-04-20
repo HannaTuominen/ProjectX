@@ -1218,6 +1218,8 @@ public class MainClass extends Game {
             return  chapter7_3;
         }  else if (combine.equals("chapter8_1")) {
             return  chapter8_1;
+        } else if (combine.equals("chapter8_2")) {
+            return  chapter8_2;
         }  else if (combine.equals("chapter8_3")) {
             return  chapter8_3;
         }  else if (combine.equals("chapter9_1")) {
