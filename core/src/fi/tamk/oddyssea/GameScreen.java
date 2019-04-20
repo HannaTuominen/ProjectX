@@ -427,21 +427,14 @@ public class GameScreen implements Screen {
         //as it hasn't been set to anything before the initial open
         //and also save the openedFirstTime boolean to true so this will only happen once
 
-//        System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
         if (!openedFirstTime) {
-
-//            mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            mainClass.setGotToTheLastTextOnceAlready(false);
-//            System.out.println("GOT HERE asdasdasdasdasdasdasdasdasdasdasdasdasdasasddas");
 
             mainClass.setTutorialShow(true);
             openedFirstTime = true;
             mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
             mainClass.prefs.flush();
             requiredStepsFirstLoad();
-            //ON FIRST OPEN SET CURRENT STEPS TO 0
-//            mainClass.setCurrentSteps(0);
 
             mainClass.prefs.putFloat("currentSteps", mainClass.getCurrentSteps());
 
@@ -454,15 +447,11 @@ public class GameScreen implements Screen {
 
         }
 
-//        System.out.println(mainClass.getPlayPressed());
 
         if (mainClass.getPlayPressed()) {
-//            System.out.println("HEREEEEFDFSEF");
             mainClass.setChapterNumber(mainClass.prefs.getInteger("currentFurthestChapter"));
             mainClass.prefs.putInteger("ChapterNumber",mainClass.getChapterNumber());
             mainClass.setPlayPressed(false);
-//            System.out.println(mainClass.getChapterNumber() + "H");
-//            System.out.println(mainClass.getCurrentFurthestChapter() + " CUR H");
             mainClass.prefs.flush();
         }
 
@@ -485,7 +474,6 @@ public class GameScreen implements Screen {
         batch.begin();
 
 
-//        int steps = mainClass.getCurrentSteps();
         if(mainClass.getChapterNumber() == 1 && !mainClass.getSwapped()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter1);
@@ -497,8 +485,6 @@ public class GameScreen implements Screen {
                 mainClass.prefs.putBoolean("openedFirstTime", openedFirstTime);
                 mainClass.prefs.flush();
                 requiredStepsFirstLoad();
-                //ON FIRST OPEN SET CURRENT STEPS TO 0
-//            mainClass.setCurrentSteps(0);
 
                 mainClass.prefs.putFloat("currentSteps", mainClass.getCurrentSteps());
 
@@ -512,13 +498,6 @@ public class GameScreen implements Screen {
                 setClearedChaptersUpdater();
             }
 
-//            if(!mainClass.getGotToTheLastTextOnceAlready()) {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//                System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons() + "G");
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println(mainClass.getGotToLastTextPartOkayToShowNeededButtons() + "GG");
-//            }
             if(!mainClass.getClearedChapter1()) {
                 if(mainClass.getResetEverything()) {
                     mainClass.setResetEverything(false);
@@ -526,10 +505,10 @@ public class GameScreen implements Screen {
                 }
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());
-//                mainClass.setButton5Visible(false);
+
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter1_choice_text_2() +mainClass.getStepsToOpenChapter2_2(),0,6,
                         screenWidth-buttonWidth*2-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_2());
-//                mainClass.setButton6Visible(false);
+
 
                 //CURRENT STEPS AND NEEDED STEPS WHEN NOT CLREARED YET
                 mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
@@ -786,7 +765,6 @@ public class GameScreen implements Screen {
             addExitAndMusicButtons();
         }
 
-//        System.out.println(mainClass.getChapterNumber() + "CHAPTER NUMBER AND CLEARED CHAPTER 6 IS " + mainClass.getClearedChapter6());
         if(mainClass.getChapterNumber() == 7 && !mainClass.getSwapped()&& mainClass.getClearedChapter6()) {
             mainClass.getStage().clear();
             mainClass.getStage().addActor(chapter7);
@@ -1468,12 +1446,8 @@ public class GameScreen implements Screen {
             mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getBackToMainMenu(),0,6,
                      screenWidth/2-buttonWidth/2, screenHeight/26, buttonWidth ,buttonHeight,0);
 
-//            mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
-//                    50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
-
             mainClass.prefs.flush();
             mainClass.setSwapped(true);
-//            implementTexturesForTextIndicators();
             addExitAndMusicButtons();
         }
 

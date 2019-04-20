@@ -37,7 +37,6 @@ public class ChapterAssets extends Actor {
         setHeight(mainClass.screenHeight);
         setBounds(0,0,getWidth(),getHeight());
         textbox = new Texture("textbox_90.png");
-//        stepbox = new Texture ("askelbox.png");
         if(screenHeight < 800) {
             textboxHeight = screenHeight/3.3f;
             stepboxHeight = screenHeight/7.3f;
@@ -67,7 +66,6 @@ public class ChapterAssets extends Actor {
 
         if(mainClass.getChapterNumber() != 24) {
             batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
-//        batch.draw(stepbox,screenWidth/2f-screenWidth/8,screenHeight-stepboxHeight,screenWidth/4, stepboxHeight);
 
         }
 

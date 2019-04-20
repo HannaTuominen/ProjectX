@@ -20,7 +20,6 @@ public class Credits implements Screen {
     BitmapFont font12;
     Texture texture;
     Texture credits;
-//    Texture logo1;
 
     float buttonWidth;
     float buttonHeight;
@@ -72,11 +71,7 @@ public class Credits implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(texture, 0f, 0f, mainClass.getScreenWidth(),mainClass.getScreenHeight());
-//        font12.draw(batch,"Scrum master: Antti Peltola \n Graafikko: Tanja Varvio \n Graafikko: Aapo Rantanen \n Koodari: Juuso Toivanen \n Koodari: Hanna Tuominen", mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-100);
-
-
         batch.draw(credits, 15, 15, mainClass.getScreenWidth()-30,mainClass.getScreenHeight()-30);
-//        font12.draw(batch,mainClass.getSponsors(), mainClass.getScreenWidth()/3, mainClass.getScreenHeight()-250);
 
         batch.end();
         mainClass.getStage().draw();

@@ -16,7 +16,6 @@ public class MainMenu implements Screen {
     MainClass mainClass;
     SpriteBatch batch;
     BitmapFont font12;
-//    public OrthographicCamera camera;
     private float screenWidth;
     private float screenHeight;
     private float buttonWidth;
@@ -42,8 +41,6 @@ public class MainMenu implements Screen {
         texture2 = new Texture(Gdx.files.internal("18tiko3D-Oddyssea.png"));
 
         stage = mainClass.getStage();
-
-//        Skin skin = new Skin( Gdx.files.internal("uiskin.json"));
 
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
@@ -129,9 +126,6 @@ public class MainMenu implements Screen {
         batch.end();
 
         stage.draw();
-
-
-//        System.out.println("CURRENT STEPS MAIN MENU: " + mainClass.getCurrentSteps());
     }
 
     @Override

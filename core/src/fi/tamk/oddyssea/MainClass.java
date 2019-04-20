@@ -645,13 +645,10 @@ public class MainClass extends Game {
 	}
 
 	public void setButton5Visible(boolean visible) {
-//	    System.out.println(visible + "Button 5 on tällä hetkellä");
 		button5.setVisible(visible);
 	}
 	public void setButton6Visible(boolean visible){
         button6.setVisible(visible);
-
-//        System.out.println(visible + "Button 6 on tällä hetkellä");
     }
 
     public void setGotToLastTextPartOkayToShowNeededButtons(boolean gotToLastTextPartOkayToShowNeededButtons) {
@@ -728,39 +725,26 @@ public class MainClass extends Game {
 
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             stage.addActor(button);
-//            System.out.println(useForTheButton);
         }
 
 		if(useForTheButton == 9 || useForTheButton == 12 ) {
-//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
 			groupActors(button);
 			groupStageAdd1();
-
-//			stage.addActor(button);
 		}
 
         if(useForTheButton == 17 || useForTheButton == 18 || useForTheButton == 19 ) {
-//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             groupActors2(button);
             groupStageAdd2();
-
-//			stage.addActor(button);
         }
 
         if(useForTheButton == 20 || useForTheButton == 21 ) {
-//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             groupActors3(button);
             groupStageAdd3();
-
-//			stage.addActor(button);
         }
 
         if(useForTheButton == 23 || useForTheButton == 24 ) {
-//			button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             groupActors4(button);
             groupStageAdd4();
-
-//			stage.addActor(button);
         }
 
 		if(useForTheButton == 5 || useForTheButton == 6) {
@@ -769,13 +753,11 @@ public class MainClass extends Game {
 				button5 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
                 stage.addActor(button5);
                 System.out.println("created button5" + getGotToLastTextPartOkayToShowNeededButtons());
-//                setButton5Visible(false);
 			}
 			else if (useForTheButton == 6) {
 			    System.out.println("GOT HERE TO CREATING BUTTON 6");
 				button6 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
                 stage.addActor(button6);
-//                setButton6Visible(false);
                 System.out.println("created button6" + getGotToLastTextPartOkayToShowNeededButtons());
 			}
 
@@ -797,11 +779,6 @@ public class MainClass extends Game {
                 }
 			}
 		}
-
-
-//		else {
-//			stage.addActor(button);
-//		}
 
 		Gdx.input.setInputProcessor(stage);
 
@@ -1971,8 +1948,6 @@ public class MainClass extends Game {
 		}
 		parameter.size = fontSize;
 
-//		parameter.borderColor = Color.BLACK;
-//		parameter.borderWidth = 3;
 		font12 = generator.generateFont(parameter);
 
 		font12.setColor(Color.BLACK);
@@ -2001,8 +1976,6 @@ public class MainClass extends Game {
 			createBackGroundMusicAndLoopIt(backGroundMusicOff);
 			System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
             soundAndLanguage.flush();
-//			setGotToTheLastTextOnceAlready(false);
-//			setGotToLastTextPartOkayToShowNeededButtons(false);
 
 		}
 
@@ -2016,10 +1989,6 @@ public class MainClass extends Game {
             System.out.println("MAINCLASS DON'T PLAY MUSIC");
         }
 
-
-//		if(backGroundMusicOff != prefs.getBoolean("backGroundMusicOff")) {
-//			createBackGroundMusicAndLoopIt(true);
-//		}
 		System.out.println("IS SOUND OFF AT THE START: " + getbackGroundMusicOffOrOn());
 
 
@@ -2029,12 +1998,10 @@ public class MainClass extends Game {
 			System.out.println("LANGUAGE FALSE");
 			setDefaultLocale();
 			setCurrentFurthestChapter(1);
-//			getbackGroundMusicOffOrOff();
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
             soundAndLanguage.flush();
 
             setResetEverything(false);
-//            getResetEverything();
 
 			if(localLanguageToString.equals("fi_FI")) {
 				System.out.println("LOCAL LANGUAGE FINNISH");
@@ -2108,7 +2075,6 @@ public class MainClass extends Game {
 		return steps;
 	}
 	public int getCurrentSteps() {
-//	    System.out.println(steps);
 		return steps;
 	}
 	public void removeSteps(int steps) {
