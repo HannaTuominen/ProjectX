@@ -439,12 +439,15 @@ public class GameScreen implements Screen {
 
             if(mainClass.getLanguageFinnish()) {
                 System.out.println("CREATING FINNISH TUTORIAL");
-                mainClass.createButtons(new Texture("tutorial_fi.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                mainClass.createButtons(new Texture("tutorial_fi.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2,
+                        mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
             } else {
                 System.out.println("CREATING ENGLISH TUTORIAL");
-                mainClass.createButtons(new Texture("tutorial_en.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                mainClass.createButtons(new Texture("tutorial_en.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2,
+                        mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
             }
-            mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getOk(), 0, 21, screenWidth/2f-screenWidth/8, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+            mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getOk(), 0, 21, screenWidth/2f-screenWidth/8,
+                    mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
 
         }
 
