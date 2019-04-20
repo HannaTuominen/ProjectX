@@ -1762,11 +1762,11 @@ public class Button extends Actor {
             if(getUseForTheButton() == 1 || getUseForTheButton() == 2 || getUseForTheButton() == 3 || getUseForTheButton() == 4 || getUseForTheButton() == 16
                     || getUseForTheButton() == 18 || getUseForTheButton() == 19 || getUseForTheButton() == 21 || getUseForTheButton() == 22
                     || getUseForTheButton() == 24) {
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                if(!mainClass.getPrefsPopUpActivate() && useForTheButton != 21 && useForTheButton !=24) {
+                    setTexture(new Texture(Gdx.files.internal("button_pressed.png")));
                 }else {
-                    if(useForTheButton == 18 || useForTheButton == 19) {
-                        setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                    if(useForTheButton == 18 || useForTheButton == 19 || useForTheButton == 21 || useForTheButton == 24) {
+                        setTexture(new Texture(Gdx.files.internal("button_pressed.png")));
                     }
                 }
             }
@@ -1776,7 +1776,7 @@ public class Button extends Actor {
                 if(stepsToOpenNextChapter > steps) {
                     System.out.println("NExt chapter button pressed but too little steps");
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange_pressed.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_pressed.png")));
                 }
             }
             if(getUseForTheButton() == 6 && getTexture().toString().equals("next_page.png")) {
@@ -1929,7 +1929,7 @@ public class Button extends Actor {
 
            if((useForTheButton == 5 || useForTheButton == 6) && !getTexture().toString().equals("next_page.png") && !getTexture().toString().equals("next_page_pressed.png")) {
                System.out.println("Setting texture back to orange");
-               setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+               setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
            }
            if(getTexture().toString().equals("next_page_pressed.png")) {
                setTexture(new Texture(Gdx.files.internal("next_page.png")));
@@ -1937,11 +1937,11 @@ public class Button extends Actor {
 
            if (useForTheButton == 16) {
                if(!mainClass.getPrefsPopUpActivate()) {
-                   setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                   setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                    mainClass.setPrefsPopUpActivate(true);
                    mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
-                   mainClass.createButtons(new Texture("button_orange.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
                }
            }
             if (useForTheButton == 18) {
@@ -1976,7 +1976,7 @@ public class Button extends Actor {
             if (useForTheButton == 22) {
                 //Doesn't save on computer as you need at least 1 legit step for the save
                 mainClass.setSteps(mainClass.getCurrentSteps()+1000);
-                setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
             }
             if (useForTheButton == 23 || useForTheButton == 24) {
                 mainClass.clearGroup(24);
@@ -1987,7 +1987,7 @@ public class Button extends Actor {
                 if (stepsToOpenNextChapter > steps) {
                     if (!mainClass.getTooFewStepsPopUpActivate()) {
                         mainClass.createButtons(new Texture("box.png"), mainClass.getTooFewStepsMessage(), 0, 23, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f / 2, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                        mainClass.createButtons(new Texture("button_orange.png"), mainClass.getOk(), 0, 24, mainClass.getScreenWidth()/2f-mainClass.getScreenWidth()/8, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2 + mainClass.getScreenHeight() / 20, buttonWidth, buttonHeight, 0);
+                        mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getOk(), 0, 24, mainClass.getScreenWidth()/2f-mainClass.getScreenWidth()/8, mainClass.getScreenHeight() / 2 - mainClass.getScreenHeight() / 1.6f / 2 + mainClass.getScreenHeight() / 20, buttonWidth, buttonHeight, 0);
                         mainClass.setTooFewStepsPopUpActivate(true);
                     }
                 }
@@ -2471,7 +2471,7 @@ public class Button extends Actor {
                     GameScreen gameScreen = new GameScreen(mainClass);
                     mainClass.setScreen(gameScreen);
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
 
 
@@ -2480,7 +2480,7 @@ public class Button extends Actor {
                     ChapterSelect chapterSelect = new ChapterSelect(mainClass);
                     mainClass.setScreen(chapterSelect);
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             } else if (getUseForTheButton() == 3) {
                 if(!mainClass.getPrefsPopUpActivate()) {
@@ -2488,7 +2488,7 @@ public class Button extends Actor {
                     Credits credits = new Credits(mainClass);
                     mainClass.setScreen(credits);
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             } else if (getUseForTheButton() == 4) {
                 if(!mainClass.getPrefsPopUpActivate()) {
@@ -2496,7 +2496,7 @@ public class Button extends Actor {
                     Gdx.app.exit();
                     System.exit(0);
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             } else if (getUseForTheButton() == 9) {
                 if(touchUpX == 0) {
@@ -2673,7 +2673,7 @@ public class Button extends Actor {
                         System.out.println("local language: " + mainClass.getlocalLanguageToString());
                     }
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             } else if (getUseForTheButton() == 13) {
                 if(!mainClass.getPrefsPopUpActivate()) {
@@ -2695,7 +2695,7 @@ public class Button extends Actor {
                         System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
                     }
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_orange.png")));
+                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             }
 //            else if (getUseForTheButton() == 16 || getUseForTheButton() == 17 || getUseForTheButton() == 18) {

@@ -65,13 +65,13 @@ public class MainMenu implements Screen {
 
     public void createNewButtons() {
         if(!firstRound) {
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getPlay(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f ,buttonHeight*1.3f,0);
+            mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getPlay(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f ,buttonHeight*1.3f,0);
             System.out.println(firstRound + " IS IT FIRST ROUND");
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
 
 
         } else {
-            mainClass.createButtons(new Texture("button_orange.png"),mainClass.getContinue(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f, buttonHeight*1.3f,0);
+            mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f, buttonHeight*1.3f,0);
             System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
         }
 
@@ -89,10 +89,10 @@ public class MainMenu implements Screen {
         }
 //        mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -50, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
 
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getChapterSelect(),0,2,screenWidth/10*1.35f,screenHeight/2f, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getCredits(),0,3,screenWidth/10*1.35f,screenHeight/2.2f-buttonHeight, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getExit(),0,4,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*2, buttonWidth ,buttonHeight,0);
-        mainClass.createButtons(new Texture("button_orange.png"),mainClass.getResetGame(),0,16,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*3.3f, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapterSelect(),0,2,screenWidth/10*1.35f,screenHeight/2f, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getCredits(),0,3,screenWidth/10*1.35f,screenHeight/2.2f-buttonHeight, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getExit(),0,4,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*2, buttonWidth ,buttonHeight,0);
+        mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getResetGame(),0,16,screenWidth/10*1.35f,screenHeight/2.4f-buttonHeight*3.3f, buttonWidth ,buttonHeight,0);
 
         mainClass.setPrefsPopUpActivate(false);
     }

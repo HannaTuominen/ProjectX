@@ -36,6 +36,10 @@ public class ChapterSelect implements Screen {
         buttonWidth = screenWidth/4;
         buttonHeight = screenHeight/10;
 
+        if (mainClass.getCurrentFurthestChapter() == 0) {
+            mainClass.setCurrentFurthestChapter(1);
+        }
+
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.playBackgroundMusic();
         } else {
