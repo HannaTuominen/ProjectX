@@ -46,29 +46,29 @@ public class ChapterSelect implements Screen {
             mainClass.stopBackGroundMusic();
         }
 
-        mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
-        mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
-        mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
-        mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
-        mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
-        mainClass.setClearedChapter6(mainClass.prefs.getBoolean("clearedChapter6"));
-        mainClass.setClearedChapter7(mainClass.prefs.getBoolean("clearedChapter7"));
-        mainClass.setClearedChapter8(mainClass.prefs.getBoolean("clearedChapter8"));
-        mainClass.setClearedChapter9(mainClass.prefs.getBoolean("clearedChapter9"));
-        mainClass.setClearedChapter10(mainClass.prefs.getBoolean("clearedChapter10"));
-        mainClass.setClearedChapter11(mainClass.prefs.getBoolean("clearedChapter11"));
-        mainClass.setClearedChapter12(mainClass.prefs.getBoolean("clearedChapter12"));
-        mainClass.setClearedChapter13(mainClass.prefs.getBoolean("clearedChapter13"));
-        mainClass.setClearedChapter14(mainClass.prefs.getBoolean("clearedChapter14"));
-        mainClass.setClearedChapter15(mainClass.prefs.getBoolean("clearedChapter15"));
-        mainClass.setClearedChapter16(mainClass.prefs.getBoolean("clearedChapter16"));
-        mainClass.setClearedChapter17(mainClass.prefs.getBoolean("clearedChapter17"));
-        mainClass.setClearedChapter18(mainClass.prefs.getBoolean("clearedChapter18"));
-        mainClass.setClearedChapter19(mainClass.prefs.getBoolean("clearedChapter19"));
-        mainClass.setClearedChapter20(mainClass.prefs.getBoolean("clearedChapter20"));
-        mainClass.setClearedChapter21(mainClass.prefs.getBoolean("clearedChapter21"));
-        mainClass.setClearedChapter22(mainClass.prefs.getBoolean("clearedChapter22"));
-        mainClass.setClearedChapter23(mainClass.prefs.getBoolean("clearedChapter23"));
+//        mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
+//        mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
+//        mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
+//        mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
+//        mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
+//        mainClass.setClearedChapter6(mainClass.prefs.getBoolean("clearedChapter6"));
+//        mainClass.setClearedChapter7(mainClass.prefs.getBoolean("clearedChapter7"));
+//        mainClass.setClearedChapter8(mainClass.prefs.getBoolean("clearedChapter8"));
+//        mainClass.setClearedChapter9(mainClass.prefs.getBoolean("clearedChapter9"));
+//        mainClass.setClearedChapter10(mainClass.prefs.getBoolean("clearedChapter10"));
+//        mainClass.setClearedChapter11(mainClass.prefs.getBoolean("clearedChapter11"));
+//        mainClass.setClearedChapter12(mainClass.prefs.getBoolean("clearedChapter12"));
+//        mainClass.setClearedChapter13(mainClass.prefs.getBoolean("clearedChapter13"));
+//        mainClass.setClearedChapter14(mainClass.prefs.getBoolean("clearedChapter14"));
+//        mainClass.setClearedChapter15(mainClass.prefs.getBoolean("clearedChapter15"));
+//        mainClass.setClearedChapter16(mainClass.prefs.getBoolean("clearedChapter16"));
+//        mainClass.setClearedChapter17(mainClass.prefs.getBoolean("clearedChapter17"));
+//        mainClass.setClearedChapter18(mainClass.prefs.getBoolean("clearedChapter18"));
+//        mainClass.setClearedChapter19(mainClass.prefs.getBoolean("clearedChapter19"));
+//        mainClass.setClearedChapter20(mainClass.prefs.getBoolean("clearedChapter20"));
+//        mainClass.setClearedChapter21(mainClass.prefs.getBoolean("clearedChapter21"));
+//        mainClass.setClearedChapter22(mainClass.prefs.getBoolean("clearedChapter22"));
+//        mainClass.setClearedChapter23(mainClass.prefs.getBoolean("clearedChapter23"));
         mainClass.setCurrentFurthestChapter(mainClass.prefs.getInteger("currentFurthestChapter"));
         mainClass.prefs.flush();
 
@@ -85,7 +85,7 @@ public class ChapterSelect implements Screen {
         mainClass.createButtons(new Texture("Chapter_1_unlocked_unpressed.png"),"1",0,9,
                 20f,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         //3
-        if(! mainClass.getClearedChapter2()) {
+        if(!mainClass.getClearedChapterGeneral(2)) {
             mainClass.createButtons(new Texture("Chapter_3_locked_unpressed.png"),"3",0,9,
                     (20f*2)+buttonWidth,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -93,7 +93,7 @@ public class ChapterSelect implements Screen {
                     (20f*2)+buttonWidth,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //5
-        if(!mainClass.getClearedChapter4()) {
+        if(!mainClass.getClearedChapterGeneral(4)) {
             mainClass.createButtons(new Texture("Chapter_5_locked_unpressed.png"),"5",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -101,7 +101,7 @@ public class ChapterSelect implements Screen {
                     (20f*3)+buttonWidth*2,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //7
-        if(!mainClass.getClearedChapter6()) {
+        if(!mainClass.getClearedChapterGeneral(6)) {
             mainClass.createButtons(new Texture("Chapter_7_locked_unpressed.png"),"7",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -110,7 +110,7 @@ public class ChapterSelect implements Screen {
         }
 
         //9
-        if(!mainClass.getClearedChapter8()) {
+        if(!mainClass.getClearedChapterGeneral(8)) {
             mainClass.createButtons(new Texture("Chapter_9_locked_unpressed.png"),"9",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -119,7 +119,7 @@ public class ChapterSelect implements Screen {
         }
 
         //11
-        if(!mainClass.getClearedChapter10()) {
+        if(!mainClass.getClearedChapterGeneral(10)) {
             mainClass.createButtons(new Texture("Chapter_11_locked_unpressed.png"),"11",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -128,7 +128,7 @@ public class ChapterSelect implements Screen {
         }
 
         //13
-        if(!mainClass.getClearedChapter12()) {
+        if(!mainClass.getClearedChapterGeneral(12)) {
             mainClass.createButtons(new Texture("Chapter_13_locked_unpressed.png"),"13",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -137,7 +137,7 @@ public class ChapterSelect implements Screen {
         }
 
         //15
-        if(!mainClass.getClearedChapter14()) {
+        if(!mainClass.getClearedChapterGeneral(14)) {
             mainClass.createButtons(new Texture("Chapter_15_locked_unpressed.png"),"15",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -146,7 +146,7 @@ public class ChapterSelect implements Screen {
         }
 
         //17
-        if(!mainClass.getClearedChapter16()) {
+        if(!mainClass.getClearedChapterGeneral(16)) {
             mainClass.createButtons(new Texture("Chapter_17_locked_unpressed.png"),"17",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -155,7 +155,7 @@ public class ChapterSelect implements Screen {
         }
 
         //19
-        if(!mainClass.getClearedChapter18()) {
+        if(!mainClass.getClearedChapterGeneral(18)) {
             mainClass.createButtons(new Texture("Chapter_19_locked_unpressed.png"),"19",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -164,7 +164,7 @@ public class ChapterSelect implements Screen {
         }
 
         //21
-        if(!mainClass.getClearedChapter20()) {
+        if(!mainClass.getClearedChapterGeneral(20)) {
             mainClass.createButtons(new Texture("Chapter_21_locked_unpressed.png"),"21",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -173,7 +173,7 @@ public class ChapterSelect implements Screen {
         }
 
         //23
-        if(!mainClass.getClearedChapter22()) {
+        if(!mainClass.getClearedChapterGeneral(22)) {
             mainClass.createButtons(new Texture("Chapter_23_locked_unpressed.png"),"23",0,9,
                     (20f*12)+buttonWidth*11,screenHeight/2.2f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -188,7 +188,7 @@ public class ChapterSelect implements Screen {
 
         //DOWNROW
         //2
-        if(!mainClass.getClearedChapter1()) {
+        if(!mainClass.getClearedChapterGeneral(1)) {
             mainClass.createButtons(new Texture("Chapter_2_locked_unpressed.png"),"2",0,9,
                     20f,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -196,7 +196,7 @@ public class ChapterSelect implements Screen {
                     20f,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         }
         //4
-        if(! mainClass.getClearedChapter3()) {
+        if(! mainClass.getClearedChapterGeneral(3)) {
             mainClass.createButtons(new Texture("Chapter_4_locked_unpressed.png"),"4",0,9,
                     (20f*2)+buttonWidth,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -205,7 +205,7 @@ public class ChapterSelect implements Screen {
         }
 
         //6
-        if(! mainClass.getClearedChapter5()) {
+        if(! mainClass.getClearedChapterGeneral(5)) {
             mainClass.createButtons(new Texture("Chapter_6_locked_unpressed.png"),"6",0,9,
                     (20f*3)+buttonWidth*2,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -214,7 +214,7 @@ public class ChapterSelect implements Screen {
         }
 
         //8
-        if(! mainClass.getClearedChapter7()) {
+        if(! mainClass.getClearedChapterGeneral(7)) {
             mainClass.createButtons(new Texture("Chapter_8_locked_unpressed.png"),"8",0,9,
                     (20f*4)+buttonWidth*3,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -223,7 +223,7 @@ public class ChapterSelect implements Screen {
         }
 
         //10
-        if(! mainClass.getClearedChapter9()) {
+        if(! mainClass.getClearedChapterGeneral(9)) {
             mainClass.createButtons(new Texture("Chapter_10_locked_unpressed.png"),"10",0,9,
                     (20f*5)+buttonWidth*4,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -232,7 +232,7 @@ public class ChapterSelect implements Screen {
         }
 
         //12
-        if(! mainClass.getClearedChapter11()) {
+        if(! mainClass.getClearedChapterGeneral(11)) {
             mainClass.createButtons(new Texture("Chapter_12_locked_unpressed.png"),"12",0,9,
                     (20f*6)+buttonWidth*5,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -241,7 +241,7 @@ public class ChapterSelect implements Screen {
         }
 
         //14
-        if(! mainClass.getClearedChapter13()) {
+        if(! mainClass.getClearedChapterGeneral(13)) {
             mainClass.createButtons(new Texture("Chapter_14_locked_unpressed.png"),"14",0,9,
                     (20f*7)+buttonWidth*6,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -250,7 +250,7 @@ public class ChapterSelect implements Screen {
         }
 
         //16
-        if(! mainClass.getClearedChapter15()) {
+        if(! mainClass.getClearedChapterGeneral(15)) {
             mainClass.createButtons(new Texture("Chapter_16_locked_unpressed.png"),"16",0,9,
                     (20f*8)+buttonWidth*7,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -259,7 +259,7 @@ public class ChapterSelect implements Screen {
         }
 
         //18
-        if(! mainClass.getClearedChapter17()) {
+        if(!mainClass.getClearedChapterGeneral(17)) {
             mainClass.createButtons(new Texture("Chapter_18_locked_unpressed.png"),"18",0,9,
                     (20f*9)+buttonWidth*8,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -268,7 +268,7 @@ public class ChapterSelect implements Screen {
         }
 
         //20
-        if(! mainClass.getClearedChapter19()) {
+        if(! mainClass.getClearedChapterGeneral(19)) {
             mainClass.createButtons(new Texture("Chapter_20_locked_unpressed.png"),"20",0,9,
                     (20f*10)+buttonWidth*9,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {
@@ -277,7 +277,7 @@ public class ChapterSelect implements Screen {
         }
 
         //22
-        if(! mainClass.getClearedChapter21()) {
+        if(! mainClass.getClearedChapterGeneral(21)) {
             mainClass.createButtons(new Texture("Chapter_22_locked_unpressed.png"),"22",0,9,
                     (20f*11)+buttonWidth*10,screenHeight/2f - buttonHeight*4.5f-6,buttonWidth,buttonHeight*3.5f,0);
         } else {

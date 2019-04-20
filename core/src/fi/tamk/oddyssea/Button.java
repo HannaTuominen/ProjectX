@@ -363,7 +363,7 @@ public class Button extends Actor {
             if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-                if(!mainClass.getClearedChapter1()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton5Visible(true);
                     mainClass.setButton6Visible(true);
                 } else {
@@ -382,7 +382,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter2()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -401,7 +401,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter3()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton6Visible(true);
                 } else {
                     mainClass.setButton6Visible(true);
@@ -419,7 +419,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter4()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton5Visible(true);
                     mainClass.setButton6Visible(true);
                 } else {
@@ -442,7 +442,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter5()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton6Visible(true);
                 } else {
                     mainClass.setButton6Visible(true);
@@ -464,7 +464,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter6()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -487,7 +487,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter7()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -510,7 +510,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter8()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -537,7 +537,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter9()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -560,7 +560,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter10()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -587,7 +587,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter11()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton5Visible(true);
                     mainClass.setButton6Visible(true);
                 } else {
@@ -614,7 +614,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter12()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -641,7 +641,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter13()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -668,7 +668,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter14()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -699,7 +699,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter15()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -730,7 +730,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter16()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -773,7 +773,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter17()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton5Visible(true);
                     mainClass.setButton6Visible(true);
                 } else {
@@ -804,7 +804,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter18()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -831,7 +831,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter19()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -858,7 +858,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter20()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -889,7 +889,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter21()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -924,7 +924,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter22()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
 //                            mainClass.setButton5Visible();
                     mainClass.setButton6Visible(true);
                 } else {
@@ -955,7 +955,7 @@ public class Button extends Actor {
                 System.out.println("SET LASTTEXTOKAY TO TRUE");
                 mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
                 mainClass.setGotToTheLastTextOnceAlready(true);
-                if(!mainClass.getClearedChapter23()) {
+                if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
                     mainClass.setButton5Visible(true);
                     mainClass.setButton6Visible(true);
                 } else {
@@ -1303,11 +1303,12 @@ public class Button extends Actor {
 
 
     public void useForTheButton5Or6Commons() {
-        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+//        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
         System.out.println("REMOVING STEPS");
         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
         mainClass.removeSteps(stepsToOpenNextChapter);
         System.out.println(steps);
+        mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
         mainClass.setCurrentFurthestChapter(chapterNumber + 1);
         enoughSteps = true;
         mainClass.setChapterNumber(chapterNumber + 1);
@@ -1407,49 +1408,49 @@ public class Button extends Actor {
 
                 if(chapterSelect == 1) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter2() && chapterSelect == 2) {
+                } else if(mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter3() && chapterSelect == 3) {
+                } else if(mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter4() && chapterSelect == 4) {
+                } else if(mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter5() && chapterSelect == 5) {
+                } else if(mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter6() && chapterSelect == 6) {
+                } else if(mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter7() && chapterSelect == 7) {
+                } else if(mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter8() && chapterSelect == 8) {
+                } else if(mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter9() && chapterSelect == 9) {
+                } else if(mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter10() && chapterSelect == 10) {
+                } else if(mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter11() && chapterSelect == 11) {
+                } else if(mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter12() && chapterSelect == 12) {
+                } else if(mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter13() && chapterSelect == 13) {
+                } else if(mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter14() && chapterSelect == 14) {
+                } else if(mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter15() && chapterSelect == 15) {
+                } else if(mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter16() && chapterSelect == 16) {
+                } else if(mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter17() && chapterSelect == 17) {
+                } else if(mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter18() && chapterSelect == 18) {
+                } else if(mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter19() && chapterSelect == 19) {
+                } else if(mainClass.getClearedChapterGeneral(19) && chapterSelect == 19) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter20() && chapterSelect == 20) {
+                } else if(mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter21() && chapterSelect == 21) {
+                } else if(mainClass.getClearedChapterGeneral(21)&& chapterSelect == 21) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter22() && chapterSelect == 22) {
+                } else if(mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapter23() && chapterSelect == 23) {
+                } else if(mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
                     setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_pressed.png")));
                 } else if(mainClass.getCurrentFurthestChapter() == chapterSelect) {
                     if(chapterSelect == 1) {
@@ -1598,10 +1599,11 @@ public class Button extends Actor {
                                 mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
                                 mainClass.setChoseWrong_1(true);
                             }
+//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter1(true);
-                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
-                            mainClass.prefs.flush();
+
+//                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
+//                            mainClass.prefs.flush();
                         }
 
 
@@ -1610,10 +1612,12 @@ public class Button extends Actor {
                         if (stepsToOpenNextChapter > steps) {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
+//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter2(true);
-                            mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter2());
-                            mainClass.prefs.flush();
+
+//                            mainClass.setClearedChapter2(true);
+//                            mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter2());
+//                            mainClass.prefs.flush();
                         }
 
 
@@ -1622,9 +1626,10 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter3(true);
-                            mainClass.prefs.putBoolean("clearedChapter3", mainClass.getClearedChapter3());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
+//                            mainClass.setClearedChapter3(true);
+//                            mainClass.prefs.putBoolean("clearedChapter3", mainClass.getClearedChapter3());
+//                            mainClass.prefs.flush();
                         }
 
 
@@ -1637,9 +1642,9 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_2(true);
                             }
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter4(true);
-                            mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter4(true);
+//                            mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
+//                            mainClass.prefs.flush();
                         }
 
 
@@ -1648,9 +1653,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter5(true);
-                            mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter5(true);
+//                            mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 6) {
@@ -1658,9 +1663,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter6(true);
-                            mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter6(true);
+//                            mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 7) {
@@ -1668,9 +1673,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter7(true);
-                            mainClass.prefs.putBoolean("clearedChapter7", mainClass.getClearedChapter7());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter7(true);
+//                            mainClass.prefs.putBoolean("clearedChapter7", mainClass.getClearedChapter7());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 8) {
@@ -1678,9 +1683,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter8(true);
-                            mainClass.prefs.putBoolean("clearedChapter8", mainClass.getClearedChapter8());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter8(true);
+//                            mainClass.prefs.putBoolean("clearedChapter8", mainClass.getClearedChapter8());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 9) {
@@ -1688,9 +1693,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter9(true);
-                            mainClass.prefs.putBoolean("clearedChapter9", mainClass.getClearedChapter9());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter9(true);
+//                            mainClass.prefs.putBoolean("clearedChapter9", mainClass.getClearedChapter9());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 10) {
@@ -1698,9 +1703,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter10(true);
-                            mainClass.prefs.putBoolean("clearedChapter10", mainClass.getClearedChapter10());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter10(true);
+//                            mainClass.prefs.putBoolean("clearedChapter10", mainClass.getClearedChapter10());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 11) {
@@ -1712,9 +1717,9 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_3(true);
                             }
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter11(true);
-                            mainClass.prefs.putBoolean("clearedChapter11", mainClass.getClearedChapter11());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter11(true);
+//                            mainClass.prefs.putBoolean("clearedChapter11", mainClass.getClearedChapter11());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 12) {
@@ -1722,9 +1727,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter12(true);
-                            mainClass.prefs.putBoolean("clearedChapter12", mainClass.getClearedChapter12());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter12(true);
+//                            mainClass.prefs.putBoolean("clearedChapter12", mainClass.getClearedChapter12());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 13) {
@@ -1732,9 +1737,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter13(true);
-                            mainClass.prefs.putBoolean("clearedChapter13", mainClass.getClearedChapter13());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter13(true);
+//                            mainClass.prefs.putBoolean("clearedChapter13", mainClass.getClearedChapter13());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 14) {
@@ -1742,9 +1747,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter14(true);
-                            mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter14(true);
+//                            mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 15) {
@@ -1752,9 +1757,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter15(true);
-                            mainClass.prefs.putBoolean("clearedChapter15", mainClass.getClearedChapter15());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter15(true);
+//                            mainClass.prefs.putBoolean("clearedChapter15", mainClass.getClearedChapter15());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 16) {
@@ -1762,9 +1767,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter16(true);
-                            mainClass.prefs.putBoolean("clearedChapter16", mainClass.getClearedChapter16());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter16(true);
+//                            mainClass.prefs.putBoolean("clearedChapter16", mainClass.getClearedChapter16());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 17) {
@@ -1776,9 +1781,9 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_4(true);
                             }
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter17(true);
-                            mainClass.prefs.putBoolean("clearedChapter17", mainClass.getClearedChapter17());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter17(true);
+//                            mainClass.prefs.putBoolean("clearedChapter17", mainClass.getClearedChapter17());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 18) {
@@ -1786,9 +1791,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter18(true);
-                            mainClass.prefs.putBoolean("clearedChapter18", mainClass.getClearedChapter18());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter18(true);
+//                            mainClass.prefs.putBoolean("clearedChapter18", mainClass.getClearedChapter18());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 19) {
@@ -1796,9 +1801,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter19(true);
-                            mainClass.prefs.putBoolean("clearedChapter19", mainClass.getClearedChapter19());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter19(true);
+//                            mainClass.prefs.putBoolean("clearedChapter19", mainClass.getClearedChapter19());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 20) {
@@ -1806,9 +1811,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter20(true);
-                            mainClass.prefs.putBoolean("clearedChapter20", mainClass.getClearedChapter20());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter20(true);
+//                            mainClass.prefs.putBoolean("clearedChapter20", mainClass.getClearedChapter20());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 21) {
@@ -1816,9 +1821,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter21(true);
-                            mainClass.prefs.putBoolean("clearedChapter21", mainClass.getClearedChapter21());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter21(true);
+//                            mainClass.prefs.putBoolean("clearedChapter21", mainClass.getClearedChapter21());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 22) {
@@ -1826,9 +1831,9 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-                            mainClass.setClearedChapter22(true);
-                            mainClass.prefs.putBoolean("clearedChapter22", mainClass.getClearedChapter22());
-                            mainClass.prefs.flush();
+//                            mainClass.setClearedChapter22(true);
+//                            mainClass.prefs.putBoolean("clearedChapter22", mainClass.getClearedChapter22());
+//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 23) {
@@ -1838,27 +1843,29 @@ public class Button extends Actor {
                             mainClass.prefs.clear();
                             mainClass.setResetEverything(true);
                             mainClass.prefs.putBoolean("openedFirstTime", true);
-                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), false);
+//                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), false);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setChapterNumber(1);
                             mainClass.setCurrentFurthestChapter(1);
-                            mainClass.setClearedChapter1(false);
-                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
+                            mainClass.setClearedChapterGeneral(false, 1);
+//                            mainClass.setClearedChapter1(false);
+//                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                             mainClass.setSwapped(false);
                             mainClass.setSteps(0);
                             mainClass.prefs.flush();
                         }
                         if (getUseForTheButton() == 6) {
                             System.out.println("LAST CHAPTER");
-                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
+//                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                             System.out.println("REMOVING STEPS");
                             System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setCurrentFurthestChapter(chapterNumber + 1);
-                            mainClass.setClearedChapter23(true);
-                            mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
+                            mainClass.setClearedChapterGeneral(true, 23);
+//                            mainClass.setClearedChapter23(true);
+//                            mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
                             mainClass.setChapterNumber(chapterNumber + 1);
                             mainClass.setSwapped(false);
                             mainClass.prefs.flush();
@@ -1895,29 +1902,30 @@ public class Button extends Actor {
                     System.out.println("9 pressed");
                     System.out.println(mainClass.getCurrentFurthestChapter());
                     chapterSelect = Integer.parseInt(getTextForAButton());
-                    if (mainClass.getClearedChapter1() && chapterSelect == 1 ||
-                            mainClass.getClearedChapter2() && chapterSelect == 2 ||
-                            mainClass.getClearedChapter3() && chapterSelect == 3 ||
-                            mainClass.getClearedChapter4() && chapterSelect == 4 ||
-                            mainClass.getClearedChapter5() && chapterSelect == 5 ||
-                            mainClass.getClearedChapter6() && chapterSelect == 6 ||
-                            mainClass.getClearedChapter7() && chapterSelect == 7 ||
-                            mainClass.getClearedChapter8() && chapterSelect == 8 ||
-                            mainClass.getClearedChapter9() && chapterSelect == 9 ||
-                            mainClass.getClearedChapter10() && chapterSelect == 10 ||
-                            mainClass.getClearedChapter11() && chapterSelect == 11 ||
-                            mainClass.getClearedChapter12() && chapterSelect == 12 ||
-                            mainClass.getClearedChapter13() && chapterSelect == 13 ||
-                            mainClass.getClearedChapter14() && chapterSelect == 14 ||
-                            mainClass.getClearedChapter15() && chapterSelect == 15 ||
-                            mainClass.getClearedChapter16() && chapterSelect == 16 ||
-                            mainClass.getClearedChapter17() && chapterSelect == 17 ||
-                            mainClass.getClearedChapter18() && chapterSelect == 18 ||
-                            mainClass.getClearedChapter19() && chapterSelect == 19 ||
-                            mainClass.getClearedChapter20() && chapterSelect == 20 ||
-                            mainClass.getClearedChapter21() && chapterSelect == 21 ||
-                            mainClass.getClearedChapter22() && chapterSelect == 22 ||
-                            mainClass.getClearedChapter23() && chapterSelect == 23 ||
+//                    mainClass.getClearedChapterGeneral(1);
+                    if (mainClass.getClearedChapterGeneral(1) && chapterSelect == 1 ||
+                            mainClass.getClearedChapterGeneral(2) && chapterSelect == 2 ||
+                            mainClass.getClearedChapterGeneral(3) && chapterSelect == 3 ||
+                            mainClass.getClearedChapterGeneral(4) && chapterSelect == 4 ||
+                            mainClass.getClearedChapterGeneral(5) && chapterSelect == 5 ||
+                            mainClass.getClearedChapterGeneral(6) && chapterSelect == 6 ||
+                            mainClass.getClearedChapterGeneral(7) && chapterSelect == 7 ||
+                            mainClass.getClearedChapterGeneral(8) && chapterSelect == 8 ||
+                            mainClass.getClearedChapterGeneral(9) && chapterSelect == 9 ||
+                            mainClass.getClearedChapterGeneral(10) && chapterSelect == 10 ||
+                            mainClass.getClearedChapterGeneral(11) && chapterSelect == 11 ||
+                            mainClass.getClearedChapterGeneral(12) && chapterSelect == 12 ||
+                            mainClass.getClearedChapterGeneral(13) && chapterSelect == 13 ||
+                            mainClass.getClearedChapterGeneral(14) && chapterSelect == 14 ||
+                            mainClass.getClearedChapterGeneral(15) && chapterSelect == 15 ||
+                            mainClass.getClearedChapterGeneral(16) && chapterSelect == 16 ||
+                            mainClass.getClearedChapterGeneral(17) && chapterSelect == 17 ||
+                            mainClass.getClearedChapterGeneral(18) && chapterSelect == 18 ||
+                            mainClass.getClearedChapterGeneral(19) && chapterSelect == 19 ||
+                            mainClass.getClearedChapterGeneral(20) && chapterSelect == 20 ||
+                            mainClass.getClearedChapterGeneral(21) && chapterSelect == 21 ||
+                            mainClass.getClearedChapterGeneral(22) && chapterSelect == 22 ||
+                            mainClass.getClearedChapterGeneral(23) && chapterSelect == 23 ||
                             mainClass.getCurrentFurthestChapter() == chapterSelect) {
 
                         mainClass.setChapterNumber(chapterSelect);
@@ -1935,49 +1943,49 @@ public class Button extends Actor {
                     System.out.println("RELEASED SCROLL SHOULD CHANGE BUTTON TO NORMAL");
                     if (chapterSelect == 1) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter2() && chapterSelect == 2) {
+                    } else if (mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter3() && chapterSelect == 3) {
+                    } else if (mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter4() && chapterSelect == 4) {
+                    } else if (mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter5() && chapterSelect == 5) {
+                    } else if (mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter6() && chapterSelect == 6) {
+                    } else if (mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter7() && chapterSelect == 7) {
+                    } else if (mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter8() && chapterSelect == 8) {
+                    } else if (mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter9() && chapterSelect == 9) {
+                    } else if (mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter10() && chapterSelect == 10) {
+                    } else if (mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter11() && chapterSelect == 11) {
+                    } else if (mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter12() && chapterSelect == 12) {
+                    } else if (mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter13() && chapterSelect == 13) {
+                    } else if (mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter14() && chapterSelect == 14) {
+                    } else if (mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter15() && chapterSelect == 15) {
+                    } else if (mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter16() && chapterSelect == 16) {
+                    } else if (mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter17() && chapterSelect == 17) {
+                    } else if (mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter18() && chapterSelect == 18) {
+                    } else if (mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter19() && chapterSelect == 19) {
+                    } else if (mainClass.getClearedChapterGeneral(19)&& chapterSelect == 19) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter20() && chapterSelect == 20) {
+                    } else if (mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter21() && chapterSelect == 21) {
+                    } else if (mainClass.getClearedChapterGeneral(21) && chapterSelect == 21) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter22() && chapterSelect == 22) {
+                    } else if (mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapter23() && chapterSelect == 23) {
+                    } else if (mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
                         setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
                     } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
                         if (chapterSelect == 1) {
@@ -2101,8 +2109,9 @@ public class Button extends Actor {
                 mainClass.prefs.clear();
                 mainClass.setSteps(0);
                 mainClass.setCurrentFurthestChapter(1);
-                mainClass.setClearedChapter1(false);
-                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
+                mainClass.setClearedChapterGeneral(false, 1);
+//                mainClass.setClearedChapter1(false);
+//                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                 mainClass.setChapterNumber(1);
                 mainClass.setResetEverything(true);
                 mainClass.prefs.flush();
@@ -2132,8 +2141,6 @@ public class Button extends Actor {
                 mainClass.clearGroup(24);
                 mainClass.setTooFewStepsPopUpActivate(false);
             }
-
-
         }
 
         @Override
