@@ -46,29 +46,6 @@ public class ChapterSelect implements Screen {
             mainClass.stopBackGroundMusic();
         }
 
-//        mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
-//        mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
-//        mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
-//        mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
-//        mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
-//        mainClass.setClearedChapter6(mainClass.prefs.getBoolean("clearedChapter6"));
-//        mainClass.setClearedChapter7(mainClass.prefs.getBoolean("clearedChapter7"));
-//        mainClass.setClearedChapter8(mainClass.prefs.getBoolean("clearedChapter8"));
-//        mainClass.setClearedChapter9(mainClass.prefs.getBoolean("clearedChapter9"));
-//        mainClass.setClearedChapter10(mainClass.prefs.getBoolean("clearedChapter10"));
-//        mainClass.setClearedChapter11(mainClass.prefs.getBoolean("clearedChapter11"));
-//        mainClass.setClearedChapter12(mainClass.prefs.getBoolean("clearedChapter12"));
-//        mainClass.setClearedChapter13(mainClass.prefs.getBoolean("clearedChapter13"));
-//        mainClass.setClearedChapter14(mainClass.prefs.getBoolean("clearedChapter14"));
-//        mainClass.setClearedChapter15(mainClass.prefs.getBoolean("clearedChapter15"));
-//        mainClass.setClearedChapter16(mainClass.prefs.getBoolean("clearedChapter16"));
-//        mainClass.setClearedChapter17(mainClass.prefs.getBoolean("clearedChapter17"));
-//        mainClass.setClearedChapter18(mainClass.prefs.getBoolean("clearedChapter18"));
-//        mainClass.setClearedChapter19(mainClass.prefs.getBoolean("clearedChapter19"));
-//        mainClass.setClearedChapter20(mainClass.prefs.getBoolean("clearedChapter20"));
-//        mainClass.setClearedChapter21(mainClass.prefs.getBoolean("clearedChapter21"));
-//        mainClass.setClearedChapter22(mainClass.prefs.getBoolean("clearedChapter22"));
-//        mainClass.setClearedChapter23(mainClass.prefs.getBoolean("clearedChapter23"));
         mainClass.setCurrentFurthestChapter(mainClass.prefs.getInteger("currentFurthestChapter"));
         mainClass.prefs.flush();
 

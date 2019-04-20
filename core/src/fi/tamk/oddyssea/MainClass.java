@@ -193,32 +193,6 @@ public class MainClass extends Game {
 
 	GlyphLayout layout;
 
-	//Used to check what chapters have been cleared
-	private boolean clearedChapter1;
-	private boolean clearedChapter2;
-	private boolean clearedChapter3;
-	private boolean clearedChapter4;
-	private boolean clearedChapter5;
-	private boolean clearedChapter6;
-	private boolean clearedChapter7;
-	private boolean clearedChapter8;
-	private boolean clearedChapter9;
-	private boolean clearedChapter10;
-	private boolean clearedChapter11;
-	private boolean clearedChapter12;
-	private boolean clearedChapter13;
-	private boolean clearedChapter14;
-	private boolean clearedChapter15;
-	private boolean clearedChapter16;
-	private boolean clearedChapter17;
-	private boolean clearedChapter18;
-	private boolean clearedChapter19;
-	private boolean clearedChapter20;
-	private boolean clearedChapter21;
-	private boolean clearedChapter22;
-	private boolean clearedChapter23;
-
-
 	private boolean choseWrong_1 = false;
     private boolean choseWrong_2 = false;
     private boolean choseWrong_3 = false;
@@ -1778,70 +1752,6 @@ public class MainClass extends Game {
 		return localLanguageToString;
 	}
 
-//	public boolean getClearedChapter1() {
-//		return clearedChapter1;
-//	}
-//	public boolean getClearedChapter2() {
-//		return clearedChapter2;
-//	}
-//	public boolean getClearedChapter3() { return clearedChapter3; }
-//	public boolean getClearedChapter4() {
-//		return clearedChapter4;
-//	}
-//	public boolean getClearedChapter5() {
-//		return clearedChapter5;
-//	}
-//	public boolean getClearedChapter6() {
-//		return clearedChapter6;
-//	}
-//	public boolean getClearedChapter7() {
-//		return clearedChapter7;
-//	}
-//	public boolean getClearedChapter8() {
-//		return clearedChapter8;
-//	}
-//	public boolean getClearedChapter9() {
-//		return clearedChapter9;
-//	}
-//	public boolean getClearedChapter10() {
-//		return clearedChapter10;
-//	}
-//	public boolean getClearedChapter11() {
-//		return clearedChapter11;
-//	}
-//	public boolean getClearedChapter12() {
-//		return clearedChapter12;
-//	}
-//	public boolean getClearedChapter13() {
-//		return clearedChapter13;
-//	}
-//	public boolean getClearedChapter14() { return clearedChapter14; }
-//	public boolean getClearedChapter15() {
-//		return clearedChapter15;
-//	}
-//	public boolean getClearedChapter16() {
-//		return clearedChapter16;
-//	}
-//	public boolean getClearedChapter17() {
-//		return clearedChapter17;
-//	}
-//	public boolean getClearedChapter18() {
-//		return clearedChapter18;
-//	}
-//	public boolean getClearedChapter19() {
-//		return clearedChapter19;
-//	}
-//	public boolean getClearedChapter20() { return clearedChapter20; }
-//	public boolean getClearedChapter21() {
-//		return clearedChapter21;
-//	}
-//	public boolean getClearedChapter22() {
-//		return clearedChapter22;
-//	}
-//	public boolean getClearedChapter23() {
-//		return clearedChapter23;
-//	}
-
 
 	public void setClearedChapterGeneral(boolean clearedChapterNumberBoolean, int clearedChapterNumberInt) {
 	    if(clearedChapterNumberInt > 0 || clearedChapterNumberInt <25) {
@@ -1854,39 +1764,6 @@ public class MainClass extends Game {
         return prefs.getBoolean("clearedChapter" + clearedChapterNumberInt);
     }
 
-//
-//	public void setClearedChapter1(boolean clearedChapter1) {
-//		this.clearedChapter1 = clearedChapter1;
-//	}
-//	public void setClearedChapter2(boolean clearedChapter2) {
-//		this.clearedChapter2 = clearedChapter2;
-//	}
-//	public void setClearedChapter3(boolean clearedChapter3) {
-//		this.clearedChapter3 = clearedChapter3;
-//	}
-//	public void setClearedChapter4(boolean clearedChapter4) {
-//		this.clearedChapter4 = clearedChapter4;
-//	}
-//	public void setClearedChapter5(boolean clearedChapter5) { this.clearedChapter5 = clearedChapter5; }
-//	public void setClearedChapter6(boolean clearedChapter6) { this.clearedChapter6 = clearedChapter6; }
-//	public void setClearedChapter7(boolean clearedChapter7) { this.clearedChapter7 = clearedChapter7; }
-//	public void setClearedChapter8(boolean clearedChapter8) { this.clearedChapter8 = clearedChapter8; }
-//	public void setClearedChapter9(boolean clearedChapter9) { this.clearedChapter9 = clearedChapter9; }
-//	public void setClearedChapter10(boolean clearedChapter10) { this.clearedChapter10 = clearedChapter10; }
-//	public void setClearedChapter11(boolean clearedChapter11) { this.clearedChapter11 = clearedChapter11; }
-//	public void setClearedChapter12(boolean clearedChapter12) { this.clearedChapter12 = clearedChapter12; }
-//	public void setClearedChapter13(boolean clearedChapter13) { this.clearedChapter13 = clearedChapter13; }
-//	public void setClearedChapter14(boolean clearedChapter14) { this.clearedChapter14 = clearedChapter14; }
-//	public void setClearedChapter15(boolean clearedChapter15) { this.clearedChapter15 = clearedChapter15; }
-//	public void setClearedChapter16(boolean clearedChapter16) { this.clearedChapter16 = clearedChapter16; }
-//	public void setClearedChapter17(boolean clearedChapter17) { this.clearedChapter17 = clearedChapter17; }
-//	public void setClearedChapter18(boolean clearedChapter18) { this.clearedChapter18 = clearedChapter18; }
-//	public void setClearedChapter19(boolean clearedChapter19) { this.clearedChapter19 = clearedChapter19; }
-//	public void setClearedChapter20(boolean clearedChapter20) { this.clearedChapter20 = clearedChapter20; }
-//	public void setClearedChapter21(boolean clearedChapter21) { this.clearedChapter21 = clearedChapter21; }
-//	public void setClearedChapter22(boolean clearedChapter22) { this.clearedChapter22 = clearedChapter22; }
-//	public void setClearedChapter23(boolean clearedChapter23) { this.clearedChapter23 = clearedChapter23; }
-//
 
 	public String getPlay() {
 		return play;

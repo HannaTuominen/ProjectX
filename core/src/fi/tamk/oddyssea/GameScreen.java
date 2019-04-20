@@ -313,82 +313,13 @@ public class GameScreen implements Screen {
         for (int i = 1; i <24; i++) {
             mainClass.setClearedChapterGeneral(false, i );
         }
-//        mainClass.setClearedChapter1(false);
-//        mainClass.prefs.putBoolean("clearedChapter1", false);
-//        mainClass.setClearedChapter2(false);
-//        mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter2());
-//        mainClass.setClearedChapter3(false);
-//        mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter3());
-//        mainClass.setClearedChapter4(false);
-//        mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
-//        mainClass.setClearedChapter5(false);
-//        mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
-//        mainClass.setClearedChapter6(false);
-//        mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
-//        mainClass.setClearedChapter7(false);
-//        mainClass.prefs.putBoolean("clearedChapter7", mainClass.getClearedChapter7());
-//        mainClass.setClearedChapter8(false);
-//        mainClass.prefs.putBoolean("clearedChapter8", mainClass.getClearedChapter8());
-//        mainClass.setClearedChapter9(false);
-//        mainClass.prefs.putBoolean("clearedChapter9", mainClass.getClearedChapter9());
-//        mainClass.setClearedChapter10(false);
-//        mainClass.prefs.putBoolean("clearedChapter10", mainClass.getClearedChapter10());
-//        mainClass.setClearedChapter11(false);
-//        mainClass.prefs.putBoolean("clearedChapter11", mainClass.getClearedChapter11());
-//        mainClass.setClearedChapter12(false);
-//        mainClass.prefs.putBoolean("clearedChapter12", mainClass.getClearedChapter12());
-//        mainClass.setClearedChapter13(false);
-//        mainClass.prefs.putBoolean("clearedChapter13", mainClass.getClearedChapter13());
-//        mainClass.setClearedChapter14(false);
-//        mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
-//        mainClass.setClearedChapter15(false);
-//        mainClass.prefs.putBoolean("clearedChapter15", mainClass.getClearedChapter15());
-//        mainClass.setClearedChapter16(false);
-//        mainClass.prefs.putBoolean("clearedChapter16", mainClass.getClearedChapter16());
-//        mainClass.setClearedChapter17(false);
-//        mainClass.prefs.putBoolean("clearedChapter17", mainClass.getClearedChapter17());
-//        mainClass.setClearedChapter18(false);
-//        mainClass.prefs.putBoolean("clearedChapter18", mainClass.getClearedChapter18());
-//        mainClass.setClearedChapter19(false);
-//        mainClass.prefs.putBoolean("clearedChapter19", mainClass.getClearedChapter19());
-//        mainClass.setClearedChapter20(false);
-//        mainClass.prefs.putBoolean("clearedChapter20", mainClass.getClearedChapter20());
-//        mainClass.setClearedChapter21(false);
-//        mainClass.prefs.putBoolean("clearedChapter21", mainClass.getClearedChapter21());
-//        mainClass.setClearedChapter22(false);
-//        mainClass.prefs.putBoolean("clearedChapter22", mainClass.getClearedChapter22());
-//        mainClass.setClearedChapter23(false);
-//        mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
-//        mainClass.prefs.flush();
+//
     }
 
     public void setClearedChaptersUpdater() {
         for (int i = 1; i <24; i++) {
             mainClass.getClearedChapterGeneral(i);
         }
-//        mainClass.setClearedChapter1(mainClass.prefs.getBoolean("clearedChapter1"));
-//        mainClass.setClearedChapter2(mainClass.prefs.getBoolean("clearedChapter2"));
-//        mainClass.setClearedChapter3(mainClass.prefs.getBoolean("clearedChapter3"));
-//        mainClass.setClearedChapter4(mainClass.prefs.getBoolean("clearedChapter4"));
-//        mainClass.setClearedChapter5(mainClass.prefs.getBoolean("clearedChapter5"));
-//        mainClass.setClearedChapter6(mainClass.prefs.getBoolean("clearedChapter6"));
-//        mainClass.setClearedChapter7(mainClass.prefs.getBoolean("clearedChapter7"));
-//        mainClass.setClearedChapter8(mainClass.prefs.getBoolean("clearedChapter8"));
-//        mainClass.setClearedChapter9(mainClass.prefs.getBoolean("clearedChapter9"));
-//        mainClass.setClearedChapter10(mainClass.prefs.getBoolean("clearedChapter10"));
-//        mainClass.setClearedChapter11(mainClass.prefs.getBoolean("clearedChapter11"));
-//        mainClass.setClearedChapter12(mainClass.prefs.getBoolean("clearedChapter12"));
-//        mainClass.setClearedChapter13(mainClass.prefs.getBoolean("clearedChapter13"));
-//        mainClass.setClearedChapter14(mainClass.prefs.getBoolean("clearedChapter14"));
-//        mainClass.setClearedChapter15(mainClass.prefs.getBoolean("clearedChapter15"));
-//        mainClass.setClearedChapter16(mainClass.prefs.getBoolean("clearedChapter16"));
-//        mainClass.setClearedChapter17(mainClass.prefs.getBoolean("clearedChapter17"));
-//        mainClass.setClearedChapter18(mainClass.prefs.getBoolean("clearedChapter18"));
-//        mainClass.setClearedChapter19(mainClass.prefs.getBoolean("clearedChapter19"));
-//        mainClass.setClearedChapter20(mainClass.prefs.getBoolean("clearedChapter20"));
-//        mainClass.setClearedChapter21(mainClass.prefs.getBoolean("clearedChapter21"));
-//        mainClass.setClearedChapter22(mainClass.prefs.getBoolean("clearedChapter22"));
-//        mainClass.setClearedChapter23(mainClass.prefs.getBoolean("clearedChapter23"));
     }
 
     public GameScreen(MainClass MainClass2) {
