@@ -1599,11 +1599,7 @@ public class Button extends Actor {
                                 mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
                                 mainClass.setChoseWrong_1(true);
                             }
-//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
                             useForTheButton5Or6Commons();
-
-//                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
-//                            mainClass.prefs.flush();
                         }
 
 
@@ -1612,12 +1608,7 @@ public class Button extends Actor {
                         if (stepsToOpenNextChapter > steps) {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
-//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
                             useForTheButton5Or6Commons();
-
-//                            mainClass.setClearedChapter2(true);
-//                            mainClass.prefs.putBoolean("clearedChapter2", mainClass.getClearedChapter2());
-//                            mainClass.prefs.flush();
                         }
 
 
@@ -1626,10 +1617,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
-//                            mainClass.setClearedChapter3(true);
-//                            mainClass.prefs.putBoolean("clearedChapter3", mainClass.getClearedChapter3());
-//                            mainClass.prefs.flush();
                         }
 
 
@@ -1642,9 +1629,6 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_2(true);
                             }
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter4(true);
-//                            mainClass.prefs.putBoolean("clearedChapter4", mainClass.getClearedChapter4());
-//                            mainClass.prefs.flush();
                         }
 
 
@@ -1653,9 +1637,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter5(true);
-//                            mainClass.prefs.putBoolean("clearedChapter5", mainClass.getClearedChapter5());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 6) {
@@ -1663,9 +1644,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter6(true);
-//                            mainClass.prefs.putBoolean("clearedChapter6", mainClass.getClearedChapter6());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 7) {
@@ -1673,9 +1651,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter7(true);
-//                            mainClass.prefs.putBoolean("clearedChapter7", mainClass.getClearedChapter7());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 8) {
@@ -1683,9 +1658,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter8(true);
-//                            mainClass.prefs.putBoolean("clearedChapter8", mainClass.getClearedChapter8());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 9) {
@@ -1693,9 +1665,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter9(true);
-//                            mainClass.prefs.putBoolean("clearedChapter9", mainClass.getClearedChapter9());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 10) {
@@ -1703,9 +1672,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter10(true);
-//                            mainClass.prefs.putBoolean("clearedChapter10", mainClass.getClearedChapter10());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 11) {
@@ -1717,9 +1683,6 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_3(true);
                             }
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter11(true);
-//                            mainClass.prefs.putBoolean("clearedChapter11", mainClass.getClearedChapter11());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 12) {
@@ -1727,9 +1690,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter12(true);
-//                            mainClass.prefs.putBoolean("clearedChapter12", mainClass.getClearedChapter12());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 13) {
@@ -1737,9 +1697,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter13(true);
-//                            mainClass.prefs.putBoolean("clearedChapter13", mainClass.getClearedChapter13());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 14) {
@@ -1747,9 +1704,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter14(true);
-//                            mainClass.prefs.putBoolean("clearedChapter14", mainClass.getClearedChapter14());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 15) {
@@ -1757,9 +1711,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter15(true);
-//                            mainClass.prefs.putBoolean("clearedChapter15", mainClass.getClearedChapter15());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 16) {
@@ -1767,9 +1718,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter16(true);
-//                            mainClass.prefs.putBoolean("clearedChapter16", mainClass.getClearedChapter16());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 17) {
@@ -1781,9 +1729,6 @@ public class Button extends Actor {
                                 mainClass.setChoseWrong_4(true);
                             }
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter17(true);
-//                            mainClass.prefs.putBoolean("clearedChapter17", mainClass.getClearedChapter17());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 18) {
@@ -1791,9 +1736,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter18(true);
-//                            mainClass.prefs.putBoolean("clearedChapter18", mainClass.getClearedChapter18());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 19) {
@@ -1801,9 +1743,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter19(true);
-//                            mainClass.prefs.putBoolean("clearedChapter19", mainClass.getClearedChapter19());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 20) {
@@ -1811,9 +1750,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter20(true);
-//                            mainClass.prefs.putBoolean("clearedChapter20", mainClass.getClearedChapter20());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 21) {
@@ -1821,9 +1757,6 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter21(true);
-//                            mainClass.prefs.putBoolean("clearedChapter21", mainClass.getClearedChapter21());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 22) {
@@ -1831,41 +1764,31 @@ public class Button extends Actor {
                             System.out.println("ERROR TOO FEW STEPS");
                         } else {
                             useForTheButton5Or6Commons();
-//                            mainClass.setClearedChapter22(true);
-//                            mainClass.prefs.putBoolean("clearedChapter22", mainClass.getClearedChapter22());
-//                            mainClass.prefs.flush();
                         }
 
                     } else if (mainClass.getChapterNumber() == 23) {
                         System.out.println("GOT HERE at 23");
                         if (getUseForTheButton() == 5) {
-//                            mainClass.setResetEverything(true);
                             mainClass.prefs.clear();
                             mainClass.setResetEverything(true);
                             mainClass.prefs.putBoolean("openedFirstTime", true);
-//                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), false);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setChapterNumber(1);
                             mainClass.setCurrentFurthestChapter(1);
                             mainClass.setClearedChapterGeneral(false, 1);
-//                            mainClass.setClearedChapter1(false);
-//                            mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                             mainClass.setSwapped(false);
                             mainClass.setSteps(0);
                             mainClass.prefs.flush();
                         }
                         if (getUseForTheButton() == 6) {
                             System.out.println("LAST CHAPTER");
-//                            mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
                             System.out.println("REMOVING STEPS");
                             System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setCurrentFurthestChapter(chapterNumber + 1);
                             mainClass.setClearedChapterGeneral(true, 23);
-//                            mainClass.setClearedChapter23(true);
-//                            mainClass.prefs.putBoolean("clearedChapter23", mainClass.getClearedChapter23());
                             mainClass.setChapterNumber(chapterNumber + 1);
                             mainClass.setSwapped(false);
                             mainClass.prefs.flush();
