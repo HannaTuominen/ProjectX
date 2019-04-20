@@ -517,13 +517,6 @@ public class GameScreen implements Screen {
             mainClass.getStage().clear();
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(2)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(mainClass.getChoseWrong_1()) {
                 mainClass.getStage().addActor(chapter2_1);
@@ -559,13 +552,6 @@ public class GameScreen implements Screen {
 
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(3)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(!mainClass.getClearedChapterGeneral(3)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter4_1(),0,6,
@@ -593,13 +579,6 @@ public class GameScreen implements Screen {
 
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(4)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(!mainClass.getClearedChapterGeneral(4)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter4_choice_text_1() +mainClass.getStepsToOpenChapter5_1(),0,5,
@@ -634,13 +613,6 @@ public class GameScreen implements Screen {
 
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(5)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(!mainClass.getClearedChapterGeneral(5)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter6_1(),0,6,
@@ -666,13 +638,6 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",6 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(6)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(!mainClass.getClearedChapterGeneral(6)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter7_1(),0,6,
@@ -698,13 +663,6 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",7 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(7)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
 
             if(!mainClass.getClearedChapterGeneral(7)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter8_1(),0,6,
@@ -730,13 +688,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",8 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(8)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(8)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter9_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter9_1());
@@ -760,13 +712,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",9 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(9)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(9)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter10_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter10_1());
@@ -791,13 +737,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",10 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(10)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(10)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter11_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter11_1());
@@ -822,13 +762,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",11 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(11)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(11)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter11_choice_text_1() +mainClass.getStepsToOpenChapter12_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter12_1());
@@ -859,13 +793,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",12 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(12)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(12)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter13_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter13_1());
@@ -890,13 +818,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",13 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(13)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(13)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter14_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter14_1());
@@ -921,13 +843,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",14 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(14)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(14)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter15_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter15_1());
@@ -952,13 +868,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",15 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(15)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(15)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter16_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter16_1());
@@ -983,13 +893,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",16 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(16)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(16)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter17_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter17_1());
@@ -1014,13 +918,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",17 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(17)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(17)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter17_choice_text_1()+mainClass.getStepsToOpenChapter18_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter18_1());
@@ -1052,13 +950,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",18 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(18)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(18)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter19_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter19_1());
@@ -1084,13 +976,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",19 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(19)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(19)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter20_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter20_1());
@@ -1116,13 +1002,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",20 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(20)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(20)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter21_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter21_1());
@@ -1148,13 +1028,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",21 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(21)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(21)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter22_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter22_1());
@@ -1180,13 +1054,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",22 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(22)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(22)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue() + ": " + mainClass.getStepsToOpenChapter23_1(),0,6,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter23_1());
@@ -1212,13 +1080,7 @@ public class GameScreen implements Screen {
             mainClass.prefs.putInteger("ChapterNumber",23 );
 
             checkSetGotToLastTextPartOkayToShowNeededButtons();
-//            if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(23)) {
-//                System.out.println("don't show buttons at the start");
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
-//            } else {
-//                mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-//                System.out.println("show buttons at the start");
-//            }
+
             if(!mainClass.getClearedChapterGeneral(23)) {
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter23_choice_text_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,0);
