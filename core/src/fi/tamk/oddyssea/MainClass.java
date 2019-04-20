@@ -1175,296 +1175,488 @@ public class MainClass extends Game {
 	public String getChapter() {
 		return chapter;
 	}
-	public String getChapter1_1Text() {
-		return chapter1_1;
-	}
-	public String getChapter1_2Text() {
-		return chapter1_2;
-	}
-	public String getChapter1_3Text() {
-		return chapter1_3;
-	}
 
-	public String getChapter2_1Text() {
-		return chapter2_1;
-	}
-	public String getChapter2_2Text() {
-		return chapter2_2;
-	}
 
-	public String getChapter3_1Text() {
-		return chapter3_1;
-	}
-	public String getChapter3_2Text() { return chapter3_2; }
+	public String getChapterText(int chapterTextNumberFirstPart, int chapterTextNumberSecondPart) {
+	    String combine = "chapter"+chapterTextNumberFirstPart + "_" + chapterTextNumberSecondPart;
+//	    System.out.println("chapter"+chapterTextNumberFirstPart + "_" + chapterTextNumberSecondPart);
+	    if(combine.equals("chapter1_1")) {
+	        return  chapter1_1;
+        } else if (combine.equals("chapter1_2")) {
+	        return  chapter1_2;
+        }  else if (combine.equals("chapter1_3")) {
+            return  chapter1_3;
+        }  else if (combine.equals("chapter2_1")) {
+            return  chapter2_1;
+        }  else if (combine.equals("chapter2_2")) {
+            return  chapter2_2;
+        }  else if (combine.equals("chapter3_1")) {
+            return  chapter3_1;
+        }  else if (combine.equals("chapter3_2")) {
+            return  chapter3_2;
+        }  else if (combine.equals("chapter4_1")) {
+            return  chapter4_1;
+        }  else if (combine.equals("chapter4_2")) {
+            return  chapter4_2;
+        }  else if (combine.equals("chapter5_1")) {
+            return  chapter5_1;
+        }  else if (combine.equals("chapter5_2")) {
+            return  chapter5_2;
+        }  else if (combine.equals("chapter5_3")) {
+            return  chapter5_3;
+        }  else if (combine.equals("chapter6_1")) {
+            return  chapter6_1;
+        }  else if (combine.equals("chapter6_2")) {
+            return  chapter6_2;
+        }  else if (combine.equals("chapter6_3")) {
+            return  chapter6_3;
+        }  else if (combine.equals("chapter7_1")) {
+            return  chapter7_1;
+        }  else if (combine.equals("chapter7_2")) {
+            return  chapter7_2;
+        }  else if (combine.equals("chapter7_3")) {
+            return  chapter7_3;
+        }  else if (combine.equals("chapter8_1")) {
+            return  chapter8_1;
+        }  else if (combine.equals("chapter8_3")) {
+            return  chapter8_3;
+        }  else if (combine.equals("chapter9_1")) {
+            return  chapter9_1;
+        }  else if (combine.equals("chapter9_2")) {
+            return  chapter9_2;
+        }  else if (combine.equals("chapter9_3")) {
+            return  chapter9_3;
+        }  else if (combine.equals("chapter9_4")) {
+            return  chapter9_4;
+        }  else if (combine.equals("chapter10_1")) {
+            return  chapter10_1;
+        } else if (combine.equals("chapter10_2")) {
+            return  chapter10_2;
+        } else if (combine.equals("chapter10_3")) {
+            return  chapter10_3;
+        } else if (combine.equals("chapter11_1")) {
+            return  chapter11_1;
+        } else if (combine.equals("chapter11_2")) {
+            return  chapter11_2;
+        } else if (combine.equals("chapter11_3")) {
+            return  chapter11_3;
+        } else if (combine.equals("chapter11_4")) {
+            return  chapter11_4;
+        } else if (combine.equals("chapter12_1")) {
+            return  chapter12_1;
+        } else if (combine.equals("chapter12_2")) {
+            return  chapter12_2;
+        } else if (combine.equals("chapter12_3")) {
+            return  chapter12_3;
+        } else if (combine.equals("chapter12_4")) {
+            return  chapter12_4;
+        } else if (combine.equals("chapter13_1")) {
+            return  chapter13_1;
+        } else if (combine.equals("chapter13_2")) {
+            return  chapter13_2;
+        } else if (combine.equals("chapter13_3")) {
+            return  chapter13_3;
+        } else if (combine.equals("chapter13_4")) {
+            return  chapter13_4;
+        } else if (combine.equals("chapter14_1")) {
+            return  chapter14_1;
+        } else if (combine.equals("chapter14_2")) {
+            return  chapter14_2;
+        } else if (combine.equals("chapter14_3")) {
+            return  chapter14_3;
+        } else if (combine.equals("chapter14_4")) {
+            return  chapter14_4;
+        } else if (combine.equals("chapter15_1")) {
+            return  chapter15_1;
+        } else if (combine.equals("chapter15_2")) {
+            return  chapter15_2;
+        } else if (combine.equals("chapter15_3")) {
+            return  chapter15_3;
+        } else if (combine.equals("chapter15_4")) {
+            return  chapter15_4;
+        } else if (combine.equals("chapter15_5")) {
+            return  chapter15_5;
+        } else if (combine.equals("chapter16_1")) {
+            return  chapter16_1;
+        } else if (combine.equals("chapter16_2")) {
+            return  chapter16_2;
+        } else if (combine.equals("chapter16_3")) {
+            return  chapter16_3;
+        } else if (combine.equals("chapter16_4")) {
+            return  chapter16_4;
+        } else if (combine.equals("chapter16_5")) {
+            return  chapter16_5;
+        } else if (combine.equals("chapter17_1")) {
+            return  chapter17_1;
+        } else if (combine.equals("chapter17_2")) {
+            return  chapter17_2;
+        } else if (combine.equals("chapter17_3")) {
+            return  chapter17_3;
+        } else if (combine.equals("chapter17_4")) {
+            return  chapter17_4;
+        } else if (combine.equals("chapter17_5")) {
+            return  chapter17_5;
+        } else if (combine.equals("chapter17_6")) {
+            return  chapter17_6;
+        } else if (combine.equals("chapter17_7")) {
+            return  chapter17_7;
+        } else if (combine.equals("chapter17_8")) {
+            return  chapter17_8;
+        } else if (combine.equals("chapter18_1")) {
+            return  chapter18_1;
+        } else if (combine.equals("chapter18_2")) {
+            return  chapter18_2;
+        } else if (combine.equals("chapter18_3")) {
+            return  chapter18_3;
+        } else if (combine.equals("chapter18_4")) {
+            return  chapter18_4;
+        } else if (combine.equals("chapter18_5")) {
+            return  chapter18_5;
+        } else if (combine.equals("chapter19_1")) {
+            return  chapter19_1;
+        } else if (combine.equals("chapter19_2")) {
+            return  chapter19_2;
+        } else if (combine.equals("chapter19_3")) {
+            return  chapter19_3;
+        } else if (combine.equals("chapter19_4")) {
+            return  chapter19_4;
+        } else if (combine.equals("chapter20_1")) {
+            return  chapter20_1;
+        } else if (combine.equals("chapter20_2")) {
+            return  chapter20_2;
+        } else if (combine.equals("chapter20_3")) {
+            return  chapter20_3;
+        } else if (combine.equals("chapter20_4")) {
+            return  chapter20_4;
+        } else if (combine.equals("chapter21_1")) {
+            return  chapter21_1;
+        } else if (combine.equals("chapter21_2")) {
+            return  chapter21_2;
+        } else if (combine.equals("chapter21_3")) {
+            return  chapter21_3;
+        } else if (combine.equals("chapter21_4")) {
+            return  chapter21_4;
+        } else if (combine.equals("chapter21_5")) {
+            return  chapter21_5;
+        } else if (combine.equals("chapter22_1")) {
+            return  chapter22_1;
+        } else if (combine.equals("chapter22_2")) {
+            return  chapter22_2;
+        } else if (combine.equals("chapter22_3")) {
+            return  chapter22_3;
+        } else if (combine.equals("chapter22_4")) {
+            return  chapter22_4;
+        } else if (combine.equals("chapter22_5")) {
+            return  chapter22_5;
+        } else if (combine.equals("chapter22_6")) {
+            return  chapter22_6;
+        } else if (combine.equals("chapter22_7")) {
+            return  chapter22_7;
+        } else if (combine.equals("chapter23_1")) {
+            return  chapter23_1;
+        } else if (combine.equals("chapter23_2")) {
+            return  chapter23_2;
+        } else if (combine.equals("chapter23_3")) {
+            return  chapter23_3;
+        } else if (combine.equals("chapter23_4")) {
+            return  chapter23_4;
+        } else {
+	        return "";
+        }
+    }
 
-	public String getChapter4_1Text() {
-		return chapter4_1;
-	}
-	public String getChapter4_2Text() {
-		return chapter4_2;
-	}
 
-	public String getChapter5_1Text() {
-		return chapter5_1;
-	}
-	public String getChapter5_2Text() {
-		return chapter5_2;
-	}
-	public String getChapter5_3Text() {
-		return chapter5_3;
-	}
 
-	public String getChapter6_1Text() {
-		return chapter6_1;
-	}
-	public String getChapter6_2Text() {
-		return chapter6_2;
-	}
-	public String getChapter6_3Text() {
-		return chapter6_3;
-	}
-
-	public String getChapter7_1Text() {
-		return chapter7_1;
-	}
-	public String getChapter7_2Text() {
-		return chapter7_2;
-	}
-	public String getChapter7_3Text() {
-		return chapter7_3;
-	}
-
-	public String getChapter8_1Text() {
-		return chapter8_1;
-	}
-	public String getChapter8_2Text() {
-		return chapter8_2;
-	}
-	public String getChapter8_3Text() {
-		return chapter8_3;
-	}
-
-	public String getChapter9_1Text() {
-		return chapter9_1;
-	}
-	public String getChapter9_2Text() {
-		return chapter9_2;
-	}
-	public String getChapter9_3Text() { return chapter9_3; }
-	public String getChapter9_4Text() { return chapter9_4; }
-
-	public String getChapter10_1Text() {
-		return chapter10_1;
-	}
-	public String getChapter10_2Text() {
-		return chapter10_2;
-	}
-	public String getChapter10_3Text() {
-		return chapter10_3;
-	}
-
-	public String getChapter11_1Text() {
-		return chapter11_1;
-	}
-	public String getChapter11_2Text() {
-		return chapter11_2;
-	}
-	public String getChapter11_3Text() {
-		return chapter11_3;
-	}
-	public String getChapter11_4Text() {
-		return chapter11_4;
-	}
-
-	public String getChapter12_1Text() {
-		return chapter12_1;
-	}
-	public String getChapter12_2Text() {
-		return chapter12_2;
-	}
-	public String getChapter12_3Text() {
-		return chapter12_3;
-	}
-	public String getChapter12_4Text() {
-		return chapter12_4;
-	}
-
-	public String getChapter13_1Text() {
-		return chapter13_1;
-	}
-	public String getChapter13_2Text() {
-		return chapter13_2;
-	}
-	public String getChapter13_3Text() {
-		return chapter13_3;
-	}
-	public String getChapter13_4Text() {
-		return chapter13_4;
-	}
-
-	public String getChapter14_1Text() {
-		return chapter14_1;
-	}
-	public String getChapter14_2Text() {
-		return chapter14_2;
-	}
-	public String getChapter14_3Text() {
-		return chapter14_3;
-	}
-	public String getChapter14_4Text() {
-		return chapter14_4;
-	}
-
-	public String getChapter15_1Text() {
-		return chapter15_1;
-	}
-	public String getChapter15_2Text() {
-		return chapter15_2;
-	}
-	public String getChapter15_3Text() {
-		return chapter15_3;
-	}
-	public String getChapter15_4Text() {
-		return chapter15_4;
-	}
-	public String getChapter15_5Text() {
-		return chapter15_5;
-	}
-
-	public String getChapter16_1Text() {
-		return chapter16_1;
-	}
-	public String getChapter16_2Text() {
-		return chapter16_2;
-	}
-	public String getChapter16_3Text() {
-		return chapter16_3;
-	}
-	public String getChapter16_4Text() {
-		return chapter16_4;
-	}
-	public String getChapter16_5Text() {
-		return chapter16_5;
-	}
-
-	public String getChapter17_1Text() {
-		return chapter17_1;
-	}
-	public String getChapter17_2Text() {
-		return chapter17_2;
-	}
-	public String getChapter17_3Text() {
-		return chapter17_3;
-	}
-	public String getChapter17_4Text() {
-		return chapter17_4;
-	}
-	public String getChapter17_5Text() {
-		return chapter17_5;
-	}
-	public String getChapter17_6Text() {
-		return chapter17_6;
-	}
-	public String getChapter17_7Text() {
-		return chapter17_7;
-	}
-	public String getChapter17_8Text() {
-		return chapter17_8;
-	}
-
-	public String getChapter18_1Text() {
-		return chapter18_1;
-	}
-	public String getChapter18_2Text() {
-		return chapter18_2;
-	}
-	public String getChapter18_3Text() {
-		return chapter18_3;
-	}
-	public String getChapter18_4Text() {
-		return chapter18_4;
-	}
-	public String getChapter18_5Text() {
-		return chapter18_5;
-	}
-
-	public String getChapter19_1Text() {
-		return chapter19_1;
-	}
-	public String getChapter19_2Text() {
-		return chapter19_2;
-	}
-	public String getChapter19_3Text() {
-		return chapter19_3;
-	}
-	public String getChapter19_4Text() {
-		return chapter19_4;
-	}
-
-	public String getChapter20_1Text() {
-		return chapter20_1;
-	}
-	public String getChapter20_2Text() {
-		return chapter20_2;
-	}
-	public String getChapter20_3Text() {
-		return chapter20_3;
-	}
-	public String getChapter20_4Text() {
-		return chapter20_4;
-	}
-
-	public String getChapter21_1Text() {
-		return chapter21_1;
-	}
-	public String getChapter21_2Text() {
-		return chapter21_2;
-	}
-	public String getChapter21_3Text() {
-		return chapter21_3;
-	}
-	public String getChapter21_4Text() {
-		return chapter21_4;
-	}
-	public String getChapter21_5Text() {
-		return chapter21_5;
-	}
-
-	public String getChapter22_1Text() {
-		return chapter22_1;
-	}
-	public String getChapter22_2Text() {
-		return chapter22_2;
-	}
-	public String getChapter22_3Text() {
-		return chapter22_3;
-	}
-	public String getChapter22_4Text() {
-		return chapter22_4;
-	}
-	public String getChapter22_5Text() {
-		return chapter22_5;
-	}
-	public String getChapter22_6Text() {
-		return chapter22_6;
-	}
-	public String getChapter22_7Text() {
-		return chapter22_7;
-	}
-
-	public String getChapter23_1Text() {
-		return chapter23_1;
-	}
-	public String getChapter23_2Text() {
-		return chapter23_2;
-	}
-	public String getChapter23_3Text() {
-		return chapter23_3;
-	}
-	public String getChapter23_4Text() {
-		return chapter23_4;
-	}
-
+//	public String getChapter1_1Text() {
+//		return chapter1_1;
+//	}
+//	public String getChapter1_2Text() {
+//		return chapter1_2;
+//	}
+//	public String getChapter1_3Text() {
+//		return chapter1_3;
+//	}
+//
+//	public String getChapter2_1Text() {
+//		return chapter2_1;
+//	}
+//	public String getChapter2_2Text() {
+//		return chapter2_2;
+//	}
+//
+//	public String getChapter3_1Text() {
+//		return chapter3_1;
+//	}
+//	public String getChapter3_2Text() { return chapter3_2; }
+//
+//	public String getChapter4_1Text() {
+//		return chapter4_1;
+//	}
+//	public String getChapter4_2Text() {
+//		return chapter4_2;
+//	}
+//
+//	public String getChapter5_1Text() {
+//		return chapter5_1;
+//	}
+//	public String getChapter5_2Text() {
+//		return chapter5_2;
+//	}
+//	public String getChapter5_3Text() {
+//		return chapter5_3;
+//	}
+//
+//	public String getChapter6_1Text() {
+//		return chapter6_1;
+//	}
+//	public String getChapter6_2Text() {
+//		return chapter6_2;
+//	}
+//	public String getChapter6_3Text() {
+//		return chapter6_3;
+//	}
+//
+//	public String getChapter7_1Text() {
+//		return chapter7_1;
+//	}
+//	public String getChapter7_2Text() {
+//		return chapter7_2;
+//	}
+//	public String getChapter7_3Text() {
+//		return chapter7_3;
+//	}
+//
+//	public String getChapter8_1Text() {
+//		return chapter8_1;
+//	}
+//	public String getChapter8_2Text() {
+//		return chapter8_2;
+//	}
+//	public String getChapter8_3Text() {
+//		return chapter8_3;
+//	}
+//
+//	public String getChapter9_1Text() {
+//		return chapter9_1;
+//	}
+//	public String getChapter9_2Text() {
+//		return chapter9_2;
+//	}
+//	public String getChapter9_3Text() { return chapter9_3; }
+//	public String getChapter9_4Text() { return chapter9_4; }
+//
+//	public String getChapter10_1Text() {
+//		return chapter10_1;
+//	}
+//	public String getChapter10_2Text() {
+//		return chapter10_2;
+//	}
+//	public String getChapter10_3Text() {
+//		return chapter10_3;
+//	}
+//
+//	public String getChapter11_1Text() {
+//		return chapter11_1;
+//	}
+//	public String getChapter11_2Text() {
+//		return chapter11_2;
+//	}
+//	public String getChapter11_3Text() {
+//		return chapter11_3;
+//	}
+//	public String getChapter11_4Text() {
+//		return chapter11_4;
+//	}
+//
+//	public String getChapter12_1Text() {
+//		return chapter12_1;
+//	}
+//	public String getChapter12_2Text() {
+//		return chapter12_2;
+//	}
+//	public String getChapter12_3Text() {
+//		return chapter12_3;
+//	}
+//	public String getChapter12_4Text() {
+//		return chapter12_4;
+//	}
+//
+//	public String getChapter13_1Text() {
+//		return chapter13_1;
+//	}
+//	public String getChapter13_2Text() {
+//		return chapter13_2;
+//	}
+//	public String getChapter13_3Text() {
+//		return chapter13_3;
+//	}
+//	public String getChapter13_4Text() {
+//		return chapter13_4;
+//	}
+//
+//	public String getChapter14_1Text() {
+//		return chapter14_1;
+//	}
+//	public String getChapter14_2Text() {
+//		return chapter14_2;
+//	}
+//	public String getChapter14_3Text() {
+//		return chapter14_3;
+//	}
+//	public String getChapter14_4Text() {
+//		return chapter14_4;
+//	}
+//
+//	public String getChapter15_1Text() {
+//		return chapter15_1;
+//	}
+//	public String getChapter15_2Text() {
+//		return chapter15_2;
+//	}
+//	public String getChapter15_3Text() {
+//		return chapter15_3;
+//	}
+//	public String getChapter15_4Text() {
+//		return chapter15_4;
+//	}
+//	public String getChapter15_5Text() {
+//		return chapter15_5;
+//	}
+//
+//	public String getChapter16_1Text() {
+//		return chapter16_1;
+//	}
+//	public String getChapter16_2Text() {
+//		return chapter16_2;
+//	}
+//	public String getChapter16_3Text() {
+//		return chapter16_3;
+//	}
+//	public String getChapter16_4Text() {
+//		return chapter16_4;
+//	}
+//	public String getChapter16_5Text() {
+//		return chapter16_5;
+//	}
+//
+//	public String getChapter17_1Text() {
+//		return chapter17_1;
+//	}
+//	public String getChapter17_2Text() {
+//		return chapter17_2;
+//	}
+//	public String getChapter17_3Text() {
+//		return chapter17_3;
+//	}
+//	public String getChapter17_4Text() {
+//		return chapter17_4;
+//	}
+//	public String getChapter17_5Text() {
+//		return chapter17_5;
+//	}
+//	public String getChapter17_6Text() {
+//		return chapter17_6;
+//	}
+//	public String getChapter17_7Text() {
+//		return chapter17_7;
+//	}
+//	public String getChapter17_8Text() {
+//		return chapter17_8;
+//	}
+//
+//	public String getChapter18_1Text() {
+//		return chapter18_1;
+//	}
+//	public String getChapter18_2Text() {
+//		return chapter18_2;
+//	}
+//	public String getChapter18_3Text() {
+//		return chapter18_3;
+//	}
+//	public String getChapter18_4Text() {
+//		return chapter18_4;
+//	}
+//	public String getChapter18_5Text() {
+//		return chapter18_5;
+//	}
+//
+//	public String getChapter19_1Text() {
+//		return chapter19_1;
+//	}
+//	public String getChapter19_2Text() {
+//		return chapter19_2;
+//	}
+//	public String getChapter19_3Text() {
+//		return chapter19_3;
+//	}
+//	public String getChapter19_4Text() {
+//		return chapter19_4;
+//	}
+//
+//	public String getChapter20_1Text() {
+//		return chapter20_1;
+//	}
+//	public String getChapter20_2Text() {
+//		return chapter20_2;
+//	}
+//	public String getChapter20_3Text() {
+//		return chapter20_3;
+//	}
+//	public String getChapter20_4Text() {
+//		return chapter20_4;
+//	}
+//
+//	public String getChapter21_1Text() {
+//		return chapter21_1;
+//	}
+//	public String getChapter21_2Text() {
+//		return chapter21_2;
+//	}
+//	public String getChapter21_3Text() {
+//		return chapter21_3;
+//	}
+//	public String getChapter21_4Text() {
+//		return chapter21_4;
+//	}
+//	public String getChapter21_5Text() {
+//		return chapter21_5;
+//	}
+//
+//	public String getChapter22_1Text() {
+//		return chapter22_1;
+//	}
+//	public String getChapter22_2Text() {
+//		return chapter22_2;
+//	}
+//	public String getChapter22_3Text() {
+//		return chapter22_3;
+//	}
+//	public String getChapter22_4Text() {
+//		return chapter22_4;
+//	}
+//	public String getChapter22_5Text() {
+//		return chapter22_5;
+//	}
+//	public String getChapter22_6Text() {
+//		return chapter22_6;
+//	}
+//	public String getChapter22_7Text() {
+//		return chapter22_7;
+//	}
+//
+//	public String getChapter23_1Text() {
+//		return chapter23_1;
+//	}
+//	public String getChapter23_2Text() {
+//		return chapter23_2;
+//	}
+//	public String getChapter23_3Text() {
+//		return chapter23_3;
+//	}
+//	public String getChapter23_4Text() {
+//		return chapter23_4;
+//	}
+//
 
 	public String getNext() {
 		return next;
