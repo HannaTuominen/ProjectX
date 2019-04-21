@@ -13,39 +13,39 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import java.util.Locale;
 
 public class Button extends Actor {
-    MainClass mainClass;
-    BitmapFont font12;
-    Texture texture;
-    String textForAButton;
-    int chapterNumber;
-    int useForTheButton;
-    float xPlace;
-    float yPlace;
-    float buttonWidth;
-    float buttonHeight;
-    int chapterSelect;
-    int stepsToOpenNextChapter;
-    int steps;
-    boolean enoughSteps = false;
-    float storyID;
-    float buttonTextXPlace;
-    float buttonTextYPlace;
-    Group group;
-    Group group2;
-    static float scrollerWidth;
+    private MainClass mainClass;
+    private BitmapFont font12;
+    private Texture texture;
+    private String textForAButton;
+    private int chapterNumber;
+    private int useForTheButton;
+    private float xPlace;
+    private float yPlace;
+    private float buttonWidth;
+    private float buttonHeight;
+    private int chapterSelect;
+    private int stepsToOpenNextChapter;
+    private int steps;
+    private boolean enoughSteps = false;
+    private float storyID;
+    private float buttonTextXPlace;
+    private float buttonTextYPlace;
+    private Group group;
+    private Group group2;
+    private static float scrollerWidth;
 
-    float touchUpX;
+    private float touchUpX;
 
-    float flingX;
+    private float flingX;
 
-    float textboxHeight;
+    private float textboxHeight;
 
-    String currentStepsText;
+    private String currentStepsText;
 
-    boolean prefsPopUpActivate;
+    private boolean prefsPopUpActivate;
 
 
-    boolean swappedIndicator = true;
+    private boolean swappedIndicator = true;
 
     public void button10Reverse(float getStoryID) {
         double secondPart = getStoryID - (int)getStoryID;

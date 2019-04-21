@@ -37,8 +37,6 @@ public class MainClass extends Game {
 	private boolean prefsPopUpActivate;
 	private boolean tutorialShow;
 	private boolean tooFewStepsPopUpActivate;
-	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
-//	private float CurrentSteps;
 
 	//All of the names of the MyBundle things used in the FIN/ENG distinction
 
@@ -98,10 +96,9 @@ public class MainClass extends Game {
 	private String chapter23_choice_text_2;
     private String chapter;
     private String sponsors;
-	// remove steps by: MyServices.removeSteps(int);
-	static int steps;
+	private static int steps;
 
-	GlyphLayout layout;
+	private GlyphLayout layout;
 
 	private boolean choseWrong_1 = false;
     private boolean choseWrong_2 = false;
@@ -169,12 +166,12 @@ public class MainClass extends Game {
 	float screenHeight;
 
 	//Implement the button used everywhere in the code
-	Button button;
-	Button button5;
-	Button button6;
-	String localLanguageToString;
-	Locale locale;
-	I18NBundle myBundle;
+	private Button button;
+    private Button button5;
+    private Button button6;
+    private String localLanguageToString;
+    private Locale locale;
+    private I18NBundle myBundle;
 	private static boolean swappedLanguage = false;
 
 	private static boolean languageFinnish = false;
@@ -183,11 +180,11 @@ public class MainClass extends Game {
 	//ChapterNumber is used everywhere in the code - it is the current chapter that is displayed
 	private static int chapterNumber = 1;
 	//Used to get and set the furthest the player has gotten in the story so evry time they press the play button in the main menu it redirects them correctly to the last chapter played
-	static int currentFurthestChapter = 1;
+    private static int currentFurthestChapter = 1;
 
 	//Used when creating a new button to set its width and height
-	float buttonWidth;
-	float buttonHeight;
+    private float buttonWidth;
+    private float buttonHeight;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
@@ -197,63 +194,63 @@ public class MainClass extends Game {
 
 	//Camera used everywhere
 	public OrthographicCamera camera;
-	Group group;
+    private Group group;
 
-	Group group2;
+    private Group group2;
 
-    Group group3;
+    private Group group3;
 
-	Group group4;
+    private Group group4;
 
 	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
 	private boolean gotToTheLastTextOnceAlready = false;
 
 
 	//BACKGROUND MUSIC
-	Music music;
-	boolean backGroundMusicOff;
+    private Music music;
+    private boolean backGroundMusicOff;
 
-	Texture textIndicator_2_1;
-	Texture textIndicator_2_2;
+    private Texture textIndicator_2_1;
+    private Texture textIndicator_2_2;
 
-	Texture textIndicator_3_1;
-	Texture textIndicator_3_2;
-	Texture textIndicator_3_3;
+    private Texture textIndicator_3_1;
+    private Texture textIndicator_3_2;
+    private Texture textIndicator_3_3;
 
-	Texture textIndicator_4_1;
-	Texture textIndicator_4_2;
-	Texture textIndicator_4_3;
-	Texture textIndicator_4_4;
+    private Texture textIndicator_4_1;
+    private Texture textIndicator_4_2;
+    private Texture textIndicator_4_3;
+    private Texture textIndicator_4_4;
 
-	Texture textIndicator_5_1;
-	Texture textIndicator_5_2;
-	Texture textIndicator_5_3;
-	Texture textIndicator_5_4;
-	Texture textIndicator_5_5;
+    private Texture textIndicator_5_1;
+    private Texture textIndicator_5_2;
+    private Texture textIndicator_5_3;
+    private Texture textIndicator_5_4;
+    private Texture textIndicator_5_5;
 
-	Texture textIndicator_6_1;
-	Texture textIndicator_6_2;
-	Texture textIndicator_6_3;
-	Texture textIndicator_6_4;
-	Texture textIndicator_6_5;
-	Texture textIndicator_6_6;
+    private Texture textIndicator_6_1;
+    private Texture textIndicator_6_2;
+    private Texture textIndicator_6_3;
+    private Texture textIndicator_6_4;
+    private Texture textIndicator_6_5;
+    private Texture textIndicator_6_6;
 
-	Texture textIndicator_7_1;
-	Texture textIndicator_7_2;
-	Texture textIndicator_7_3;
-	Texture textIndicator_7_4;
-	Texture textIndicator_7_5;
-	Texture textIndicator_7_6;
-	Texture textIndicator_7_7;
+    private Texture textIndicator_7_1;
+    private Texture textIndicator_7_2;
+    private Texture textIndicator_7_3;
+    private Texture textIndicator_7_4;
+    private Texture textIndicator_7_5;
+    private Texture textIndicator_7_6;
+    private Texture textIndicator_7_7;
 
-	Texture textIndicator_8_1;
-	Texture textIndicator_8_2;
-	Texture textIndicator_8_3;
-	Texture textIndicator_8_4;
-	Texture textIndicator_8_5;
-	Texture textIndicator_8_6;
-	Texture textIndicator_8_7;
-	Texture textIndicator_8_8;
+    private Texture textIndicator_8_1;
+    private Texture textIndicator_8_2;
+    private Texture textIndicator_8_3;
+    private Texture textIndicator_8_4;
+    private Texture textIndicator_8_5;
+    private Texture textIndicator_8_6;
+    private Texture textIndicator_8_7;
+    private Texture textIndicator_8_8;
 
 
 	public void setResetEverything(boolean resetEverything) {

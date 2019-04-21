@@ -8,20 +8,19 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
-    private Texture stepbox;
 
 
-    MainClass mainClass;
+    private MainClass mainClass;
 
-    BitmapFont font12;
-    float screenWidth;
-    float screenHeight;
+    private BitmapFont font12;
+    private float screenWidth;
+    private float screenHeight;
 
-    float textboxHeight;
-    float stepboxHeight;
-    int steps;
+    private float textboxHeight;
+    private float stepboxHeight;
+    private int steps;
 
-    int howManyPageSwaps;
+    private int howManyPageSwaps;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, int howManyPageSwaps) {
         this.mainClass = MainClass2;

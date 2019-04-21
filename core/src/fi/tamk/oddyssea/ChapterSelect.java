@@ -15,10 +15,10 @@ import com.badlogic.gdx.graphics.GL20;
 
 public class ChapterSelect implements Screen {
 
-    MainClass mainClass;
-    SpriteBatch batch;
+    private MainClass mainClass;
+    private SpriteBatch batch;
     BitmapFont font12;
-    Texture texture;
+    private Texture texture;
 
     private float screenWidth;
     private float screenHeight;

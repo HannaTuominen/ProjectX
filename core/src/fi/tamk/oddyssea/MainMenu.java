@@ -13,9 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
  */
 
 public class MainMenu implements Screen {
-    MainClass mainClass;
-    SpriteBatch batch;
-    BitmapFont font12;
+    private MainClass mainClass;
+    private SpriteBatch batch;
+    private BitmapFont font12;
     private float screenWidth;
     private float screenHeight;
     private float buttonWidth;
@@ -23,9 +23,9 @@ public class MainMenu implements Screen {
 
     private Stage stage;
 
-    Texture texture;
-    Texture texture2;
-    boolean firstRound = false;
+    private Texture texture;
+    private Texture texture2;
+    private boolean firstRound = false;
 
     public MainMenu(MainClass MainClass2) {
         System.out.println(firstRound + " IS IT FIRST ROUND");
