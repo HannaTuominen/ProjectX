@@ -1114,6 +1114,34 @@ public class Button extends Actor {
         mainClass.setSwapped(false);
         mainClass.prefs.flush();
     }
+
+    public void useForTheButton9Commons(boolean released) {
+        for (int i = 1; i < 24; i++) {
+            chapterSelect = Integer.parseInt(getTextForAButton());
+            if (chapterSelect == 1) {
+                if(!released) {
+                    setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+                }
+            } else if (mainClass.getClearedChapterGeneral(i) && chapterSelect == i) {
+                if(!released) {
+                    setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_pressed.png")));
+                } else {
+                    setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_unpressed.png")));
+                }
+            } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
+                if (chapterSelect == i) {
+                    if(!released) {
+                    setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_pressed.png")));
+                    } else {
+                        setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_unpressed.png")));
+                    }
+                }
+            }
+
+        }
+    }
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace,
                  float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
@@ -1203,104 +1231,117 @@ public class Button extends Actor {
 
 
             if (getUseForTheButton() == 9) {
-                chapterSelect = Integer.parseInt(getTextForAButton());
+                useForTheButton9Commons(false);
+//                for(int i = 1; i <24; i++) {
+//                    chapterSelect = Integer.parseInt(getTextForAButton());
+//                    if(chapterSelect == 1) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(i) && chapterSelect == i) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_"+i+"_unlocked_pressed.png")));
+//                    } else if(mainClass.getCurrentFurthestChapter() == chapterSelect) {
+//                    if(chapterSelect == i) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_"+i+"_unlocked_pressed.png")));
+//                    }
+//                }
 
-                if(chapterSelect == 1) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(19) && chapterSelect == 19) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(21)&& chapterSelect == 21) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_pressed.png")));
-                } else if(mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
-                    setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_pressed.png")));
-                } else if(mainClass.getCurrentFurthestChapter() == chapterSelect) {
-                    if(chapterSelect == 1) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
-                    } else if(chapterSelect == 2) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_pressed.png")));
-                    } else if( chapterSelect == 3) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_pressed.png")));
-                    } else if(chapterSelect == 4) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_pressed.png")));
-                    } else if( chapterSelect == 5) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_pressed.png")));
-                    } else if(chapterSelect == 6) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_pressed.png")));
-                    } else if(chapterSelect == 7) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_pressed.png")));
-                    } else if(chapterSelect == 8) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_pressed.png")));
-                    } else if(chapterSelect == 9) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_pressed.png")));
-                    } else if(chapterSelect == 10) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_pressed.png")));
-                    } else if(chapterSelect == 11) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_pressed.png")));
-                    } else if(chapterSelect == 12) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_pressed.png")));
-                    } else if(chapterSelect == 13) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_pressed.png")));
-                    } else if(chapterSelect == 14) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_pressed.png")));
-                    } else if(chapterSelect == 15) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_pressed.png")));
-                    } else if(chapterSelect == 16) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_pressed.png")));
-                    } else if(chapterSelect == 17) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_pressed.png")));
-                    } else if(chapterSelect == 18) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_pressed.png")));
-                    } else if( chapterSelect == 19) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_pressed.png")));
-                    } else if(chapterSelect == 20) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_pressed.png")));
-                    } else if(chapterSelect == 21) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_pressed.png")));
-                    } else if(chapterSelect == 22) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_pressed.png")));
-                    } else if(chapterSelect == 23) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_pressed.png")));
-                    }
+//                chapterSelect = Integer.parseInt(getTextForAButton());
+
+//                if(chapterSelect == 1) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(19) && chapterSelect == 19) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(21)&& chapterSelect == 21) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_pressed.png")));
+//                    } else if(mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_pressed.png")));
+//                } else if(mainClass.getCurrentFurthestChapter() == chapterSelect) {
+//                    if(chapterSelect == 1) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 2) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_pressed.png")));
+//                    } else if( chapterSelect == 3) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 4) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_pressed.png")));
+//                    } else if( chapterSelect == 5) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 6) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 7) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 8) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 9) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 10) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 11) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 12) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 13) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 14) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 15) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 16) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 17) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 18) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_pressed.png")));
+//                    } else if( chapterSelect == 19) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 20) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 21) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 22) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_pressed.png")));
+//                    } else if(chapterSelect == 23) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_pressed.png")));
+//                    }
                 }
-            }
+//            }
 
         }
 
@@ -1661,103 +1702,116 @@ public class Button extends Actor {
 
                     }
                 } else {
-                    chapterSelect = Integer.parseInt(getTextForAButton());
-                    System.out.println("RELEASED SCROLL SHOULD CHANGE BUTTON TO NORMAL");
-                    if (chapterSelect == 1) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(19)&& chapterSelect == 19) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(21) && chapterSelect == 21) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
-                    } else if (mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
-                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
-                    } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
-                        if (chapterSelect == 1) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 2) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 3) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 4) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 5) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 6) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 7) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 8) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 9) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 10) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 11) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 12) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 13) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 14) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 15) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 16) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 17) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 18) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 19) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 20) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 21) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 22) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
-                        } else if (chapterSelect == 23) {
-                            setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
-                        }
-                    }
+                    useForTheButton9Commons(true);
+//                    for(int i = 1; i <24; i++) {
+//                        chapterSelect = Integer.parseInt(getTextForAButton());
+//                        if (chapterSelect == 1) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+//                        } else if (mainClass.getClearedChapterGeneral(i) && chapterSelect == i) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_unpressed.png")));
+//                        } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
+//                            if (chapterSelect == i) {
+//                                setTexture(new Texture(Gdx.files.internal("Chapter_" + i + "_unlocked_unpressed.png")));
+//                            }
+//                        }
+//                    }
+//                    chapterSelect = Integer.parseInt(getTextForAButton());
+//                    System.out.println("RELEASED SCROLL SHOULD CHANGE BUTTON TO NORMAL");
+//                    if (chapterSelect == 1) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(2) && chapterSelect == 2) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(3) && chapterSelect == 3) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(4) && chapterSelect == 4) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(5) && chapterSelect == 5) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(6) && chapterSelect == 6) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(7) && chapterSelect == 7) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(8) && chapterSelect == 8) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(9) && chapterSelect == 9) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(10) && chapterSelect == 10) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(11) && chapterSelect == 11) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(12) && chapterSelect == 12) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(13) && chapterSelect == 13) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(14) && chapterSelect == 14) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(15) && chapterSelect == 15) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(16) && chapterSelect == 16) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(17) && chapterSelect == 17) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(18) && chapterSelect == 18) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(19)&& chapterSelect == 19) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(20) && chapterSelect == 20) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(21) && chapterSelect == 21) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(22) && chapterSelect == 22) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
+//                    } else if (mainClass.getClearedChapterGeneral(23) && chapterSelect == 23) {
+//                        setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
+//                    } else if (mainClass.getCurrentFurthestChapter() == chapterSelect) {
+//                        if (chapterSelect == 1) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_1_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 2) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_2_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 3) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_3_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 4) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_4_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 5) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_5_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 6) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_6_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 7) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_7_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 8) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_8_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 9) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_9_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 10) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_10_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 11) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_11_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 12) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_12_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 13) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_13_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 14) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_14_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 15) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_15_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 16) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_16_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 17) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_17_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 18) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_18_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 19) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_19_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 20) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_20_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 21) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_21_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 22) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_22_unlocked_unpressed.png")));
+//                        } else if (chapterSelect == 23) {
+//                            setTexture(new Texture(Gdx.files.internal("Chapter_23_unlocked_unpressed.png")));
+//                        }
+//                    }
                 }
 
             } else if (getUseForTheButton() == 10) {
