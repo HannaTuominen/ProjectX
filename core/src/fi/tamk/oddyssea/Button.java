@@ -277,7 +277,7 @@ public class Button extends Actor {
             setTextForAButton(mainClass.getChapterText(19,3));
             setStoryID(19.3f);
             indicatorsX4_stage_2();
-        }  else if (getStoryID() == 20.1f) {
+        } else if (getStoryID() == 20.1f) {
         } else if (getStoryID() == 20.2f) {
             setTextForAButton(mainClass.getChapterText(20,1));
             setStoryID(20.1f);
@@ -1142,6 +1142,12 @@ public class Button extends Actor {
 
         }
     }
+
+    public void useForTheButton6IfEnoughSteps() {
+        if(stepsToOpenNextChapter <= steps) {
+            useForTheButton5Or6Commons();
+        }
+    }
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace,
                  float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
@@ -1323,179 +1329,274 @@ public class Button extends Actor {
                 }
                 if(touchUpX == 0) {
                     if (mainClass.getChapterNumber() == 1) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
+                        if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
                                 mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
                                 mainClass.setChoseWrong_1(true);
                             }
                             useForTheButton5Or6Commons();
                         }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//
+//                        }
 
 
                     } else if (mainClass.getChapterNumber() == 2) {
-
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
 
                     } else if (mainClass.getChapterNumber() == 3) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
 
                     } else if (mainClass.getChapterNumber() == 4) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
+                        if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
                                 mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 1000);
                                 mainClass.setChoseWrong_2(true);
                             }
                             useForTheButton5Or6Commons();
                         }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            if (getUseForTheButton() == 5) {
+//                                mainClass.setStepsToOpenChapter6_1(mainClass.getStepsToOpenChapter6_1() + 1000);
+//                                mainClass.setChoseWrong_2(true);
+//                            }
+//                            useForTheButton5Or6Commons();
+//                        }
 
 
                     } else if (mainClass.getChapterNumber() == 5) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 6) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 7) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 8) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 9) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 10) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 11) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
+                        if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
                                 mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 200);
                                 mainClass.setChoseWrong_3(true);
                             }
                             useForTheButton5Or6Commons();
                         }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            if (getUseForTheButton() == 5) {
+//                                mainClass.setStepsToOpenChapter13_1(mainClass.getStepsToOpenChapter13_1() + 200);
+//                                mainClass.setChoseWrong_3(true);
+//                            }
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 12) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 13) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 14) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 15) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 16) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 17) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
+                        if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
                                 mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 800);
                                 mainClass.setChoseWrong_4(true);
                             }
                             useForTheButton5Or6Commons();
                         }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            if (getUseForTheButton() == 5) {
+//                                mainClass.setStepsToOpenChapter19_1(mainClass.getStepsToOpenChapter19_1() + 800);
+//                                mainClass.setChoseWrong_4(true);
+//                            }
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 18) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 19) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 20) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 21) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 22) {
-                        if (stepsToOpenNextChapter > steps) {
-                            System.out.println("ERROR TOO FEW STEPS");
-                        } else {
-                            useForTheButton5Or6Commons();
-                        }
+                        useForTheButton6IfEnoughSteps();
+//                        if(stepsToOpenNextChapter <= steps) {
+//                            useForTheButton5Or6Commons();
+//                        }
+//                        if (stepsToOpenNextChapter > steps) {
+//                            System.out.println("ERROR TOO FEW STEPS");
+//                        } else {
+//                            useForTheButton5Or6Commons();
+//                        }
 
                     } else if (mainClass.getChapterNumber() == 23) {
                         System.out.println("GOT HERE at 23");
