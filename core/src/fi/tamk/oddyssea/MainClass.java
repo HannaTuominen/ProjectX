@@ -1363,7 +1363,7 @@ public class MainClass extends Game {
         } else if (combine.equals("chapter23_4")) {
             return  chapter23_4;
         } else {
-	        return "";
+	        return combine + " WRONG";
         }
     }
 	public String getNext() {
