@@ -42,119 +42,29 @@ public class MainClass extends Game {
 
 	//All of the names of the MyBundle things used in the FIN/ENG distinction
 
-	private String chapter1_1;
-	private String chapter1_2;
-	private String chapter1_3;
-
-	private String chapter2_1;
-	private String chapter2_2;
-
-	private String chapter3_1;
-	private String chapter3_2;
-
-	private String chapter4_1;
-	private String chapter4_2;
-
-	private String chapter5_1;
-	private String chapter5_2;
-	private String chapter5_3;
-
-	private String chapter6_1;
-	private String chapter6_2;
-	private String chapter6_3;
-
-	private String chapter7_1;
-	private String chapter7_2;
-	private String chapter7_3;
-
-	private String chapter8_1;
-	private String chapter8_2;
-	private String chapter8_3;
-
-	private String chapter9_1;
-	private String chapter9_2;
-	private String chapter9_3;
-	private String chapter9_4;
-
-	private String chapter10_1;
-	private String chapter10_2;
-	private String chapter10_3;
-
-	private String chapter11_1;
-	private String chapter11_2;
-	private String chapter11_3;
-	private String chapter11_4;
-
-	private String chapter12_1;
-	private String chapter12_2;
-	private String chapter12_3;
-	private String chapter12_4;
-
-	private String chapter13_1;
-	private String chapter13_2;
-	private String chapter13_3;
-	private String chapter13_4;
-
-	private String chapter14_1;
-	private String chapter14_2;
-	private String chapter14_3;
-	private String chapter14_4;
-
-	private String chapter15_1;
-	private String chapter15_2;
-	private String chapter15_3;
-	private String chapter15_4;
-	private String chapter15_5;
-
-	private String chapter16_1;
-	private String chapter16_2;
-	private String chapter16_3;
-	private String chapter16_4;
-	private String chapter16_5;
-
-	private String chapter17_1;
-	private String chapter17_2;
-	private String chapter17_3;
-	private String chapter17_4;
-	private String chapter17_5;
-	private String chapter17_6;
-	private String chapter17_7;
-	private String chapter17_8;
-
-	private String chapter18_1;
-	private String chapter18_2;
-	private String chapter18_3;
-	private String chapter18_4;
-	private String chapter18_5;
-
-	private String chapter19_1;
-	private String chapter19_2;
-	private String chapter19_3;
-	private String chapter19_4;
-
-	private String chapter20_1;
-	private String chapter20_2;
-	private String chapter20_3;
-	private String chapter20_4;
-
-	private String chapter21_1;
-	private String chapter21_2;
-	private String chapter21_3;
-	private String chapter21_4;
-	private String chapter21_5;
-
-	private String chapter22_1;
-	private String chapter22_2;
-	private String chapter22_3;
-	private String chapter22_4;
-	private String chapter22_5;
-	private String chapter22_6;
-	private String chapter22_7;
-
-	private String chapter23_1;
-	private String chapter23_2;
-	private String chapter23_3;
-	private String chapter23_4;
+	private String chapter1_1, chapter1_2, chapter1_3,
+			chapter2_1, chapter2_2,
+			chapter3_1, chapter3_2,
+			chapter4_1, chapter4_2,
+			chapter5_1, chapter5_2, chapter5_3,
+			chapter6_1, chapter6_2, chapter6_3,
+			chapter7_1, chapter7_2, chapter7_3,
+			chapter8_1, chapter8_2, chapter8_3,
+			chapter9_1, chapter9_2, chapter9_3, chapter9_4,
+			chapter10_1, chapter10_2, chapter10_3,
+			chapter11_1, chapter11_2, chapter11_3, chapter11_4,
+			chapter12_1, chapter12_2, chapter12_3, chapter12_4,
+			chapter13_1, chapter13_2, chapter13_3, chapter13_4,
+			chapter14_1, chapter14_2, chapter14_3, chapter14_4,
+			chapter15_1, chapter15_2, chapter15_3, chapter15_4, chapter15_5,
+			chapter16_1, chapter16_2, chapter16_3, chapter16_4, chapter16_5,
+			chapter17_1, chapter17_2, chapter17_3, chapter17_4, chapter17_5, chapter17_6, chapter17_7, chapter17_8,
+			chapter18_1, chapter18_2, chapter18_3, chapter18_4, chapter18_5,
+			chapter19_1, chapter19_2, chapter19_3, chapter19_4,
+			chapter20_1, chapter20_2, chapter20_3, chapter20_4,
+			chapter21_1, chapter21_2, chapter21_3, chapter21_4, chapter21_5,
+			chapter22_1, chapter22_2, chapter22_3, chapter22_4, chapter22_5, chapter22_6, chapter22_7,
+			chapter23_1, chapter23_2, chapter23_3, chapter23_4;
 
 
     private String resetGame;
