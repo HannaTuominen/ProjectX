@@ -1,6 +1,5 @@
 package fi.tamk.oddyssea;
 
-import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,22 +53,25 @@ public class MyServices extends Service implements StepListener,SensorEventListe
 		}
 		MainClass.setSteps(numSteps);
 		save();
-		System.out.println(numSteps);
+		System.out.println("Step: " + numSteps);
 	}
 	public void save() {
 		SharedPreferences stepsPrefs = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 		SharedPreferences.Editor editor = stepsPrefs.edit();
 		editor.putInt(SHARED_PREFS,numSteps);
 		editor.commit();
+		System.out.println("saved: " + numSteps);
 	}
 	public void loadData() {
 		SharedPreferences stepsPrefs = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 		numSteps = stepsPrefs.getInt(SHARED_PREFS,0);
+		System.out.println("loaded: " + numSteps);
 	}
 	@Override
 	public void onDestroy() {
 		sensorManager.unregisterListener(MyServices.this);
 		stopService(new Intent(getBaseContext(), MyServices.class));
+		System.out.println("Stopped Service");
 	}
 	public void getGameSteps() {
 		if (MainClass.getSteps() != -1) {
