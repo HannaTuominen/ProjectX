@@ -66,7 +66,6 @@ public class ChapterAssets extends Actor {
 
         if(mainClass.getChapterNumber() != 24) {
             batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
-
         }
 
         if(howManyPageSwaps == 2) {

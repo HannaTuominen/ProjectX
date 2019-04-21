@@ -127,7 +127,7 @@ public class Button extends Actor {
             button10Reverse(11.2f, 11,2);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 11.4f) {
-            button10Reverse(getStoryID(), 11,3);
+            button10Reverse(11.3f, 11,3);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 12.1f) {
         } else if (getStoryID() == 12.2f) {
@@ -736,24 +736,24 @@ public class Button extends Actor {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX4_stage_2() {
-        mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX4_stage_3() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX4_stage_4() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
 
     }
@@ -762,148 +762,148 @@ public class Button extends Actor {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_2() {
-        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_3() {
-        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_4() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX5_stage_5() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
 
-    public void indicatorsX6_stage_1() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_2() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_3() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_4() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_5() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_now_3.png")));
-    }
-    public void indicatorsX6_stage_6() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
+//    public void indicatorsX6_stage_1() {
+//        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_now_3.png")));
+//        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//    }
+//    public void indicatorsX6_stage_2() {
+////        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_now_3.png")));
+//        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//    }
+//    public void indicatorsX6_stage_3() {
+////        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_now_3.png")));
+//        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//    }
+//    public void indicatorsX6_stage_4() {
+////        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_now_3.png")));
+//        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//    }
+//    public void indicatorsX6_stage_5() {
+//        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_now_3.png")));
+//    }
+//    public void indicatorsX6_stage_6() {
+//        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_now_3.png")));
+//        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+////        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//    }
 
     public void indicatorsX7_stage_1() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_2() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_3() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_4() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_5() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_6() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX7_stage_7() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
 
@@ -911,80 +911,80 @@ public class Button extends Actor {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_2() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_3() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_4() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_5() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_6() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_7() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX8_stage_8() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
+//        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
 
