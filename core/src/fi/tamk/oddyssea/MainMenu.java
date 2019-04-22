@@ -9,27 +9,71 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 /**
- * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * Main menu where you can go to ChapterSelect, GameScreen, Credits, exit the game and reset the game
  * @author Hanna Tuominen
  * @version 2019.2204
  * @since 15.01.2019
  */
 
 public class MainMenu implements Screen {
+    /**
+     * main class
+     */
     private MainClass mainClass;
+    /**
+     * batch
+     */
     private SpriteBatch batch;
+    /**
+     * font
+     */
     private BitmapFont font12;
+    /**
+     * the screen width of the current device
+     */
     private float screenWidth;
+    /**
+     * the screen height of the current device
+     */
     private float screenHeight;
+    /**
+     * the button width
+     */
     private float buttonWidth;
+    /**
+     * the button height
+     */
     private float buttonHeight;
-
+    /**
+     * the stage
+     */
     private Stage stage;
-
+    /**
+     * the background texture
+     */
     private Texture texture;
+    /**
+     * the oddyssea logo texture
+     */
     private Texture texture2;
+    /**
+     * check if the game is opened for the first time or not
+     */
     private boolean firstRound = false;
 
+    /**
+     * everything needed on main menu is created here (changed only when changing the language or reopening the menu whatever way)
+     * <p>
+     *     first save needed info locally
+     *     set up textures for backgroun and logo
+     *     get stage
+     *     set button widths and heights
+     *     clear stage
+     *     get the first round infor from prefs
+     *     createned buttons
+     *     check if the background music should be on or off and play music depending on that
+     * @param MainClass2
+     */
     public MainMenu(MainClass MainClass2) {
         System.out.println(firstRound + " IS IT FIRST ROUND");
 
@@ -63,6 +107,10 @@ public class MainMenu implements Screen {
 
     }
 
+    /**
+     * create new main menu buttons depending on given info and if the game has been started or not (new game - continue game text)
+     * created again whenever the language is changed
+     */
     public void createNewButtons() {
         if(!firstRound) {
             mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getPlay(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f ,buttonHeight*1.3f,0);
@@ -102,6 +150,13 @@ public class MainMenu implements Screen {
 
     }
 
+    /**
+     * render the stage and batch that are needed for the scene
+     * draw background and logo textures
+     * if the game language is swapped the stage needs to be cleared and buttons reloaded new
+     * if the game is resetted the stage needs to be cleared and original buttons need to be created again
+     * @param delta
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(mainClass.camera.combined);
