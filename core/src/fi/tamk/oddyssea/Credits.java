@@ -8,28 +8,63 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 /**
- * This is the Credits screen in the main menu
+ * This is the Credits screen in the main menu that has the creator info and sponsor info
  * @author Hanna Tuominen
  * @version 2019.2204
  * @since 15.01.2019
  */
 
 public class Credits implements Screen {
-
+    /**
+     * main class
+     */
     private MainClass mainClass;
+    /**
+     * batch
+     */
     private SpriteBatch batch;
+    /**
+     * font
+     */
     private BitmapFont font12;
+    /**
+     * the credits background texure
+     */
     private Texture texture;
+    /**
+     * the credits screen texture depending on language
+     */
     private Texture credits;
 
+    /**
+     * button width
+     */
     private float buttonWidth;
+    /**
+     * button height
+     */
     private float buttonHeight;
-
-
+    /**
+     * screen width depending on the device
+     */
     private float screenWidth;
+    /**
+     * screen height depending on the device
+     */
     private float screenHeight;
 
+    /**
+     * everything needed on credits is created here (changed only when going to the credits through the main menu button)
+     * <p>
+     *     first save things needed and clear the stage and set button width and height
+     *     the create back button
+     *     then the background texture
+     *     then the credits box texture screen depending on the language
+     *     check if there should be music or not
+     * @param MainClass2
+     */
     public Credits(MainClass MainClass2) {
+
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
         font12 = mainClass.getFont12();
@@ -65,6 +100,10 @@ public class Credits implements Screen {
 
     }
 
+    /**
+     * render everything the stage needs and background and credits
+     * @param delta
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(mainClass.camera.combined);
