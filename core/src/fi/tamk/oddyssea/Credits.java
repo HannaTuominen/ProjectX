@@ -9,8 +9,8 @@ import com.badlogic.gdx.graphics.GL20;
 
 /**
  * This is the Credits screen in the main menu that has the creator info and sponsor info
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 

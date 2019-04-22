@@ -9,8 +9,8 @@ import com.badlogic.gdx.graphics.GL20;
 
 /**
  * This is the Chapter select screen in the main menu that has all 23 chapters accessible via buttons depending on the progress of the game
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 

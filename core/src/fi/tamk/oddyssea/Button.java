@@ -13,8 +13,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import java.util.Locale;
 /**
  * The button actor script that changes the game depending on the use of the buttons.
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 public class Button extends Actor {

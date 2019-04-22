@@ -9,8 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
  * The actual game screen where the game is "played", gotten through main menu (either play button or chapter select menu)
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 

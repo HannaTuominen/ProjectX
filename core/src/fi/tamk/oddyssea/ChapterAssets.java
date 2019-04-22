@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 /**
  * The chapterassets actor that has the text box texture that's not empty and text indicators and the backgroound images depending on chapter
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 public class ChapterAssets extends Actor {

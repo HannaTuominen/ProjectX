@@ -10,8 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 
 /**
  * Main menu where you can go to ChapterSelect, GameScreen, Credits, exit the game and reset the game
- * @author Hanna Tuominen
- * @version 2019.2204
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 

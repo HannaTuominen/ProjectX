@@ -25,7 +25,7 @@ import java.util.Locale;
  * texture indicators, and other info that is needed to save and access all through the game.
  * These will be used in the different places of other codes.
  *
- * @author Hanna Tuominen
+ * @author Hanna Tuominen hanna.h.tuominen@tuni.fi
  * @version 24.4.2019
  * @since 15.01.2019
  */
