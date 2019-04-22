@@ -237,11 +237,11 @@ public class MainClass extends Game {
      */
     private boolean choseWrong_2 = false;
     /**
-     * boolean choseWrong_1 used for chapter 17 choice.
+     * boolean choseWrong_1 used for chapter 11 choice.
      */
     private boolean choseWrong_3 = false;
     /**
-     * boolean choseWrong_1 used for chapter 23 choice.
+     * boolean choseWrong_1 used for chapter 17 choice.
      */
     private boolean choseWrong_4 = false;
     /**
@@ -1199,35 +1199,69 @@ public class MainClass extends Game {
         button6.setVisible(visible);
     }
 
+    /**
+     * sets and saves the gotToLastTextPartOkayToShowNeededButtons to prefs in button script to check whether or not
+     * the current chapter should show the next chapter buttons or not
+     * @param gotToLastTextPartOkayToShowNeededButtons true or false to see whether to show the buttons (5 and/or 6) in the game screen and swapped in button script
+     */
     public void setGotToLastTextPartOkayToShowNeededButtons(boolean gotToLastTextPartOkayToShowNeededButtons) {
         this.gotToLastTextPartOkayToShowNeededButtons = gotToLastTextPartOkayToShowNeededButtons;
         prefs.putBoolean("gotToLastTextPartOkayToShowNeededButtons", this.gotToLastTextPartOkayToShowNeededButtons);
         prefs.flush();
     }
+
+    /**
+     * saves to local and gets the prefs boolean of gotToLastTextPartOkayToShowNeededButtons
+     * Used in GameScreen to check if they should currently be visible
+     * @return the current gotToLastTextPartOkayToShowNeededButtons to true (show) or false (don't show)
+     */
     public boolean getGotToLastTextPartOkayToShowNeededButtons() {
         gotToLastTextPartOkayToShowNeededButtons = prefs.getBoolean("gotToLastTextPartOkayToShowNeededButtons");
         return gotToLastTextPartOkayToShowNeededButtons;
     }
+
+    /**
+     * Saves and sets true or false if the current chapter has already been read through once so upon
+     * next open the buttons should be already visible changed in button script and GameScreen
+     * @param gotToTheLastTextOnceAlready true or false if the current chapter story has been read once already
+     */
     public void setGotToTheLastTextOnceAlready(boolean gotToTheLastTextOnceAlready) {
         this.gotToTheLastTextOnceAlready = gotToTheLastTextOnceAlready;
         prefs.putBoolean("gotToTheLastTextOnceAlready", this.gotToTheLastTextOnceAlready);
         prefs.flush();
     }
+
+    /**
+     * returns the current gotToTheLAstTextOnceAlready from prefs to check if the buttons should be shown accordingly
+     * @return true or false from prefs if the text has been read once and should the buttons be showing upon getting to the story
+     */
     public boolean getGotToTheLastTextOnceAlready() {
         gotToTheLastTextOnceAlready = prefs.getBoolean("gotToTheLastTextOnceAlready");
         return gotToTheLastTextOnceAlready;
     }
-
+    /**
+     * sets and saves if the reset game pop us should be active or not
+     * @param prefsPopUpActivate true or false if the reset pop up should be show
+     */
     public void setPrefsPopUpActivate(boolean prefsPopUpActivate) {
         this.prefsPopUpActivate = prefsPopUpActivate;
         prefs.putBoolean("prefsPopUpActivate", this.prefsPopUpActivate);
         prefs.flush();
     }
-
+    /**
+     * gets from prefs if the refsPopUpActivate should be show or not (changed in button script through main menu reset button)
+     * @return true or false if the pop up should be or is shown currently
+     */
     public boolean getPrefsPopUpActivate() {
         prefsPopUpActivate = prefs.getBoolean("prefsPopUpActivate");
         return prefsPopUpActivate;
     }
+
+    /**
+     * sets and saves if the too few steps error pop up should be shown currently or not
+     * changed through button script
+     * @param tooFewStepsPopUpActivate true or false if the pop up should be show or not
+     */
 
     public void setTooFewStepsPopUpActivate(boolean tooFewStepsPopUpActivate) {
         this.tooFewStepsPopUpActivate = tooFewStepsPopUpActivate;
@@ -1235,29 +1269,57 @@ public class MainClass extends Game {
         prefs.flush();
     }
 
+    /**
+     * returns from prefs if the too few steps pop up is or should be currently on
+     * @return true or false if the pop up should be active or not
+     */
     public boolean getTooFewStepsPopUpActivate() {
         tooFewStepsPopUpActivate = prefs.getBoolean("tooFewStepsPopUpActivate");
         return tooFewStepsPopUpActivate;
     }
-
+    /**
+     * sets and saves the prefs pop up activate or not activate on chapter 1 (changed in button script)
+     * @param tutorialShow true or false if the tutorial should be shown in chapter 1 or not
+     */
     public void setTutorialShow(boolean tutorialShow) {
         this.tutorialShow = tutorialShow;
         prefs.putBoolean("tutorialShow", this.tutorialShow);
         prefs.flush();
     }
 
+    /**
+     * returns from prefs if the tutorial should be show upon first load of the game or not and after that accessing the chapter 1 again
+     * @return true or false if tutorial screen should be shown or not
+     */
     public boolean gettutorialShow() {
         tutorialShow = prefs.getBoolean("tutorialShow");
         return tutorialShow;
     }
 
-
+    /**
+     * the universal button creation method accessed all through the scripts whenever a button is needed
+     * and it sets all the needed things for them
+     * <p>
+     *     depending on the use for the button create a new button and group it to the right place or don't group it at all
+     *     5 and 6 not a group but used to check if they should be shown currently via getGotToLastTextPartOkayToShowNeededButtons()
+     *     9 and 12 in ChapterSelect
+     *     17, 18, 19 in prefs pop up
+     *     20, 21 tutorial pop up
+     *     23, 24 not enough steps pop up
+     * @param texture the texture used for the button
+     * @param textForAButton the text on the button
+     * @param storyID if the button is used to show story text give the correct storyID (1.1, 1.2 etc.) if not in use set to 0
+     * @param useForTheButton the use of the button between 1-24 and upon pressing do different things depending on the use in button script and un createButtons used also for grouping them correctly
+     * @param xPlace the x (horizontal) place of the button on the screen
+     * @param yPlace the y (vertical) place of the button on the screen
+     * @param buttonWidth the width of the current button
+     * @param buttonHeight the height of the current button
+     * @param stepsToOpenNextChapter if the button is in use (GameScreen and useforthebutton 5 and 6) used to check if enough steps if not in use set to 0
+     */
     public void createButtons(Texture texture, String textForAButton, float storyID, int useForTheButton,
 							  float xPlace, float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
-
 		this.buttonHeight = buttonHeight;
 		this.buttonWidth = buttonWidth;
-
 		if(useForTheButton == 1 || useForTheButton == 2
                 || useForTheButton == 3 || useForTheButton == 4
                 || useForTheButton == 7 || useForTheButton == 8
@@ -1270,31 +1332,25 @@ public class MainClass extends Game {
                 || useForTheButton == 21 || useForTheButton == 22
                 || useForTheButton == 23 || useForTheButton == 24
                 ) {
-
             button = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
             stage.addActor(button);
         }
-
 		if(useForTheButton == 9 || useForTheButton == 12 ) {
 			groupActors(button);
 			groupStageAdd1();
 		}
-
         if(useForTheButton == 17 || useForTheButton == 18 || useForTheButton == 19 ) {
             groupActors2(button);
             groupStageAdd2();
         }
-
         if(useForTheButton == 20 || useForTheButton == 21 ) {
             groupActors3(button);
             groupStageAdd3();
         }
-
         if(useForTheButton == 23 || useForTheButton == 24 ) {
             groupActors4(button);
             groupStageAdd4();
         }
-
 		if(useForTheButton == 5 || useForTheButton == 6) {
 		    System.out.println("useforthebutton is " + useForTheButton);
 			if(useForTheButton == 5) {
@@ -1327,24 +1383,44 @@ public class MainClass extends Game {
                 }
 			}
 		}
-
 		Gdx.input.setInputProcessor(stage);
-
 	}
-
+    /**
+     * groups the actors send in createButtons to the group 1
+     * @param actor Button actor 9 and 12 (chapter Select buttons)
+     */
 	public void groupActors(Actor actor) {
 		group.addActor(actor);
 	}
+    /**
+     * groups the actors send in createButtons to the group 2
+     * @param actor Button actor 17,18 and 19 (in prefs pop up)
+     */
 	public void groupActors2(Actor actor) {
 		group2.addActor(actor);
 	}
+    /**
+     * groups the actors send in createButtons to the group 3
+     * @param actor Button actor 20 and 21 (tutorial pop up)
+     */
     public void groupActors3(Actor actor) {
         group3.addActor(actor);
     }
+    /**
+     * groups the actors send in createButtons to the group 4
+     * @param actor Button actor 23 and 24 (too few steps error pop up)
+     */
 	public void groupActors4(Actor actor) {
 		group4.addActor(actor);
 	}
-
+    /**
+     *  clears the group depending on use for the button
+     *  9 and 12 in ChapterSelect
+     *  17, 18, 19 in prefs pop up
+     *  20, 21 tutorial pop up
+     *  23, 24 not enough steps pop up
+     * @param useForTheButton used to specify which group to clear
+     */
 	public void clearGroup(int useForTheButton) {
 		if(useForTheButton == 9 || useForTheButton == 12) {
 			group.clear();
@@ -1357,69 +1433,131 @@ public class MainClass extends Game {
 			group4.clear();
 		}
     }
+
+    /**
+     * returns group1 to set changes if needed universal
+     * @return group (1)
+     */
 	public Group getGroup1() {
 		return group;
 	}
+    /**
+     * returns group2 to set changes if needed universal
+     * @return group (2)
+     */
 	public Group getGroup2() {
 		return group2;
 	}
+    /**
+     * returns group3 to set changes if needed universal
+     * not in use currently as group 3 does not need changes ever
+     * @return group (3)
+     */
     public Group getGroup3() {
         return group3;
     }
+    /**
+     * returns group4 to set changes if needed universal
+     * not in use currently as group 4 does not need changes ever
+     * @return group (4)
+     */
 	public Group getGroup4() {
 		return group4;
 	}
+
+    /**
+     * adds group 1 to the stage to be shown
+     */
 	public void groupStageAdd1() {
 		stage.addActor(group);
 	}
+    /**
+     * adds group 2 to the stage to be shown
+     */
 	public void groupStageAdd2() {
 		stage.addActor(group2);
 	}
-
+    /**
+     * adds group 3 to the stage to be shown
+     */
     public void groupStageAdd3() {
         stage.addActor(group3);
     }
+    /**
+     * adds group 4 to the stage to be shown
+     */
 	public void groupStageAdd4() {
 		stage.addActor(group4);
 	}
 
-
-
+    /**
+     * sets and saves the first choice in the game if it's right or wrong (in button script)
+     * which either adds or doesn't add more steps to the next chapter that is needed
+     * @param choseWrong_1 true or false if the player has chosen the right or wrong choice in chapter 1
+     */
     public void setChoseWrong_1(boolean choseWrong_1) {
         this.choseWrong_1 = choseWrong_1;
         prefs.putBoolean("choseWrong_1", this.choseWrong_1);
         prefs.flush();
     }
+    /**
+     * gets from prefs if the player has chosen wrong or right in chapter 1
+     * @return true or false if the player has chosen the wrong choice in chapter 1 and if the next steps needs to be set higher
+     */
     public boolean getChoseWrong_1() {
 	    choseWrong_1 = prefs.getBoolean("choseWrong_1");
         return choseWrong_1;
     }
-
+    /**
+     * sets and saves the fourth choice in the game if it's right or wrong (in button script)
+     * which either adds or doesn't add more steps to the next chapter that is needed
+     * @param choseWrong_2 true or false if the player has chosen the right or wrong choice in chapter 4
+     */
 	public void setChoseWrong_2(boolean choseWrong_2) {
 		this.choseWrong_2 = choseWrong_2;
 		prefs.putBoolean("choseWrong_2", this.choseWrong_2);
 		prefs.flush();
 	}
+    /**
+     * gets from prefs if the player has chosen wrong or right in chapter 4
+     * @return true or false if the player has chosen the wrong choice in chapter 4 and if the next steps needs to be set higher
+     */
 	public boolean getChoseWrong_2() {
 		choseWrong_2 = prefs.getBoolean("choseWrong_2");
 		return choseWrong_2;
 	}
-
+    /**
+     * sets and saves the eleventh choice in the game if it's right or wrong (in button script)
+     * which either adds or doesn't add more steps to the next chapter that is needed
+     * @param choseWrong_3 true or false if the player has chosen the right or wrong choice in chapter 11
+     */
 	public void setChoseWrong_3(boolean choseWrong_3) {
 		this.choseWrong_3 = choseWrong_3;
 		prefs.putBoolean("choseWrong_3", this.choseWrong_3);
 		prefs.flush();
 	}
+    /**
+     * gets from prefs if the player has chosen wrong or right in chapter 11
+     * @return true or false if the player has chosen the wrong choice in chapter 11 and if the next steps needs to be set higher
+     */
 	public boolean getChoseWrong_3() {
 		choseWrong_3 = prefs.getBoolean("choseWrong_3");
 		return choseWrong_3;
 	}
-
+    /**
+     * sets and saves the seventeenth choice in the game if it's right or wrong (in button script)
+     * which either adds or doesn't add more steps to the next chapter that is needed
+     * @param choseWrong_4 true or false if the player has chosen the right or wrong choice in chapter 17
+     */
 	public void setChoseWrong_4(boolean choseWrong_4) {
 		this.choseWrong_4 = choseWrong_4;
 		prefs.putBoolean("choseWrong_4", this.choseWrong_4);
 		prefs.flush();
 	}
+    /**
+     * gets from prefs if the player has chosen wrong or right in chapter 17
+     * @return true or false if the player has chosen the wrong choice in chapter 17 and if the next steps needs to be set higher
+     */
 	public boolean getChoseWrong_4() {
 		choseWrong_4 = prefs.getBoolean("choseWrong_4");
 		return choseWrong_4;
