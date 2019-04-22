@@ -5,28 +5,64 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 /**
- * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * The chapterassets actor that has the text box texture that's not empty and text indicators and the backgroound images depending on chapter
  * @author Hanna Tuominen
  * @version 2019.2204
  * @since 15.01.2019
  */
 public class ChapterAssets extends Actor {
+    /**
+     * the background image texture
+     */
     private Texture texture;
+    /**
+     * the textbox image texture
+     */
     private Texture textbox;
-
-
+    /**
+     * main class
+     */
     private MainClass mainClass;
-
+    /**
+     * font
+     */
     private BitmapFont font12;
+    /**
+     * screen width depending on the device
+     */
     private float screenWidth;
+    /**
+     * screen height depending on the device
+     */
     private float screenHeight;
-
+    /**
+     * textbox height
+     */
     private float textboxHeight;
+    /**
+     * stepbox height
+     */
     private float stepboxHeight;
+    /**
+     * current steps
+     */
     private int steps;
-
+    /**
+     * how many pages is in use for the current chapter
+     */
     private int howManyPageSwaps;
 
+    /**
+     * the actor created in chapter assets (images mostly) that don't need changing during the chapters at all
+     * <p>
+     *     first set locally all needed things from main class
+     *     set width and height and bounds of the actor
+     *     textbox texture
+     *     depending on screen width textbox and stepbox heights
+     * @param MainClass2 main class
+     * @param texture the background texture
+     * @param howManyPageSwaps how many page swaps are there needed
+     */
     public ChapterAssets(MainClass MainClass2, Texture texture, int howManyPageSwaps) {
         this.mainClass = MainClass2;
         this.texture = texture;
@@ -52,6 +88,14 @@ public class ChapterAssets extends Actor {
 
     }
 
+    /**
+     * draw all needed textures to the stage
+     * <p>
+     *     howmanypages changes the textindicators number and size and place drawn initially
+     *     also draw the textbox with the actual texture if the chapternumber is not 24
+     * @param batch
+     * @param alpha
+     */
     @Override
     public void draw(Batch batch, float alpha) {
         steps = mainClass.getCurrentSteps();
@@ -119,6 +163,11 @@ public class ChapterAssets extends Actor {
 
 
     }
+
+    /**
+     * act the scene
+     * @param delta
+     */
     @Override
     public void act(float delta) {
         super.act(delta);
