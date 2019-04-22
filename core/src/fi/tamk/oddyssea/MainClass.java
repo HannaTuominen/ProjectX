@@ -22,18 +22,19 @@ import java.util.Locale;
 /**
  * Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
  * These will be used in the different places of other codes.
+ *
  * @author Hanna Tuominen
- * @version 2019.2204
+ * @version 24.4.2019
  * @since 15.01.2019
  */
 
 public class MainClass extends Game {
     /**
-     * Batch created here and used in every single java code of the game.
+     * SpriteBatch batch created here and used in every single java code of the game.
      */
 	private SpriteBatch batch;
     /**
-     * The font is created here and used everywhere else - size and bitmapFont also.
+     * FreeTypeFontGenerator generator is used when the font is created here and used everywhere else - size and bitmapFont also.
      */
 	private FreeTypeFontGenerator generator;
     /**
@@ -41,7 +42,7 @@ public class MainClass extends Game {
      */
 	private BitmapFont font12;
     /**
-     * Sets the font size depending on the screen size.
+     * int fontSize sets the font size depending on the screen size.
      */
 	private int fontSize;
     /**
@@ -50,14 +51,20 @@ public class MainClass extends Game {
      */
 	private boolean resetEverything = false;
     /**
-     * Boolean prefsPopUpActive is
+     * Boolean prefsPopUpActive is used to check if the reset game popup in main menu is active
      */
 	private boolean prefsPopUpActivate;
+    /**
+     * Boolean tutorialShow is used to check if the tutorial should be shown and is show currently
+     */
 	private boolean tutorialShow;
+    /**
+     * Boolean tooFewStepsPopUpActivate is used to check if the error message for too few steps is activate or not or if it should be
+     */
 	private boolean tooFewStepsPopUpActivate;
-
-	//All of the names of the MyBundle things used in the FIN/ENG distinction
-
+    /**
+     * String chapter1_1 .... All of the names of the MyBundle things used in the FIN/ENG distinction for chapter texts
+     */
 	private String chapter1_1, chapter1_2, chapter1_3,
 			chapter2_1, chapter2_2,
 			chapter3_1, chapter3_2,
@@ -81,193 +88,530 @@ public class MainClass extends Game {
 			chapter21_1, chapter21_2, chapter21_3, chapter21_4, chapter21_5,
 			chapter22_1, chapter22_2, chapter22_3, chapter22_4, chapter22_5, chapter22_6, chapter22_7,
 			chapter23_1, chapter23_2, chapter23_3, chapter23_4;
-
-
+    /**
+     * String resetGame the MyBundle thing used in the FIN/ENG distinction for reset game button in main menu
+     */
     private String resetGame;
+    /**
+     * String resetGameQuestion the MyBundle thing used in the FIN/ENG distinction for reset game text in main menu popup
+     */
     private String resetGameQuestion;
+    /**
+     * String yes the MyBundle thing used in the FIN/ENG distinction for reset game box yes button in main menu popup
+     */
     private String yes;
+    /**
+     * String no the MyBundle thing used in the FIN/ENG distinction for reset game box no button in main menu popup
+     */
     private String no;
+    /**
+     * String ok the MyBundle thing used in the FIN/ENG distinction for not enough steps and tutorial popup button in the gameScreen
+     */
     private String ok;
+    /**
+     * String tutorialText the MyBundle thing used in the FIN/ENG distinction for tutorial text popup in the gameScreen
+     */
     private String tutorialText;
+    /**
+     * String tutorialText the MyBundle thing used in the FIN/ENG distinction for too few steps text popup in the gameScreen
+     */
     private String tooFewStepsMessage;
-
+    /**
+     * String tutorialText the MyBundle thing used in the FIN/ENG distinction for tutorial text popup in the gameScreen
+     */
     private String backToMainMenu;
+    /**
+     * String title the MyBundle thing used in the FIN/ENG distinction nowhere at ths moment but it contains the tittle of the game
+     */
 	private String title;
+    /**
+     * String play the MyBundle thing used in the FIN/ENG distinction for continuing the game / start a new game in main menu button
+     */
 	private String play;
+    /**
+     * String chapterSelect the MyBundle thing used in the FIN/ENG distinction for chapterselect button in main menu
+     */
 	private String chapterSelect;
+    /**
+     * String credits the MyBundle thing used in the FIN/ENG distinction for credits button in main menu
+     */
 	private String credits;
+    /**
+     * String exit the MyBundle thing used in the FIN/ENG distinction for exit button in main menu
+     */
 	private String exit;
+    /**
+     * String back the MyBundle thing used in the FIN/ENG distinction back button not in use anywhere at the moment
+     */
 	private String back;
+    /**
+     * String stepsString the MyBundle thing used in the FIN/ENG distinction for steps in gameScreen/button
+     */
 	private String stepsString;
+    /**
+     * String previous the MyBundle thing used in the FIN/ENG distinction for previous chapter not in use at the moment
+     */
 	private String previous;
+    /**
+     * String next the MyBundle thing used in the FIN/ENG distinction for next chapter not in use at the moment
+     */
 	private String next;
+    /**
+     * String continuee the MyBundle thing used in the FIN/ENG distinction for continue/play used in main menu
+     */
     private String continuee;
+    /**
+     * String chapter1_choice_text_1 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 1 and chapter number 1
+     */
     private String chapter1_choice_text_1;
+    /**
+     * String chapter1_choice_text_2 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 2 and chapter number 1
+     */
     private String chapter1_choice_text_2;
+    /**
+     * String chapter4_choice_text_1 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 1 and chapter number 4
+     */
 	private String chapter4_choice_text_1;
+    /**
+     * String chapter4_choice_text_2 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 2 and chapter number 4
+     */
 	private String chapter4_choice_text_2;
+    /**
+     * String chapter11_choice_text_1 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 1 and chapter number 11
+     */
 	private String chapter11_choice_text_1;
+    /**
+     * String chapter11_choice_text_2 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 2 and chapter number 11
+     */
 	private String chapter11_choice_text_2;
+    /**
+     * String chapter17_choice_text_1 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 1 and chapter number 17
+     */
 	private String chapter17_choice_text_1;
+    /**
+     * String chapter17_choice_text_2 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 2 and chapter number 17
+     */
 	private String chapter17_choice_text_2;
+    /**
+     * String chapter23_choice_text_1 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 1 and chapter number 23
+     */
 	private String chapter23_choice_text_1;
+    /**
+     * String chapter23_choice_text_2 .... is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the choice texts in the gameScreen/Button depending on player choice number 2 and chapter number 23
+     */
 	private String chapter23_choice_text_2;
+    /**
+     * String chapter is used for the MyBundle thing used in the FIN/ENG distinction for
+     * the chapter text in mainGame bottom left screen
+     */
     private String chapter;
+    /**
+     * String sponsors is used for the MyBundle thing used in the FIN/ENG distinction for
+     * sponsor texts - not used anywhere currently
+     */
     private String sponsors;
+    /**
+     * int steps used for the steps all over the and MainClass specifically get and set and remove steps methods
+     */
 	private static int steps;
-
+    /**
+     * GlyphLayout layout used for the font
+     */
 	private GlyphLayout layout;
-
+    /**
+     * boolean choseWrong_1 used for chapter 1 choice.
+     */
 	private boolean choseWrong_1 = false;
+    /**
+     * boolean choseWrong_1 used for chapter 4 choice.
+     */
     private boolean choseWrong_2 = false;
+    /**
+     * boolean choseWrong_1 used for chapter 17 choice.
+     */
     private boolean choseWrong_3 = false;
+    /**
+     * boolean choseWrong_1 used for chapter 23 choice.
+     */
     private boolean choseWrong_4 = false;
-
+    /**
+     * int stepsToOpenChapter2_1 used for to define neeeded steps to open chapter 2.
+     */
 	private int stepsToOpenChapter2_1;
+    /**
+     * int stepsToOpenChapter2_2 used for to define neeeded steps to open chapter 2.
+     */
 	private int stepsToOpenChapter2_2;
-
+    /**
+     * int stepsToOpenChapter3_1 used for to define neeeded steps to open chapter 3.
+     */
 	private int stepsToOpenChapter3_1;
-
+    /**
+     * int stepsToOpenChapter4_1 used for to define neeeded steps to open chapter 4.
+     */
 	private int stepsToOpenChapter4_1;
-
+    /**
+     * int stepsToOpenChapter5_1 used for to define neeeded steps to open chapter 5.
+     */
 	private int stepsToOpenChapter5_1;
+    /**
+     * int stepsToOpenChapter5_2 used for to define neeeded steps to open chapter 5.
+     */
 	private int stepsToOpenChapter5_2;
-
+    /**
+     * int stepsToOpenChapter6_1 used for to define neeeded steps to open chapter 6.
+     */
 	private int stepsToOpenChapter6_1;
-
+    /**
+     * int stepsToOpenChapter7_1 used for to define neeeded steps to open chapter 7.
+     */
 	private int stepsToOpenChapter7_1;
-
+    /**
+     * int stepsToOpenChapter8_1 used for to define neeeded steps to open chapter 8.
+     */
 	private int stepsToOpenChapter8_1;
-
+    /**
+     * int stepsToOpenChapter9_1 used for to define neeeded steps to open chapter 9.
+     */
 	private int stepsToOpenChapter9_1;
-
+    /**
+     * int stepsToOpenChapter10_1 used for to define neeeded steps to open chapter 10.
+     */
 	private int stepsToOpenChapter10_1;
-
+    /**
+     * int stepsToOpenChapter11_1 used for to define neeeded steps to open chapter 11.
+     */
 	private int stepsToOpenChapter11_1;
-
+    /**
+     * int stepsToOpenChapter12_1 used for to define neeeded steps to open chapter 12.
+     */
 	private int stepsToOpenChapter12_1;
+    /**
+     * int stepsToOpenChapter12_2 used for to define neeeded steps to open chapter 2.
+     */
 	private int stepsToOpenChapter12_2;
-
+    /**
+     * int stepsToOpenChapter13_1 used for to define neeeded steps to open chapter 13.
+     */
 	private int stepsToOpenChapter13_1;
-
+    /**
+     * int stepsToOpenChapter14_1 used for to define neeeded steps to open chapter 14.
+     */
 	private int stepsToOpenChapter14_1;
-
+    /**
+     * int stepsToOpenChapter15_1 used for to define neeeded steps to open chapter 15.
+     */
 	private int stepsToOpenChapter15_1;
-
+    /**
+     * int stepsToOpenChapter16_1 used for to define neeeded steps to open chapter 16.
+     */
 	private int stepsToOpenChapter16_1;
-
+    /**
+     * int stepsToOpenChapter17_1 used for to define neeeded steps to open chapter 17.
+     */
 	private int stepsToOpenChapter17_1;
-
+    /**
+     * int stepsToOpenChapter18_1 used for to define neeeded steps to open chapter 18.
+     */
 	private int stepsToOpenChapter18_1;
+    /**
+     * int stepsToOpenChapter18_2 used for to define neeeded steps to open chapter 18.
+     */
 	private int stepsToOpenChapter18_2;
-
+    /**
+     * int stepsToOpenChapter19_1 used for to define neeeded steps to open chapter 19.
+     */
 	private int stepsToOpenChapter19_1;
-
+    /**
+     * int stepsToOpenChapter20_1 used for to define neeeded steps to open chapter 20.
+     */
 	private int stepsToOpenChapter20_1;
-
+    /**
+     * int stepsToOpenChapter21_1 used for to define neeeded steps to open chapter 21.
+     */
 	private int stepsToOpenChapter21_1;
-
+    /**
+     * int stepsToOpenChapter22_1 used for to define neeeded steps to open chapter 22.
+     */
 	private int stepsToOpenChapter22_1;
-
+    /**
+     * int stepsToOpenChapter23_1 used for to define neeeded steps to open chapter 23.
+     */
 	private int stepsToOpenChapter23_1;
-
-	//Created the prefs file here that is used everywhere in the code
+    /**
+     * preferences prefs used to save important information of the game needed on reload etc.
+     */
 	Preferences prefs;
-
+    /**
+     * preferences soundAnLanguage used to save important sound and language settings in a different file so they are not affected on resetting the game.
+     */
 	Preferences soundAndLanguage;
-
-	//Created the stage used everywhere in the code
+    /**
+     * Stage stage created the stage used everywhere in the code
+     */
 	private Stage stage;
-
-	//Screen width and height used everywhere in the code
+    /**
+     * float screenWidth is used to determine the current width of the used platform in pixels(android or desktop) and used everywhere
+     */
 	float screenWidth;
+    /**
+     * float screenHeight is used to determine the current height of the used platform in pixels(android or desktop)
+     */
 	float screenHeight;
-
-	//Implement the button used everywhere in the code
+    /**
+     * Button button is used to create the universal button (mainClass createbuttons()) that are created and used everywhere.
+     */
 	private Button button;
+    /**
+     * Button button is used to create the universal button for useForTheButton5 (mainClass createbuttons()) that are created and used everywhere.
+     */
     private Button button5;
+    /**
+     * Button button is used to create the universal button for useForTheButton6 (mainClass createbuttons()) that are created and used everywhere.
+     */
     private Button button6;
+    /**
+     * String localLanguageToString is used to check the current local language used in the system and getting either fi_FI or en_EN and swapped between those
+     */
     private String localLanguageToString;
+    /**
+     * Locale locale use or the languages for the game
+     */
     private Locale locale;
+    /**
+     * I18NBundle myBundle used to get language texts from the properties files and saving them to their local Strings
+     */
     private I18NBundle myBundle;
+    /**
+     * boolean swappedLanguage is used to check if the language has been swapped and a reload of texts is needed
+     */
 	private static boolean swappedLanguage = false;
-
+    /**
+     * boolean languageFinnish is used to check if the language is currently finnish or not and doing the appropriate changes depending on  if it's true or false in the button script and MainClass
+     */
 	private static boolean languageFinnish = false;
+    /**
+     *  boolean languageFirstRound is used to check if the game is being loaded for the first time language wise and used to check the users system language
+     */
 	private static boolean languageFirstRound;
-
-	//ChapterNumber is used everywhere in the code - it is the current chapter that is displayed
+    /**
+     *  int chapterNumber is used everywhere in the code - it is the current chapter that is displayed on screen
+     */
 	private static int chapterNumber = 1;
-	//Used to get and set the furthest the player has gotten in the story so evry time they press the play button in the main menu it redirects them correctly to the last chapter played
+    /**
+     *  int currentFurthestChapter is used to get and set the furthest the player has gotten in the story so every time they press the play button in the main menu
+     *  it redirects them correctly to the last chapter played
+     */
     private static int currentFurthestChapter = 1;
-
-	//Used when creating a new button to set its width and height
+    /**
+     * float buttonWidth is used when creating a new button to set its basic universal width depending on screen width that can be changed manually
+     */
     private float buttonWidth;
+    /**
+     * float buttonheight is used when creating a new button to set its basic universal height depending on screen height that can be changed manually
+     */
     private float buttonHeight;
-
-	//Needed to prevent creating new things every render lol, only creates this once
+    /**
+     * boolean swapped is needed to prevent creating new things every render lol, only creates this once when clearing screen and getting new chapters and buttons etc.
+     */
 	private boolean swapped = false;
-
-	//Needed to check if the PlayButton has been pressed (changed in the Button script) to set things correctly
+    /**
+     * boolean playPressed is needed to check if the PlayButton has been pressed and not getting to the chapter through the chapterSelect (changed in the Button script) to set things correctly
+     * to the curerntly fursthest chapter.
+     */
 	public static boolean playPressed = false;
-
-	//Camera used everywhere
+    /**
+     * OrthographicCamera camera used on the whole game. Only one camera.
+     */
 	public OrthographicCamera camera;
+    /**
+     * Group group used to group the chapter select buttons in buttons script to make them move in a group
+     */
     private Group group;
-
+    /**
+     * Group group2 used to group clear prefs popup buttons to make things easier to move etc.
+     */
     private Group group2;
-
+    /**
+     * Group group3 used to group the tutorial buttons in chapter 1 to make things easier to move etc.
+     */
     private Group group3;
-
+    /**
+     * Group group4 used to group the error too few steps buttons in mame screen to make things easier to move etc.
+     */
     private Group group4;
-
+    /**
+     * boolean gotToLastTextPartOkayToShowNeededButtons is used in button script when clicking through the story
+     * as you need to go through the story to the last place to show the buttons you need to get to the next chapter
+     * this is checked every time you open the game again/ press play to see if you have already read it once.
+     */
 	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
+    /**
+     * boolean gotToTheLastTextOnceAlready is used in button script to check if the player has skimmed through the story
+     * to the last part already once and should the buttons be shown upon reopening the gameScreen or not
+     * this is checked every time you open the game again/ press play to see if you have already read it through.
+     */
 	private boolean gotToTheLastTextOnceAlready = false;
 
 
-	//BACKGROUND MUSIC
+    /**
+     * Music music is the background music of the game
+     */
     private Music music;
+    /**
+     * boolean backGroundMusicOff is a boolean used to check if the background music is off or on currently or when changed
+     * using the buttons in the game.
+     */
     private boolean backGroundMusicOff;
-
+    /**
+     * Texture textIndicator_2_1 is used for the texture when texture indicator is size 2 (biggest) space 1
+     */
     private Texture textIndicator_2_1;
+    /**
+     * Texture textIndicator_2_2 is used for the texture when texture indicator is size 2 (biggest) space 2
+     */
     private Texture textIndicator_2_2;
-
+    /**
+     * Texture textIndicator_3_1 is used for the texture when texture indicator is size 3 space 1
+     */
     private Texture textIndicator_3_1;
+    /**
+     * Texture textIndicator_3_2 is used for the texture when texture indicator is size 3 space 2
+     */
     private Texture textIndicator_3_2;
+    /**
+     * Texture textIndicator_3_3 is used for the texture when texture indicator is size 3 space 3
+     */
     private Texture textIndicator_3_3;
-
+    /**
+     * Texture textIndicator_4_1 is used for the texture when texture indicator is size 4 space 1
+     */
     private Texture textIndicator_4_1;
+    /**
+     * Texture textIndicator_4_2 is used for the texture when texture indicator is size 4 space 2
+     */
     private Texture textIndicator_4_2;
+    /**
+     * Texture textIndicator_4_3 is used for the texture when texture indicator is size 4 space 3
+     */
     private Texture textIndicator_4_3;
+    /**
+     * Texture textIndicator_4_4 is used for the texture when texture indicator is size 4 space 4
+     */
     private Texture textIndicator_4_4;
-
+    /**
+     * Texture textIndicator_5_1 is used for the texture when texture indicator is size 5 space 1
+     */
     private Texture textIndicator_5_1;
+    /**
+     * Texture textIndicator_5_2 is used for the texture when texture indicator is size 5 space 2
+     */
     private Texture textIndicator_5_2;
+    /**
+     * Texture textIndicator_5_3 is used for the texture when texture indicator is size 5 space 3
+     */
     private Texture textIndicator_5_3;
+    /**
+     * Texture textIndicator_5_4 is used for the texture when texture indicator is size 5 space 4
+     */
     private Texture textIndicator_5_4;
+    /**
+     * Texture textIndicator_5_5 is used for the texture when texture indicator is size 5 space 5
+     */
     private Texture textIndicator_5_5;
-
+    /**
+     * Texture textIndicator_6_1 is used for the texture when texture indicator is size 6 space 1
+     */
     private Texture textIndicator_6_1;
+    /**
+     * Texture textIndicator_6_2 is used for the texture when texture indicator is size 6 space 2
+     */
     private Texture textIndicator_6_2;
+    /**
+     * Texture textIndicator_6_3 is used for the texture when texture indicator is size 6 space 3
+     */
     private Texture textIndicator_6_3;
+    /**
+     * Texture textIndicator_6_4 is used for the texture when texture indicator is size 6 space 4
+     */
     private Texture textIndicator_6_4;
+    /**
+     * Texture textIndicator_6_5 is used for the texture when texture indicator is size 6 space 5
+     */
     private Texture textIndicator_6_5;
+    /**
+     * Texture textIndicator_6_6 is used for the texture when texture indicator is size 6 space 6
+     */
     private Texture textIndicator_6_6;
-
+    /**
+     * Texture textIndicator_7_1 is used for the texture when texture indicator is size 7 space 1
+     */
     private Texture textIndicator_7_1;
+    /**
+     * Texture textIndicator_7_2 is used for the texture when texture indicator is size 7 space 2
+     */
     private Texture textIndicator_7_2;
+    /**
+     * Texture textIndicator_7_3 is used for the texture when texture indicator is size 7 space 3
+     */
     private Texture textIndicator_7_3;
+    /**
+     * Texture textIndicator_7_4 is used for the texture when texture indicator is size 7 space 4
+     */
     private Texture textIndicator_7_4;
+    /**
+     * Texture textIndicator_7_5 is used for the texture when texture indicator is size 7 space 5
+     */
     private Texture textIndicator_7_5;
+    /**
+     * Texture textIndicator_7_6 is used for the texture when texture indicator is size 7 space 6
+     */
     private Texture textIndicator_7_6;
+    /**
+     * Texture textIndicator_7_7 is used for the texture when texture indicator is size 7 space 7
+     */
     private Texture textIndicator_7_7;
-
+    /**
+     * Texture textIndicator_8_1 is used for the texture when texture indicator is size 8 space 1
+     */
     private Texture textIndicator_8_1;
+    /**
+     * Texture textIndicator_8_2 is used for the texture when texture indicator is size 8 space 2
+     */
     private Texture textIndicator_8_2;
+    /**
+     * Texture textIndicator_8_3 is used for the texture when texture indicator is size 8 space 3
+     */
     private Texture textIndicator_8_3;
+    /**
+     * Texture textIndicator_8_4 is used for the texture when texture indicator is size 8 space 4
+     */
     private Texture textIndicator_8_4;
+    /**
+     * Texture textIndicator_8_5 is used for the texture when texture indicator is size 8 space 5
+     */
     private Texture textIndicator_8_5;
+    /**
+     * Texture textIndicator_8_6 is used for the texture when texture indicator is size 8 space 6
+     */
     private Texture textIndicator_8_6;
+    /**
+     * Texture textIndicator_8_7 is used for the texture when texture indicator is size 8 space 7
+     */
     private Texture textIndicator_8_7;
+    /**
+     * Texture textIndicator_8_8 is used for the texture when texture indicator is size 8 space 8
+     */
     private Texture textIndicator_8_8;
 
 	/**
