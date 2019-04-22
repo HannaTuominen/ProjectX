@@ -503,11 +503,11 @@ public class GameScreen implements Screen {
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
                     screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-            System.out.println("CREATED SOUND BUTTON ON");
+            //System.out.println("CREATED SOUND BUTTON ON");
         } else {
             mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10,
                     screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-            System.out.println("CREATED SOUND BUTTON OFF");
+            //System.out.println("CREATED SOUND BUTTON OFF");
         }
 
         //CHAPTER TEXT IN THE BOTTOM LEFT CORNER OF THE TEXT BOX
@@ -651,7 +651,7 @@ public class GameScreen implements Screen {
                 screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
 
         if(mainClass.getChapterNumber()!= 23) {
-            System.out.println("CREATED THE STEP BOX");
+            //System.out.println("CREATED THE STEP BOX");
 //          CURRENT STEPS AND NEEDED STEPS WHEN CLREARED AKA 0
             mainClass.createButtons(new Texture("askelbox.png"),"",0,15,
                     screenWidth/2f-screenWidth/8, screenHeight-(stepboxHeight/1.5f), screenWidth/4 ,stepboxHeight/1.5f,0);
@@ -679,11 +679,11 @@ public class GameScreen implements Screen {
         if(mainClass.gettutorialShow()) {
 
             if(mainClass.getLanguageFinnish()) {
-                System.out.println("CREATING FINNISH TUTORIAL");
+                //System.out.println("CREATING FINNISH TUTORIAL");
                 mainClass.createButtons(new Texture("tutorial_fi.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2,
                         mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
             } else {
-                System.out.println("CREATING ENGLISH TUTORIAL");
+                //System.out.println("CREATING ENGLISH TUTORIAL");
                 mainClass.createButtons(new Texture("tutorial_en.png"), "", 0, 20, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2,
                         mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
             }
@@ -749,7 +749,7 @@ public class GameScreen implements Screen {
             if(!mainClass.getClearedChapterGeneral(1)) {
                 if(mainClass.getResetEverything()) {
                     mainClass.setResetEverything(false);
-                    System.out.println("PUTTING RESET EVERYTHING BACK TO FALSE");
+                    //System.out.println("PUTTING RESET EVERYTHING BACK TO FALSE");
                 }
                 mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getChapter1_choice_text_1() +mainClass.getStepsToOpenChapter2_1(),0,5,
                         screenWidth-buttonWidth-50, textboxHeight+buttonHeight/2.5f, buttonWidth ,buttonHeight,mainClass.getStepsToOpenChapter2_1());

@@ -82,7 +82,7 @@ public class Credits implements Screen {
 
         if(mainClass.getLanguageFinnish()) {
             credits = new Texture(Gdx.files.internal("CREDITS_textbox_FINNISH.png"));
-            System.out.println("FINNISH");
+            //System.out.println("FINNISH");
         }else {
             credits = new Texture(Gdx.files.internal("CREDITS_textbox.png"));
 

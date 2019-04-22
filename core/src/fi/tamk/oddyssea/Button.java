@@ -138,7 +138,7 @@ public class Button extends Actor {
         float secondPartRoundedFloat = (float)secondPartRounded*10;
 
         double firstPart = (getStoryID-secondPart)/10;
-        System.out.println(getStoryID + " firstpart" +firstPart);
+        //System.out.println(getStoryID + " firstpart" +firstPart);
         double firstPartRounded = Math.round(firstPart * 10) / 10.0;
         float firstPartRoundedFloat = (float)firstPartRounded*10;
 
@@ -386,7 +386,7 @@ public class Button extends Actor {
      */
     public void check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons() {
         if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
-            System.out.println("SET LASTTEXTOKAY TO TRUE");
+            //System.out.println("SET LASTTEXTOKAY TO TRUE");
             mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
             mainClass.setGotToTheLastTextOnceAlready(true);
             if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
@@ -402,7 +402,7 @@ public class Button extends Actor {
      */
     public void check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons() {
         if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
-            System.out.println("SET LASTTEXTOKAY TO TRUE");
+            //System.out.println("SET LASTTEXTOKAY TO TRUE");
             mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
             mainClass.setGotToTheLastTextOnceAlready(true);
             if(!mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
@@ -1050,10 +1050,10 @@ public class Button extends Actor {
      * the common settings for each button with useForTheButton 5 or 6
      */
     public void useForTheButton5Or6Commons() {
-        System.out.println("REMOVING STEPS");
-        System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+        //System.out.println("REMOVING STEPS");
+        //System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
         mainClass.removeSteps(stepsToOpenNextChapter);
-        System.out.println(steps);
+        //System.out.println(steps);
         mainClass.setClearedChapterGeneral(true, mainClass.getChapterNumber());
         mainClass.setCurrentFurthestChapter(chapterNumber + 1);
         enoughSteps = true;
@@ -1194,7 +1194,7 @@ public class Button extends Actor {
             }
             if(getUseForTheButton() == 6 && !getTexture().toString().equals("next_page.png") || getUseForTheButton() == 5) {
                 if(stepsToOpenNextChapter > steps) {
-                    System.out.println("NExt chapter button pressed but too little steps");
+                    //System.out.println("NExt chapter button pressed but too little steps");
                 } else {
                     setTexture(new Texture(Gdx.files.internal("button_pressed.png")));
                 }
@@ -1252,23 +1252,23 @@ public class Button extends Actor {
             */
 
            if((useForTheButton == 5 || useForTheButton == 6) && !getTexture().toString().equals("next_page.png") && !getTexture().toString().equals("next_page_pressed.png")) {
-               System.out.println("Setting texture back to orange");
+               //System.out.println("Setting texture back to orange");
                setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
            }
            if(getTexture().toString().equals("next_page_pressed.png")) {
                setTexture(new Texture(Gdx.files.internal("next_page.png")));
            }
            if (getUseForTheButton() == 1) {
-               System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
+               //System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
                if(!mainClass.getPrefsPopUpActivate()) {
                    if (mainClass.prefs.getBoolean("openedFirstTime")) {
                        mainClass.prefs.putBoolean("openedFirstTime", true);
                        mainClass.prefs.flush();
-                       System.out.println("OPENEEDFIRSTTIME");
+                       //System.out.println("OPENEEDFIRSTTIME");
                        mainClass.prefs.flush();
                    }
                    mainClass.setPlayPressed(true);
-                   System.out.println(mainClass.getPlayPressed());
+                   //System.out.println(mainClass.getPlayPressed());
                    GameScreen gameScreen = new GameScreen(mainClass);
                    mainClass.setScreen(gameScreen);
                 } else {
@@ -1357,7 +1357,7 @@ public class Button extends Actor {
                             useForTheButton5Or6Commons();
                         }
                     }else if (mainClass.getChapterNumber() == 23) {
-                        System.out.println("GOT HERE at 23");
+                        //System.out.println("GOT HERE at 23");
                         if (getUseForTheButton() == 5) {
                             mainClass.prefs.clear();
                             mainClass.setResetEverything(true);
@@ -1372,9 +1372,9 @@ public class Button extends Actor {
                             mainClass.prefs.flush();
                         }
                         if (getUseForTheButton() == 6) {
-                            System.out.println("LAST CHAPTER");
-                            System.out.println("REMOVING STEPS");
-                            System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
+                            //System.out.println("LAST CHAPTER");
+                            //System.out.println("REMOVING STEPS");
+                            //System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
                             mainClass.removeSteps(stepsToOpenNextChapter);
                             enoughSteps = true;
                             mainClass.setCurrentFurthestChapter(chapterNumber + 1);
@@ -1412,8 +1412,8 @@ public class Button extends Actor {
                 mainClass.setScreen(mainMenu);
             } else if (getUseForTheButton() == 9) {
                 if(touchUpX == 0) {
-                    System.out.println("9 pressed");
-                    System.out.println(mainClass.getCurrentFurthestChapter());
+                    //System.out.println("9 pressed");
+                    //System.out.println(mainClass.getCurrentFurthestChapter());
                     chapterSelect = Integer.parseInt(getTextForAButton());
 //                    mainClass.getClearedChapterGeneral(1);
                     if (mainClass.getClearedChapterGeneral(1) && chapterSelect == 1 ||
@@ -1444,7 +1444,7 @@ public class Button extends Actor {
                         mainClass.setChapterNumber(chapterSelect);
                         mainClass.prefs.putInteger("ChapterNumber", chapterSelect);
                         mainClass.setPlayPressed(false);
-                        System.out.println(chapterSelect);
+                        //System.out.println(chapterSelect);
                         GameScreen gameScreen = new GameScreen(mainClass);
                         mainClass.setScreen(gameScreen);
                         mainClass.prefs.flush();
@@ -1458,7 +1458,7 @@ public class Button extends Actor {
             } else if (getUseForTheButton() == 10) {
                 if(!mainClass.gettutorialShow() && !mainClass.getTooFewStepsPopUpActivate()) {
                     swappedIndicator = false;
-                    System.out.println("HERE " + getStoryID());
+                    //System.out.println("HERE " + getStoryID());
                     if(flingX == 0) {
                         useForTheButtonis10();
                     }
@@ -1469,22 +1469,22 @@ public class Button extends Actor {
                         mainClass.setLanguageFinnish(false);
                         mainClass.prefs.putBoolean("languageFinnish", false);
                         mainClass.prefs.flush();
-                        System.out.println("I AM SWAPPING THE LANGUAGE TO ENGLISH");
+                        //System.out.println("I AM SWAPPING THE LANGUAGE TO ENGLISH");
                         setTexture(new Texture(Gdx.files.internal("eng_button.png")));
                         mainClass.setLocale(new Locale("en", "EN"));
                         mainClass.setLocalLanguageToString("en_EN");
                         mainClass.setLocaleTexts();
-                        System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                        //System.out.println("local language: " + mainClass.getlocalLanguageToString());
                     } else {
                         mainClass.setLanguageFinnish(true);
                         mainClass.prefs.putBoolean("languageFinnish", true);
                         mainClass.prefs.flush();
-                        System.out.println("I AM SWAPPING THE LANGUAGE TO FINNISH");
+                        //System.out.println("I AM SWAPPING THE LANGUAGE TO FINNISH");
                         setTexture(new Texture(Gdx.files.internal("fin_button.png")));
                         mainClass.setLocale(new Locale("fi", "Fi"));
                         mainClass.setLocalLanguageToString("fi_FI");
                         mainClass.setLocaleTexts();
-                        System.out.println("local language: " + mainClass.getlocalLanguageToString());
+                        //System.out.println("local language: " + mainClass.getlocalLanguageToString());
                     }
                 } else {
                     setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
@@ -1497,16 +1497,16 @@ public class Button extends Actor {
                         mainClass.soundAndLanguage.flush();
                         mainClass.playBackgroundMusic();
                         setTexture(new Texture(Gdx.files.internal("sound_on_button.png")));
-                        System.out.println("I AM SWAPPING THE MUSIC OFF");
-                        System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                        //System.out.println("I AM SWAPPING THE MUSIC OFF");
+                        //System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
                     } else {
                         mainClass.setbackGroundMusicOffOrOn(true);
                         mainClass.soundAndLanguage.putBoolean("backGroundMusicOff", true);
                         mainClass.soundAndLanguage.flush();
                         mainClass.stopBackGroundMusic();
                         setTexture(new Texture(Gdx.files.internal("sound_off_button.png")));
-                        System.out.println("I AM SWAPPING THE MUSIC ON");
-                        System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
+                        //System.out.println("I AM SWAPPING THE MUSIC ON");
+                        //System.out.println("Music is currently: " + mainClass.getbackGroundMusicOffOrOn());
                     }
                 } else {
                     setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
@@ -1536,7 +1536,7 @@ public class Button extends Actor {
                 mainClass.setChapterNumber(1);
                 mainClass.setResetEverything(true);
                 mainClass.prefs.flush();
-                System.out.println("PREFS CLEARED PRESSED");
+                //System.out.println("PREFS CLEARED PRESSED");
                 mainClass.setPrefsPopUpActivate(false);
             }
             if (getUseForTheButton() == 19) {
@@ -1580,17 +1580,17 @@ public class Button extends Actor {
             if(getUseForTheButton() == 12 || useForTheButton == 9) {
                 if(getGroup1().getX()<=0 && getGroup1().getX()>= scrollerWidth) {
                     getGroup1().setX(getGroup1().getX()+deltaX);
-                    System.out.println("FIRST OPTION GOING ON " + getGroup1().getX());
+                    //System.out.println("FIRST OPTION GOING ON " + getGroup1().getX());
                 }
 
                 if (getGroup1().getX() > 0){
                     getGroup1().setX(-1);
-                    System.out.println("SECOND OPTION GOING ON");
+                    //System.out.println("SECOND OPTION GOING ON");
                 }
 
                 if (getGroup1().getX() < scrollerWidth){
                     getGroup1().setX(scrollerWidth+1);
-                    System.out.println("THIRD OPTION GOING ON");
+                    //System.out.println("THIRD OPTION GOING ON");
                 }
 
                 setGroup1(mainClass.getGroup1());
@@ -1615,12 +1615,12 @@ public class Button extends Actor {
                         flingX = velocityX;
                         useForTheButtonIs10Reverse();
                     } else if (velocityX < 0) {
-                        System.out.println("SMALLER");
+                        //System.out.println("SMALLER");
                         flingX = velocityX;
 
                         useForTheButtonis10();
                     }
-                    System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
+                    //System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
                 }
             }
         }

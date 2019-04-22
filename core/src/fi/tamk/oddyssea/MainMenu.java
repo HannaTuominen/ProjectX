@@ -75,7 +75,7 @@ public class MainMenu implements Screen {
      * @param MainClass2
      */
     public MainMenu(MainClass MainClass2) {
-        System.out.println(firstRound + " IS IT FIRST ROUND");
+        //System.out.println(firstRound + " IS IT FIRST ROUND");
 
         this.mainClass = MainClass2;
         screenHeight = mainClass.getScreenHeight();
@@ -97,11 +97,11 @@ public class MainMenu implements Screen {
         createNewButtons();
 
         if(!mainClass.getbackGroundMusicOffOrOn()) {
-            System.out.println("PLAYING BACKGROUN MUSIC IN MAIN MENU");
+            //System.out.println("PLAYING BACKGROUN MUSIC IN MAIN MENU");
             mainClass.playBackgroundMusic();
 
         } else {
-            System.out.println("NOT PLAYING BACKGROUN MUSIC IN MAIN MENU");
+            //System.out.println("NOT PLAYING BACKGROUN MUSIC IN MAIN MENU");
             mainClass.stopBackGroundMusic();
         }
 
@@ -114,13 +114,13 @@ public class MainMenu implements Screen {
     public void createNewButtons() {
         if(!firstRound) {
             mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getPlay(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f ,buttonHeight*1.3f,0);
-            System.out.println(firstRound + " IS IT FIRST ROUND");
-            System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
+            //System.out.println(firstRound + " IS IT FIRST ROUND");
+            //System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
 
 
         } else {
             mainClass.createButtons(new Texture("button_unpressed.png"),mainClass.getContinue(),0,1,screenWidth/10,screenHeight/1.55f, buttonWidth*1.3f, buttonHeight*1.3f,0);
-            System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
+            //System.out.println(mainClass.getCurrentFurthestChapter() + " MAIN CUR FURTH");
         }
 
         if(mainClass.getLanguageFinnish()) {
@@ -130,10 +130,10 @@ public class MainMenu implements Screen {
         }
         if(!mainClass.getbackGroundMusicOffOrOn()) {
             mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-            System.out.println("CREATED SOUND BUTTON ON");
+            //System.out.println("CREATED SOUND BUTTON ON");
         } else {
             mainClass.createButtons(new Texture("sound_off_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -10, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
-            System.out.println("CREATED SOUND BUTTON OFF");
+            //System.out.println("CREATED SOUND BUTTON OFF");
         }
 //        mainClass.createButtons(new Texture("sound_on_button.png"), "", 0, 13, screenWidth - buttonWidth/4.5f -50, screenHeight - buttonHeight - 10, buttonWidth / 4.5f, buttonHeight, 0);
 
@@ -168,14 +168,14 @@ public class MainMenu implements Screen {
 
 //        font12.draw(batch,mainClass.getTitle(), 0, 100);
         if(mainClass.getSwappedlanguage()) {
-            System.out.println("SWAPPED BUTTONS AND THEIR LANGUAGE");
+            //System.out.println("SWAPPED BUTTONS AND THEIR LANGUAGE");
             stage.clear();
             createNewButtons();
             mainClass.setSwappedlanguage(false);
         }
 
         if(mainClass.getResetEverything()) {
-            System.out.println("RESETTING MAIN MENU");
+            //System.out.println("RESETTING MAIN MENU");
             stage.clear();
             mainClass.setResetEverything(false);
             firstRound = mainClass.prefs.getBoolean("openedFirstTime");

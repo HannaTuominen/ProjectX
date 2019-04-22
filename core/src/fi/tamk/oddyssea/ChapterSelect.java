@@ -93,7 +93,7 @@ public class ChapterSelect implements Screen {
         mainClass.createButtons(new Texture("inv_scroller.png"),"",0,12,
                 0,0,buttonWidth*22,buttonHeight *8.5f,0);
 
-        System.out.println("BTTONWIDTH*22: " + buttonWidth*22);
+        //System.out.println("BTTONWIDTH*22: " + buttonWidth*22);
 
         //UPROW
         //1

@@ -1354,34 +1354,34 @@ public class MainClass extends Game {
             groupStageAdd4();
         }
 		if(useForTheButton == 5 || useForTheButton == 6) {
-		    System.out.println("useforthebutton is " + useForTheButton);
+		    //System.out.println("useforthebutton is " + useForTheButton);
 			if(useForTheButton == 5) {
 				button5 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
                 stage.addActor(button5);
-                System.out.println("created button5" + getGotToLastTextPartOkayToShowNeededButtons());
+                //System.out.println("created button5" + getGotToLastTextPartOkayToShowNeededButtons());
 			}
 			else if (useForTheButton == 6) {
-			    System.out.println("GOT HERE TO CREATING BUTTON 6");
+			    //System.out.println("GOT HERE TO CREATING BUTTON 6");
 				button6 = new Button(this, texture, textForAButton, storyID, useForTheButton, xPlace, yPlace, buttonWidth, buttonHeight, stepsToOpenNextChapter);
                 stage.addActor(button6);
-                System.out.println("created button6" + getGotToLastTextPartOkayToShowNeededButtons());
+                //System.out.println("created button6" + getGotToLastTextPartOkayToShowNeededButtons());
 			}
 
 			if(!getGotToLastTextPartOkayToShowNeededButtons()) {
 			    if(useForTheButton == 5) {
                    button5.setVisible(false);
-                    System.out.println("set nonvisible button5");
+                    //System.out.println("set nonvisible button5");
                 }else if (useForTheButton == 6) {
                     button6.setVisible(false);
-                    System.out.println("set nonvisible button6");
+                    //System.out.println("set nonvisible button6");
                 }
 			} else {
                 if(useForTheButton == 5) {
                     setButton5Visible(true);
-                    System.out.println("set visible button5");
+                    //System.out.println("set visible button5");
                 }else if (useForTheButton == 6) {
                     setButton6Visible(true);
-                    System.out.println("set visible button6");
+                    //System.out.println("set visible button6");
                 }
 			}
 		}
@@ -1430,7 +1430,7 @@ public class MainClass extends Game {
 			group2.clear();
 		}else if (useForTheButton == 20 || useForTheButton == 21) {
 		    group3.clear();
-		    System.out.println("clearing group 3");
+		    //System.out.println("clearing group 3");
         } else {
 			group4.clear();
 		}
@@ -2392,7 +2392,7 @@ public class MainClass extends Game {
 	public void setCurrentFurthestChapter(int currentFurthestChapter) {
         if(currentFurthestChapter > this.currentFurthestChapter) {
             setGotToTheLastTextOnceAlready(false);
-            System.out.println("setting the last text once to false in the currentfurthest" + "this.curr " + this.currentFurthestChapter + " current " + currentFurthestChapter);
+            //System.out.println("setting the last text once to false in the currentfurthest" + "this.curr " + this.currentFurthestChapter + " current " + currentFurthestChapter);
         }
 		if(this.currentFurthestChapter <= currentFurthestChapter) {
 			this.currentFurthestChapter = currentFurthestChapter;
@@ -2739,8 +2739,8 @@ public class MainClass extends Game {
 		//GET THE SCREEN WIDTH AND HEIGHT OF YOUR CURRENT DEVICE IN PIXELS
 		screenWidth = Gdx.graphics.getWidth();
 		screenHeight = Gdx.graphics.getHeight();
-		System.out.println(screenWidth);
-		System.out.println(screenHeight);
+		//System.out.println(screenWidth);
+		//System.out.println(screenHeight);
 		layout = new GlyphLayout();
 
 		//CREATE A NEW BATCH THAT IS USED EVERYWHERE
@@ -2783,7 +2783,7 @@ public class MainClass extends Game {
 
 			backGroundMusicOff = soundAndLanguage.getBoolean("backGroundMusicOff");
 			createBackGroundMusicAndLoopIt(backGroundMusicOff);
-			System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
+			//System.out.println("CREATED A NEW BACKGROUND SOUND AND SET IT FALSE");
             soundAndLanguage.flush();
 
 		}
@@ -2791,20 +2791,20 @@ public class MainClass extends Game {
 		if(!getbackGroundMusicOffOrOn()) {
             createBackGroundMusicAndLoopIt(backGroundMusicOff);
             playBackgroundMusic();
-            System.out.println("MAINCLASS PLAY MUSIC");
+            //System.out.println("MAINCLASS PLAY MUSIC");
         } else {
             createBackGroundMusicAndLoopIt(backGroundMusicOff);
             stopBackGroundMusic();
-            System.out.println("MAINCLASS DON'T PLAY MUSIC");
+            //System.out.println("MAINCLASS DON'T PLAY MUSIC");
         }
 
-		System.out.println("IS SOUND OFF AT THE START: " + getbackGroundMusicOffOrOn());
+		//System.out.println("IS SOUND OFF AT THE START: " + getbackGroundMusicOffOrOn());
 
 
 
 		if(languageFirstRound != soundAndLanguage.getBoolean("languageFirstRound")) {
-			System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + soundAndLanguage.getBoolean("languageFirstRound"));
-			System.out.println("LANGUAGE FALSE");
+			//System.out.println("ERI FIRSTROUND LANGUAGE KUN TALLESSA" + languageFirstRound + " AND " + soundAndLanguage.getBoolean("languageFirstRound"));
+			//System.out.println("LANGUAGE FALSE");
 			setDefaultLocale();
 			setCurrentFurthestChapter(1);
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
@@ -2813,28 +2813,28 @@ public class MainClass extends Game {
             setResetEverything(false);
 
 			if(localLanguageToString.equals("fi_FI")) {
-				System.out.println("LOCAL LANGUAGE FINNISH");
+				//System.out.println("LOCAL LANGUAGE FINNISH");
 				languageFinnish = true;
                 soundAndLanguage.putBoolean("languageFinnish", true);
 				setLocalLanguageToString("fi_FI");
 				setLocaleTexts();
                 soundAndLanguage.flush();
-				System.out.println("local language: " + localLanguageToString);
+				//System.out.println("local language: " + localLanguageToString);
 			} else {
 				languageFinnish = false;
                 soundAndLanguage.putBoolean("languageFinnish", false);
 				setLocalLanguageToString("en_EN");
 				setLocaleTexts();
                 soundAndLanguage.flush();
-				System.out.println("local language: " + localLanguageToString);
+				//System.out.println("local language: " + localLanguageToString);
 			}
 		} else {
 			languageFirstRound = soundAndLanguage.getBoolean("languageFirstRound");
 			getlocalLanguageToString();
-			System.out.println("local language: " + localLanguageToString);
+			//System.out.println("local language: " + localLanguageToString);
             soundAndLanguage.flush();
 			if(localLanguageToString.equals("fi_FI")) {
-				System.out.println("LOCAL LANGUAGE FINNISH");
+				//System.out.println("LOCAL LANGUAGE FINNISH");
 				languageFinnish = true;
                 soundAndLanguage.putBoolean("languageFinnish", true);
 				setLocale(new Locale("fi", "FI"));
@@ -2911,7 +2911,7 @@ public class MainClass extends Game {
 		if (steps <= this.getCurrentSteps()) {
 			setSteps(this.getCurrentSteps() - steps);
 		} else {
-			System.out.println("ERROR: Not enough steps");
+			//System.out.println("ERROR: Not enough steps");
 		}
 	}
 }
