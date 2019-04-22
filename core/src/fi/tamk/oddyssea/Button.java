@@ -12,46 +12,126 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 
 import java.util.Locale;
 /**
- * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * The button actor script that changes the game depending on the use of the buttons.
  * @author Hanna Tuominen
  * @version 2019.2204
  * @since 15.01.2019
  */
 public class Button extends Actor {
+    /**
+     * mainclass
+     */
     private MainClass mainClass;
+    /**
+     * save the font from mainclass
+     */
     private BitmapFont font12;
+    /**
+     * the button texture that is drawn and gotten from the main class where the button is created
+     */
     private Texture texture;
+    /**
+     * the text the current button has gotten also from the main class button creation
+     */
     private String textForAButton;
+    /**
+     * the chapter number that the player is currently used to change the chapter and such when clicking certain buttons
+     */
     private int chapterNumber;
+    /**
+     * given to the  button upon creation and is used to give "commands" and change the game dependng on the buttons use
+     */
     private int useForTheButton;
+    /**
+     * the horizontal x place the button should have
+     */
     private float xPlace;
+    /**
+     * the vertical y place the button should have
+     */
     private float yPlace;
+    /**
+     * the width the button should have
+     */
     private float buttonWidth;
+    /**
+     * the height the button should have
+     */
     private float buttonHeight;
+    /**
+     * used on the chapter select screen to define what chapter has been pressed to load
+     */
     private int chapterSelect;
+    /**
+     * used to check if the player has enough steps to open the next chapter
+     */
     private int stepsToOpenNextChapter;
+    /**
+     * the current steps the place has
+     */
     private int steps;
     private boolean enoughSteps = false;
+    /**
+     * the current story id (the chapter number and text box number) that needs to be displayed for the player
+     * changed via either touching or flinging the text box
+     */
     private float storyID;
+    /**
+     * the text x place for the button
+     */
     private float buttonTextXPlace;
+    /**
+     * the text y place for the button
+     */
     private float buttonTextYPlace;
+    /**
+     * group 1 (chapter select) buttons used to scroll the buttons back and forth by changing the x place
+     */
     private Group group;
+    /**
+     *  group 2 (prefs pop up)
+     */
     private Group group2;
+    /**
+     * the scroller width of the chapter select group to prevent infinite scrolling
+     */
     private static float scrollerWidth;
 
+    /**
+     * the touchup X needs to be 0 for certain buttons to work and if it's not it's used to move the chapter select buttons (group 1)
+     */
     private float touchUpX;
 
+    /**
+     * used to change the storyID depending on the fling - backwards + forwards
+     */
     private float flingX;
 
+    /**
+     * the text box height
+     */
     private float textboxHeight;
 
+    /**
+     * what the current steps text should be
+     */
     private String currentStepsText;
 
+    /**
+     * the prefspopupactivate if the reset game should be active or not
+     */
     private boolean prefsPopUpActivate;
 
-
+    /**
+     * if the indicator (bottom middle) has been swapped or not
+     */
     private boolean swappedIndicator = true;
 
+    /**
+     * when flinging on the textbox sets the storyID to smaller or bigger depending on the given ID
+     * sets and sets info created here to the new text for the text box method
+     * @param getStoryID the given id that needs to be changed and reset
+     */
     public void button10Reverse(float getStoryID) {
         double secondPart = getStoryID - (int)getStoryID;
         double secondPartRounded = Math.round(secondPart * 10) / 10.0;
@@ -67,6 +147,9 @@ public class Button extends Actor {
         setStoryID(getStoryID);
     }
 
+    /**
+     * all of the reversed (going backwards in the story) ids and setting the new texts methods and new indicators method for the game screen bottom middle
+     */
     public void useForTheButtonIs10Reverse() {
         if (getStoryID() == 1.1f) {
         } else if (getStoryID() == 1.2f) {
@@ -298,7 +381,9 @@ public class Button extends Actor {
         }
     }
 
-
+    /**
+     * if there is 2 choices in the current chapter set them visible (button 5 and 6) if the gotToTheLastTextPartOkayToShowNeededButtons if true or not
+     */
     public void check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons() {
         if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
             System.out.println("SET LASTTEXTOKAY TO TRUE");
@@ -312,6 +397,9 @@ public class Button extends Actor {
             }
         }
     }
+    /**
+     * if there is 1 choices in the current chapter set them visible (button 6) if the gotToTheLastTextPartOkayToShowNeededButtons if true or not
+     */
     public void check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons() {
         if(!mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
             System.out.println("SET LASTTEXTOKAY TO TRUE");
@@ -326,6 +414,9 @@ public class Button extends Actor {
         }
     }
 
+    /**
+     * touch up or fling forwards sets new sotry id and story indicators update and on the last part of the current chapter show the needed buttons (button 5 and / or 6)
+     */
     public void useForTheButtonis10() {
         if (getStoryID() == 1.1f) {
             button10Reverse(1.2f);
@@ -626,198 +717,338 @@ public class Button extends Actor {
         }
     }
 
+    /**
+     * update the size 2 stage 1 textures
+     */
     public void indicatorsX2_stage_1() {
         mainClass.setTextIndicator_2_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_2_2(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+
+    /**
+     * update the size 2 stage 2 textures
+     */
     public void indicatorsX2_stage_2() {
         mainClass.setTextIndicator_2_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_2_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+
+    /**
+     * update the size 3 stage 1 textures
+     */
     public void indicatorsX3_stage_1() {
         mainClass.setTextIndicator_3_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_3_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 3 stage 2 textures
+     */
     public void indicatorsX3_stage_2() {
         mainClass.setTextIndicator_3_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_3(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+    /**
+     * update the size 3 stage 3 textures
+     */
     public void indicatorsX3_stage_3() {
         mainClass.setTextIndicator_3_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_3_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 4 stage 1 textures
+     */
     public void indicatorsX4_stage_1() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 4 stage 2 textures
+     */
     public void indicatorsX4_stage_2() {
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 4 stage 3 textures
+     */
     public void indicatorsX4_stage_3() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+    /**
+     * update the size 4 stage 4 textures
+     */
     public void indicatorsX4_stage_4() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+
+    /**
+     * update the size 5 stage 1 textures
+     */
     public void indicatorsX5_stage_1() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 5 stage 2 textures
+     */
     public void indicatorsX5_stage_2() {
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 5 stage 3 textures
+     */
     public void indicatorsX5_stage_3() {
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 5 stage 4 textures
+     */
     public void indicatorsX5_stage_4() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+    /**
+     * update the size 5 stage 5 textures
+     */
     public void indicatorsX5_stage_5() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 1 textures
+     */
     public void indicatorsX7_stage_1() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 2 textures
+     */
     public void indicatorsX7_stage_2() {
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 3 textures
+     */
     public void indicatorsX7_stage_3() {
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 4 textures
+     */
     public void indicatorsX7_stage_4() {
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 5 textures
+     */
     public void indicatorsX7_stage_5() {
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 7 stage 6 textures
+     */
     public void indicatorsX7_stage_6() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+    /**
+     * update the size 7 stage 7 textures
+     */
     public void indicatorsX7_stage_7() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 1 textures
+     */
     public void indicatorsX8_stage_1() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 2 textures
+     */
     public void indicatorsX8_stage_2() {
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 3 textures
+     */
     public void indicatorsX8_stage_3() {
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 4 textures
+     */
     public void indicatorsX8_stage_4() {
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 5 textures
+     */
     public void indicatorsX8_stage_5() {
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 6 textures
+     */
     public void indicatorsX8_stage_6() {
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
+    /**
+     * update the size 8 stage 7 textures
+     */
     public void indicatorsX8_stage_7() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_now_3.png")));
     }
+    /**
+     * update the size 8 stage 8 textures
+     */
     public void indicatorsX8_stage_8() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
 
+    /**
+     * sets the group 1 gotten from main menu
+     * @param group gotten through main menu
+     */
     public void setGroup1(Group group) {
        this.group = group;
     }
+    /**
+     * get the group 1 and it's place and other information
+     * @return group group 1 aka chapter select group
+     */
     public Group getGroup1() {
         return group;
     }
-
+    /**
+     * sets the group 2 gotten from main menu
+     * @param group gotten through main menu
+     */
     public void setGroup2(Group group) {
         this.group2 = group;
     }
-    public Group getGroup2() {
-        return group2;
-    }
 
+    /**
+     * get the text the button should show
+     * @return text the button should show
+     */
     public String getTextForAButton() {
         return textForAButton;
     }
+
+    /**
+     * set the text the button should show
+     * @param textForAButton the text the button should show
+     */
     public void setTextForAButton(String textForAButton) {
         this.textForAButton = textForAButton;
     }
+
+    /**
+     * gets the use for the button that has been assigned upon button creation
+     * @return the use for the button (used to give different commands in touch up)
+     */
     public int getUseForTheButton() {
         return useForTheButton;
     }
+
+    /**
+     * sets the useforthebutton to local
+     * @param useForTheButton gotten through the creation of button actor
+     */
     public void setUseForTheButton(int useForTheButton) {
         this.useForTheButton = useForTheButton;
     }
+
+    /**
+     * get the texture the button should have
+     * @return the texture the button should have
+     */
     public Texture getTexture() {
         return texture;
     }
+
+    /**
+     * sets the texture the button should have currently
+     * @param texture the texture the button should currently have
+     */
     public void setTexture(Texture texture) {
         this.texture = texture;
     }
+
+    /**
+     * the current story id
+     * @return the current story id
+     */
     public float getStoryID() {
         return storyID;
     }
 
+    /**
+     * set the new story id that should be displayed
+     * @param storyID the story id that should be displayed (aka story text)
+     */
     public void setStoryID(float storyID) {
         this.storyID = storyID;
     }
 
+    /**
+     * used to calculate the text place center height and width depending on the text length and size
+     */
     public void calculateButtonXAndYPlace() {
         //SETS THE X PLACE CORRECTLY TO CENTER DEPENDING ON THE TEXT SIZE FOR BUTTONS
         buttonTextXPlace = this.xPlace + buttonWidth/2 - mainClass.getTextPlaceWIDTH(textForAButton)/2;
         buttonTextYPlace = this.yPlace+buttonHeight/1.55f;
     }
 
-
-
+    /**
+     * the common settings for each button with useForTheButton 5 or 6
+     */
     public void useForTheButton5Or6Commons() {
         System.out.println("REMOVING STEPS");
         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
@@ -830,7 +1061,10 @@ public class Button extends Actor {
         mainClass.setSwapped(false);
         mainClass.prefs.flush();
     }
-
+    /**
+     * the common settings for each button with useForTheButton 9
+     * used to change the textures in chapter select depending if it's pressed or unpressed
+     */
     public void useForTheButton9Commons(boolean released) {
         for (int i = 1; i < 24; i++) {
             chapterSelect = Integer.parseInt(getTextForAButton());
@@ -859,11 +1093,35 @@ public class Button extends Actor {
         }
     }
 
+    /**
+     * the common settings for each button with useForTheButton 6 (if there is enough steps then use the method useForTheButton5Or6Commons())
+     */
     public void useForTheButton6IfEnoughSteps() {
         if(stepsToOpenNextChapter <= steps) {
             useForTheButton5Or6Commons();
         }
     }
+
+    /**
+     *  the actual creation and changing the game using button actors depending on the use of the button and how it's touched (fling, pan touchDown and touchUp)
+     *  <p>
+     *      first save all the gotten info and save them locally
+     *      then depending on the screen size change the chapter select scroller width
+     *      if use for the button is 14 change the text places else save the given one
+     *      get the current chapter number from main class and save it locally
+     *      set bounds for the button
+     *      add a gesture listener
+     * @param mainclass get the current mainClass info
+     * @param texture the first texture the button should have
+     * @param textForAButton the text the button should have and be drawn on the button
+     * @param storyID the story id that should be displayed currently
+     * @param useForTheButton the use for the button when pressed
+     * @param xPlace the x place for the button aka horizontal
+     * @param yPlace the y place for the button aka vertical
+     * @param buttonWidth the width of the button
+     * @param buttonHeight the height of the button
+     * @param stepsToOpenNextChapter if use for the button 5 or 6 the steps that are required to open the next chapter
+     */
    public Button(MainClass mainclass, Texture texture, String textForAButton, float storyID, int useForTheButton, float xPlace,
                  float yPlace, float buttonWidth, float buttonHeight, int stepsToOpenNextChapter) {
 
@@ -906,9 +1164,20 @@ public class Button extends Actor {
        addListener(new Gesture());
    }
 
+    /**
+     * the gesture listener that extens actorgesturelistener
+     * used to check the games button pressing
+     */
     class Gesture extends ActorGestureListener {
+        /**
+         * on touchdown change buttons texture depending on the use and the current texture
+         * @param event
+         * @param x
+         * @param y
+         * @param pointer
+         * @param button
+         */
         @Override
-
         public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
             touchUpX = 0;
             flingX = 0;
@@ -944,6 +1213,14 @@ public class Button extends Actor {
             }
         }
 
+        /**
+         * on releasing the finger from the button update info and textures depending on the button use
+         * @param event
+         * @param x
+         * @param y
+         * @param pointer
+         * @param button
+         */
         @Override
         public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
            /*
@@ -1287,8 +1564,15 @@ public class Button extends Actor {
             }
         }
 
+        /**
+         * if the player scrolls in the chapter select then the group1 buttons should be moved depending on the input deltaX given
+         * @param event
+         * @param x
+         * @param y
+         * @param deltaX used to change the group1 buttons place on screen
+         * @param deltaY
+         */
         @Override
-
         public void pan(InputEvent event, float x, float y, float deltaX, float deltaY) {
 
             touchUpX = deltaX;
@@ -1315,6 +1599,14 @@ public class Button extends Actor {
 
 
         }
+
+        /**
+         * used for changing the storyID depending where the player flings to either forward or backward in the story
+         * @param event
+         * @param velocityX if its - go back if + go forward
+         * @param velocityY
+         * @param button
+         */
         @Override
         public void fling(InputEvent event, float velocityX, float velocityY, int button) {
             if(!mainClass.gettutorialShow() && !mainClass.getTooFewStepsPopUpActivate()) {
@@ -1334,6 +1626,18 @@ public class Button extends Actor {
         }
     }
 
+    /**
+     * draw the button after all the information given or changed before
+     * <p>some extra info on button showing
+     *      if useforthebutton is 5 or 6 then check if the button should be visible or not
+     *      draw the texture batch in its right place
+     *      if use for the button is 9 there should be no text (there has been give a number that is used to determine stuff before but they should not be printed)
+     *      use for the button is 15 the text should have current steps and needed steps that have been combined and will be printed correctly
+     *      if the use for the button is different from 10 or the previous ones then the text should be normal (two exceptions)
+     *      the story text box text is unique in placement depending on the screen size and the text is same
+     * @param batch
+     * @param alpha
+     */
     @Override
     public void draw(Batch batch, float alpha) {
         batch.setProjectionMatrix(mainClass.camera.combined);
@@ -1390,6 +1694,11 @@ public class Button extends Actor {
             }
         }
     }
+
+    /**
+     * act the scene
+     * @param delta
+     */
     @Override
     public void act(float delta) {
         super.act(delta);
