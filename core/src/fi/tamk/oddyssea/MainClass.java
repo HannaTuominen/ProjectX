@@ -2320,57 +2320,112 @@ public class MainClass extends Game {
 	public String getNext() {
 		return next;
 	}
+    /**
+     * returns chapter1 choice 1 string
+     * @return returns chapter 1 choice 1 string
+     */
     public String getChapter1_choice_text_1() {
         return chapter1_choice_text_1;
     }
+    /**
+     * returns chapter1 choice 2 string
+     * @return returns chapter 1 choice 2 string
+     */
     public String getChapter1_choice_text_2() {
         return chapter1_choice_text_2;
     }
-
+    /**
+     * returns chapter4 choice 1 string
+     * @return returns chapter 4 choice 1 string
+     */
 	public String getChapter4_choice_text_1() {
 		return chapter4_choice_text_1;
 	}
+    /**
+     * returns chapter4 choice 2 string
+     * @return returns chapter 4 choice 2 string
+     */
 	public String getChapter4_choice_text_2() {
 		return chapter4_choice_text_2;
 	}
-
+    /**
+     * returns chapter11 choice 1 string
+     * @return returns chapter 11 choice 1 string
+     */
 	public String getChapter11_choice_text_1() {
 		return chapter11_choice_text_1;
 	}
+    /**
+     * returns chapter11 choice 2 string
+     * @return returns chapter 11 choice 2 string
+     */
 	public String getChapter11_choice_text_2() {
 		return chapter11_choice_text_2;
 	}
-
+    /**
+     * returns chapter17 choice 1 string
+     * @return returns chapter 17 choice 1 string
+     */
 	public String getChapter17_choice_text_1() {
 		return chapter17_choice_text_1;
 	}
+    /**
+     * returns chapter17 choice 2 string
+     * @return returns chapter 17 choice 2 string
+     */
 	public String getChapter17_choice_text_2() {
 		return chapter17_choice_text_2;
 	}
-
+    /**
+     * returns chapter23 choice 1 string
+     * @return returns chapter 23 choice 1 string
+     */
 	public String getChapter23_choice_text_1() {
 		return chapter23_choice_text_1;
 	}
+    /**
+     * returns chapter23 choice 2 string
+     * @return returns chapter 23 choice 2 string
+     */
 	public String getChapter23_choice_text_2() {
 		return chapter23_choice_text_2;
 	}
-
-
-
+    /**
+     * returns previous string not in use
+     * @return returns previous string not in use
+     */
 	public String getPrevious() {
 		return previous;
 	}
+    /**
+     * returns continue string
+     * @return returns continue string
+     */
     public String getContinue() {
         return continuee;
     }
+
+    /**
+     * get the current furthest chapter that the player has gone
+     * @return the current furthest chapter from prefs that the player has got (checked when pressing play) etc
+     */
 	public int getCurrentFurthestChapter() {
 		currentFurthestChapter = prefs.getInteger("currentFurthestChapter");
 		return currentFurthestChapter;
 	}
+
+    /**
+     * returns stepstring string
+     * @return returns stepstring string
+     */
 	public String getStepsString(){
 		return stepsString;
 	}
 
+    /**
+     * sets the current furthest chapter to bigger if the player get to the next chapter and sets the gotToTheLAstTextOnceAlready to false if player gets to the new furthest
+     * @param currentFurthestChapter if its bigger than before save the new number to the prefs
+     */
 	public void setCurrentFurthestChapter(int currentFurthestChapter) {
         if(currentFurthestChapter > this.currentFurthestChapter) {
             setGotToTheLastTextOnceAlready(false);
@@ -2382,52 +2437,100 @@ public class MainClass extends Game {
 			prefs.putInteger("currentFurthestChapter", currentFurthestChapter);
 			prefs.flush();
 		}
-
 	}
 
-
+    /**
+     * returns if player gets to the GameScreen through the play button or not
+     * @return true or false if the player got to the game screen through play button and sets the scene to the furthest elsewhere
+     */
 	public boolean getPlayPressed() {
 		return playPressed;
 	}
+
+    /**
+     * sets if the player got the the game screen via the play button in main menu or not
+     * @param playPressed
+     */
 	public void setPlayPressed(boolean playPressed) {
 		this.playPressed = playPressed;
 	}
 
+    /**
+     * checks if the language is currently finnish or not
+     * @return true or false if the language is finnish or not
+     */
 	public boolean getLanguageFinnish() {
 		languageFinnish =soundAndLanguage.getBoolean("languageFinnish");
 		return languageFinnish;
 	}
+
+    /**
+     * sets the if the language should be finnish currently or not and saves it to prefs
+     * @param languageFinnish true or false if the language is finnish
+     */
 	public void setLanguageFinnish(boolean languageFinnish) {
 		this.languageFinnish = languageFinnish;
         soundAndLanguage.putBoolean("languageFinnish", languageFinnish);
         soundAndLanguage.flush();
 	}
 
+    /**
+     * not in use but checks if it's the first round
+     * @return not in use
+     */
 	public boolean getLanguageFirstRound() {
 		languageFirstRound =soundAndLanguage.getBoolean("languageFirstRound");
 		return languageFirstRound;
 	}
+
+    /**
+     * not in use
+     * @param languageFirstRound not in use
+     */
 	public void setLanguageFirstRound(boolean languageFirstRound) {
 		this.languageFirstRound = languageFirstRound;
         soundAndLanguage.putBoolean("languageFirstRound", languageFirstRound);
         soundAndLanguage.flush();
 	}
+
+    /**
+     * gets if the language has been swapped and the stage need to be cleared and refilled with new buttons and such
+     * @return
+     */
 	public boolean getSwappedlanguage() {
 		return swappedLanguage;
 	}
 
+    /**
+     * if language is swapped via the flag button in main menu set the swap to true and change language
+     * @param swappedLanguage true or false if the language should be swapped or not
+     */
 	public void setSwappedlanguage(boolean swappedLanguage) {
 		this.swappedLanguage = swappedLanguage;
 	}
+
+    /**
+     * sets the locale and created myBundle and such needed for the language texts
+     * @param locale locale that needs to be swapped and used
+     */
 	public void setLocale(Locale locale) {
 		this.locale = locale;
 		swappedLanguage = true;
 		myBundle =
 				I18NBundle.createBundle(Gdx.files.internal("MyBundle"), locale);
 	}
+
+    /**
+     * not in use
+     * @return
+     */
 	public Locale getLocale() {
 		return locale;
 	}
+
+    /**
+     * sets all of the locale texts string in one method that need to be changed if the language is swapped
+     */
 	public void setLocaleTexts() {
 
         backToMainMenu = myBundle.get("backToMainMenu");
@@ -2583,6 +2686,10 @@ public class MainClass extends Game {
 		next = myBundle.get("next");
 		continuee = myBundle.get("continuee");
 	}
+
+    /**
+     * sets the default locale of the game depending on the player system language upon first load of the game
+     */
 	public void setDefaultLocale() {
 		locale = Locale.getDefault();
 		localLanguageToString = java.util.Locale.getDefault().toString();
@@ -2592,41 +2699,70 @@ public class MainClass extends Game {
         soundAndLanguage.flush();
 	}
 
+    /**
+     * sets the local language to string (fi_FI or en_EN etc) depending on the language and sets it a string and saves to soundAndLanguage
+     * @param localLanguageToString
+     */
 	public void setLocalLanguageToString(String localLanguageToString) {
 		this.localLanguageToString = localLanguageToString;
         soundAndLanguage.putString("localLanguageToString", this.localLanguageToString);
         soundAndLanguage.flush();
 	}
-
+    /**
+     * gets the local language to string that needs to be changed or checked what it currently is
+     * @return
+     */
 	public String getlocalLanguageToString() {
 		localLanguageToString = soundAndLanguage.getString("localLanguageToString");
 		return localLanguageToString;
 	}
-
-
+    /**
+     * sets all of the chapters that currently are or are not cleared
+     * @param clearedChapterNumberBoolean if the chapter should be cleared true or false
+     * @param clearedChapterNumberInt what the chapter number is that should be cleared or not
+     */
 	public void setClearedChapterGeneral(boolean clearedChapterNumberBoolean, int clearedChapterNumberInt) {
 	    if(clearedChapterNumberInt > 0 || clearedChapterNumberInt <25) {
             prefs.putBoolean("clearedChapter" + clearedChapterNumberInt, clearedChapterNumberBoolean);
             prefs.flush();
         }
 	}
-
+    /**
+     * gets from prefs if the chapter is cleared or not
+     * @param clearedChapterNumberInt the wanted chapter that needs checking
+     * @return if the wanted chapter is true or not
+     */
 	public boolean getClearedChapterGeneral(int clearedChapterNumberInt) {
         return prefs.getBoolean("clearedChapter" + clearedChapterNumberInt);
     }
 
-
+    /**
+     * return the play string
+     * @return return the play string (button)
+     */
 	public String getPlay() {
 		return play;
 	}
+
+    /**
+     * return the chapter select string (button)
+     * @return return the chapter select string (button)
+     */
 	public String getChapterSelect() {
 		return chapterSelect;
 	}
-
+    /**
+     * return the credits string (button)
+     * @return return the credits string (button)
+     */
 	public String getCredits() {
 		return credits;
 	}
 
+    /**
+     * returns the exit string (button)
+     * @return returns the exit string (button)
+     */
 	public String getExit() {
 		return exit;
 	}
