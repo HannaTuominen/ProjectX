@@ -1563,327 +1563,567 @@ public class MainClass extends Game {
 		return choseWrong_4;
 	}
 
+    /**
+     * sets and saves to prefs the steps to open chapter 2 (button 5)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter2_1(int steps) {
 		stepsToOpenChapter2_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter2_1", stepsToOpenChapter2_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 2 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 2 (button 5)
+     */
 	public int getStepsToOpenChapter2_1() {
 		return stepsToOpenChapter2_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 2 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter2_2(int steps) {
 		stepsToOpenChapter2_2 = steps;
 		prefs.putInteger("setStepsToOpenChapter2_2", stepsToOpenChapter2_2);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 2 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 2 (button 6)
+     */
 	public int getStepsToOpenChapter2_2() {
 		return stepsToOpenChapter2_2;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 3 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter3_1(int steps) {
 		stepsToOpenChapter3_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter3_1", stepsToOpenChapter3_1);
 		prefs.flush();
 	}
+	/**
+     * gets how many steps you need to open chapter 3 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 3 (button 6)
+     */
 	public int getStepsToOpenChapter3_1() {
 		return stepsToOpenChapter3_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 4 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter4_1(int steps) {
 		stepsToOpenChapter4_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter4_1", stepsToOpenChapter4_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 4 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 4 (button 6)
+     */
 	public int getStepsToOpenChapter4_1() {
 		return stepsToOpenChapter4_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 5 (button 5)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter5_1(int steps) {
 		stepsToOpenChapter5_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter5_1", stepsToOpenChapter5_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 5 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 5 (button 5)
+     */
 	public int getStepsToOpenChapter5_1() {
 		return stepsToOpenChapter5_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 5 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter5_2(int steps) {
 		stepsToOpenChapter5_2 = steps;
 		prefs.putInteger("setStepsToOpenChapter5_2", stepsToOpenChapter5_2);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 5 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 5 (button 6)
+     */
 	public int getStepsToOpenChapter5_2() {
 		return stepsToOpenChapter5_2;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 6 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter6_1(int steps) {
 		stepsToOpenChapter6_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter6_1", stepsToOpenChapter6_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 6 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 6 (button 6)
+     */
 	public int getStepsToOpenChapter6_1() {
 		return stepsToOpenChapter6_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 7 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter7_1(int steps) {
 		stepsToOpenChapter7_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter7_1", stepsToOpenChapter7_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 7 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 7 (button 6)
+     */
 	public int getStepsToOpenChapter7_1() {
 		return stepsToOpenChapter7_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 8 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter8_1(int steps) {
 		stepsToOpenChapter8_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter8_1", stepsToOpenChapter8_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 8 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 8 (button 6)
+     */
 	public int getStepsToOpenChapter8_1() {
 		return stepsToOpenChapter8_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 9 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter9_1(int steps) {
 		stepsToOpenChapter9_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter9_1", stepsToOpenChapter9_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 9 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 9 (button 6)
+     */
 	public int getStepsToOpenChapter9_1() {
 		return stepsToOpenChapter9_1;
 	}
-
-
+	/**
+     * sets and saves to prefs the steps to open chapter 10 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter10_1(int steps) {
 		stepsToOpenChapter10_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter10_1", stepsToOpenChapter10_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 10 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 10 (button 6)
+     */
 	public int getStepsToOpenChapter10_1() {
 		return stepsToOpenChapter10_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 11 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter11_1(int steps) {
 		stepsToOpenChapter11_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter11_1", stepsToOpenChapter11_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 11 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 11 (button 6)
+     */
 	public int getStepsToOpenChapter11_1() {
 		return stepsToOpenChapter11_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 12 (button 5)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter12_1(int steps) {
 		stepsToOpenChapter12_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter12_1", stepsToOpenChapter12_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 12 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 12 (button 5)
+     */
 	public int getStepsToOpenChapter12_1() {
 		return stepsToOpenChapter12_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 12 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter12_2(int steps) {
 		stepsToOpenChapter12_2 = steps;
 		prefs.putInteger("setStepsToOpenChapter12_2", stepsToOpenChapter12_2);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 12 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 12 (button 6)
+     */
 	public int getStepsToOpenChapter12_2() {
 		return stepsToOpenChapter12_2;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 13 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter13_1(int steps) {
 		stepsToOpenChapter13_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter13_1", stepsToOpenChapter13_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 13 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 13 (button 6)
+     */
 	public int getStepsToOpenChapter13_1() {
 		return stepsToOpenChapter13_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 14 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter14_1(int steps) {
 		stepsToOpenChapter14_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter14_1", stepsToOpenChapter14_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 14 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 14 (button 6)
+     */
 	public int getStepsToOpenChapter14_1() {
 		return stepsToOpenChapter14_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 15 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter15_1(int steps) {
 		stepsToOpenChapter15_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter15_1", stepsToOpenChapter15_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 15 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 15 (button 6)
+     */
 	public int getStepsToOpenChapter15_1() {
 		return stepsToOpenChapter15_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 16 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter16_1(int steps) {
 		stepsToOpenChapter16_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter16_1", stepsToOpenChapter16_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 16 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 16 (button 6)
+     */
 	public int getStepsToOpenChapter16_1() {
 		return stepsToOpenChapter16_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 17 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter17_1(int steps) {
 		stepsToOpenChapter17_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter17_1", stepsToOpenChapter17_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 17 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 17 (button 6)
+     */
 	public int getStepsToOpenChapter17_1() {
 		return stepsToOpenChapter17_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 18 (button 5)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter18_1(int steps) {
 		stepsToOpenChapter18_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter18_1", stepsToOpenChapter18_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 18 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 18 (button 5)
+     */
 	public int getStepsToOpenChapter18_1() {
 		return stepsToOpenChapter18_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 18 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter18_2(int steps) {
 		stepsToOpenChapter18_2 = steps;
 		prefs.putInteger("setStepsToOpenChapter18_2", stepsToOpenChapter18_2);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 18 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 18 (button 6)
+     */
 	public int getStepsToOpenChapter18_2() {
 		return stepsToOpenChapter18_2;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 19 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter19_1(int steps) {
 		stepsToOpenChapter19_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter19_1", stepsToOpenChapter19_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 19 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 19 (button 6)
+     */
 	public int getStepsToOpenChapter19_1() {
 		return stepsToOpenChapter19_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 20 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter20_1(int steps) {
 		stepsToOpenChapter20_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter20_1", stepsToOpenChapter20_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 20 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 20 (button 6)
+     */
 	public int getStepsToOpenChapter20_1() {
 		return stepsToOpenChapter20_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 21 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter21_1(int steps) {
 		stepsToOpenChapter21_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter21_1", stepsToOpenChapter21_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 21 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 21 (button 6)
+     */
 	public int getStepsToOpenChapter21_1() {
 		return stepsToOpenChapter21_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 22 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter22_1(int steps) {
 		stepsToOpenChapter22_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter22_1", stepsToOpenChapter22_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 22 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 22 (button 6)
+     */
 	public int getStepsToOpenChapter22_1() {
 		return stepsToOpenChapter22_1;
 	}
-
-
+    /**
+     * sets and saves to prefs the steps to open chapter 23 (button 6)
+     * @param steps sets in GameScreen and swapped in button script if needed
+     */
 	public void setStepsToOpenChapter23_1(int steps) {
 		stepsToOpenChapter23_1 = steps;
 		prefs.putInteger("setStepsToOpenChapter23_1", stepsToOpenChapter23_1);
 		prefs.flush();
 	}
+    /**
+     * gets how many steps you need to open chapter 23 used in GameScreen (step buttons) and in button script to check if player has enough steps
+     * @return steps needed to open chapter 23 (button 6)
+     */
 	public int getStepsToOpenChapter23_1() {
 		return stepsToOpenChapter23_1;
 	}
+
+    /**
+     * sets the current chapter number that is displayed on screen
+     * @param chapterNumber the current chapter displayed on screen depending if you go through chapter select or continue through the story or back and forth already read ones
+     */
 	public void setChapterNumber(int chapterNumber) {
 		this.chapterNumber = chapterNumber;
 	}
+
+    /**
+     * gets the current chapter number that should be shown
+     * @return current chapter number
+     */
 	public int getChapterNumber() {
 		return chapterNumber;
 	}
+
+    /**
+     * checks if the stage is ready with swap and such prevents the stage from getting infinite number of actors
+     * @param swapped true or false if current stage is ready or not (only lets things generate once and is then set true)
+     */
 	public void setSwapped(boolean swapped) {
 		this.swapped = swapped;
 	}
+
+    /**
+     * gets if stage has been swapped already or not
+     * @return if the stage is ready or not
+     */
 	public boolean getSwapped() {
 		return swapped;
 	}
 
-
+    /**
+     * returns SpriteBatch batch that is used everywhere
+     * @return
+     */
 	public SpriteBatch getBatch() {
 		return batch;
 	}
 
+    /**
+     * returns the universal font that is created only once
+     * @return the current font and its settings
+     */
 	public BitmapFont getFont12() {
 		return font12;
 	}
 
+    /**
+     * returns the String backToMainMenu (button)
+     * @return returns the text backToMainMenu
+     */
     public String getBackToMainMenu() {
         return backToMainMenu;
     }
 
+    /**
+     * returns the resetgame string (button)
+     * @return returns the reset game string
+     */
     public String getResetGame() {
         return resetGame;
     }
+    /**
+     * returns the resetGameQuestion text in the pop up
+     * @returnthe resetGameQuestion text in the pop up
+     */
     public String getResetGameQuestion() {
         return resetGameQuestion;
     }
+    /**
+     * yes string
+     * @return yes string
+     */
     public String getYes() {
         return yes;
     }
+    /**
+     * no string
+     * @return no string
+     */
     public String getNo() {
         return no;
     }
+    /**
+     * ok string
+     * @return ok string
+     */
     public String getOk() {
         return ok;
     }
+    /**
+     * too few steps currently error message string
+     * @return too few steps currently error message string
+     */
     public String getTooFewStepsMessage() {
 	    return  tooFewStepsMessage;
     }
+
+    /**
+     * tutorial string not in use
+     * @return tutorial text string not in use
+     */
     public String getTutorialText() {
         return tutorialText;
     }
+
+    /**
+     * title string not in use
+     * @return title string not in use
+     */
 	public String getTitle() {
 		return title;
 	}
+
+    /**
+     * sponsors string not in use
+     * @return sponsors string not in use
+     */
 	public String getSponsors() {
 		return sponsors;
 	}
 
+    /**
+     * returns the universal stage
+     * @return returns the universal stage
+     */
 	public Stage getStage() {
 		return stage;
 	}
 
+    /**
+     * returns chapter String (bottom left on game screen)
+     * @return returns chapter String
+     */
 	public String getChapter() {
 		return chapter;
 	}
-
-
+    /**
+     * gets the chapter text depending on where the story currently is
+     * @param chapterTextNumberFirstPart the current chapter
+     * @param chapterTextNumberSecondPart the current chapters current place
+     * @return returns the current chapter text needed and is selected
+     */
 	public String getChapterText(int chapterTextNumberFirstPart, int chapterTextNumberSecondPart) {
 	    String combine = "chapter"+chapterTextNumberFirstPart + "_" + chapterTextNumberSecondPart;
 //	    System.out.println("chapter"+chapterTextNumberFirstPart + "_" + chapterTextNumberSecondPart);
@@ -2073,6 +2313,10 @@ public class MainClass extends Game {
 	        return combine + " WRONG";
         }
     }
+    /**
+     * returns next string not in use
+     * @return returns next string not in use
+     */
 	public String getNext() {
 		return next;
 	}
