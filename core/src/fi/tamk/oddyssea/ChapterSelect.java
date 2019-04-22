@@ -8,9 +8,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 /**
-
-    This is the Chapter select screen in the main menu
-
+ * This is the Chapter select screen in the main menu
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
  */
 
 public class ChapterSelect implements Screen {

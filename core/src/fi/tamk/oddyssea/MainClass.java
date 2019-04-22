@@ -20,20 +20,38 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import java.util.Locale;
 
 /**
-	Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
-	These will be used in the different places of other codes.
+ * Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
+ * These will be used in the different places of other codes.
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
  */
 
 public class MainClass extends Game {
-	//Batch created here and used in every single java code of the game
+    /**
+     * Batch created here and used in every single java code of the game.
+     */
 	private SpriteBatch batch;
-
-	//the font is created here and used everywhere else - size and bitmapFont also
+    /**
+     * The font is created here and used everywhere else - size and bitmapFont also.
+     */
 	private FreeTypeFontGenerator generator;
+    /**
+     * BitmapFont font12 - used everywhere that needs text font.
+     */
 	private BitmapFont font12;
+    /**
+     * Sets the font size depending on the screen size.
+     */
 	private int fontSize;
-
+    /**
+     * Boolean resetEverything is used to determine whether the game should be reset.
+     * Either in the end if you player decides to go the party of through main menus reset game button.
+     */
 	private boolean resetEverything = false;
+    /**
+     * Boolean prefsPopUpActive is
+     */
 	private boolean prefsPopUpActivate;
 	private boolean tutorialShow;
 	private boolean tooFewStepsPopUpActivate;
@@ -252,7 +270,10 @@ public class MainClass extends Game {
     private Texture textIndicator_8_7;
     private Texture textIndicator_8_8;
 
-
+	/**
+	 *
+	 * @param resetEverything
+	 */
 	public void setResetEverything(boolean resetEverything) {
         soundAndLanguage.putBoolean("resetEverything", resetEverything);
         this.resetEverything = resetEverything;

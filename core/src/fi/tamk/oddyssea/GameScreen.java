@@ -8,7 +8,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
-    The actual game screen where the game is "played", gotten through main menu
+ * The actual game screen where the game is "played", gotten through main menu
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
  */
 
 public class GameScreen implements Screen {

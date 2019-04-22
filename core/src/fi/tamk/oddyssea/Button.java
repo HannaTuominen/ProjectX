@@ -11,7 +11,12 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 
 import java.util.Locale;
-
+/**
+ * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
+ */
 public class Button extends Actor {
     private MainClass mainClass;
     private BitmapFont font12;

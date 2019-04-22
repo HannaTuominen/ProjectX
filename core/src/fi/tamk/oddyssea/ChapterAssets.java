@@ -4,7 +4,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-
+/**
+ * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
+ */
 public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
