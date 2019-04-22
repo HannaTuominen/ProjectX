@@ -637,7 +637,7 @@ public class MainClass extends Game {
 
     /**
      * sets the current newest texture needed in the indicator (Games bottom middle).
-     * @param textIndicator_2_1 indicator size is biggest (2 next to each other) and the place is leftest (1).
+     * @param textIndicator_2_1  sets the texture of indicator size is biggest (2 next to each other) and the place is leftest (1).
      */
 	public void setTextIndicator_2_1(Texture textIndicator_2_1) {
 		this.textIndicator_2_1 = textIndicator_2_1;
@@ -645,14 +645,22 @@ public class MainClass extends Game {
 
     /**
      *  gets the current newest texture needed in the indicator (Games bottom middle).
-     * @return indicator size is biggest (2 next to each other) and the place is leftest (1).
+     * @return the texure of indicator size is biggest (2 next to each other) and the place is leftest (1).
      */
 	public Texture getTextIndicator_2_1() {
 		return textIndicator_2_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_2_2  sets the texture of indicator size is biggest (2 next to each other) and the place is rightest (2).
+     */
 	public void setTextIndicator_2_2(Texture textIndicator_2_2) {
 		this.textIndicator_2_2 = textIndicator_2_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (2 next to each other) and the place is rightest (2).
+     */
 	public Texture getTextIndicator_2_2() {
 		return textIndicator_2_2;
 	}
