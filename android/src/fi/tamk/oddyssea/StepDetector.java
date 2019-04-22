@@ -1,30 +1,77 @@
 package fi.tamk.oddyssea;
 
 public class StepDetector {
+	/**
+	 * How much accelerometer values can go into array
+	 */
 	private static final int ACCEL_RING_SIZE = 10;
+	/**
+	 * How much velocity values can go into array
+	 */
 	private static final int VEL_RING_SIZE = 10;
-
-	// change this threshold according to your sensitivity preferences
+	/**
+	 * Sensitivity threshold
+	 */
 	private static final float STEP_THRESHOLD = 15f;
-	// Time that needs to happen between steps
+	/**
+	 * Time that needs to happen between steps
+	 */
 	private static final int STEP_DELAY_NS = 250000000;
-
+	/**
+	 * Amount of AccelRing changes
+	 */
 	private int accelRingCounter = 0;
+	/**
+	 * x-axis array
+	 */
 	private float[] accelRingX = new float[ACCEL_RING_SIZE];
+	/**
+	 * y-axis array
+	 */
 	private float[] accelRingY = new float[ACCEL_RING_SIZE];
+	/**
+	 * z-axis array
+	 */
 	private float[] accelRingZ = new float[ACCEL_RING_SIZE];
+	/**
+	 * Amount of velocity changes
+	 */
 	private int velRingCounter = 0;
+	/**
+	 * array for velocity changes
+	 */
 	private float[] velRing = new float[VEL_RING_SIZE];
+	/**
+	 * When last step was taken
+	 */
 	private long lastStepTimeNs = 0;
+	/**
+	 * Latest velocity estimate
+	 */
 	private float oldVelocityEstimate = 0;
-
+	/**
+	 * Interface that listens to the step alerts
+	 */
 	private StepListener listener;
 
+	/**
+	 * Listener registration method
+	 * @param listener Registers listener for use
+	 */
 	public void registerListener(StepListener listener) {
 		this.listener = listener;
 	}
 
 	// Where the magic happens
+
+	/**
+	 * Updates accelerometer position
+	 *
+	 * @param timeNs Time of update
+	 * @param x x-axis of accelerometer
+	 * @param y y-axis of accelerometer
+	 * @param z z-axis of accelerometer
+	 */
 	public void updateAccel(long timeNs, float x, float y, float z) {
 		float[] currentAccel = new float[3];
 		currentAccel[0] = x;
