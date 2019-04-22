@@ -20,7 +20,9 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import java.util.Locale;
 
 /**
- * Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
+ * Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and prefs where information is saved is created.
+ * also getters and setters for many things such as texts and steps needed for each chapter, resetting the game,
+ * texture indicators, and other info that is needed to save and access all through the game.
  * These will be used in the different places of other codes.
  *
  * @author Hanna Tuominen
