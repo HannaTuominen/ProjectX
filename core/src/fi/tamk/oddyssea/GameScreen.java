@@ -15,91 +15,280 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
  */
 
 public class GameScreen implements Screen {
-
+    /**
+     * MainClass mainclass gotten from main class and used here to get methods and information and changing them
+     */
     private MainClass mainClass;
+    /**
+     * SpriteBatch batch
+     */
     private SpriteBatch batch;
-
+    /**
+     * chapter 1 background image
+     */
     private Texture backGroundImage1;
+    /**
+     * chapter 2 background image choice 1
+     */
     private Texture backGroundImage2_1;
+    /**
+     * chapter 2 background image choice 2
+     */
     private Texture backGroundImage2_2;
+    /**
+     * chapter 3 background image
+     */
     private Texture backGroundImage3;
+    /**
+     * chapter 4 background image
+     */
     private Texture backGroundImage4;
+    /**
+     * chapter 5 background image choice 1
+     */
     private Texture backGroundImage5_1;
+    /**
+     * chapter 5 background image choice 2
+     */
     private Texture backGroundImage5_2;
+    /**
+     * chapter 6 background image
+     */
     private Texture backGroundImage6;
+    /**
+     * chapter 7 background image
+     */
     private Texture backGroundImage7;
+    /**
+     * chapter 8 background image
+     */
     private Texture backGroundImage8;
+    /**
+     * chapter 9 background image
+     */
     private Texture backGroundImage9;
+    /**
+     * chapter 10 background image
+     */
     private Texture backGroundImage10;
+    /**
+     * chapter 11 background image
+     */
     private Texture backGroundImage11;
+    /**
+     * chapter 12 background image choice 1
+     */
     private Texture backGroundImage12_1;
+    /**
+     * chapter 12 background image choice 2
+     */
     private Texture backGroundImage12_2;
+    /**
+     * chapter 13 background image
+     */
     private Texture backGroundImage13;
+    /**
+     * chapter 14 background image
+     */
     private Texture backGroundImage14;
+    /**
+     * chapter 15 background image
+     */
     private Texture backGroundImage15;
+    /**
+     * chapter 16 background image
+     */
     private Texture backGroundImage16;
+    /**
+     * chapter 17 background image
+     */
     private Texture backGroundImage17;
+    /**
+     * chapter 18 background image choice 1
+     */
     private Texture backGroundImage18_1;
+    /**
+     * chapter 18 background image choice 2
+     */
     private Texture backGroundImage18_2;
+    /**
+     * chapter 19 background image
+     */
     private Texture backGroundImage19;
+    /**
+     * chapter 20 background image
+     */
     private Texture backGroundImage20;
+    /**
+     * chapter 21 background image
+     */
     private Texture backGroundImage21;
+    /**
+     * chapter 22 background image
+     */
     private Texture backGroundImage22;
+    /**
+     * chapter 23 background image
+     */
     private Texture backGroundImage23;
-
+    /**
+     * chapter 24 background image Finnish
+     */
     private Texture backGroundImage24_1;
+    /**
+     * chapter 24 background image English
+     */
     private Texture backGroundImage24_2;
-
+    /**
+     * StepBoxHeight used to define what the step box height should be
+     */
     private float stepboxHeight;
-
+    /**
+     * ChapterAssets chapter1 to create chapter 1 through chapterAssets
+     */
     private ChapterAssets chapter1;
+    /**
+     * ChapterAssets chapter2_1 to create chapter 2_1 through chapterAssets
+     */
     private ChapterAssets chapter2_1;
+    /**
+     * ChapterAssets chapter2_2 to create chapter 2_2 through chapterAssets
+     */
     private ChapterAssets chapter2_2;
+    /**
+     * ChapterAssets chapter3 to create chapter 3 through chapterAssets
+     */
     private ChapterAssets chapter3;
+    /**
+     * ChapterAssets chapter4 to create chapter 4 through chapterAssets
+     */
     private ChapterAssets chapter4;
+    /**
+     * ChapterAssets chapter5_1 to create chapter 5:1 through chapterAssets
+     */
     private ChapterAssets chapter5_1;
+    /**
+     * ChapterAssets chapter5_2 to create chapter 5_2 through chapterAssets
+     */
     private ChapterAssets chapter5_2;
+    /**
+     * ChapterAssets chapter6 to create chapter 6 through chapterAssets
+     */
     private ChapterAssets chapter6;
+    /**
+     * ChapterAssets chapter7 to create chapter 7 through chapterAssets
+     */
     private ChapterAssets chapter7;
+    /**
+     * ChapterAssets chapter8 to create chapter 8 through chapterAssets
+     */
     private ChapterAssets chapter8;
+    /**
+     * ChapterAssets chapter9 to create chapter 9 through chapterAssets
+     */
     private ChapterAssets chapter9;
+    /**
+     * ChapterAssets chapter10 to create chapter 10 through chapterAssets
+     */
     private ChapterAssets chapter10;
+    /**
+     * ChapterAssets chapter11 to create chapter 11 through chapterAssets
+     */
     private ChapterAssets chapter11;
+    /**
+     * ChapterAssets chapter12_1 to create chapter 12_1 through chapterAssets
+     */
     private ChapterAssets chapter12_1;
+    /**
+     * ChapterAssets chapter12_2 to create chapter 12_2 through chapterAssets
+     */
     private ChapterAssets chapter12_2;
+    /**
+     * ChapterAssets chapter13 to create chapter 13 through chapterAssets
+     */
     private ChapterAssets chapter13;
+    /**
+     * ChapterAssets chapter14 to create chapter 14 through chapterAssets
+     */
     private ChapterAssets chapter14;
+    /**
+     * ChapterAssets chapter15 to create chapter 15 through chapterAssets
+     */
     private ChapterAssets chapter15;
+    /**
+     * ChapterAssets chapter16 to create chapter 16 through chapterAssets
+     */
     private ChapterAssets chapter16;
+    /**
+     * ChapterAssets chapter17 to create chapter 17 through chapterAssets
+     */
     private ChapterAssets chapter17;
+    /**
+     * ChapterAssets chapter18_1 to create chapter 18_1 through chapterAssets
+     */
     private ChapterAssets chapter18_1;
+    /**
+     * ChapterAssets chapter18_2 to create chapter 18_2 through chapterAssets
+     */
     private ChapterAssets chapter18_2;
+    /**
+     * ChapterAssets chapter19 to create chapter 19 through chapterAssets
+     */
     private ChapterAssets chapter19;
+    /**
+     * ChapterAssets chapter20 to create chapter 20 through chapterAssets
+     */
     private ChapterAssets chapter20;
+    /**
+     * ChapterAssets chapter21 to create chapter 21 through chapterAssets
+     */
     private ChapterAssets chapter21;
+    /**
+     * ChapterAssets chapter22 to create chapter 22 through chapterAssets
+     */
     private ChapterAssets chapter22;
+    /**
+     * ChapterAssets chapter23 to create chapter 23 through chapterAssets
+     */
     private ChapterAssets chapter23;
-
+    /**
+     * ChapterAssets chapter24_1 to create chapter 24_1 through chapterAssets
+     */
     private ChapterAssets chapter24_1;
+    /**
+     * ChapterAssets chapter24_2 to create chapter 24_2 through chapterAssets
+     */
     private ChapterAssets chapter24_2;
 
-
+    /**
+     * textBoxHeight used to define what the text box height should be
+     */
     private float textboxHeight;
 
-
+    /**
+     * the basic button width depending on screen width and what it has been set
+     */
     private float buttonWidth;
+    /**
+     * the basic button height depending on screen height and what it has been set
+     */
     private float buttonHeight;
-
+    /**
+     * openedFirstTime if the game has been just downloaded and opened for the first time or not
+     */
     private boolean openedFirstTime = false;
-
-
-
-
+    /**
+     * the current devices screen width
+     */
     private float screenWidth;
+    /**
+     * the current devices screen height
+     */
     private float screenHeight;
 
-
-
+    /**
+     * first implementing the backgroun textures to each chapter needed
+     */
     public void implementTextures() {
         backGroundImage1 = new Texture(Gdx.files.internal("background_001.png"));
         backGroundImage2_1 = new Texture(Gdx.files.internal("background_002_purje.png"));
@@ -135,6 +324,10 @@ public class GameScreen implements Screen {
 
 
     }
+
+    /**
+     * implementing the textures for the text indecators on first load (the ones at the game screen bottom middle)
+     */
     public void implementTexturesForTextIndicators() {
         mainClass.setTextIndicator_2_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_2_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
@@ -180,6 +373,9 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * creating each of the chapter scenes for the first time every time the game is reopened
+     */
     public void createScenes() {
         chapter1 = new ChapterAssets(mainClass, backGroundImage1, 3);
         chapter2_1 = new ChapterAssets(mainClass, backGroundImage2_1, 2);
@@ -215,6 +411,9 @@ public class GameScreen implements Screen {
         chapter24_2 = new ChapterAssets(mainClass, backGroundImage24_2, 0);
     }
 
+    /**
+     * sets the first initial load steps requirements on each chapter and saves them (also reused upon resetting the game)
+     */
 
         public void requiredStepsFirstLoad() {
         mainClass.setStepsToOpenChapter2_1(500); //WRONG + 300 (5);//
@@ -245,6 +444,9 @@ public class GameScreen implements Screen {
         mainClass.setStepsToOpenChapter23_1(3500); //Vaihtoehtoja (jos alex valtisee mennä juhliin, alkaa peli alusta)
     }
 
+    /**
+     * checks for the required steps update for each chapter (if picking wrong aka button 5 the steps change and need to be updated and checked again)
+     */
     public void requiredStepsUpdater() {
         mainClass.setStepsToOpenChapter2_1(mainClass.prefs.getInteger("setStepsToOpenChapter2_1"));
         mainClass.setStepsToOpenChapter2_2(mainClass.prefs.getInteger("setStepsToOpenChapter2_2"));
@@ -282,6 +484,10 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * creates the exit and music buttons to the top of the screen and also the chapter text to the bottom left of the screen
+     * ALSO THE BUTTON FOR THE EXTRA 1000 STEPS FOR THE GAME FARE IS CREATED HERE AND NEEDS TO BE COMMENTED OUT FOR THE ACTUAL GAME
+     */
     public void addExitAndMusicButtons() {
 
         if(mainClass.getChapterNumber() != 24) {
@@ -310,6 +516,9 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * sets the cleared chapters upon first round all to false to lock everything but chapter 1
+     */
     public void firstRoundSetClearedChapter() {
 //        int i = 1;
         for (int i = 1; i <24; i++) {
@@ -318,12 +527,28 @@ public class GameScreen implements Screen {
 //
     }
 
+    /**
+     * used to update each cleared chapter after a change has occured
+     */
     public void setClearedChaptersUpdater() {
         for (int i = 1; i <24; i++) {
             mainClass.getClearedChapterGeneral(i);
         }
     }
 
+    /**
+     * upon first load of the game screen set and save important things
+     * <p>
+     * such as the screen width and height
+     * textbox and stepbox heights depending on screen width
+     * if the game has been opened before or not
+     * sets the step error message to false if its true to prevent duplicates
+     * if there should be background music or not
+     * if the game is being opened for the first time ever or not and save its important methods and prefs and such
+     * if the player got here through the main menus play button or not then set the player to the furthest chapter or not
+     * and get the updated required steps and cleared chapters
+     * @param MainClass2 get the mainclass and its methods and such
+     */
     public GameScreen(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
@@ -404,16 +629,23 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * checks if the player has got to the last part of the current chapter text or not and show or don't show the buttons at the start of the chapter
+     */
     public void checkSetGotToLastTextPartOkayToShowNeededButtons() {
         if(!mainClass.getGotToTheLastTextOnceAlready() && !mainClass.getClearedChapterGeneral(mainClass.getChapterNumber())) {
-            System.out.println("don't show buttons at the start");
+            //don't show buttons at the start
             mainClass.setGotToLastTextPartOkayToShowNeededButtons(false);
         } else {
+            //show buttons at the start
             mainClass.setGotToLastTextPartOkayToShowNeededButtons(true);
-            System.out.println("show buttons at the start");
         }
     }
 
+    /**
+     * creation of buttons if the chapter has already been read and gotten to a further chapter there will always be a next page button that requires nothing chapter specific
+     * and also a step box that has a 0 for required steps always
+     */
     public void alreadyReadAlwaysSameButtons() {
         mainClass.createButtons(new Texture("next_page.png"),"",0,6,
                 screenWidth-buttonWidth/5-50, textboxHeight+buttonHeight/2.5f, buttonWidth /5 ,buttonHeight,0);
@@ -427,6 +659,10 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * creation of buttons in each chapter (not 1) for the previous page and an empty text box (has the chapter text in it) over a text box that is displayed through chapter assets
+     * that are displayed always
+     */
     public void prevPageAndEmptyTextForStoryButtons() {
         mainClass.createButtons(new Texture("prev_page.png"),"",0,7,
                 50, textboxHeight+buttonHeight/2.5f, buttonWidth/5 ,buttonHeight,0);
@@ -436,6 +672,9 @@ public class GameScreen implements Screen {
                 20f,10f, screenWidth-40f,textboxHeight,0);
     }
 
+    /**
+     * creation of the tutorial and if it should be shown or not
+     */
     public void tutorial() {
         if(mainClass.gettutorialShow()) {
 
@@ -455,6 +694,25 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * the render has everything show on the game screen during the player reading the chapters
+     * <<p>
+     * check the current chapter number each render and if the stage should be swapped or not (done only once to set and create everything needed visible and such)
+     * clear each stage and add the correct chapter actor
+     * on first chapter if the current furthest chapter is somehow 0 (like choosing wrong on chapter 23 set it to 1 and save inportant information to prefs
+     *      and also reload the cleared and steps needed and such to the original ones
+     *      also save cleared and such info if not chapter 1
+     * then create the unique buttons needed for each chapter and their unique texts and needed steps and such
+     *      if the chapter has aleady been read or not different button and texture and use
+     *      show the step box with current and needed steps
+     *      if the chapter has been read but not gotten through show or don't show the buttons
+     *  then create indicator buttons for the chapter
+     *  then the chapter text first place
+     *  exit and sound buttons
+     *  tutorial if needed
+     *  All of these are used for 1-24 chapters
+     * @param delta
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(mainClass.camera.combined);
