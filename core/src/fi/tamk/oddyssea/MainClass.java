@@ -1562,7 +1562,6 @@ public class MainClass extends Game {
 		choseWrong_4 = prefs.getBoolean("choseWrong_4");
 		return choseWrong_4;
 	}
-
     /**
      * sets and saves to prefs the steps to open chapter 2 (button 5)
      * @param steps sets in GameScreen and swapped in button script if needed
@@ -2080,30 +2079,6 @@ public class MainClass extends Game {
     }
 
     /**
-     * tutorial string not in use
-     * @return tutorial text string not in use
-     */
-    public String getTutorialText() {
-        return tutorialText;
-    }
-
-    /**
-     * title string not in use
-     * @return title string not in use
-     */
-	public String getTitle() {
-		return title;
-	}
-
-    /**
-     * sponsors string not in use
-     * @return sponsors string not in use
-     */
-	public String getSponsors() {
-		return sponsors;
-	}
-
-    /**
      * returns the universal stage
      * @return returns the universal stage
      */
@@ -2314,13 +2289,6 @@ public class MainClass extends Game {
         }
     }
     /**
-     * returns next string not in use
-     * @return returns next string not in use
-     */
-	public String getNext() {
-		return next;
-	}
-    /**
      * returns chapter1 choice 1 string
      * @return returns chapter 1 choice 1 string
      */
@@ -2389,13 +2357,6 @@ public class MainClass extends Game {
      */
 	public String getChapter23_choice_text_2() {
 		return chapter23_choice_text_2;
-	}
-    /**
-     * returns previous string not in use
-     * @return returns previous string not in use
-     */
-	public String getPrevious() {
-		return previous;
 	}
     /**
      * returns continue string
@@ -2475,25 +2436,6 @@ public class MainClass extends Game {
 	}
 
     /**
-     * not in use but checks if it's the first round
-     * @return not in use
-     */
-	public boolean getLanguageFirstRound() {
-		languageFirstRound =soundAndLanguage.getBoolean("languageFirstRound");
-		return languageFirstRound;
-	}
-
-    /**
-     * not in use
-     * @param languageFirstRound not in use
-     */
-	public void setLanguageFirstRound(boolean languageFirstRound) {
-		this.languageFirstRound = languageFirstRound;
-        soundAndLanguage.putBoolean("languageFirstRound", languageFirstRound);
-        soundAndLanguage.flush();
-	}
-
-    /**
      * gets if the language has been swapped and the stage need to be cleared and refilled with new buttons and such
      * @return
      */
@@ -2519,15 +2461,6 @@ public class MainClass extends Game {
 		myBundle =
 				I18NBundle.createBundle(Gdx.files.internal("MyBundle"), locale);
 	}
-
-    /**
-     * not in use
-     * @return
-     */
-	public Locale getLocale() {
-		return locale;
-	}
-
     /**
      * sets all of the locale texts string in one method that need to be changed if the language is swapped
      */
@@ -2767,38 +2700,38 @@ public class MainClass extends Game {
 		return exit;
 	}
 
-	public String getBack() {
-		return back;
-	}
-
-	public float getButtonWidth() {
-		buttonWidth = screenWidth/2;
-		return buttonWidth;
-	}
-	public float getButtonHeight()
-	{	buttonHeight = screenHeight/2;
-		return buttonWidth;
-	}
-
-	public int getFontSize() {
-		return fontSize;
-	}
-
+    /**
+     * gets the text Place width via text and using layout
+     * @param text the text used to calculate the width
+     * @return the width of the text
+     */
 	public float getTextPlaceWIDTH(String text) {
 		layout.setText(font12,text);
 		float width = layout.width;
 		return width;
 	}
 
+    /**
+     * returns the screen width of the device in pixels
+     * @return the screenwidth
+     */
 	public float getScreenWidth() {
 		return screenWidth;
 	}
 
+    /**
+     * retrns the screen height of the device in pixels
+     * @return the screenheight
+     */
 	public float getScreenHeight() {
 		return screenHeight;
 	}
 
-
+    /**
+     * on first load the game needs to check and create things used throughout the game and after that each time the game is restarted
+     * such as the language, fonts and their settings, the screen height and width, initiate groups
+     * and lastly load the games main menu screen
+     */
 	@Override
 	public void create () {
 		//GET THE SCREEN WIDTH AND HEIGHT OF YOUR CURRENT DEVICE IN PIXELS
@@ -2931,9 +2864,11 @@ public class MainClass extends Game {
 		setScreen(mainMenu);
 	}
 
+    /**
+     * super the render
+     */
 	@Override
 	public void render () {
-
 		super.render();
 	}
 	
@@ -2942,15 +2877,34 @@ public class MainClass extends Game {
 
 	}
 
+    /**
+     * sets the current steps
+     * @param numSteps the current steps changed when getting new steps
+     */
 	public static void setSteps(int numSteps) {
 		steps = numSteps;
 	}
+
+    /**
+     * returns the current steps
+     * @return current steps
+     */
 	public static int getSteps() {
 		return steps;
 	}
+
+    /**
+     * same as above not sure which is in use lol
+     * @return the current steps
+     */
 	public int getCurrentSteps() {
 		return steps;
 	}
+
+    /**
+     * when opening the next chapter of the game remove steps via this method
+     * @param steps the current steps that needed to be removed from the total amount of steps the player has
+     */
 	public void removeSteps(int steps) {
 		if (steps <= this.getCurrentSteps()) {
 			setSteps(this.getCurrentSteps() - steps);
