@@ -462,8 +462,6 @@ public class MainClass extends Game {
      * this is checked every time you open the game again/ press play to see if you have already read it through.
      */
 	private boolean gotToTheLastTextOnceAlready = false;
-
-
     /**
      * Music music is the background music of the game
      */
@@ -614,24 +612,41 @@ public class MainClass extends Game {
      */
     private Texture textIndicator_8_8;
 
-	/**
-	 *
-	 * @param resetEverything
+    /**
+	 * setResetEverything method to swap the soundAndLanguage prefs and resetEverything local boolean on what is needed
+     * <p>
+     * setResetEverything is used either in mainMenu when pressing the reset game buttons and pressing yes or when you
+     * go to the party if last chapter(23) and if it's true the game is then free to reset prefs once to clear them.
+     * Both of these instances are accessed in the button script. And also a few other places just in case they are not correctly set for some reason.
+	 * @param resetEverything is a boolean used to check if the game should reset everything to its initial state
 	 */
 	public void setResetEverything(boolean resetEverything) {
         soundAndLanguage.putBoolean("resetEverything", resetEverything);
         this.resetEverything = resetEverything;
         soundAndLanguage.flush();
     }
+
+    /**
+     * getResetEverything is used to check what is currently saved in resetEverything and if there should be change in resetting the game
+     * @return the current resetEverything that has been saved in soundAndLanguage prefs
+     */
     public boolean getResetEverything() {
 	    resetEverything = soundAndLanguage.getBoolean("resetEverything");
 	    return resetEverything;
     }
 
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_2_1 indicator size is biggest (2 next to each other) and the place is leftest (1).
+     */
 	public void setTextIndicator_2_1(Texture textIndicator_2_1) {
 		this.textIndicator_2_1 = textIndicator_2_1;
 	}
+
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return indicator size is biggest (2 next to each other) and the place is leftest (1).
+     */
 	public Texture getTextIndicator_2_1() {
 		return textIndicator_2_1;
 	}
