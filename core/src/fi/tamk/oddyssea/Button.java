@@ -11,339 +11,289 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 
 import java.util.Locale;
-
+/**
+ * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
+ */
 public class Button extends Actor {
-    MainClass mainClass;
-    BitmapFont font12;
-    Texture texture;
-    String textForAButton;
-    int chapterNumber;
-    int useForTheButton;
-    float xPlace;
-    float yPlace;
-    float buttonWidth;
-    float buttonHeight;
-    int chapterSelect;
-    int stepsToOpenNextChapter;
-    int steps;
-    boolean enoughSteps = false;
-    float storyID;
-    float buttonTextXPlace;
-    float buttonTextYPlace;
-    Group group;
-    Group group2;
-    static float scrollerWidth;
+    private MainClass mainClass;
+    private BitmapFont font12;
+    private Texture texture;
+    private String textForAButton;
+    private int chapterNumber;
+    private int useForTheButton;
+    private float xPlace;
+    private float yPlace;
+    private float buttonWidth;
+    private float buttonHeight;
+    private int chapterSelect;
+    private int stepsToOpenNextChapter;
+    private int steps;
+    private boolean enoughSteps = false;
+    private float storyID;
+    private float buttonTextXPlace;
+    private float buttonTextYPlace;
+    private Group group;
+    private Group group2;
+    private static float scrollerWidth;
 
-    float touchUpX;
+    private float touchUpX;
 
-    float flingX;
+    private float flingX;
 
-    float textboxHeight;
+    private float textboxHeight;
 
-    String currentStepsText;
+    private String currentStepsText;
 
-    boolean prefsPopUpActivate;
+    private boolean prefsPopUpActivate;
 
 
-    boolean swappedIndicator = true;
+    private boolean swappedIndicator = true;
+
+    public void button10Reverse(float getStoryID) {
+        double secondPart = getStoryID - (int)getStoryID;
+        double secondPartRounded = Math.round(secondPart * 10) / 10.0;
+        float secondPartRoundedFloat = (float)secondPartRounded*10;
+
+        double firstPart = (getStoryID-secondPart)/10;
+        System.out.println(getStoryID + " firstpart" +firstPart);
+        double firstPartRounded = Math.round(firstPart * 10) / 10.0;
+        float firstPartRoundedFloat = (float)firstPartRounded*10;
+
+//        System.out.println(secondPart + " ROUNDED" +secondPartRounded + " FLOAT" + secondPartRoundedFloat + "INT" + (int)secondPartRoundedFloat + "STORYDI" + getStoryID);
+        setTextForAButton(mainClass.getChapterText((int)firstPartRoundedFloat,(int)secondPartRoundedFloat));
+        setStoryID(getStoryID);
+    }
 
     public void useForTheButtonIs10Reverse() {
-
         if (getStoryID() == 1.1f) {
         } else if (getStoryID() == 1.2f) {
-            setTextForAButton(mainClass.getChapterText(1,1));
-            setStoryID(1.1f);
+            button10Reverse(1.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 1.3f) {
-            setTextForAButton(mainClass.getChapterText(1,2));
-            setStoryID(1.2f);
+            button10Reverse(1.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 2.1f) {
         } else if (getStoryID() == 2.2f) {
-            setTextForAButton(mainClass.getChapterText(2,1));
-            setStoryID(2.1f);
+            button10Reverse(2.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 3.1f) {
         } else if (getStoryID() == 3.2f) {
-            setTextForAButton(mainClass.getChapterText(3,1));
-            setStoryID(3.1f);
+            button10Reverse(3.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 4.1f) {
         } else if (getStoryID() == 4.2f) {
-            setTextForAButton(mainClass.getChapterText(4,1));
-            setStoryID(4.1f);
+            button10Reverse(4.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 5.1f) {
         } else if (getStoryID() == 5.2f) {
-            setTextForAButton(mainClass.getChapterText(5,1));
-            setStoryID(5.1f);
+            button10Reverse(5.1f);
             indicatorsX3_stage_3();
         }  else if (getStoryID() == 5.3f) {
-            setTextForAButton(mainClass.getChapterText(5,2));
-            setStoryID(5.2f);
+            button10Reverse(5.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 6.1f) {
         } else if (getStoryID() == 6.2f) {
-            setTextForAButton(mainClass.getChapterText(6,1));
-            setStoryID(6.1f);
+            button10Reverse(6.1f);
             indicatorsX3_stage_3();
         }  else if (getStoryID() == 6.3f) {
-            setTextForAButton(mainClass.getChapterText(6,2));
-            setStoryID(6.2f);
+            button10Reverse(6.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 7.1f) {
         } else if (getStoryID() == 7.2f) {
-            setTextForAButton(mainClass.getChapterText(7,1));
-            setStoryID(7.1f);
+            button10Reverse(7.1f);
             indicatorsX3_stage_3();
         }  else if (getStoryID() == 7.3f) {
-            setTextForAButton(mainClass.getChapterText(7,2));
-            setStoryID(7.2f);
+            button10Reverse(7.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 8.1f) {
         } else if (getStoryID() == 8.2f) {
-            setTextForAButton(mainClass.getChapterText(8,1));
-            setStoryID(8.1f);
+            button10Reverse(8.1f);
             indicatorsX3_stage_3();
         }  else if (getStoryID() == 8.3f) {
-            setTextForAButton(mainClass.getChapterText(8,2));
-            setStoryID(8.2f);
+            button10Reverse(8.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 9.1f) {
         } else if (getStoryID() == 9.2f) {
-            setTextForAButton(mainClass.getChapterText(9,1));
-            setStoryID(9.1f);
+            button10Reverse(9.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 9.3f) {
-            setTextForAButton(mainClass.getChapterText(9,2));
-            setStoryID(9.2f);
+            button10Reverse(9.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 9.4f) {
-            setTextForAButton(mainClass.getChapterText(9,3));
-            setStoryID(9.3f);
+            button10Reverse(9.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 10.1f) {
         } else if (getStoryID() == 10.2f) {
-            setTextForAButton(mainClass.getChapterText(10,1));
-            setStoryID(10.1f);
+            button10Reverse(10.1f);
             indicatorsX3_stage_3();
         }  else if (getStoryID() == 10.3f) {
-            setTextForAButton(mainClass.getChapterText(10,2));
-            setStoryID(10.2f);
+            button10Reverse(10.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 11.1f) {
         } else if (getStoryID() == 11.2f) {
-            setTextForAButton(mainClass.getChapterText(11,1));
-            setStoryID(11.1f);
+            button10Reverse(11.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 11.3f) {
-            setTextForAButton(mainClass.getChapterText(11,2));
-            setStoryID(11.2f);
+            button10Reverse(11.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 11.4f) {
-            setTextForAButton(mainClass.getChapterText(11,3));
-            setStoryID(11.3f);
+            button10Reverse(11.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 12.1f) {
         } else if (getStoryID() == 12.2f) {
-            setTextForAButton(mainClass.getChapterText(12,1));
-            setStoryID(12.1f);
+            button10Reverse(12.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 12.3f) {
-            setTextForAButton(mainClass.getChapterText(12,2));
-            setStoryID(12.2f);
+            button10Reverse(12.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 12.4f) {
-            setTextForAButton(mainClass.getChapterText(12,3));
-            setStoryID(12.3f);
+            button10Reverse(12.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 13.1f) {
         } else if (getStoryID() == 13.2f) {
-            setTextForAButton(mainClass.getChapterText(13,1));
-            setStoryID(13.1f);
+            button10Reverse(13.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 13.3f) {
-            setTextForAButton(mainClass.getChapterText(13,2));
-            setStoryID(13.2f);
+            button10Reverse(13.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 13.4f) {
-            setTextForAButton(mainClass.getChapterText(13,3));
-            setStoryID(13.3f);
+            button10Reverse(13.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 14.1f) {
         } else if (getStoryID() == 14.2f) {
-            setTextForAButton(mainClass.getChapterText(14,1));
-            setStoryID(14.1f);
+            button10Reverse(14.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 14.3f) {
-            setTextForAButton(mainClass.getChapterText(14,2));
-            setStoryID(14.2f);
+            button10Reverse(14.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 14.4f) {
-            setTextForAButton(mainClass.getChapterText(14,3));
-            setStoryID(14.3f);
+            button10Reverse(14.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 15.1f) {
         } else if (getStoryID() == 15.2f) {
-            setTextForAButton(mainClass.getChapterText(15,1));
-            setStoryID(15.1f);
+            button10Reverse(15.1f);
             indicatorsX5_stage_5();
         }  else if (getStoryID() == 15.3f) {
-            setTextForAButton(mainClass.getChapterText(15,2));
-            setStoryID(15.2f);
+            button10Reverse(15.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 15.4f) {
-            setTextForAButton(mainClass.getChapterText(15,3));
-            setStoryID(15.3f);
+            button10Reverse(15.3f);
             indicatorsX5_stage_2();
-
         } else if (getStoryID() == 15.5f) {
-            setTextForAButton(mainClass.getChapterText(15,4));
-            setStoryID(15.4f);
+            button10Reverse(15.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 16.1f) {
         } else if (getStoryID() == 16.2f) {
-            setTextForAButton(mainClass.getChapterText(16,1));
-            setStoryID(16.1f);
+            button10Reverse(16.1f);
             indicatorsX5_stage_5();
         }  else if (getStoryID() == 16.3f) {
-            setTextForAButton(mainClass.getChapterText(16,2));
-            setStoryID(16.2f);
+            button10Reverse(16.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 16.4f) {
-            setTextForAButton(mainClass.getChapterText(16,3));
-            setStoryID(16.3f);
+            button10Reverse(16.3f);
             indicatorsX5_stage_2();
         } else if (getStoryID() == 16.5f) {
-            setTextForAButton(mainClass.getChapterText(16,4));
-            setStoryID(16.4f);
+            button10Reverse(16.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 17.1f) {
         } else if (getStoryID() == 17.2f) {
-            setTextForAButton(mainClass.getChapterText(17,1));
-            setStoryID(17.1f);
+            button10Reverse(17.1f);
             indicatorsX8_stage_8();
         }  else if (getStoryID() == 17.3f) {
-            setTextForAButton(mainClass.getChapterText(17,2));
-            setStoryID(17.2f);
+            button10Reverse(17.2f);
             indicatorsX8_stage_1();
         } else if (getStoryID() == 17.4f) {
-            setTextForAButton(mainClass.getChapterText(17,3));
-            setStoryID(17.3f);
+            button10Reverse(17.3f);
             indicatorsX8_stage_2();
         } else if (getStoryID() == 17.5f) {
-            setTextForAButton(mainClass.getChapterText(17,4));
-            setStoryID(17.4f);
+            button10Reverse(17.4f);
             indicatorsX8_stage_3();
         } else if (getStoryID() == 17.6f) {
-            setTextForAButton(mainClass.getChapterText(17,5));
-            setStoryID(17.5f);
+            button10Reverse(17.5f);
             indicatorsX8_stage_4();
         } else if (getStoryID() == 17.7f) {
-            setTextForAButton(mainClass.getChapterText(17,6));
-            setStoryID(17.6f);
+            button10Reverse(17.6f);
             indicatorsX8_stage_5();
         } else if (getStoryID() == 17.8f) {
-            setTextForAButton(mainClass.getChapterText(17,7));
-            setStoryID(17.7f);
+            button10Reverse(17.7f);
             indicatorsX8_stage_6();
         } else if (getStoryID() == 18.1f) {
         } else if (getStoryID() == 18.2f) {
-            setTextForAButton(mainClass.getChapterText(18,1));
-            setStoryID(18.1f);
+            button10Reverse(18.1f);
             indicatorsX5_stage_5();
         }  else if (getStoryID() == 18.3f) {
-            setTextForAButton(mainClass.getChapterText(18,2));
-            setStoryID(18.2f);
+            button10Reverse(18.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 18.4f) {
-            setTextForAButton(mainClass.getChapterText(18,3));
-            setStoryID(18.3f);
+            button10Reverse(18.3f);
             indicatorsX5_stage_2();
         } else if (getStoryID() == 18.5f) {
-            setTextForAButton(mainClass.getChapterText(18,4));
-            setStoryID(18.4f);
+            button10Reverse(18.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 19.1f) {
         } else if (getStoryID() == 19.2f) {
-            setTextForAButton(mainClass.getChapterText(19,1));
-            setStoryID(19.1f);
+            button10Reverse(19.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 19.3f) {
-            setTextForAButton(mainClass.getChapterText(19,2));
-            setStoryID(19.2f);
+            button10Reverse(19.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 19.4f) {
-            setTextForAButton(mainClass.getChapterText(19,3));
-            setStoryID(19.3f);
+            button10Reverse(19.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 20.1f) {
         } else if (getStoryID() == 20.2f) {
-            setTextForAButton(mainClass.getChapterText(20,1));
-            setStoryID(20.1f);
+            button10Reverse(20.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 20.3f) {
-            setTextForAButton(mainClass.getChapterText(20,2));
-            setStoryID(20.2f);
+            button10Reverse(20.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 20.4f) {
-            setTextForAButton(mainClass.getChapterText(20,3));
-            setStoryID(20.3f);
+            button10Reverse(20.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 21.1f) {
         } else if (getStoryID() == 21.2f) {
-            setTextForAButton(mainClass.getChapterText(21,1));
-            setStoryID(21.1f);
+            button10Reverse(21.1f);
             indicatorsX5_stage_5();
         }  else if (getStoryID() == 21.3f) {
-            setTextForAButton(mainClass.getChapterText(21,2));
-            setStoryID(21.2f);
+            button10Reverse(21.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 21.4f) {
-            setTextForAButton(mainClass.getChapterText(21,3));
-            setStoryID(21.3f);
+            button10Reverse(21.3f);
             indicatorsX5_stage_2();
         } else if (getStoryID() == 21.5f) {
-            setTextForAButton(mainClass.getChapterText(21,4));
-            setStoryID(21.4f);
+            button10Reverse(21.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 22.1f) {
         } else if (getStoryID() == 22.2f) {
-            setTextForAButton(mainClass.getChapterText(22,1));
-            setStoryID(22.1f);
+            button10Reverse(22.1f);
             indicatorsX7_stage_7();
         }  else if (getStoryID() == 22.3f) {
-            setTextForAButton(mainClass.getChapterText(22,2));
-            setStoryID(22.2f);
+            button10Reverse(22.2f);
             indicatorsX7_stage_1();
         } else if (getStoryID() == 22.4f) {
-            setTextForAButton(mainClass.getChapterText(22,3));
-            setStoryID(22.3f);
+            button10Reverse(22.3f);
             indicatorsX7_stage_2();
         } else if (getStoryID() == 22.5f) {
-            setTextForAButton(mainClass.getChapterText(22,4));
-            setStoryID(22.4f);
+            button10Reverse(22.4f);
             indicatorsX7_stage_3();
         } else if (getStoryID() == 22.6f) {
-            setTextForAButton(mainClass.getChapterText(22,5));
-            setStoryID(22.5f);
+            button10Reverse(22.5f);
             indicatorsX7_stage_4();
         } else if (getStoryID() == 22.7f) {
-            setTextForAButton(mainClass.getChapterText(22,6));
-            setStoryID(22.6f);
+            button10Reverse(22.6f);
             indicatorsX7_stage_5();
         } else if (getStoryID() == 23.1f) {
         } else if (getStoryID() == 23.2f) {
-            setTextForAButton(mainClass.getChapterText(23,1));
-            setStoryID(23.1f);
+            button10Reverse(23.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 23.3f) {
-            setTextForAButton(mainClass.getChapterText(23,2));
-            setStoryID(23.2f);
+            button10Reverse(23.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 23.4f) {
-            setTextForAButton(mainClass.getChapterText(23,3));
-            setStoryID(23.3f);
+            button10Reverse(23.3f);
             indicatorsX4_stage_2();
         }
     }
@@ -378,407 +328,312 @@ public class Button extends Actor {
 
     public void useForTheButtonis10() {
         if (getStoryID() == 1.1f) {
-            setTextForAButton(mainClass.getChapterText(1,2));
-            setStoryID(1.2f);
-            System.out.println(getStoryID());
+            button10Reverse(1.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 1.2f) {
-            setTextForAButton(mainClass.getChapterText(1,3));
-            setStoryID(1.3f);
+            button10Reverse(1.3f);
             indicatorsX3_stage_2();
             check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 1.3f) {
-            setTextForAButton(mainClass.getChapterText(1,1));
-            setStoryID(1.1f);
+            button10Reverse(1.1f);
             indicatorsX3_stage_3();
         }else if (getStoryID() == 2.1f) {
-            setTextForAButton(mainClass.getChapterText(2,2));
-            setStoryID(2.2f);
+            button10Reverse(2.2f);
             indicatorsX2_stage_1();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 2.2f) {
-            setTextForAButton(mainClass.getChapterText(2,1));
-            setStoryID(2.1f);
+            button10Reverse(2.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 3.1f) {
-            setTextForAButton(mainClass.getChapterText(3,2));
-            setStoryID(3.2f);
+            button10Reverse(3.2f);
             indicatorsX2_stage_1();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 3.2f) {
-            setTextForAButton(mainClass.getChapterText(3,1));
-            setStoryID(3.1f);
+            button10Reverse(3.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 4.1f) {
-            setTextForAButton(mainClass.getChapterText(4,2));
-            setStoryID(4.2f);
+            button10Reverse(4.2f);
             indicatorsX2_stage_1();
             check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 4.2f) {
-            setTextForAButton(mainClass.getChapterText(4,1));
-            setStoryID(4.1f);
+            button10Reverse(4.1f);
             indicatorsX2_stage_2();
         } else if (getStoryID() == 5.1f) {
-            setTextForAButton(mainClass.getChapterText(5,2));
-            setStoryID(5.2f);
+            button10Reverse(5.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 5.2f) {
-            setTextForAButton(mainClass.getChapterText(5,3));
-            setStoryID(5.3f);
+            button10Reverse(5.3f);
             indicatorsX3_stage_2();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         }  else if (getStoryID() == 5.3f) {
-            setTextForAButton(mainClass.getChapterText(5,1));
-            setStoryID(5.1f);
+            button10Reverse(5.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 6.1f) {
-            setTextForAButton(mainClass.getChapterText(6,2));
-            setStoryID(6.2f);
+            button10Reverse(6.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 6.2f) {
-            setTextForAButton(mainClass.getChapterText(6,3));
-            setStoryID(6.3f);
+            button10Reverse(6.3f);
             indicatorsX3_stage_2();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         }  else if (getStoryID() == 6.3f) {
-            setTextForAButton(mainClass.getChapterText(6,1));
-            setStoryID(6.1f);
+            button10Reverse(6.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 7.1f) {
-            setTextForAButton(mainClass.getChapterText(7,2));
-            setStoryID(7.2f);
+            button10Reverse(7.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 7.2f) {
-            setTextForAButton(mainClass.getChapterText(7,3));
-            setStoryID(7.3f);
+            button10Reverse(7.3f);
             indicatorsX3_stage_2();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         }  else if (getStoryID() == 7.3f) {
-            setTextForAButton(mainClass.getChapterText(7,1));
-            setStoryID(7.1f);
+            button10Reverse(7.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 8.1f) {
-            setTextForAButton(mainClass.getChapterText(8,2));
-            setStoryID(8.2f);
+            button10Reverse(8.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 8.2f) {
-            setTextForAButton(mainClass.getChapterText(8,3));
-            setStoryID(8.3f);
+            button10Reverse(8.3f);
             indicatorsX3_stage_2();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         }  else if (getStoryID() == 8.3f) {
-            setTextForAButton(mainClass.getChapterText(8,1));
-            setStoryID(8.1f);
+            button10Reverse(8.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 9.1f) {
-            setTextForAButton(mainClass.getChapterText(9,2));
-            setStoryID(9.2f);
+            button10Reverse(9.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 9.2f) {
-            setTextForAButton(mainClass.getChapterText(9,3));
-            setStoryID(9.3f);
+            button10Reverse(9.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 9.3f) {
-            setTextForAButton(mainClass.getChapterText(9,4));
-            setStoryID(9.4f);
+            button10Reverse(9.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 9.4f) {
-            setTextForAButton(mainClass.getChapterText(9,1));
-            setStoryID(9.1f);
+            button10Reverse(9.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 10.1f) {
-            setTextForAButton(mainClass.getChapterText(10,2));
-            setStoryID(10.2f);
+            button10Reverse(10.2f);
             indicatorsX3_stage_1();
         } else if (getStoryID() == 10.2f) {
-            setTextForAButton(mainClass.getChapterText(10,3));
-            setStoryID(10.3f);
+            button10Reverse(10.3f);
             indicatorsX3_stage_2();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         }  else if (getStoryID() == 10.3f) {
-            setTextForAButton(mainClass.getChapterText(10,1));
-            setStoryID(10.1f);
+            button10Reverse(10.1f);
             indicatorsX3_stage_3();
         } else if (getStoryID() == 11.1f) {
-            setTextForAButton(mainClass.getChapterText(11,2));
-            setStoryID(11.2f);
+            button10Reverse(11.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 11.2f) {
-            setTextForAButton(mainClass.getChapterText(11,3));
-            setStoryID(11.3f);
+            button10Reverse(11.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 11.3f) {
-            setTextForAButton(mainClass.getChapterText(11,4));
-            setStoryID(11.4f);
+            button10Reverse(11.4f);
             indicatorsX4_stage_3();
             check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 11.4f) {
-            setTextForAButton(mainClass.getChapterText(11,1));
-            setStoryID(11.1f);
+            button10Reverse(11.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 12.1f) {
-            setTextForAButton(mainClass.getChapterText(12,2));
-            setStoryID(12.2f);
+            button10Reverse(12.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 12.2f) {
-            setTextForAButton(mainClass.getChapterText(12,3));
-            setStoryID(12.3f);
+            button10Reverse(12.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 12.3f) {
-            setTextForAButton(mainClass.getChapterText(12,4));
-            setStoryID(12.4f);
+            button10Reverse(12.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 12.4f) {
-            setTextForAButton(mainClass.getChapterText(12,1));
-            setStoryID(12.1f);
+            button10Reverse(12.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 13.1f) {
-            setTextForAButton(mainClass.getChapterText(13,2));
-            setStoryID(13.2f);
+            button10Reverse(13.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 13.2f) {
-            setTextForAButton(mainClass.getChapterText(13,3));
-            setStoryID(13.3f);
+            button10Reverse(13.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 13.3f) {
-            setTextForAButton(mainClass.getChapterText(13,4));
-            setStoryID(13.4f);
+            button10Reverse(13.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 13.4f) {
-            setTextForAButton(mainClass.getChapterText(13,1));
-            setStoryID(13.1f);
+            button10Reverse(13.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 14.1f) {
-            setTextForAButton(mainClass.getChapterText(14,2));
-            setStoryID(14.2f);
+            button10Reverse(14.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 14.2f) {
-            setTextForAButton(mainClass.getChapterText(14,3));
-            setStoryID(14.3f);
+            button10Reverse(14.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 14.3f) {
-            setTextForAButton(mainClass.getChapterText(14,4));
-            setStoryID(14.4f);
+            button10Reverse(14.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 14.4f) {
-            setTextForAButton(mainClass.getChapterText(14,1));
-            setStoryID(14.1f);
+            button10Reverse(14.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 15.1f) {
-            setTextForAButton(mainClass.getChapterText(15,2));
-            setStoryID(15.2f);
+            button10Reverse(15.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 15.2f) {
-            setTextForAButton(mainClass.getChapterText(15,3));
-            setStoryID(15.3f);
+            button10Reverse(15.3f);
             indicatorsX5_stage_2();
         }  else if (getStoryID() == 15.3f) {
-            setTextForAButton(mainClass.getChapterText(15,4));
-            setStoryID(15.4f);
+            button10Reverse(15.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 15.4f) {
-            setTextForAButton(mainClass.getChapterText(15,5));
-            setStoryID(15.5f);
+            button10Reverse(15.5f);
             indicatorsX5_stage_4();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 15.5f) {
-            setTextForAButton(mainClass.getChapterText(15,1));
-            setStoryID(15.1f);
+            button10Reverse(15.1f);
             indicatorsX5_stage_5();
         } else if (getStoryID() == 16.1f) {
-            setTextForAButton(mainClass.getChapterText(16,2));
-            setStoryID(16.2f);
+            button10Reverse(16.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 16.2f) {
-            setTextForAButton(mainClass.getChapterText(16,3));
-            setStoryID(16.3f);
+            button10Reverse(16.3f);
             indicatorsX5_stage_2();
         }  else if (getStoryID() == 16.3f) {
-            setTextForAButton(mainClass.getChapterText(16,4));
-            setStoryID(16.4f);
+            button10Reverse(16.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 16.4f) {
-            setTextForAButton(mainClass.getChapterText(16,5));
-            setStoryID(16.5f);
+            button10Reverse(16.5f);
             indicatorsX5_stage_4();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 16.5f) {
-            setTextForAButton(mainClass.getChapterText(16,1));
-            setStoryID(16.1f);
+            button10Reverse(16.1f);
             indicatorsX5_stage_5();
         } else if (getStoryID() == 17.1f) {
-            setTextForAButton(mainClass.getChapterText(17,2));
-            setStoryID(17.2f);
+            button10Reverse(17.2f);
             indicatorsX8_stage_1();
         } else if (getStoryID() == 17.2f) {
-            setTextForAButton(mainClass.getChapterText(17,3));
-            setStoryID(17.3f);
+            button10Reverse(17.3f);
             indicatorsX8_stage_2();
         }  else if (getStoryID() == 17.3f) {
-            setTextForAButton(mainClass.getChapterText(17,4));
-            setStoryID(17.4f);
+            button10Reverse(17.4f);
             indicatorsX8_stage_3();
         } else if (getStoryID() == 17.4f) {
-            setTextForAButton(mainClass.getChapterText(17,5));
-            setStoryID(17.5f);
+            button10Reverse(17.5f);
             indicatorsX8_stage_4();
         } else if (getStoryID() == 17.5f) {
-            setTextForAButton(mainClass.getChapterText(17,6));
-            setStoryID(17.6f);
+            button10Reverse(17.6f);
             indicatorsX8_stage_5();
         } else if (getStoryID() == 17.6f) {
-            setTextForAButton(mainClass.getChapterText(17,7));
-            setStoryID(17.7f);
+            button10Reverse(17.7f);
             indicatorsX8_stage_6();
         } else if (getStoryID() == 17.7f) {
-            setTextForAButton(mainClass.getChapterText(17,8));
-            setStoryID(17.8f);
+            button10Reverse(17.8f);
             indicatorsX8_stage_7();
             check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 17.8f) {
-            setTextForAButton(mainClass.getChapterText(17,1));
-            setStoryID(17.1f);
+            button10Reverse(17.1f);
             indicatorsX8_stage_8();
         } else if (getStoryID() == 18.1f) {
-            setTextForAButton(mainClass.getChapterText(18,2));
-            setStoryID(18.2f);
+            button10Reverse(18.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 18.2f) {
-            setTextForAButton(mainClass.getChapterText(18,3));
-            setStoryID(18.3f);
+            button10Reverse(18.3f);
             indicatorsX5_stage_2();
         }  else if (getStoryID() == 18.3f) {
-            setTextForAButton(mainClass.getChapterText(18,4));
-            setStoryID(18.4f);
+            button10Reverse(18.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 18.4f) {
-            setTextForAButton(mainClass.getChapterText(18,5));
-            setStoryID(18.5f);
+            button10Reverse(18.5f);
             indicatorsX5_stage_4();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 18.5f) {
-            setTextForAButton(mainClass.getChapterText(18,1));
-            setStoryID(18.1f);
+            button10Reverse(18.1f);
             indicatorsX5_stage_5();
         } else if (getStoryID() == 19.1f) {
-            setTextForAButton(mainClass.getChapterText(19,2));
-            setStoryID(19.2f);
+            button10Reverse(19.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 19.2f) {
-            setTextForAButton(mainClass.getChapterText(19,3));
-            setStoryID(19.3f);
+            button10Reverse(19.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 19.3f) {
-            setTextForAButton(mainClass.getChapterText(19,4));
-            setStoryID(19.4f);
+            button10Reverse(19.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 19.4f) {
-            setTextForAButton(mainClass.getChapterText(19,1));
-            setStoryID(19.1f);
+            button10Reverse(19.1f);
             indicatorsX4_stage_4();
         }  else if (getStoryID() == 20.1f) {
-            setTextForAButton(mainClass.getChapterText(20,2));
-            setStoryID(20.2f);
+            button10Reverse(20.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 20.2f) {
-            setTextForAButton(mainClass.getChapterText(20,3));
-            setStoryID(20.3f);
+            button10Reverse(20.3f);
             indicatorsX4_stage_2();
         }  else if (getStoryID() == 20.3f) {
-            setTextForAButton(mainClass.getChapterText(20,4));
-            setStoryID(20.4f);
+            button10Reverse(20.4f);
             indicatorsX4_stage_3();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 20.4f) {
-            setTextForAButton(mainClass.getChapterText(20,1));
-            setStoryID(20.1f);
+            button10Reverse(20.1f);
             indicatorsX4_stage_4();
         } else if (getStoryID() == 21.1f) {
-            setTextForAButton(mainClass.getChapterText(21,2));
-            setStoryID(21.2f);
+            button10Reverse(21.2f);
             indicatorsX5_stage_1();
         } else if (getStoryID() == 21.2f) {
-            setTextForAButton(mainClass.getChapterText(21,3));
-            setStoryID(21.3f);
+            button10Reverse(21.3f);
             indicatorsX5_stage_2();
         }  else if (getStoryID() == 21.3f) {
-            setTextForAButton(mainClass.getChapterText(21,4));
-            setStoryID(21.4f);
+            button10Reverse(21.4f);
             indicatorsX5_stage_3();
         } else if (getStoryID() == 21.4f) {
-            setTextForAButton(mainClass.getChapterText(21,5));
-            setStoryID(21.5f);
+            button10Reverse(21.5f);
             indicatorsX5_stage_4();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 21.5f) {
-            setTextForAButton(mainClass.getChapterText(21,1));
-            setStoryID(21.1f);
+            button10Reverse(21.1f);
             indicatorsX5_stage_5();
         } else if (getStoryID() == 22.1f) {
-            setTextForAButton(mainClass.getChapterText(22,2));
-            setStoryID(22.2f);
+            button10Reverse(22.2f);
             indicatorsX7_stage_1();
         } else if (getStoryID() == 22.2f) {
-            setTextForAButton(mainClass.getChapterText(22,3));
-            setStoryID(22.3f);
+            button10Reverse(22.3f);
             indicatorsX7_stage_2();
         }  else if (getStoryID() == 22.3f) {
-            setTextForAButton(mainClass.getChapterText(22,4));
-            setStoryID(22.4f);
+            button10Reverse(22.4f);
             indicatorsX7_stage_3();
         } else if (getStoryID() == 22.4f) {
-            setTextForAButton(mainClass.getChapterText(22,5));
-            setStoryID(22.5f);
+            button10Reverse(22.5f);
             indicatorsX7_stage_4();
         } else if (getStoryID() == 22.5f) {
-            setTextForAButton(mainClass.getChapterText(22,6));
-            setStoryID(22.6f);
+            button10Reverse(22.6f);
             indicatorsX7_stage_5();
         } else if (getStoryID() == 22.6f) {
-            setTextForAButton(mainClass.getChapterText(22,7));
-            setStoryID(22.7f);
+            button10Reverse(22.7f);
             indicatorsX7_stage_6();
             check1ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 22.7f) {
-            setTextForAButton(mainClass.getChapterText(22,1));
-            setStoryID(22.1f);
+            button10Reverse(22.1f);
             indicatorsX7_stage_7();
         } else if (getStoryID() == 23.1f) {
-            setTextForAButton(mainClass.getChapterText(23,2));
-            setStoryID(23.2f);
+            button10Reverse(23.2f);
             indicatorsX4_stage_1();
         } else if (getStoryID() == 23.2f) {
-            setTextForAButton(mainClass.getChapterText(23,3));
-            setStoryID(23.3f);
+            button10Reverse(23.3f);
             indicatorsX4_stage_2();
         } else if (getStoryID() == 23.3f) {
-            setTextForAButton(mainClass.getChapterText(23,4));
-            setStoryID(23.4f);
+            button10Reverse(23.4f);
             indicatorsX4_stage_3();
             check2ChoicesgetGotToLastTextPartOkayToShowNeededButtons();
         } else if (getStoryID() == 23.4f) {
-            setTextForAButton(mainClass.getChapterText(23,1));
-            setStoryID(23.1f);
+            button10Reverse(23.1f);
             indicatorsX4_stage_4();
         }
-
     }
 
     public void indicatorsX2_stage_1() {
         mainClass.setTextIndicator_2_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_2_2(new Texture(Gdx.files.internal("text_now_3.png")));
-
     }
     public void indicatorsX2_stage_2() {
         mainClass.setTextIndicator_2_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_2_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
-
     public void indicatorsX3_stage_1() {
         mainClass.setTextIndicator_3_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_2(new Texture(Gdx.files.internal("text_now_3.png")));
@@ -794,264 +649,126 @@ public class Button extends Actor {
         mainClass.setTextIndicator_3_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_3_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
-
     public void indicatorsX4_stage_1() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX4_stage_2() {
-        mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX4_stage_3() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX4_stage_4() {
         mainClass.setTextIndicator_4_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_4_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_4_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_4_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-
     }
-
     public void indicatorsX5_stage_1() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_2() {
-        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_3() {
-        mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX5_stage_4() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX5_stage_5() {
         mainClass.setTextIndicator_5_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_5_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_5_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_5_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
-
-    public void indicatorsX6_stage_1() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_2() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_3() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_4() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-    public void indicatorsX6_stage_5() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_now_3.png")));
-    }
-    public void indicatorsX6_stage_6() {
-        mainClass.setTextIndicator_6_1(new Texture(Gdx.files.internal("text_now_3.png")));
-        mainClass.setTextIndicator_6_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_6_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-    }
-
     public void indicatorsX7_stage_1() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_2() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_3() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_4() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_5() {
-        mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX7_stage_6() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX7_stage_7() {
         mainClass.setTextIndicator_7_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_7_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_7_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_7_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
-
     public void indicatorsX8_stage_1() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_2() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_3() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_4() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_5() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_6() {
-        mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
     public void indicatorsX8_stage_7() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_now_3.png")));
     }
     public void indicatorsX8_stage_8() {
         mainClass.setTextIndicator_8_1(new Texture(Gdx.files.internal("text_now_3.png")));
         mainClass.setTextIndicator_8_2(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_3(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_4(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_5(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_6(new Texture(Gdx.files.internal("text_hidden_3.png")));
-        mainClass.setTextIndicator_8_7(new Texture(Gdx.files.internal("text_hidden_3.png")));
         mainClass.setTextIndicator_8_8(new Texture(Gdx.files.internal("text_hidden_3.png")));
     }
-
-
 
     public void setGroup1(Group group) {
        this.group = group;
@@ -1102,7 +819,6 @@ public class Button extends Actor {
 
 
     public void useForTheButton5Or6Commons() {
-//        mainClass.prefs.putBoolean("clearedChapter" + mainClass.getChapterNumber(), true);
         System.out.println("REMOVING STEPS");
         System.out.println("STEPS TO OPEN NEXT CHAPTER " + stepsToOpenNextChapter);
         mainClass.removeSteps(stepsToOpenNextChapter);
@@ -1171,7 +887,6 @@ public class Button extends Actor {
             } else if (mainClass.getScreenHeight() >= 1000) {
                 scrollerWidth = -mainclass.getScreenWidth()*2.15f;
             }
-
         }
 
        if(useForTheButton == 14) {
@@ -1180,19 +895,15 @@ public class Button extends Actor {
        } else {
           calculateButtonXAndYPlace();
        }
-
-
-        if(stepsToOpenNextChapter > 0) {
-            this.stepsToOpenNextChapter = stepsToOpenNextChapter;
-        }
+       if(stepsToOpenNextChapter > 0) {
+           this.stepsToOpenNextChapter = stepsToOpenNextChapter;
+       }
        chapterNumber = mainclass.getChapterNumber();
        font12 = mainClass.getFont12();
 
        setBounds(xPlace, yPlace, buttonWidth, buttonHeight);
 
        addListener(new Gesture());
-
-
    }
 
     class Gesture extends ActorGestureListener {
@@ -1212,8 +923,6 @@ public class Button extends Actor {
                     }
                 }
             }
-
-
             if(getUseForTheButton() == 6 && !getTexture().toString().equals("next_page.png") || getUseForTheButton() == 5) {
                 if(stepsToOpenNextChapter > steps) {
                     System.out.println("NExt chapter button pressed but too little steps");
@@ -1224,21 +933,14 @@ public class Button extends Actor {
             if(getUseForTheButton() == 6 && getTexture().toString().equals("next_page.png")) {
                 setTexture(new Texture(Gdx.files.internal("next_page_pressed.png")));
             }
-
-
-
-
             if(getUseForTheButton() == 7) {
                 setTexture(new Texture(Gdx.files.internal("prev_page_pressed.png")));
             }
             if (getUseForTheButton() == 8) {
                 setTexture(new Texture(Gdx.files.internal("back_X_pressed.png")));
             }
-
-
             if (getUseForTheButton() == 9) {
                 useForTheButton9Commons(false);
-
             }
         }
 
@@ -1279,23 +981,21 @@ public class Button extends Actor {
            if(getTexture().toString().equals("next_page_pressed.png")) {
                setTexture(new Texture(Gdx.files.internal("next_page.png")));
            }
-
-
-            if (getUseForTheButton() == 1) {
-                System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
-                if(!mainClass.getPrefsPopUpActivate()) {
-                    if (mainClass.prefs.getBoolean("openedFirstTime")) {
-                        mainClass.prefs.putBoolean("openedFirstTime", true);
-                        mainClass.prefs.flush();
-                        System.out.println("OPENEEDFIRSTTIME");
-                        mainClass.prefs.flush();
-                    }
-                    mainClass.setPlayPressed(true);
-                    System.out.println(mainClass.getPlayPressed());
-                    GameScreen gameScreen = new GameScreen(mainClass);
-                    mainClass.setScreen(gameScreen);
+           if (getUseForTheButton() == 1) {
+               System.out.println("PREFSPOPUPACTIVATE" + prefsPopUpActivate);
+               if(!mainClass.getPrefsPopUpActivate()) {
+                   if (mainClass.prefs.getBoolean("openedFirstTime")) {
+                       mainClass.prefs.putBoolean("openedFirstTime", true);
+                       mainClass.prefs.flush();
+                       System.out.println("OPENEEDFIRSTTIME");
+                       mainClass.prefs.flush();
+                   }
+                   mainClass.setPlayPressed(true);
+                   System.out.println(mainClass.getPlayPressed());
+                   GameScreen gameScreen = new GameScreen(mainClass);
+                   mainClass.setScreen(gameScreen);
                 } else {
-                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
+                   setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                 }
             }else if (getUseForTheButton() == 2) {
                 if(!mainClass.getPrefsPopUpActivate()) {
@@ -1328,7 +1028,26 @@ public class Button extends Actor {
                     }
                 }
                 if(touchUpX == 0) {
-                    if (mainClass.getChapterNumber() == 1) {
+                    if(mainClass.getChapterNumber() == 2
+                        || mainClass.getChapterNumber() == 3
+                        || mainClass.getChapterNumber() == 5
+                        || mainClass.getChapterNumber() == 6
+                        || mainClass.getChapterNumber() == 7
+                        || mainClass.getChapterNumber() == 8
+                        || mainClass.getChapterNumber() == 9
+                        || mainClass.getChapterNumber() == 10
+                        || mainClass.getChapterNumber() == 12
+                        || mainClass.getChapterNumber() == 13
+                        || mainClass.getChapterNumber() == 14
+                        || mainClass.getChapterNumber() == 15
+                        || mainClass.getChapterNumber() == 16
+                        || mainClass.getChapterNumber() == 18
+                        || mainClass.getChapterNumber() == 19
+                        || mainClass.getChapterNumber() == 20
+                        || mainClass.getChapterNumber() == 21
+                        || mainClass.getChapterNumber() == 22) {
+                            useForTheButton6IfEnoughSteps();
+                    } else if (mainClass.getChapterNumber() == 1) {
                         if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
                                 mainClass.setStepsToOpenChapter3_1(mainClass.getStepsToOpenChapter3_1() + 300);
@@ -1336,10 +1055,6 @@ public class Button extends Actor {
                             }
                             useForTheButton5Or6Commons();
                         }
-                    } else if (mainClass.getChapterNumber() == 2) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 3) {
-                        useForTheButton6IfEnoughSteps();
                     } else if (mainClass.getChapterNumber() == 4) {
                         if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
@@ -1348,18 +1063,6 @@ public class Button extends Actor {
                             }
                             useForTheButton5Or6Commons();
                         }
-                    } else if (mainClass.getChapterNumber() == 5) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 6) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 7) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 8) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 9) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 10) {
-                        useForTheButton6IfEnoughSteps();
                     } else if (mainClass.getChapterNumber() == 11) {
                         if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
@@ -1368,16 +1071,6 @@ public class Button extends Actor {
                             }
                             useForTheButton5Or6Commons();
                         }
-                    } else if (mainClass.getChapterNumber() == 12) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 13) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 14) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 15) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 16) {
-                        useForTheButton6IfEnoughSteps();
                     } else if (mainClass.getChapterNumber() == 17) {
                         if(stepsToOpenNextChapter <= steps) {
                             if (getUseForTheButton() == 5) {
@@ -1386,17 +1079,7 @@ public class Button extends Actor {
                             }
                             useForTheButton5Or6Commons();
                         }
-                    } else if (mainClass.getChapterNumber() == 18) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 19) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 20) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 21) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 22) {
-                        useForTheButton6IfEnoughSteps();
-                    } else if (mainClass.getChapterNumber() == 23) {
+                    }else if (mainClass.getChapterNumber() == 23) {
                         System.out.println("GOT HERE at 23");
                         if (getUseForTheButton() == 5) {
                             mainClass.prefs.clear();
@@ -1557,9 +1240,15 @@ public class Button extends Actor {
                if(!mainClass.getPrefsPopUpActivate()) {
                    setTexture(new Texture(Gdx.files.internal("button_unpressed.png")));
                    mainClass.setPrefsPopUpActivate(true);
-                   mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2, mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
-                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getYes(), 0, 18, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
-                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getNo(), 0, 19, mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("box.png"), mainClass.getResetGameQuestion(), 0, 17,
+                           mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2,
+                           mainClass.getScreenWidth() / 1.5f, mainClass.getScreenHeight() / 1.6f, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getYes(), 0, 18,
+                           mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2+20, mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20,
+                           buttonWidth, buttonHeight, 0);
+                   mainClass.createButtons(new Texture("button_unpressed.png"), mainClass.getNo(), 0, 19,
+                           mainClass.getScreenWidth() / 2 - mainClass.getScreenWidth() / 1.5f/2 + mainClass.getScreenWidth() / 1.5f - buttonWidth-20,
+                           mainClass.getScreenHeight() / 2-mainClass.getScreenHeight() / 1.6f/2+mainClass.getScreenHeight()/20, buttonWidth, buttonHeight, 0);
                }
            }
             if (getUseForTheButton() == 18) {
@@ -1567,8 +1256,6 @@ public class Button extends Actor {
                 mainClass.setSteps(0);
                 mainClass.setCurrentFurthestChapter(1);
                 mainClass.setClearedChapterGeneral(false, 1);
-//                mainClass.setClearedChapter1(false);
-//                mainClass.prefs.putBoolean("clearedChapter1", mainClass.getClearedChapter1());
                 mainClass.setChapterNumber(1);
                 mainClass.setResetEverything(true);
                 mainClass.prefs.flush();
@@ -1642,7 +1329,6 @@ public class Button extends Actor {
                         useForTheButtonis10();
                     }
                     System.out.println("changing slides " + flingX + " StoryID: " + getStoryID());
-
                 }
             }
         }
@@ -1655,7 +1341,6 @@ public class Button extends Actor {
 
         if(useForTheButton == 5 || useForTheButton == 6) {
             if(mainClass.getGotToLastTextPartOkayToShowNeededButtons()) {
-
                 if(useForTheButton == 5) {
                     mainClass.setButton5Visible(true);
                 }
@@ -1676,12 +1361,9 @@ public class Button extends Actor {
                 this.getRotation(),0,0,
                 texture.getWidth(), texture.getHeight(), false, false);
 
-
         if(useForTheButton == 9) {
             font12.draw(batch,"", buttonTextXPlace, buttonTextYPlace);
-
         } else if (useForTheButton == 15) {
-
             textForAButton = String.valueOf(steps) + "/" + stepsToOpenNextChapter;
             calculateButtonXAndYPlace();
             font12.draw(batch,textForAButton, buttonTextXPlace+20, buttonTextYPlace);
@@ -1695,9 +1377,7 @@ public class Button extends Actor {
                } else {
                    font12.draw(batch,textForAButton, buttonTextXPlace, buttonTextYPlace);
                }
-
            }
-
         }
         //STORY BOX TEXT
         else {
@@ -1709,8 +1389,6 @@ public class Button extends Actor {
                 font12.draw(batch,textForAButton, textboxHeight/8+4, textboxHeight+25);
             }
         }
-
-
     }
     @Override
     public void act(float delta) {

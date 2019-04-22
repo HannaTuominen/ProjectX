@@ -8,47 +8,49 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
-    The actual game screen where the game is "played", gotten through main menu
+ * The actual game screen where the game is "played", gotten through main menu
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
  */
 
 public class GameScreen implements Screen {
 
-    MainClass mainClass;
-    SpriteBatch batch;
+    private MainClass mainClass;
+    private SpriteBatch batch;
 
-    Texture backGroundImage1;
-    Texture backGroundImage2_1;
-    Texture backGroundImage2_2;
-    Texture backGroundImage3;
-    Texture backGroundImage4;
-    Texture backGroundImage5_1;
-    Texture backGroundImage5_2;
-    Texture backGroundImage6;
-    Texture backGroundImage7;
-    Texture backGroundImage8;
-    Texture backGroundImage9;
-    Texture backGroundImage10;
-    Texture backGroundImage11;
-    Texture backGroundImage12_1;
-    Texture backGroundImage12_2;
-    Texture backGroundImage13;
-    Texture backGroundImage14;
-    Texture backGroundImage15;
-    Texture backGroundImage16;
-    Texture backGroundImage17;
-    Texture backGroundImage18_1;
-    Texture backGroundImage18_2;
-    Texture backGroundImage19;
-    Texture backGroundImage20;
-    Texture backGroundImage21;
-    Texture backGroundImage22;
-    Texture backGroundImage23;
+    private Texture backGroundImage1;
+    private Texture backGroundImage2_1;
+    private Texture backGroundImage2_2;
+    private Texture backGroundImage3;
+    private Texture backGroundImage4;
+    private Texture backGroundImage5_1;
+    private Texture backGroundImage5_2;
+    private Texture backGroundImage6;
+    private Texture backGroundImage7;
+    private Texture backGroundImage8;
+    private Texture backGroundImage9;
+    private Texture backGroundImage10;
+    private Texture backGroundImage11;
+    private Texture backGroundImage12_1;
+    private Texture backGroundImage12_2;
+    private Texture backGroundImage13;
+    private Texture backGroundImage14;
+    private Texture backGroundImage15;
+    private Texture backGroundImage16;
+    private Texture backGroundImage17;
+    private Texture backGroundImage18_1;
+    private Texture backGroundImage18_2;
+    private Texture backGroundImage19;
+    private Texture backGroundImage20;
+    private Texture backGroundImage21;
+    private Texture backGroundImage22;
+    private Texture backGroundImage23;
 
-    Texture backGroundImage24_1;
-    Texture backGroundImage24_2;
+    private Texture backGroundImage24_1;
+    private Texture backGroundImage24_2;
 
-    Skin skin;
-    float stepboxHeight;
+    private float stepboxHeight;
 
     private ChapterAssets chapter1;
     private ChapterAssets chapter2_1;
@@ -82,11 +84,11 @@ public class GameScreen implements Screen {
     private ChapterAssets chapter24_2;
 
 
-    float textboxHeight;
+    private float textboxHeight;
 
 
-    float buttonWidth;
-    float buttonHeight;
+    private float buttonWidth;
+    private float buttonHeight;
 
     private boolean openedFirstTime = false;
 

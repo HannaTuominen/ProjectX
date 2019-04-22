@@ -4,24 +4,28 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-
+/**
+ * Main menu where you can go to ChapterSelect, GameScreen, Credits and exit the game
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
+ */
 public class ChapterAssets extends Actor {
     private Texture texture;
     private Texture textbox;
-    private Texture stepbox;
 
 
-    MainClass mainClass;
+    private MainClass mainClass;
 
-    BitmapFont font12;
-    float screenWidth;
-    float screenHeight;
+    private BitmapFont font12;
+    private float screenWidth;
+    private float screenHeight;
 
-    float textboxHeight;
-    float stepboxHeight;
-    int steps;
+    private float textboxHeight;
+    private float stepboxHeight;
+    private int steps;
 
-    int howManyPageSwaps;
+    private int howManyPageSwaps;
 
     public ChapterAssets(MainClass MainClass2, Texture texture, int howManyPageSwaps) {
         this.mainClass = MainClass2;
@@ -66,7 +70,6 @@ public class ChapterAssets extends Actor {
 
         if(mainClass.getChapterNumber() != 24) {
             batch.draw(textbox,10f,0f,screenWidth-20f, textboxHeight);
-
         }
 
         if(howManyPageSwaps == 2) {

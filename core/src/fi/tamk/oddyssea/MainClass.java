@@ -20,141 +20,67 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import java.util.Locale;
 
 /**
-	Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
-	These will be used in the different places of other codes.
+ * Main class where the batch, fonts, camera, buttons, localisation texts, screen width and height, chapterNumber and swapped and "MyPreferences.xml" where information is saved is created.
+ * These will be used in the different places of other codes.
+ * @author Hanna Tuominen
+ * @version 2019.2204
+ * @since 15.01.2019
  */
 
 public class MainClass extends Game {
-	//Batch created here and used in every single java code of the game
+    /**
+     * Batch created here and used in every single java code of the game.
+     */
 	private SpriteBatch batch;
-
-	//the font is created here and used everywhere else - size and bitmapFont also
+    /**
+     * The font is created here and used everywhere else - size and bitmapFont also.
+     */
 	private FreeTypeFontGenerator generator;
+    /**
+     * BitmapFont font12 - used everywhere that needs text font.
+     */
 	private BitmapFont font12;
+    /**
+     * Sets the font size depending on the screen size.
+     */
 	private int fontSize;
-
+    /**
+     * Boolean resetEverything is used to determine whether the game should be reset.
+     * Either in the end if you player decides to go the party of through main menus reset game button.
+     */
 	private boolean resetEverything = false;
+    /**
+     * Boolean prefsPopUpActive is
+     */
 	private boolean prefsPopUpActivate;
 	private boolean tutorialShow;
 	private boolean tooFewStepsPopUpActivate;
-	//SHOULD STEPS BE HERE AS THEY ARE USED EVERYWHERE?
-//	private float CurrentSteps;
 
 	//All of the names of the MyBundle things used in the FIN/ENG distinction
 
-	private String chapter1_1;
-	private String chapter1_2;
-	private String chapter1_3;
-
-	private String chapter2_1;
-	private String chapter2_2;
-
-	private String chapter3_1;
-	private String chapter3_2;
-
-	private String chapter4_1;
-	private String chapter4_2;
-
-	private String chapter5_1;
-	private String chapter5_2;
-	private String chapter5_3;
-
-	private String chapter6_1;
-	private String chapter6_2;
-	private String chapter6_3;
-
-	private String chapter7_1;
-	private String chapter7_2;
-	private String chapter7_3;
-
-	private String chapter8_1;
-	private String chapter8_2;
-	private String chapter8_3;
-
-	private String chapter9_1;
-	private String chapter9_2;
-	private String chapter9_3;
-	private String chapter9_4;
-
-	private String chapter10_1;
-	private String chapter10_2;
-	private String chapter10_3;
-
-	private String chapter11_1;
-	private String chapter11_2;
-	private String chapter11_3;
-	private String chapter11_4;
-
-	private String chapter12_1;
-	private String chapter12_2;
-	private String chapter12_3;
-	private String chapter12_4;
-
-	private String chapter13_1;
-	private String chapter13_2;
-	private String chapter13_3;
-	private String chapter13_4;
-
-	private String chapter14_1;
-	private String chapter14_2;
-	private String chapter14_3;
-	private String chapter14_4;
-
-	private String chapter15_1;
-	private String chapter15_2;
-	private String chapter15_3;
-	private String chapter15_4;
-	private String chapter15_5;
-
-	private String chapter16_1;
-	private String chapter16_2;
-	private String chapter16_3;
-	private String chapter16_4;
-	private String chapter16_5;
-
-	private String chapter17_1;
-	private String chapter17_2;
-	private String chapter17_3;
-	private String chapter17_4;
-	private String chapter17_5;
-	private String chapter17_6;
-	private String chapter17_7;
-	private String chapter17_8;
-
-	private String chapter18_1;
-	private String chapter18_2;
-	private String chapter18_3;
-	private String chapter18_4;
-	private String chapter18_5;
-
-	private String chapter19_1;
-	private String chapter19_2;
-	private String chapter19_3;
-	private String chapter19_4;
-
-	private String chapter20_1;
-	private String chapter20_2;
-	private String chapter20_3;
-	private String chapter20_4;
-
-	private String chapter21_1;
-	private String chapter21_2;
-	private String chapter21_3;
-	private String chapter21_4;
-	private String chapter21_5;
-
-	private String chapter22_1;
-	private String chapter22_2;
-	private String chapter22_3;
-	private String chapter22_4;
-	private String chapter22_5;
-	private String chapter22_6;
-	private String chapter22_7;
-
-	private String chapter23_1;
-	private String chapter23_2;
-	private String chapter23_3;
-	private String chapter23_4;
+	private String chapter1_1, chapter1_2, chapter1_3,
+			chapter2_1, chapter2_2,
+			chapter3_1, chapter3_2,
+			chapter4_1, chapter4_2,
+			chapter5_1, chapter5_2, chapter5_3,
+			chapter6_1, chapter6_2, chapter6_3,
+			chapter7_1, chapter7_2, chapter7_3,
+			chapter8_1, chapter8_2, chapter8_3,
+			chapter9_1, chapter9_2, chapter9_3, chapter9_4,
+			chapter10_1, chapter10_2, chapter10_3,
+			chapter11_1, chapter11_2, chapter11_3, chapter11_4,
+			chapter12_1, chapter12_2, chapter12_3, chapter12_4,
+			chapter13_1, chapter13_2, chapter13_3, chapter13_4,
+			chapter14_1, chapter14_2, chapter14_3, chapter14_4,
+			chapter15_1, chapter15_2, chapter15_3, chapter15_4, chapter15_5,
+			chapter16_1, chapter16_2, chapter16_3, chapter16_4, chapter16_5,
+			chapter17_1, chapter17_2, chapter17_3, chapter17_4, chapter17_5, chapter17_6, chapter17_7, chapter17_8,
+			chapter18_1, chapter18_2, chapter18_3, chapter18_4, chapter18_5,
+			chapter19_1, chapter19_2, chapter19_3, chapter19_4,
+			chapter20_1, chapter20_2, chapter20_3, chapter20_4,
+			chapter21_1, chapter21_2, chapter21_3, chapter21_4, chapter21_5,
+			chapter22_1, chapter22_2, chapter22_3, chapter22_4, chapter22_5, chapter22_6, chapter22_7,
+			chapter23_1, chapter23_2, chapter23_3, chapter23_4;
 
 
     private String resetGame;
@@ -188,10 +114,9 @@ public class MainClass extends Game {
 	private String chapter23_choice_text_2;
     private String chapter;
     private String sponsors;
-	// remove steps by: MyServices.removeSteps(int);
-	static int steps;
+	private static int steps;
 
-	GlyphLayout layout;
+	private GlyphLayout layout;
 
 	private boolean choseWrong_1 = false;
     private boolean choseWrong_2 = false;
@@ -259,12 +184,12 @@ public class MainClass extends Game {
 	float screenHeight;
 
 	//Implement the button used everywhere in the code
-	Button button;
-	Button button5;
-	Button button6;
-	String localLanguageToString;
-	Locale locale;
-	I18NBundle myBundle;
+	private Button button;
+    private Button button5;
+    private Button button6;
+    private String localLanguageToString;
+    private Locale locale;
+    private I18NBundle myBundle;
 	private static boolean swappedLanguage = false;
 
 	private static boolean languageFinnish = false;
@@ -273,11 +198,11 @@ public class MainClass extends Game {
 	//ChapterNumber is used everywhere in the code - it is the current chapter that is displayed
 	private static int chapterNumber = 1;
 	//Used to get and set the furthest the player has gotten in the story so evry time they press the play button in the main menu it redirects them correctly to the last chapter played
-	static int currentFurthestChapter = 1;
+    private static int currentFurthestChapter = 1;
 
 	//Used when creating a new button to set its width and height
-	float buttonWidth;
-	float buttonHeight;
+    private float buttonWidth;
+    private float buttonHeight;
 
 	//Needed to prevent creating new things every render lol, only creates this once
 	private boolean swapped = false;
@@ -287,65 +212,68 @@ public class MainClass extends Game {
 
 	//Camera used everywhere
 	public OrthographicCamera camera;
-	Group group;
+    private Group group;
 
-	Group group2;
+    private Group group2;
 
-    Group group3;
+    private Group group3;
 
-	Group group4;
+    private Group group4;
 
 	private boolean gotToLastTextPartOkayToShowNeededButtons = false;
 	private boolean gotToTheLastTextOnceAlready = false;
 
 
 	//BACKGROUND MUSIC
-	Music music;
-	boolean backGroundMusicOff;
+    private Music music;
+    private boolean backGroundMusicOff;
 
-	Texture textIndicator_2_1;
-	Texture textIndicator_2_2;
+    private Texture textIndicator_2_1;
+    private Texture textIndicator_2_2;
 
-	Texture textIndicator_3_1;
-	Texture textIndicator_3_2;
-	Texture textIndicator_3_3;
+    private Texture textIndicator_3_1;
+    private Texture textIndicator_3_2;
+    private Texture textIndicator_3_3;
 
-	Texture textIndicator_4_1;
-	Texture textIndicator_4_2;
-	Texture textIndicator_4_3;
-	Texture textIndicator_4_4;
+    private Texture textIndicator_4_1;
+    private Texture textIndicator_4_2;
+    private Texture textIndicator_4_3;
+    private Texture textIndicator_4_4;
 
-	Texture textIndicator_5_1;
-	Texture textIndicator_5_2;
-	Texture textIndicator_5_3;
-	Texture textIndicator_5_4;
-	Texture textIndicator_5_5;
+    private Texture textIndicator_5_1;
+    private Texture textIndicator_5_2;
+    private Texture textIndicator_5_3;
+    private Texture textIndicator_5_4;
+    private Texture textIndicator_5_5;
 
-	Texture textIndicator_6_1;
-	Texture textIndicator_6_2;
-	Texture textIndicator_6_3;
-	Texture textIndicator_6_4;
-	Texture textIndicator_6_5;
-	Texture textIndicator_6_6;
+    private Texture textIndicator_6_1;
+    private Texture textIndicator_6_2;
+    private Texture textIndicator_6_3;
+    private Texture textIndicator_6_4;
+    private Texture textIndicator_6_5;
+    private Texture textIndicator_6_6;
 
-	Texture textIndicator_7_1;
-	Texture textIndicator_7_2;
-	Texture textIndicator_7_3;
-	Texture textIndicator_7_4;
-	Texture textIndicator_7_5;
-	Texture textIndicator_7_6;
-	Texture textIndicator_7_7;
+    private Texture textIndicator_7_1;
+    private Texture textIndicator_7_2;
+    private Texture textIndicator_7_3;
+    private Texture textIndicator_7_4;
+    private Texture textIndicator_7_5;
+    private Texture textIndicator_7_6;
+    private Texture textIndicator_7_7;
 
-	Texture textIndicator_8_1;
-	Texture textIndicator_8_2;
-	Texture textIndicator_8_3;
-	Texture textIndicator_8_4;
-	Texture textIndicator_8_5;
-	Texture textIndicator_8_6;
-	Texture textIndicator_8_7;
-	Texture textIndicator_8_8;
+    private Texture textIndicator_8_1;
+    private Texture textIndicator_8_2;
+    private Texture textIndicator_8_3;
+    private Texture textIndicator_8_4;
+    private Texture textIndicator_8_5;
+    private Texture textIndicator_8_6;
+    private Texture textIndicator_8_7;
+    private Texture textIndicator_8_8;
 
-
+	/**
+	 *
+	 * @param resetEverything
+	 */
 	public void setResetEverything(boolean resetEverything) {
         soundAndLanguage.putBoolean("resetEverything", resetEverything);
         this.resetEverything = resetEverything;
@@ -1363,7 +1291,7 @@ public class MainClass extends Game {
         } else if (combine.equals("chapter23_4")) {
             return  chapter23_4;
         } else {
-	        return "";
+	        return combine + " WRONG";
         }
     }
 	public String getNext() {
