@@ -665,230 +665,494 @@ public class MainClass extends Game {
 		return textIndicator_2_2;
 	}
 
-
-
+	/**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_3_1  sets the texture of indicator size is biggest (3 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_3_1(Texture textIndicator_3_1) {
 		this.textIndicator_3_1 = textIndicator_3_1;
 	}
+	/**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (3 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_3_1() {
 		return textIndicator_3_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_3_2  sets the texture of indicator size is biggest (3 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_3_2(Texture textIndicator_3_2) {
 		this.textIndicator_3_2 = textIndicator_3_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (3 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_3_2() {
 		return textIndicator_3_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_3_3  sets the texture of indicator size is biggest (3 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_3_3(Texture textIndicator_3_3) {
 		this.textIndicator_3_3 = textIndicator_3_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (3 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_3_3() {
 		return textIndicator_3_3;
 	}
-
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_4_1  sets the texture of indicator size is biggest (4 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_4_1(Texture textIndicator_4_1) {
 		this.textIndicator_4_1 = textIndicator_4_1;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (4 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_4_1() {
 		return textIndicator_4_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_4_2  sets the texture of indicator size is biggest (4 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_4_2(Texture textIndicator_4_2) {
 		this.textIndicator_4_2 = textIndicator_4_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (4 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_4_2() {
 		return textIndicator_4_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_4_3  sets the texture of indicator size is biggest (4 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_4_3(Texture textIndicator_4_3) {
 		this.textIndicator_4_3 = textIndicator_4_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (4 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_4_3() {
 		return textIndicator_4_3;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_4_4  sets the texture of indicator size is biggest (4 next to each other) and the place is (4).
+     */
 	public void setTextIndicator_4_4(Texture textIndicator_4_4) {
 		this.textIndicator_4_4 = textIndicator_4_4;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (4 next to each other) and the place is (4).
+     */
 	public Texture getTextIndicator_4_4() {
 		return textIndicator_4_4;
 	}
-
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_5_1  sets the texture of indicator size is biggest (5 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_5_1(Texture textIndicator_5_1) {
 		this.textIndicator_5_1 = textIndicator_5_1;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (5 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_5_1() {
 		return textIndicator_5_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_5_2  sets the texture of indicator size is biggest (5 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_5_2(Texture textIndicator_5_2) {
 		this.textIndicator_5_2 = textIndicator_5_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (5 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_5_2() {
 		return textIndicator_5_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_5_3  sets the texture of indicator size is biggest (5 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_5_3(Texture textIndicator_5_3) {
 		this.textIndicator_5_3 = textIndicator_5_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (5 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_5_3() {
 		return textIndicator_5_3;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_5_4  sets the texture of indicator size is biggest (5 next to each other) and the place is (4).
+     */
 	public void setTextIndicator_5_4(Texture textIndicator_5_4) {
 		this.textIndicator_5_4 = textIndicator_5_4;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (5 next to each other) and the place is (4).
+     */
 	public Texture getTextIndicator_5_4() {
 		return textIndicator_5_4;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_5_5  sets the texture of indicator size is biggest (5 next to each other) and the place is (5).
+     */
 	public void setTextIndicator_5_5(Texture textIndicator_5_5) {
 		this.textIndicator_5_5 = textIndicator_5_5;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (5 next to each other) and the place is (5).
+     */
 	public Texture getTextIndicator_5_5() {
 		return textIndicator_5_5;
 	}
-
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_1  sets the texture of indicator size is biggest (6 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_6_1(Texture textIndicator_6_1) {
 		this.textIndicator_6_1 = textIndicator_6_1;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_6_1() {
 		return textIndicator_6_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_2  sets the texture of indicator size is biggest (6 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_6_2(Texture textIndicator_6_2) {
 		this.textIndicator_6_2 = textIndicator_6_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_6_2() {
 		return textIndicator_6_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_3  sets the texture of indicator size is biggest (6 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_6_3(Texture textIndicator_6_3) {
 		this.textIndicator_6_3 = textIndicator_6_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_6_3() {
 		return textIndicator_6_3;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_4  sets the texture of indicator size is biggest (6 next to each other) and the place is (4).
+     */
 	public void setTextIndicator_6_4(Texture textIndicator_6_4) {
 		this.textIndicator_6_4 = textIndicator_6_4;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (4).
+     */
 	public Texture getTextIndicator_6_4() {
 		return textIndicator_6_4;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_5  sets the texture of indicator size is biggest (6 next to each other) and the place is (5).
+     */
 	public void setTextIndicator_6_5(Texture textIndicator_6_5) {
 		this.textIndicator_6_5 = textIndicator_6_5;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (5).
+     */
 	public Texture getTextIndicator_6_5() {
 		return textIndicator_6_5;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_6_6  sets the texture of indicator size is biggest (6 next to each other) and the place is (6).
+     */
 	public void setTextIndicator_6_6(Texture textIndicator_6_6) {
 		this.textIndicator_6_6 = textIndicator_6_6;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (6 next to each other) and the place is (6).
+     */
 	public Texture getTextIndicator_6_6() {
 		return textIndicator_6_6;
 	}
-
-
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_1  sets the texture of indicator size is biggest (7 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_7_1(Texture textIndicator_7_1) {
 		this.textIndicator_7_1 = textIndicator_7_1;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_7_1() {
 		return textIndicator_7_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_2  sets the texture of indicator size is biggest (7 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_7_2(Texture textIndicator_7_2) {
 		this.textIndicator_7_2 = textIndicator_7_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_7_2() {
 		return textIndicator_7_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_3  sets the texture of indicator size is biggest (7 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_7_3(Texture textIndicator_7_3) {
 		this.textIndicator_7_3 = textIndicator_7_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_7_3() {
 		return textIndicator_7_3;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_4  sets the texture of indicator size is biggest (7 next to each other) and the place is (4).
+     */
 	public void setTextIndicator_7_4(Texture textIndicator_7_4) {
 		this.textIndicator_7_4 = textIndicator_7_4;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (4).
+     */
 	public Texture getTextIndicator_7_4() {
 		return textIndicator_7_4;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_5  sets the texture of indicator size is biggest (7 next to each other) and the place is (5).
+     */
 	public void setTextIndicator_7_5(Texture textIndicator_7_5) {
 		this.textIndicator_7_5 = textIndicator_7_5;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (5).
+     */
 	public Texture getTextIndicator_7_5() {
 		return textIndicator_7_5;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_6  sets the texture of indicator size is biggest (7 next to each other) and the place is (6).
+     */
 	public void setTextIndicator_7_6(Texture textIndicator_7_6) {
 		this.textIndicator_7_6 = textIndicator_7_6;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (6).
+     */
 	public Texture getTextIndicator_7_6() {
 		return textIndicator_7_6;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_7_7  sets the texture of indicator size is biggest (7 next to each other) and the place is (7).
+     */
 	public void setTextIndicator_7_7(Texture textIndicator_7_7) {
 		this.textIndicator_7_7 = textIndicator_7_7;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (7 next to each other) and the place is (7).
+     */
 	public Texture getTextIndicator_7_7() {
 		return textIndicator_7_7;
 	}
-
-
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_1  sets the texture of indicator size is biggest (8 next to each other) and the place is (1).
+     */
 	public void setTextIndicator_8_1(Texture textIndicator_8_1) {
 		this.textIndicator_8_1 = textIndicator_8_1;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (1).
+     */
 	public Texture getTextIndicator_8_1() {
 		return textIndicator_8_1;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_2 sets the texture of indicator size is biggest (8 next to each other) and the place is (2).
+     */
 	public void setTextIndicator_8_2(Texture textIndicator_8_2) {
 		this.textIndicator_8_2 = textIndicator_8_2;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (2).
+     */
 	public Texture getTextIndicator_8_2() {
 		return textIndicator_8_2;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_3 sets the texture of indicator size is biggest (8 next to each other) and the place is (3).
+     */
 	public void setTextIndicator_8_3(Texture textIndicator_8_3) {
 		this.textIndicator_8_3 = textIndicator_8_3;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (3).
+     */
 	public Texture getTextIndicator_8_3() {
 		return textIndicator_8_3;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_4 sets the texture of indicator size is biggest (8 next to each other) and the place is (4).
+     */
 	public void setTextIndicator_8_4(Texture textIndicator_8_4) {
 		this.textIndicator_8_4 = textIndicator_8_4;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (4).
+     */
 	public Texture getTextIndicator_8_4() {
 		return textIndicator_8_4;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_5 sets the texture of indicator size is biggest (8 next to each other) and the place is (5).
+     */
 	public void setTextIndicator_8_5(Texture textIndicator_8_5) {
 		this.textIndicator_8_5 = textIndicator_8_5;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (5).
+     */
 	public Texture getTextIndicator_8_5() {
 		return textIndicator_8_5;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_6 sets the texture of indicator size is biggest (8 next to each other) and the place is (6).
+     */
 	public void setTextIndicator_8_6(Texture textIndicator_8_6) {
 		this.textIndicator_8_6 = textIndicator_8_6;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (6).
+     */
 	public Texture getTextIndicator_8_6() {
 		return textIndicator_8_6;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_7 sets the texture of indicator size is biggest (8 next to each other) and the place is (7).
+     */
 	public void setTextIndicator_8_7(Texture textIndicator_8_7) {
 		this.textIndicator_8_7 = textIndicator_8_7;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (7).
+     */
 	public Texture getTextIndicator_8_7() {
 		return textIndicator_8_7;
 	}
+    /**
+     * sets the current newest texture needed in the indicator (Games bottom middle).
+     * @param textIndicator_8_8 sets the texture of indicator size is biggest (8 next to each other) and the place is (8).
+     */
 	public void setTextIndicator_8_8(Texture textIndicator_8_8) {
 		this.textIndicator_8_8 = textIndicator_8_8;
 	}
+    /**
+     *  gets the current newest texture needed in the indicator (Games bottom middle).
+     * @return the texure of indicator size is biggest (8 next to each other) and the place is (8).
+     */
 	public Texture getTextIndicator_8_8() {
 		return textIndicator_8_8;
 	}
 
 
-
-
+    /**
+     * sets and saves if the background music should be on or off at this current moment and upon reopening the game
+     * @param backGroundMusicOff is the boolean used on saving the music either on or off
+     */
 	public void setbackGroundMusicOffOrOn(boolean backGroundMusicOff) {
         soundAndLanguage.putBoolean("backGroundMusicOff", backGroundMusicOff);
 		this.backGroundMusicOff = backGroundMusicOff;
         soundAndLanguage.flush();
 	}
+
+    /**
+     * returns whether the music is currently on or off
+     * @return returns backGroundMusicOff either true or false (on or off) and sets settings depending on that
+     */
 	public boolean getbackGroundMusicOffOrOn() {
 		backGroundMusicOff = soundAndLanguage.getBoolean("backGroundMusicOff");
 		return backGroundMusicOff;
 	}
+
+    /**
+     * On first load and such creates the background music used throughout the game
+     * @param backGroundMusicOff is used to set the music off or on upon first load of the game depending on
+     *                           what is saved in prefs and set to setbackGroundMusicOffOrOn
+     */
 	public void createBackGroundMusicAndLoopIt(boolean backGroundMusicOff) {
 		music = Gdx.audio.newMusic(Gdx.files.internal("game_music.mp3"));
 //		music.setVolume(1.0f);                 // sets the volume to half the maximum volume
@@ -903,19 +1167,34 @@ public class MainClass extends Game {
 		//first load set the backgroundmusic true
 		setbackGroundMusicOffOrOn(backGroundMusicOff);
 	}
+    /**
+     * Plays the background music when clicked it on on the music button
+     */
 
 	public void playBackgroundMusic() {
 		music.play();                          // resumes the playback
-
     }
-
+    /**
+     * stops the background music from playing when clicked it on the music button
+     */
 	public void stopBackGroundMusic() {
 		music.pause();                         // pauses the playback
 	}
 
+    /**
+     * sets the button 5 visible or not visible in the story if there are two choices to continue the story
+     * when the story is gone through enough (last part of the text) it's set to true else it's false
+     * @param visible sets the button either not visible or visible (true or false)
+     */
+
 	public void setButton5Visible(boolean visible) {
 		button5.setVisible(visible);
 	}
+    /**
+     * sets the button 6 visible or not visible in the story if there are two or one choices to continue the story
+     * when the story is gone through enough (last part of the text) it's set to true else it's false
+     * @param visible sets the button either not visible or visible (true or false)
+     */
 	public void setButton6Visible(boolean visible){
         button6.setVisible(visible);
     }
@@ -1404,11 +1683,6 @@ public class MainClass extends Game {
 	public int getStepsToOpenChapter23_1() {
 		return stepsToOpenChapter23_1;
 	}
-
-
-
-
-
 	public void setChapterNumber(int chapterNumber) {
 		this.chapterNumber = chapterNumber;
 	}
