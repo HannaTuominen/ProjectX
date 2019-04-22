@@ -8,25 +8,62 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 /**
- * This is the Chapter select screen in the main menu
+ * This is the Chapter select screen in the main menu that has all 23 chapters accessible via buttons depending on the progress of the game
  * @author Hanna Tuominen
  * @version 2019.2204
  * @since 15.01.2019
  */
 
 public class ChapterSelect implements Screen {
-
+    /**
+     * the mainclass
+     */
     private MainClass mainClass;
+    /**
+     * the batch from mainclass
+     */
     private SpriteBatch batch;
+    /**
+     * the font
+     */
     BitmapFont font12;
+    /**
+     * the chapter select background texture
+     */
     private Texture texture;
 
+    /**
+     * the screen width of the device
+     */
     private float screenWidth;
+    /**
+     * the screen height of the device
+     */
     private float screenHeight;
+    /**
+     * the button width
+     */
     private float buttonWidth;
+    /**
+     * the button height
+     */
     private float buttonHeight;
 
-
+    /**
+     * everything needed on chapter select is created here (changed only when going to the chapter select through the main menu button)
+     * <p>
+     * first get needed stuff from main class and save locally
+     * if currentfursthest chapter is 0 somehow set it to 1 to make chapter 1 possible to enter always
+     * get the current status of the music playing if it should be on or off
+     * set and get the current furthest chapter
+     * create the inv scroller that will be under the chapter buttons to help with the pan scrolling of the buttons
+     * create the top and bottom row of the chapter buttons
+     * set the group (group1) place
+     * add everything to the stage
+     * and finally create the back X button to get back to main menu
+     *
+     * @param MainClass2 main class
+     */
     public ChapterSelect(MainClass MainClass2) {
         this.mainClass = MainClass2;
         batch = mainClass.getBatch();
@@ -283,6 +320,10 @@ public class ChapterSelect implements Screen {
 
     }
 
+    /**
+     * render the current stage and background
+     * @param delta
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(mainClass.camera.combined);
