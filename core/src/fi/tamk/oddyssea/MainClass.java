@@ -2750,9 +2750,11 @@ public class MainClass extends Game {
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("Aero Matics Regular.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-		if(screenHeight < 800) {
-			fontSize = 23;
-		} else if (screenHeight >= 1000) {
+		if(screenHeight < 800 && screenHeight >700) {
+			fontSize = 35;
+		}else if(screenHeight> 800) {
+		    fontSize = 40;
+        } else if (screenHeight >= 1000) {
 			fontSize = 50;
 		}
 		parameter.size = fontSize;
