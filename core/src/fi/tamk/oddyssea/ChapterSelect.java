@@ -309,7 +309,7 @@ public class ChapterSelect implements Screen {
         mainClass.groupStageAdd1();
         //BACK
         mainClass.createButtons(new Texture("back_X.png"),"",0,8,
-                20,screenHeight-screenHeight/6.5f, screenWidth/15,screenHeight/8.5f,0);
+                15,screenHeight-screenHeight/7.4f, screenWidth/15,screenHeight/8.5f,0);
         texture = new Texture(Gdx.files.internal("startBackground_1.png"));
 
 
