@@ -2752,7 +2752,7 @@ public class MainClass extends Game {
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		if(screenHeight < 800 && screenHeight >700) {
 			fontSize = 35;
-		}else if(screenHeight> 800) {
+		}else if(screenHeight > 800 && screenHeight < 1000) {
 		    fontSize = 40;
         } else if (screenHeight >= 1000) {
 			fontSize = 50;
