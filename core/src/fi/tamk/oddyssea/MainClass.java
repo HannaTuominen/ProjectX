@@ -2737,8 +2737,8 @@ public class MainClass extends Game {
 	@Override
 	public void create () {
 		//GET THE SCREEN WIDTH AND HEIGHT OF YOUR CURRENT DEVICE IN PIXELS
-		screenWidth = Gdx.graphics.getWidth();
-		screenHeight = Gdx.graphics.getHeight();
+		screenWidth = Gdx.graphics.getWidth()+(Gdx.graphics.getWidth()/4);
+		screenHeight = Gdx.graphics.getHeight()+(Gdx.graphics.getHeight()/4);
 		//System.out.println(screenWidth);
 		//System.out.println(screenHeight);
 		layout = new GlyphLayout();
@@ -2750,13 +2750,16 @@ public class MainClass extends Game {
 		//CREATE THE FONT AND SET THE INFOR NEEDED FOR IT SUCH AS FONT SIZE AND NAME AND GENERATE IT
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("Aero Matics Regular.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-		if(screenHeight < 800 && screenHeight >700) {
-			fontSize = 35;
-		}else if(screenHeight > 800 && screenHeight < 1000) {
-		    fontSize = 40;
-        } else if (screenHeight >= 1000) {
-			fontSize = 50;
-		}
+
+        if(screenHeight < 800) {
+            fontSize = 35;
+        }else if(screenHeight> 800 && screenHeight < 1000) {
+            fontSize = 40;
+        } else if (screenHeight >= 1000 && screenHeight <1500) {
+            fontSize = 50;
+        } else if (screenHeight > 1500) {
+            fontSize = 55;
+        }
 		parameter.size = fontSize;
 
 		font12 = generator.generateFont(parameter);
