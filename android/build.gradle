@@ -20,8 +20,8 @@ android {
         applicationId "fi.tamk.oddyssea"
         minSdkVersion 9
         targetSdkVersion 27
-        versionCode 3
-        versionName "3.0"
+        versionCode 7
+        versionName "7"
     }
     buildTypes {
         release {
