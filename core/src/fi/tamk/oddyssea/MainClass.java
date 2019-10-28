@@ -2739,8 +2739,8 @@ public class MainClass extends Game {
 		//GET THE SCREEN WIDTH AND HEIGHT OF YOUR CURRENT DEVICE IN PIXELS
 		screenWidth = Gdx.graphics.getWidth();//+(Gdx.graphics.getWidth()/4);
 		screenHeight = Gdx.graphics.getHeight();//+(Gdx.graphics.getHeight()/4);
-		System.out.println(screenWidth);
-		System.out.println(screenHeight);
+		//System.out.println(screenWidth);
+		//System.out.println(screenHeight);
 		layout = new GlyphLayout();
 
 		if(screenWidth != 2560
@@ -2756,8 +2756,8 @@ public class MainClass extends Game {
             screenWidth = Gdx.graphics.getWidth()+(Gdx.graphics.getWidth()/3);
             screenHeight = Gdx.graphics.getHeight()+(Gdx.graphics.getHeight()/3);
         }
-        System.out.println(screenWidth);
-        System.out.println(screenHeight);
+        //System.out.println(screenWidth);
+        //System.out.println(screenHeight);
 
 		//CREATE A NEW BATCH THAT IS USED EVERYWHERE
 		batch = new SpriteBatch();
